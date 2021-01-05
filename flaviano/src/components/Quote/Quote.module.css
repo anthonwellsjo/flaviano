@@ -1,0 +1,28 @@
+.body {
+  position: relative;
+  left: 100px;
+  top: 200px;
+  width: 100%;
+}
+
+.text {
+  position: absolute;
+  font-family: Ibarra Real Nova;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 109.5%;
+  letter-spacing: 0.045em;
+}
+
+.leftQuote {
+  position: absolute;
+  left: -30px;
+  top: -30px;
+}
+
+.rightQuote {
+  position: absolute;
+  right: -20px;
+  bottom: -85px;
+}

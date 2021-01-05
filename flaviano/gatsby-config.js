@@ -4,6 +4,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `HomepageBaukasten`,
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "d1gzutwf",
