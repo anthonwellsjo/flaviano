@@ -2,7 +2,7 @@ import React from 'react';
 // import Image from "gatsby-plugin-sanity-image";
 import Img from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby';
-import { useCategoryImagesQuery } from '../../hooks/useCategoryImagesQuery';
+import { useCategoryImagesQuery } from '../../hooks/queries/useCategoryImagesQuery';
 
 const CategoryCarousel: React.FC = () => {
 
