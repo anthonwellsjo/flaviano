@@ -18,22 +18,6 @@ export default {
       },
     },
     {
-      title: 'Default variant',
-      name: 'defaultProductVariant',
-      type: 'productVariant',
-    },
-    {
-      title: 'Variants',
-      name: 'variants',
-      type: 'array',
-      of: [
-        {
-          title: 'Variant',
-          type: 'productVariant',
-        },
-      ],
-    },
-    {
       title: 'Tags',
       name: 'tags',
       type: 'array',
@@ -47,17 +31,6 @@ export default {
       },
     },
     {
-      name: 'vendor',
-      title: 'Vendor',
-      type: 'reference',
-      to: {type: 'vendor'},
-    },
-    {
-      name: 'blurb',
-      title: 'Blurb',
-      type: 'localeString',
-    },
-    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
@@ -69,17 +42,17 @@ export default {
       ],
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'localeBlockContent',
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     },
+    {
+      name: 'priceEur',
+      title: 'Price Euro €',
+      type: 'number',
+      options:{
+        validation: n => n.positive().required()
+      }
+    }
   ],
-
-  preview: {
-    select: {
-      title: 'title',
-      manufactor: 'manufactor.title',
-      media: 'defaultProductVariant.images[0]',
-    },
-  },
 }
