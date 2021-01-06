@@ -5,7 +5,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
 import category from './category'
-import categoryCarouselItem from './categoryCarouselItem'
+import categoryCarouselImage from './categoryCarouselImage'
 import product from './product'
 
 
@@ -21,7 +21,7 @@ export default createSchema({
     product,
     category,
 
-    categoryCarouselItem,
+    categoryCarouselImage,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

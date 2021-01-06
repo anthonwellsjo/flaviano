@@ -22,5 +22,10 @@ export default {
       title: 'Description',
       type: 'text',
     },
+    {
+      name: 'categoryCarouselImage',
+      title: 'Category Carousel Image',
+      type: 'categoryCarouselImage'
+    }
   ],
 }

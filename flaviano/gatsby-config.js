@@ -16,7 +16,15 @@ module.exports = {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "d1gzutwf",
-        dataset: "production",
+        dataset: "development",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        // Sanity project info (required)
+        projectId: "d1gzutwf",
+        dataset: "development",
       },
     },
     "gatsby-plugin-sharp",
