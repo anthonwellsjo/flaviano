@@ -6,6 +6,8 @@ export const useCategoryImagesQuery = () => {
       allSanityCategory {
         edges {
           node {
+            title
+            slug{current}
             categoryCarouselImage {
               asset {
                   fluid(maxHeight: 200) {
