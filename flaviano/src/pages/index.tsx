@@ -27,7 +27,7 @@ const IndexPage = () => {
 
 
       {/* ------------------------------BEIGE SECTION */}
-      <section style={{ position: "relative", height: "90vh", marginTop: "-56px", backgroundColor: "rgba(178, 147, 121, 0.2)" }}>
+      <section style={{ position: "relative", height: "95vh", marginTop: "-56px", backgroundColor: "rgba(178, 147, 121, 0.2)" }}>
         <div style={{ height: "40vh" }}>
           <Centralizer column>
             <div style={{ width: "70vw" }}>
@@ -40,22 +40,24 @@ const IndexPage = () => {
           </Centralizer>
         </div>
 
-        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", left: "11vw", bottom: "10vh" }}>
+        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", left: "11vw", bottom: "15vh" }}>
           <Quote style={QuoteStyle.header}>
             P
           </Quote>
         </div>
 
-        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "25vw", bottom: "0vh" }}>
+        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "25vw", bottom: "5vh" }}>
           <PageTitle>Prodotti</PageTitle>
         </div>
 
       </section>
 
+
+
       {/* ------------------------------PRODUCTS SECTION */}
 
 
-      <section>
+      <section style={{ position: "relative", height: "90vh", marginTop: "-56px", backgroundColor: "white" }}>
 
       </section>
 
