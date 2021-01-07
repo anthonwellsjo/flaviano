@@ -1,3 +1,6 @@
+@import "./typography.css";
+
+
 html, body{
   background-color: #FFFFFF;
   margin: 0;

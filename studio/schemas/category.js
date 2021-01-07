@@ -26,6 +26,11 @@ export default {
       name: 'categoryCarouselImage',
       title: 'Category Carousel Image',
       type: 'categoryCarouselImage'
+    },
+    { 
+      name: 'categoryParallaxIcon',
+      title: 'Category Parallax Icon',
+      type: 'categoryParallaxIcon'
     }
   ],
 }

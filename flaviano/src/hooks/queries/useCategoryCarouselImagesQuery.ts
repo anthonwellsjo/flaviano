@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const useCategoryImagesQuery = () => {
+export const useCategoryCarouselImagesQuery = () => {
   const categoryImagesData = useStaticQuery(graphql`
     query useCategoryImagesQuery{
       allSanityCategory {

@@ -3,6 +3,7 @@ import { QuoteStyle } from "../../types";
 import CategoryCarousel from "../components/CategoryCarousel/CategoryCarousel";
 import Layout from "../components/Layout/Layout"
 import PageTitle from "../components/PageTitle/PageTitle";
+import ProductPreview from "../components/ProductPage/ProductPreview/ProductPreview";
 import Quote from "../components/Quote/Quote";
 import Centralizer from "../components/structure components/Centralizer/centralizer";
 
@@ -27,7 +28,7 @@ const IndexPage = () => {
 
 
       {/* ------------------------------BEIGE SECTION */}
-      <section style={{ position: "relative", height: "95vh", backgroundColor: "rgba(178, 147, 121, 0.2)" }}>
+      <section style={{ position: "relative", height: "100vh", backgroundColor: "rgba(178, 147, 121, 0.2)" }}>
         <div style={{ height: "40vh" }}>
           <Centralizer column>
             <div style={{ width: "70vw" }}>
@@ -40,13 +41,13 @@ const IndexPage = () => {
           </Centralizer>
         </div>
 
-        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", left: "11vw", bottom: "15vh" }}>
+        <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10vw", bottom: "22vh" }}>
           <Quote style={QuoteStyle.header}>
             P
           </Quote>
         </div>
 
-        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "25vw", bottom: "5vh" }}>
+        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "35vw", bottom: "8vh" }}>
           <PageTitle>Prodotti</PageTitle>
         </div>
 
@@ -58,7 +59,7 @@ const IndexPage = () => {
 
 
       <section style={{ position: "relative", height: "90vh", marginTop: "-56px", backgroundColor: "white" }}>
-
+        <ProductPreview />
       </section>
 
 

@@ -1,9 +1,9 @@
 .text {
-  font-family: Roboto;
+  font-family: HomepagebaukastenBold;
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 50px;
+  font-size: 3em;
   line-height: 55px;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.55em;
 }
