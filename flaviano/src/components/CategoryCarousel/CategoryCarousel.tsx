@@ -13,16 +13,16 @@ const CategoryCarousel: React.FC = () => {
   console.log(data.allSanityCategory.edges[0]);
 
   return (
-    <Carousel showStatus={false} swipeable emulateTouch infiniteLoop>
-      {data.allSanityCategory.edges.map(e => {
-        return (
-          <div>
-            <Img fluid={e.node.categoryCarouselImage.asset.fluid} alt="Category image" />
-            <p className="legend">{e.node.title}</p>
-          </div>
-        )
-      })}
-    </Carousel >
+      <Carousel showStatus={false} swipeable emulateTouch infiniteLoop autoPlay>
+        {data.allSanityCategory.edges.map(e => {
+          return (
+            <div>
+              <Img fluid={e.node.categoryCarouselImage.asset.fluid} alt="Category image" />
+              {/* <p className="legend">{e.node.title}</p> */}
+            </div>
+          )
+        })}
+      </Carousel >
   )
 }
 
