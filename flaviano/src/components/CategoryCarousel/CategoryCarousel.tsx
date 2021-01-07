@@ -1,18 +1,16 @@
 import React from 'react';
 // import Image from "gatsby-plugin-sanity-image";
 import Img from 'gatsby-image'
-import { graphql, useStaticQuery } from 'gatsby';
 import { useCategoryImagesQuery } from '../../hooks/queries/useCategoryImagesQuery';
 
 const CategoryCarousel: React.FC = () => {
 
   const data = useCategoryImagesQuery();
 
-  console.group(data);
-
+  console.log(data.allSanityCategory.edges[0].node.categoryCarouselImage.asset.fluid);
 
   return (
-    <p>{data.allSanityCategory.edges.map(e => e.node.id)}</p>
+      <Img fluid={data.allSanityCategory.edges[0].node.categoryCarouselImage.asset.fluid} alt="Category image" />
     // <Img fluid={data.allSanityCategory.edges.node.categoryCarouselImage.asset.fluid} alt="ok"/>
   )
 }

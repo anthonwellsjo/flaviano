@@ -13,7 +13,7 @@ const IndexPage = () => {
       <section style={{ position: "relative", top: "100px", width: "50vw", left: "30vw" }}>
         <Quote>Ci sono sapori e profumi che evocano ricordi in ognuno di noi, ci auguriamo di regalare quei momenti di dolcezza ad ognuno di voi.</Quote>
       </section>
-      <section>
+      <section style={{ position: "relative", top: "60vh"}}>
         <CategoryCarousel/>
       </section>
     </>

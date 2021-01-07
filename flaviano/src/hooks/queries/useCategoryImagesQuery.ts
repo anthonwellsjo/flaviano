@@ -4,9 +4,15 @@ export const useCategoryImagesQuery = () => {
   const categoryImagesData = useStaticQuery(graphql`
     query useCategoryImagesQuery{
       allSanityCategory {
-      edges {
-        node {
-          id
+        edges {
+          node {
+            categoryCarouselImage {
+              asset {
+                  fluid(maxHeight: 200) {
+                ...GatsbySanityImageFluid
+                }
+            }
+          }
         }
       }
     }

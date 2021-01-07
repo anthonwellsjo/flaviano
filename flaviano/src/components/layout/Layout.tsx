@@ -5,7 +5,7 @@ import MainNavBar from '../MainNavBar/MainNavBar';
 import classes from './Layout.module.css';
 
 const MainLayout: React.FC = ({ children } ) => (
-  <div>
+  <div className={classes.Layout}>
     <Logo/>
     <MainNavBar/>
     {children}
