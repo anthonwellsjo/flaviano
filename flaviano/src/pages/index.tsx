@@ -27,7 +27,7 @@ const IndexPage = () => {
 
 
       {/* ------------------------------BEIGE SECTION */}
-      <section style={{ position: "relative", height: "95vh", marginTop: "-56px", backgroundColor: "rgba(178, 147, 121, 0.2)" }}>
+      <section style={{ position: "relative", height: "95vh", backgroundColor: "rgba(178, 147, 121, 0.2)" }}>
         <div style={{ height: "40vh" }}>
           <Centralizer column>
             <div style={{ width: "70vw" }}>

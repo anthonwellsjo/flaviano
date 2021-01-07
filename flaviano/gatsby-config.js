@@ -3,6 +3,7 @@ require('dotenv').config({
 })
 
 module.exports = {
+  pathPrefix: `/flaviano`,
   siteMetadata: {
     title: "flaviano",
   },
