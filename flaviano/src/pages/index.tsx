@@ -33,30 +33,31 @@ const IndexPage = () => {
 
 
       {/* ------------------------------BEIGE SECTION */}
-      <section style={{ position: "relative", height: "100vh", backgroundColor: "rgba(178, 147, 121, 0.2)" }}>
+      <ParallaxLayer offset={1} speed={5}>
+        <div style={{ height: "450vh", width: "100%", backgroundColor: "rgba(178, 147, 121, 0.2)", position: "absolute" }}></div>
+      </ParallaxLayer>
+      <section style={{ position: "relative", height: "100vh" }}>
         <div style={{ height: "40vh" }}>
-        <ParallaxLayer offset={0} speed={-0.20}>
+          <ParallaxLayer offset={0} speed={-0.20}>
 
-          <Centralizer column>
-            <div style={{ width: "70vw", marginTop: "-700px" }}>
+            <Centralizer column>
+              <div style={{ width: "70vw", marginTop: "-700px" }}>
                 <Quote>
                   Flaviano nasce dal desiderio di trasmettere l’amore e la passione per l’artigianalità.
                   Siamo artigiani moderni che si pongono l’obiettivo di promuovere la tradizione attraverso
                   la creatività. Siamo custodi delle bontà del nostro territorio.
                 </Quote>
-            </div>
-          </Centralizer>
+              </div>
+            </Centralizer>
           </ParallaxLayer>
 
         </div>
-
-        <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10vw", bottom: "22vh" }}>
+        <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10vw", bottom: "15vh" }}>
           <Quote style={QuoteStyle.header}>
             P
           </Quote>
         </div>
-
-        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "35vw", bottom: "8vh" }}>
+        <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "35vw", bottom: "5vh" }}>
           <PageTitle>Prodotti</PageTitle>
         </div>
 
