@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from './ProductPreview.module.css';
-import Img from 'gatsby-image';
+import Img, { FixedObject } from 'gatsby-image';
 import { Product } from '../../../../types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 
 interface ProductPreviewProps {
-  img: string,
+  img: FixedObject,
   key: any,
   title: string,
   color: string,
@@ -36,7 +36,7 @@ const ProductPreview = (props: ProductPreviewProps) => {
         <div className={classes.imageGroupHolder}>
           <div className={classes.line}></div>
           <div className={classes.imageWrapper}>
-            <ParallaxLayer offset={0} speed={-0.04}>
+            <ParallaxLayer offset={0} speed={-0.01 * (Math.floor(Math.random() * 9) + 1)  }>
               <Img className={classes.image} fixed={props.img} alt="Product image" />
             </ParallaxLayer>
           </div>
