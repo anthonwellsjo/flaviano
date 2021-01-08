@@ -48,6 +48,21 @@
   letter-spacing: 0.16em;
 }
 
+.productsListContainer{
+  position: absolute;
+  display: flex;
+  width: 30vw;
+  margin-top: 100px;
+  flex-direction: column;
+  font-size: 1.3em;
+  letter-spacing: 0.16em;
+  line-height: 35px;
+  align-items: left;
+  justify-content: center;
+  font-family: HomePageBaukastenBook;
+  text-transform: uppercase;
+}
+
 .imageGroupHolder {
   position: absolute;
   height: 100%;

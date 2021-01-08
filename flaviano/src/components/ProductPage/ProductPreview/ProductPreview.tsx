@@ -1,15 +1,23 @@
 import React from 'react';
 import classes from './ProductPreview.module.css';
 import Img from 'gatsby-image';
+import { Product } from '../../../../types';
 
 interface ProductPreviewProps {
   img: string,
   key: any,
-  title: string
+  title: string,
+  products?: Array<Product>
 }
 
 const ProductPreview = (props: ProductPreviewProps) => {
+  if (props.products != null) {
+    props.products.forEach(p => {
+      console.log("product in component", p.node.title);
 
+    })
+
+  }
 
   return (
     <div className={classes.wrapper}>
@@ -18,6 +26,9 @@ const ProductPreview = (props: ProductPreviewProps) => {
           <div className={classes.titleWrapper}>
             <div className={classes.titleOverLine}></div>
             <span className={classes.title}>{props.title}</span>
+            <div className={classes.productsListContainer}>
+              {props.products?.map((prod: Product) => <span className={classes.productTitle}>{prod.node.title}</span>)}
+            </div>
           </div>
         </div>
         <div className={classes.imageGroupHolder}>

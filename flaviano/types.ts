@@ -4,3 +4,16 @@ export enum QuoteStyle {
   "paragraph-m",
   "paragraph-l"
 }
+
+export interface Product{
+  category: {
+    id: string,
+    title: string
+  },
+  description: string,
+  priceEur: number,
+  slug: {
+    current: string
+  },
+  title: string
+}

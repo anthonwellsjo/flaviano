@@ -3,6 +3,10 @@
   src: url("./src/fonts/homepagebaukasten-bold-font/HomepagebaukastenBold-ZXvm.ttf");
 }
 @font-face {
+  font-family: "HomepagebaukastenBook";
+  src: url("./src/fonts/HomepageBaukasten\ Book.ttf");
+}
+@font-face {
   font-family: "IbarraRealNovaItalic";
   src: url("./src/fonts/Ibarra_Real_Nova/IbarraRealNova-Italic-VariableFont_wght.ttf");
 }

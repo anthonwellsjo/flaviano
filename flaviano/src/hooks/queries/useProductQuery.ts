@@ -2,20 +2,23 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 export const useProductQuery = () => {
   const Products = useStaticQuery(graphql`
-    query useCategoryImagesQuery{
-      allSanityProduct {
-        nodes {
-          categories {
+  query productQuery {
+    allSanityProduct {
+      edges {
+        node {
+          category {
+            id
             title
           }
           title
+          priceEur
+          description
           slug {
             current
           }
-          priceEur
-          description
         }
       }
+    }
   }
   `
   )

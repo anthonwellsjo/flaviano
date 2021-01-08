@@ -6,6 +6,7 @@ export const useCategoryPreviewQuery = () => {
     allSanityCategory {
       edges {
         node {
+          id
           title
           slug{current}
           categoryParallaxIcon {

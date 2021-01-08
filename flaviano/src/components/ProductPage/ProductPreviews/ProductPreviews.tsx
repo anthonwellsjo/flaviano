@@ -11,17 +11,20 @@ const ProductPreviews: React.FC = () => {
   let parallax;
 
   const productData = useProductQuery();
-
+  console.log("productdata", productData);
+  console.log("categorydata", categoryData);
 
   return (
 
 
     categoryData.allSanityCategory.edges.map((e: any, index: number) => {
+      const products = productData.allSanityProduct.edges.filter((p: any) => p.node.category.id == e.node.id);
       return (
         <>
           <div style={{ height: "50px" }}></div>
           <ProductPreview
             key={e.node.slug.current}
+            products={products}
             title={e.node.title}
             img={e.node.categoryParallaxIcon.asset.fixed} />
         </>
