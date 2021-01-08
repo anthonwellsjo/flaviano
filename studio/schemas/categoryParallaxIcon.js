@@ -4,7 +4,5 @@ export default {
   type: 'image',
   options: {
     validation: v => v.required(),
-    hotspot: true,
-    crop: true
   },
 }
