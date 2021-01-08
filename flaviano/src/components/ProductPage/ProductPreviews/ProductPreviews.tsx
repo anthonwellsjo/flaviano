@@ -26,6 +26,7 @@ const ProductPreviews: React.FC = () => {
             key={e.node.slug.current}
             products={products}
             title={e.node.title}
+            color={e.node.previewColorBoxColor.hex}
             img={e.node.categoryParallaxIcon.asset.fixed} />
         </>
       )

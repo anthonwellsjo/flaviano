@@ -1,7 +1,7 @@
 import * as React from "react"
 import { QuoteStyle } from "../../types";
 import CategoryCarousel from "../components/CategoryCarousel/CategoryCarousel";
-import Layout from "../components/Layout/Layout"
+import LayoutHeader from "../components/LayoutHeader/LayoutHeader"
 import PageTitle from "../components/PageTitle/PageTitle";
 import ProductPreviews from "../components/ProductPage/ProductPreviews/ProductPreviews";
 import Quote from "../components/Quote/Quote";
@@ -15,14 +15,16 @@ import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 const IndexPage = () => {
   let parallax;
   return (
-    <>
-      <Layout>
+    <Parallax pages={4} scrolling={true} ref={ref => parallax = ref}>
+      <LayoutHeader/>
 
         <section style={{ position: "relative", top: "30vh", width: "50vw", left: "40vw", height: "40vh" }}>
-          <Quote>
-            Ci sono sapori e profumi che evocano ricordi in ognuno di noi, ci auguriamo di regalare
-            quei momenti di dolcezza ad ognuno di voi.
+          <ParallaxLayer offset={0} speed={0.05}>
+            <Quote>
+              Ci sono sapori e profumi che evocano ricordi in ognuno di noi, ci auguriamo di regalare
+              quei momenti di dolcezza ad ognuno di voi.
           </Quote>
+          </ParallaxLayer>
         </section>
 
         <section style={{ position: "relative", left: "0", right: "0", top: "0", marginTop: "100px" }}>
@@ -60,19 +62,14 @@ const IndexPage = () => {
 
         {/* ------------------------------PRODUCTS SECTION */}
 
-        <Parallax pages={3} scrolling={true} ref={ref => parallax = ref}>
 
-          <section style={{ position: "relative", height: "90vh",  backgroundColor: "white" }}>
 
-            <ProductPreviews />
+        <section style={{ position: "relative", height: "90vh", backgroundColor: "white" }}>
 
-          </section>
-        </Parallax>
+          <ProductPreviews />
 
-      </Layout>
-
-    </>
-
+        </section>
+    </Parallax>
   )
 }
 

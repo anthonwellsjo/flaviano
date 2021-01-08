@@ -7,6 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required()
     },
     {
       name: 'slug',
@@ -15,6 +16,7 @@ export default {
       options: {
         source: 'title',
         maxLength: 96,
+        validation: Rule => Rule.required()
       },
     },
     {
@@ -26,8 +28,10 @@ export default {
           type: 'string',
         },
       ],
+      validation: Rule => Rule.required(),
       options: {
         layout: 'tags',
+        
       },
     },
     {
@@ -35,19 +39,19 @@ export default {
       title: 'Category',
       type: 'reference',
       to: { type: 'category' },
+      validation: Rule => Rule.required()
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text',
+      validation: Rule => Rule.required()
     },
     {
       name: 'priceEur',
       title: 'Price Euro €',
       type: 'number',
-      options: {
-        validation: n => n.positive().required()
-      }
+      validation: n => n.positive().required()
     }
   ],
 }

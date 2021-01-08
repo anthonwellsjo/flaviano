@@ -1,14 +1,12 @@
 .wrapper {
   height: 60vh;
   width: 100%;
-  background-color: beige;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .innerWrapper {
-  background-color: aquamarine;
   width: 80vw;
   height: 60vh;
   position: relative;
@@ -17,7 +15,6 @@
 .colorCube {
   width: 50vw;
   height: 30vh;
-  background-color: blueviolet;
   position: absolute;
   right: 10vw;
   display: flex;
@@ -75,11 +72,19 @@
 }
 
 .imageWrapper {
+  position: relative;
   width: 15vw;
   height: 45vh;
   overflow: hidden;
   display: flex;
+  align-items: center;
+  border: 1px solid black;
   justify-content: center;
+}
+
+.image{
+  position: absolute;
+  left:-50%;
 }
 
 .line {

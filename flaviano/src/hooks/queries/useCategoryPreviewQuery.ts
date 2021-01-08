@@ -9,6 +9,9 @@ export const useCategoryPreviewQuery = () => {
           id
           title
           slug{current}
+          previewColorBoxColor {
+            hex
+          }
           categoryParallaxIcon {
             asset {
               fixed{

@@ -6,6 +6,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { Carousel } from 'react-responsive-carousel';
 import { GatsbyGraphQLContext } from 'gatsby-source-sanity/lib-es5/types/gatsby';
+import { ParallaxLayer } from 'react-spring/renderprops-addons';
 
 const CategoryCarousel: React.FC = () => {
 

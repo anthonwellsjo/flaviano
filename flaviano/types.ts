@@ -5,15 +5,17 @@ export enum QuoteStyle {
   "paragraph-l"
 }
 
-export interface Product{
-  category: {
-    id: string,
+export interface Product {
+  node: {
+    category: {
+      id: string,
+      title: string
+    },
+    description: string,
+    priceEur: number,
+    slug: {
+      current: string
+    },
     title: string
-  },
-  description: string,
-  priceEur: number,
-  slug: {
-    current: string
-  },
-  title: string
+  }
 }
