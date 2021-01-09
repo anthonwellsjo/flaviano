@@ -33,8 +33,8 @@ const IndexPage = () => {
 
 
       {/* ------------------------------BEIGE SECTION */}
-      <ParallaxLayer offset={1} speed={5}>
-        <div style={{ height: "450vh", width: "100%", backgroundColor: "rgba(178, 147, 121, 0.2)", position: "absolute" }}></div>
+      <ParallaxLayer offset={1} speed={3}>
+        <div style={{ height: "350vh", width: "100%", backgroundColor: "rgba(178, 147, 121, 0.2)", position: "absolute" }}></div>
       </ParallaxLayer>
       <section style={{ position: "relative", height: "100vh" }}>
         <div style={{ height: "40vh" }}>
