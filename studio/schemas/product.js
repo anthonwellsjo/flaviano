@@ -31,7 +31,7 @@ export default {
       validation: Rule => Rule.required(),
       options: {
         layout: 'tags',
-        
+
       },
     },
     {
@@ -52,6 +52,12 @@ export default {
       title: 'Price Euro €',
       type: 'number',
       validation: n => n.positive().required()
+    },
+    {
+      name: "backGroundColor",
+      title: "Background Color",
+      type: 'color',
+      validation: Rule => Rule.required()
     }
   ],
 }

@@ -4,10 +4,12 @@ import Img, { FixedObject } from 'gatsby-image';
 import { Product } from '../../../../types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import { animated, useSpring } from 'react-spring';
+import { Link } from 'gatsby';
 
 interface ProductPreviewProps {
   img: FixedObject,
   key: any,
+  categorySlug: string,
   title: string,
   color: string,
   products?: Array<Product>
@@ -37,27 +39,29 @@ const ProductPreview = (props: ProductPreviewProps) => {
   })
 
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.innerWrapper}>
-        <animated.div onMouseLeave={() => setHover(false)} onMouseEnter={() => setHover(true)} style={{ ...previewSyles, backgroundColor: props.color }} className={classes.colorCube} >
-          <div className={classes.titleWrapper}>
-            <animated.div style={lineStyles} className={classes.titleOverLine}></animated.div>
-            <span className={classes.title}>{props.title}</span>
-            <div className={classes.productsListContainer}>
-              {props.products?.map((prod: Product) => <span className={classes.productTitle}>{prod.node.title}</span>)}
+    <Link to={`/categories/${props.categorySlug}`}>
+      <div onMouseLeave={() => setHover(false)} onMouseEnter={() => setHover(true)} className={classes.wrapper}>
+        <div className={classes.innerWrapper}>
+          <animated.div style={{ ...previewSyles, backgroundColor: props.color }} className={classes.colorCube} >
+            <div className={classes.titleWrapper}>
+              <animated.div style={lineStyles} className={classes.titleOverLine}></animated.div>
+              <span className={classes.title}>{props.title}</span>
+              <div className={classes.productsListContainer}>
+                {props.products?.map((prod: Product) => <Link key={prod.node.title}  to={`/products/${prod.node.slug.current}`}><span className={classes.productTitle}>{prod.node.title}</span></Link>)}
+              </div>
+            </div>
+          </animated.div>
+          <div className={classes.imageGroupHolder}>
+            <div className={classes.line}></div>
+            <div className={classes.imageWrapper}>
+              <ParallaxLayer offset={0} speed={0.1}>
+                <Img className={classes.image} fixed={props.img} alt="Product image" />
+              </ParallaxLayer>
             </div>
           </div>
-        </animated.div>
-        <div className={classes.imageGroupHolder}>
-          <div className={classes.line}></div>
-          <div className={classes.imageWrapper}>
-            <ParallaxLayer offset={0} speed={0.1}>
-              <Img className={classes.image} fixed={props.img} alt="Product image" />
-            </ParallaxLayer>
-          </div>
         </div>
-      </div>
-    </div >
+      </div >
+    </Link>
   )
 }
 

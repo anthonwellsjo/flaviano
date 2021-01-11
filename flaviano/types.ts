@@ -1,3 +1,5 @@
+import { GatsbyGraphQLInputObjectType } from "gatsby";
+
 export enum QuoteStyle {
   "header",
   "paragraph-s",
@@ -16,6 +18,36 @@ export interface Product {
     slug: {
       current: string
     },
+    title: string,
+    backGroundColor: {
+      hex: string
+    },
+    id: string
+  }
+}
+
+export interface ProductQuery {
+  allSanityProduct: {
+    edges: Array<Product>
+  }
+}
+
+export interface Category {
+  node: {
+    categoryParallaxIcon: any,
+    id: string,
+    previewColorBoxColor: {
+      hex: string
+    },
+    slug: {
+      current: string
+    },
     title: string
+  }
+}
+
+export interface CategoryQuery {
+  allSanityCategory: {
+    edges: Array<Category>
   }
 }

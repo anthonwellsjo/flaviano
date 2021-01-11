@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .innerWrapper {
@@ -43,6 +44,7 @@
   line-height: 33px;
   letter-spacing: 0.16em;
 }
+
 
 .productsListContainer{
   position: absolute;
@@ -91,4 +93,15 @@
   width: 14vw;
   background-color: black;
   margin-bottom: 2vh;
+}
+
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.productTitle:hover{
+  /* color: rgb(71, 71, 71); */
+  font-weight: bold;
 }

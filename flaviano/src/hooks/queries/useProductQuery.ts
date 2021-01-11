@@ -16,6 +16,10 @@ export const useProductQuery = () => {
           slug {
             current
           }
+          backGroundColor{
+            hex
+          }
+          id
         }
       }
     }

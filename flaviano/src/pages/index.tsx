@@ -9,15 +9,12 @@ import Centralizer from "../components/structure components/Centralizer/centrali
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 
 
-
-
-
 const IndexPage = () => {
+  
   let parallax;
   return (
     <Parallax pages={6} scrolling={true} ref={ref => parallax = ref}>
       <LayoutHeader />
-
       <section style={{ position: "relative", top: "30vh", width: "50vw", left: "40vw", height: "40vh" }}>
         <ParallaxLayer offset={0} speed={0.05}>
           <Quote>
