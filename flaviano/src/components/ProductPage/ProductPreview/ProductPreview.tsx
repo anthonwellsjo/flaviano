@@ -27,7 +27,7 @@ const ProductPreview = (props: ProductPreviewProps) => {
   })
   const previewSyles = useSpring({
     reverse: hover,
-    from: { borderRadius: "100px", transform: "scale(1.2)" },
+    from: { borderRadius: "5px", transform: "scale(1.1)" },
     to: { borderRadius: "0", transform: "scale(1)" },
     config: {
       mass: 1,
@@ -51,7 +51,7 @@ const ProductPreview = (props: ProductPreviewProps) => {
         <div className={classes.imageGroupHolder}>
           <div className={classes.line}></div>
           <div className={classes.imageWrapper}>
-            <ParallaxLayer offset={0} speed={-0.01 * (Math.floor(Math.random() * 9) + 1)}>
+            <ParallaxLayer offset={0} speed={0.1}>
               <Img className={classes.image} fixed={props.img} alt="Product image" />
             </ParallaxLayer>
           </div>

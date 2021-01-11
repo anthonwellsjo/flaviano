@@ -15,7 +15,7 @@ const CategoryCarousel: React.FC = () => {
   console.log(data.allSanityCategory.edges[0]);
 
   return (
-      <Carousel showIndicators dynamicHeight showThumbs={false} showStatus={false} swipeable emulateTouch infiniteLoop autoPlay>
+      <Carousel showIndicators showThumbs={false} showStatus={false} swipeable emulateTouch infiniteLoop autoPlay>
         {data.allSanityCategory.edges.map((e: any) => {
           return (
             <div key={e.node.slug}>
