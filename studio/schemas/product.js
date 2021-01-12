@@ -4,6 +4,16 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'productPhoto',
+      title: 'Product Photo',
+      type: 'image',
+      validation: v => v.required(),
+      options: {
+        hotspot: true,
+        crop: true
+      },
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
@@ -44,6 +54,18 @@ export default {
     {
       name: 'description',
       title: 'Description',
+      type: 'text',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'ingredients',
+      title: 'Ingredients',
+      type: 'text',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'conservation',
+      title: 'Conservation',
       type: 'text',
       validation: Rule => Rule.required()
     },

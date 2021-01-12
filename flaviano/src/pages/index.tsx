@@ -5,7 +5,7 @@ import LayoutHeader from "../components/LayoutHeader/LayoutHeader"
 import PageTitle from "../components/PageTitle/PageTitle";
 import ProductPreviews from "../components/ProductPage/ProductPreviews/ProductPreviews";
 import Quote from "../components/Quote/Quote";
-import Centralizer from "../components/structure components/Centralizer/centralizer";
+import Centralizer from "../components/StructureComponents/Centralizer/Centralizer";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 
 

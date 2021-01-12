@@ -20,6 +20,15 @@ export const useProductQuery = () => {
             hex
           }
           id
+          conservation
+          ingredients
+          productPhoto {
+            asset {
+              fluid(maxWidth: 400){
+                ...GatsbySanityImageFluid
+              }
+          }
+          }
         }
       }
     }

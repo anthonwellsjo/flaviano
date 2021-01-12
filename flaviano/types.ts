@@ -22,7 +22,14 @@ export interface Product {
     backGroundColor: {
       hex: string
     },
-    id: string
+    id: string,
+    conservation: string,
+    ingredients: string,
+    productPhoto: {
+      asset: {
+        fluid: any
+      }
+    }
   }
 }
 
