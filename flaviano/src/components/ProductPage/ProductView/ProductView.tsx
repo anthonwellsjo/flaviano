@@ -14,17 +14,30 @@ interface pageProps {
 
 const ProductView = (props: pageProps) => {
   return (
-    <div style={{ backgroundColor: props.bcgColor, width: "100%", height: "100vh", zIndex: 100, display: "flex", justifyContent: "space-evenly", alignItems:"center" }}>
-      <div style={{ maxWidth: "400px", width: "300px", height: "400px", marginBottom: "10vh" }}>
-        <Img fluid={props.fluidImg} alt="product photo" />
+    <div style={{ position: "relative", backgroundColor: props.bcgColor, width: "100%", height: "100vh", zIndex: 100, display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
+      <div style={{ maxWidth: "400px", width: "20vw", height: "300px", marginBottom: "10vh" }}>
+        <Img className={classes.fluidImg} fluid={props.fluidImg} alt="product photo" />
       </div>
       <div className={classes.textWrapper}>
-        <span>{props.title}</span>
-        <span>{props.description}</span>
-        <span>{props.ingredients}</span>
-        <span>{props.conservation}</span>
+        <div className={classes.titleWrapper}>
+          <span className={classes.title}>{props.title}</span>
+        </div>
+        <div className={classes.descWrapper}>
+          <span className={classes.descriptionTitle}>Descrizione prodotto</span>
+          <br></br>
+          <span className={classes.description}>{props.description}</span>
+        </div>
+        <div className={classes.ingredWrapper}>
+          <span className={classes.ingredientsTitle}>Ingredienti</span>
+          <br></br>
+          <span className={classes.ingredients}>{props.ingredients}</span>
+        </div>
+        <div className={classes.consWrapper}>
+          <span className={classes.conservationTitle}>Conservazione</span>
+          <br></br>
+          <span className={classes.conservation}>{props.conservation}</span>
+        </div>
       </div>
-
     </div>
   )
 }
