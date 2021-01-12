@@ -16,7 +16,7 @@ const ProductPage = ({ data }: ProductPageDataQuery) => {
           <LayoutHeader />
           <section className={classes.firstPage}>
             <div className={classes.productImg}>
-              <Img style={{ zIndex: -100 }} fluid={data.sanityProduct.productPhoto.asset.fluid} alt="product photo" />
+              {(data.sanityProduct.productPhoto != null) && <Img style={{ zIndex: -100 }} fluid={data.sanityProduct.productPhoto.asset.fluid} alt="product photo" />}
             </div>
           </section>
         </ParallaxLayer>
