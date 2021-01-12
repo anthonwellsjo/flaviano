@@ -7,6 +7,32 @@ export enum QuoteStyle {
   "paragraph-l"
 }
 
+export interface ProductPageDataQuery {
+  data: {
+    sanityProduct: {
+      id: string,
+      description: string,
+      conservation: string,
+      category: {
+        id: string,
+        title: string,
+        slug: {
+          current: string
+        }
+      },
+      title: string,
+      priceEur: number,
+      slug: {
+        current: string
+      },
+      productPhoto: {
+        asset: {
+          fluid: any
+        }
+      }
+    }
+  }
+}
 export interface Product {
   node: {
     category: {
@@ -58,3 +84,4 @@ export interface CategoryQuery {
     edges: Array<Category>
   }
 }
+
