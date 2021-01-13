@@ -12,6 +12,7 @@ export interface ProductPageDataQuery {
     sanityProduct: {
       id: string,
       description: string,
+      ingredients:string,
       conservation: string,
       category: {
         id: string,

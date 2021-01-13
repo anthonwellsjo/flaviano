@@ -1,0 +1,54 @@
+.textWrapper {
+  margin-top: 5vh;
+  width: 80vw;
+  margin-bottom: 10vh;
+  position: relative;
+}
+
+.title {
+  font-family: HomepagebaukastenBold;
+  letter-spacing: 0.16em;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.titleWrapper {
+  margin-bottom: 5vh;
+}
+.descriptionTitle,
+.ingredientsTitle,
+.conservationTitle {
+  font-family: HomepagebaukastenBold;
+  letter-spacing: 0.16em;
+  line-height: 11px;
+  text-transform: uppercase;
+  position: relative;
+  bottom:1vh;
+}
+.description,
+.ingredients,
+.conservation {
+  font-family: HomepagebaukastenBook;
+  letter-spacing: 0.16em;
+  line-height: 11px;
+}
+.descWrapper,
+.ingredWrapper,
+.consWrapper {
+  margin-top: 4vh;
+}
+
+
+.imgsWrapper{
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.imgLeft,
+.imgCenter,
+.imgRight{
+  width: 350px;
+  height: 350px;
+  background-color: aquamarine;
+}

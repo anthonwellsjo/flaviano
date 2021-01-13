@@ -2,9 +2,13 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { ProductPageDataQuery } from '../../types';
+import { ProductPageDataQuery, QuoteStyle } from '../../types';
 import LayoutHeader from '../components/LayoutHeader/LayoutHeader';
 import classes from './ProductPage.module.css';
+import ProductDescriptionView from '../components/ProductPage/ProductDescriptionView/ProductDescriptionView';
+import Quote from '../components/Quote/Quote';
+import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';
+import PageTitle from '../components/PageTitle/PageTitle';
 
 const ProductPage = ({ data }: ProductPageDataQuery) => {
   console.log("product data", data)
@@ -14,6 +18,16 @@ const ProductPage = ({ data }: ProductPageDataQuery) => {
       <div style={{ width: "100%", height: "100vh", zIndex: -100, position: "relative" }}>
         <ParallaxLayer factor={0} speed={-1}>
           <LayoutHeader />
+          <Centralizer>
+            <div style={{ width: "7em", marginTop: "45vh", textAlign: "center" }}>
+              <Quote style={QuoteStyle.header}>{data.sanityProduct.category.title.split("").splice(0, 1).join()}</Quote>
+            </div>
+          </Centralizer>
+          <div style={{ position: "absolute", top: "60vh", left: "10vw", textAlign:"right"}}>
+            <div style={{ height: "3px", width: "50px", backgroundColor: "black", marginBottom: "1em" }}></div>
+            <PageTitle fontSize="4.5em" letterSpacing=".15em">{data.sanityProduct.title}</PageTitle>
+            <div style={{ height: "3px", width: "50px", backgroundColor: "black", marginTop: "1em", marginLeft: "auto", marginRight: ".5em" }}></div>
+          </div>
           <section className={classes.firstPage}>
             <div className={classes.productImg}>
               {(data.sanityProduct.productPhoto != null) && <Img style={{ zIndex: -100 }} fluid={data.sanityProduct.productPhoto.asset.fluid} alt="product photo" />}
@@ -21,9 +35,14 @@ const ProductPage = ({ data }: ProductPageDataQuery) => {
           </section>
         </ParallaxLayer>
       </div>
-      <ParallaxLayer factor={1} speed={0}>
+      <ParallaxLayer offset={0} speed={0}>
         <section className={classes.secondPage}>
-
+          <ProductDescriptionView
+            title={data.sanityProduct.title}
+            description={data.sanityProduct.description}
+            conservation={data.sanityProduct.conservation}
+            ingredients={data.sanityProduct.ingredients}
+          />
         </section>
       </ParallaxLayer>
     </Parallax>
@@ -38,6 +57,7 @@ query($id: String) {
     id
     description
     conservation
+    ingredients
     category {
       id
       title

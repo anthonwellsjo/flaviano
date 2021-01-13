@@ -1,10 +1,16 @@
 import React from 'react';
 import classes from './PageTitle.module.css';
 
-const PageTitle: React.FC = ({ children } ) => {
+interface pageProps {
+  fontSize?: string,
+  letterSpacing?: string,
+  children: string
+}
+
+const PageTitle = (props: pageProps) => {
   return (
-    <span className={classes.text}>
-      {children}
+    <span style={{ fontSize: props.fontSize ? props.fontSize : "3em", letterSpacing: props.letterSpacing ? props.letterSpacing : "0.3em" }} className={classes.text}>
+      {props.children}
     </span>
   )
 }
