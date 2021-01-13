@@ -59,7 +59,7 @@ const BiscottiPage: React.FC = () => {
       })}
       {page++}
       <section style={{ position: "relative", width: "100%", height: "100vh", marginTop: "30vh" }} >
-        <ParallaxLayer factor={page} speed={page / 10}>
+        <ParallaxLayer factor={page} speed={page / 15}>
           <div style={{ backgroundColor: "white", width: "100%", height: "100vh", zIndex: 100 }}>
           </div>
         </ParallaxLayer>

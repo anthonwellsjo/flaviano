@@ -1,0 +1,9 @@
+.menu {
+  background: white;
+  border: 1px solid grey;
+  margin: 0 23%;
+}
+
+.menuItem {
+  padding: 20px;
+}

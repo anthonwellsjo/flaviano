@@ -7,10 +7,43 @@ import ProductPreviews from "../components/ProductPage/ProductPreviews/ProductPr
 import Quote from "../components/Quote/Quote";
 import Centralizer from "../components/StructureComponents/Centralizer/Centralizer";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
+import { Link } from "gatsby";
+import { useSpring, animated } from "react-spring";
 
 
 const IndexPage = () => {
-  
+  const [materiePrimeHover, setMateriePrimeHover] = React.useState(false);
+  const materiePrimeBcgStyles = useSpring({
+    reverse: materiePrimeHover,
+    from: { transform: "scale(0.9)" },
+    to: { transform: "scale(0.8)" },
+    config: {
+      mass: 1,
+      tension: 300,
+      friction: 15
+    }
+  });
+  const materiePrimeTitleStyles = useSpring({
+    reverse: materiePrimeHover,
+    from: { transform: "scale(1)" },
+    to: { transform: "scale(0.9)" },
+    config: {
+      mass: 1,
+      tension: 300,
+      friction: 40
+    }
+  });
+  const materiePrimeLineStyles = useSpring({
+    reverse: materiePrimeHover,
+    from: { width: "20vw" },
+    to: { width: "8vw" },
+    config: {
+      mass: 1,
+      tension: 300,
+      friction: 100
+    }
+  });
+
   let parallax;
   return (
     <Parallax pages={6} scrolling={true} ref={ref => parallax = ref}>
@@ -68,7 +101,7 @@ const IndexPage = () => {
       {/* ------------------------------PRODUCTS SECTION */}
 
       <section style={{ position: "relative", height: "200vh", backgroundColor: "white" }}>
-        <ParallaxLayer factor={7} speed={-0.05}>
+        <ParallaxLayer speed={-0.05}>
 
           <ProductPreviews />
         </ParallaxLayer>
@@ -77,21 +110,31 @@ const IndexPage = () => {
       {/* ------------------------------MATERIE PRIME SECTION */}
 
 
-      <section style={{ position: "relative", height: "190vh", marginTop: "0px", zIndex: -1 }}>
-        <ParallaxLayer factor={3} speed={0.2}>
-          <div style={{ position: "absolute", width: "65vw", height: "75vh", backgroundColor: "#E3A38B", marginTop: "95vh", right: "0" }}>
-          </div>
+      <section onMouseEnter={() => setMateriePrimeHover(true)} onMouseLeave={() => setMateriePrimeHover(false)} style={{ position: "relative", height: "190vh", marginTop: "20vh", zIndex: -1 }}>
+
+        <ParallaxLayer speed={0.2}>
+          <Link to="/materieprime/">
+            <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65vw", height: "75vh", backgroundColor: "#E3A38B", marginTop: "95vh", right: "0" }}>
+            </animated.div>
+          </Link>
         </ParallaxLayer>
-        <ParallaxLayer factor={7} speed={0.4}>
-          <div style={{ position: "absolute", marginLeft: "10vw", marginTop: "190vh" }}>
-            <PageTitle>Materie Prime</PageTitle>
-            <div style={{ height: "2px", width: "18vw", marginTop: "2.5vh", backgroundColor: "black", position: "absolute", left: "10vw" }}></div>
-          </div>
+        <ParallaxLayer speed={0.4}>
+          <Link to="/materieprime/">
+            <animated.div style={{ ...materiePrimeTitleStyles, position: "absolute", marginLeft: "10vw", marginTop: "190vh" }}>
+              <PageTitle>Materie Prime</PageTitle>
+              <Centralizer>
+                <animated.div style={{ ...materiePrimeLineStyles, cursor: "pointer", height: "2px", marginTop: "2.5vh", backgroundColor: "black" }}></animated.div>
+              </Centralizer>
+            </animated.div>
+          </Link>
+
         </ParallaxLayer>
-        <ParallaxLayer factor={7} speed={0.25}>
-          <div style={{ position: "absolute", width: "45vw", marginTop: "155vh", right: "10vw" }}>
-            <Quote>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
-          </div>
+        <ParallaxLayer speed={0.25}>
+          <Link to="/materieprime/">
+            <animated.div style={{ cursor: "pointer", position: "absolute", width: "45vw", marginTop: "155vh", right: "10vw" }}>
+              <Quote>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
+            </animated.div>
+          </Link>
         </ParallaxLayer>
       </section>
 

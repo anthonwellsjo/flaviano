@@ -8,32 +8,32 @@ import { Category, Product, ProductQuery, CategoryQuery } from '../../../../type
 
 
 const ProductPreviews = () => {
-  const categoryData :CategoryQuery  = useCategoryPreviewQuery();
+  const categoryData: CategoryQuery = useCategoryPreviewQuery();
   let parallax;
-  const productData :ProductQuery = useProductQuery();
+  const productData: ProductQuery = useProductQuery();
 
   console.log("productdata", productData);
   console.log("categorydata", categoryData);
 
   return (
-
-
-    categoryData.allSanityCategory.edges.map((e: Category, index: number) => {
-      const products = productData.allSanityProduct.edges.filter((p: Product) => p.node.category.id == e.node.id);
-      return (
-        <div key={e.node.id}>
-          <div style={{ height: "50px" }}></div>
-          <ProductPreview
-            key={e.node.slug.current}
-            categorySlug={e.node.slug.current}
-            products={products}
-            title={e.node.title}
-            color={e.node.previewColorBoxColor.hex}
-            img={e.node.categoryParallaxIcon.asset.fixed} />
-        </div>
-      )
-    })
-
+    <div>
+      {categoryData.allSanityCategory.edges.map((e: Category, index: number) => {
+        const products = productData.allSanityProduct.edges.filter((p: Product) => p.node.category.id == e.node.id);
+        return (
+          <div key={e.node.id}>
+            <div style={{ height: "50px" }}></div>
+            <ProductPreview
+              key={e.node.slug.current}
+              categorySlug={e.node.slug.current}
+              categoryDescription={e.node.description}
+              products={products}
+              title={e.node.title}
+              color={e.node.previewColorBoxColor.hex}
+              img={e.node.categoryParallaxIcon.asset.fixed} />
+          </div>
+        )
+      })}
+    </div>
 
   )
 }

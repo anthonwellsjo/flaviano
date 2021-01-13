@@ -9,6 +9,7 @@ import { Link } from 'gatsby';
 interface ProductPreviewProps {
   img: FixedObject,
   key: any,
+  categoryDescription: string,
   categorySlug: string,
   title: string,
   color: string,
@@ -46,8 +47,10 @@ const ProductPreview = (props: ProductPreviewProps) => {
             <div className={classes.titleWrapper}>
               <animated.div style={lineStyles} className={classes.titleOverLine}></animated.div>
               <span className={classes.title}>{props.title}</span>
-              <div className={classes.productsListContainer}>
-                {props.products?.map((prod: Product) => <Link key={prod.node.title}  to={`/products/${prod.node.slug.current}`}><span className={classes.productTitle}>{prod.node.title}</span></Link>)}
+              <div className={classes.categoryDescriptionContainer}>
+                <span className={classes.categoryDescription}>
+                  { props.categoryDescription}
+                </span>
               </div>
             </div>
           </animated.div>

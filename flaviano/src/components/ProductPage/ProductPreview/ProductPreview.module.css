@@ -26,7 +26,8 @@
 
 .titleWrapper{
   position: relative;
-  margin-top: -50px;
+  margin-top: -45px;
+  margin-left: -20vw;
 }
 .titleOverLine{
   position: absolute;
@@ -46,19 +47,20 @@
 }
 
 
-.productsListContainer{
+.categoryDescriptionContainer{
   position: absolute;
   display: flex;
-  width: 30vw;
+  width: 35vw;
   margin-top: 110px;
   flex-direction: column;
-  font-size: 1.3em;
+  font-size: 1.5em;
+  font-weight: 500;
   letter-spacing: 0.16em;
-  line-height: 35px;
+  line-height: 1.3em;
   align-items: left;
   justify-content: center;
-  font-family: HomePageBaukastenBook;
-  text-transform: uppercase;
+  font-family: Ibarra Real Nova;
+  font-style: italic;
 }
 
 .imageGroupHolder {

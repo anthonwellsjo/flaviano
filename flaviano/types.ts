@@ -76,7 +76,8 @@ export interface Category {
     slug: {
       current: string
     },
-    title: string
+    title: string,
+    description: string
   }
 }
 

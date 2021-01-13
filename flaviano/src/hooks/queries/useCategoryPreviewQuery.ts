@@ -8,6 +8,7 @@ export const useCategoryPreviewQuery = () => {
         node {
           id
           title
+          description
           slug{current}
           previewColorBoxColor {
             hex
