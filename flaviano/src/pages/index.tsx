@@ -48,7 +48,7 @@ const IndexPage = () => {
   return (
     <Parallax pages={6} scrolling={true} ref={ref => parallax = ref}>
       <LayoutHeader />
-      <section style={{ position: "relative", top: "30vh", width: "50vw", left: "40vw", height: "40vh" }}>
+      <section style={{ position: "relative", top: "30vh", width: "50vw", left: "40vw", height: "40vh", zIndex: -1 }}>
         <ParallaxLayer offset={0} speed={0.05}>
           <Quote>
             Ci sono sapori e profumi che evocano ricordi in ognuno di noi, ci auguriamo di regalare

@@ -23,7 +23,6 @@
     "dotenv": "^8.2.0",
     "gatsby": "^2.29.3",
     "gatsby-image": "^2.8.0",
-    "gatsby-plugin-anchor-links": "^1.2.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^3.7.0",
     "gatsby-plugin-sanity-image": "^0.2.0",
