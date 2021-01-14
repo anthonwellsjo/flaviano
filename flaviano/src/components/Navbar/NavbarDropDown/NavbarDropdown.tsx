@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React, { useContext, useState } from 'react';
 import { Trail, Transition } from 'react-spring/renderprops';
 import { Category, CategoryQuery } from '../../../../types';
@@ -7,7 +8,8 @@ import classes from './NavbarDropdown.module.css';
 
 interface MenuItem {
   title: string,
-  color: string
+  color: string,
+  slug: string
 }
 
 
@@ -25,7 +27,8 @@ const NavbarDropDown: React.FC = () => {
   CategoryData.allSanityCategory.edges.forEach((c: Category) => {
     const item: MenuItem = {
       title: c.node.title,
-      color: c.node.previewColorBoxColor.hex
+      color: c.node.previewColorBoxColor.hex,
+      slug: c.node.slug.current
     }
     menuItems.push(item);
     console.log(item);
@@ -62,9 +65,11 @@ const NavbarDropDown: React.FC = () => {
                 to={{ opacity: 1 }}
               >
                 {trailItem => trailProps => (
-                  <div style={{ ...trailProps, zIndex: 100, backgroundColor: trailItem.color }} className={classes.menuItem}>
-                    {trailItem.title}
-                  </div>
+                  <Link to={`/categories/${trailItem.slug}`}>
+                    <div style={{ ...trailProps, zIndex: 100, backgroundColor: trailItem.color }} className={classes.menuItem}>
+                      {trailItem.title}
+                    </div>
+                  </Link>
                 )}
               </Trail>
             </div>

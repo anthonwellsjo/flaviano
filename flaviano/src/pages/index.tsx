@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { QuoteStyle } from "../../types";
 import CategoryCarousel from "../components/CategoryCarousel/CategoryCarousel";
 import LayoutHeader from "../components/LayoutHeader/LayoutHeader"
@@ -13,7 +13,7 @@ import BackDrop from "../components/BackDrop/BackDrop";
 
 
 const IndexPage = () => {
-  const [materiePrimeHover, setMateriePrimeHover] = React.useState(false);
+  const [materiePrimeHover, setMateriePrimeHover] = useState(false);
   const materiePrimeBcgStyles = useSpring({
     reverse: materiePrimeHover,
     from: { transform: "scale(0.9)" },
@@ -46,6 +46,9 @@ const IndexPage = () => {
   });
 
   let parallax;
+
+
+
   return (
     <Parallax pages={6} scrolling={true} ref={ref => parallax = ref}>
       <BackDrop />

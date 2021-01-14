@@ -8,6 +8,7 @@ import Centralizer from '../../components/StructureComponents/Centralizer/Centra
 import { useProductQuery } from '../../hooks/queries/useProductQuery';
 import Img from 'gatsby-image';
 import ProductView from '../../components/ProductPage/ProductView/ProductView';
+import BackDrop from '../../components/BackDrop/BackDrop';
 
 const BiscottiPage: React.FC = () => {
   const products: ProductQuery = useProductQuery();
@@ -18,7 +19,6 @@ const BiscottiPage: React.FC = () => {
 
   return (
     <Parallax pages={3.4} scrolling={true} ref={ref => parallax = ref}>
-
       {/* ------------HEADER SECTION */}
       <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: -100, position: "relative" }}>
         <ParallaxLayer factor={0} speed={-1}>
