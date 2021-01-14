@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Trail, Transition } from 'react-spring/renderprops';
 import { Category, CategoryQuery } from '../../../../types';
+import { PageContext } from '../../../contexts/pageContext';
 import { useCategoryPreviewQuery } from '../../../hooks/queries/useCategoryPreviewQuery';
 import classes from './NavbarDropdown.module.css';
 
@@ -10,11 +11,15 @@ interface MenuItem {
 }
 
 
-
 const NavbarDropDown: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+  const [page, setPage] = useContext(PageContext);
   const CategoryData: CategoryQuery = useCategoryPreviewQuery();
+
+  console.log("productsDropDownMenuOpen", page.productsDropDownMenuOpen);
+
+  const onMenuBtnClicked = () => {
+    setPage(prev => ({ ...prev, productsDropDownMenuOpen: !page.productsDropDownMenuOpen }))
+  }
 
   let menuItems: Array<MenuItem> = [];
   CategoryData.allSanityCategory.edges.forEach((c: Category) => {
@@ -28,11 +33,11 @@ const NavbarDropDown: React.FC = () => {
 
   return (
     <>
-      <button className={classes.button} style={{ zIndex: 100, cursor: "pointer" }} onClick={() => setMenuOpen(!menuOpen)}>Prodotti</button>
+      <button className={classes.button} style={{ zIndex: 100, cursor: "pointer" }} onClick={onMenuBtnClicked}>Prodotti</button>
       <Transition
         unique
         reset
-        items={menuOpen}
+        items={page.productsDropDownMenuOpen}
         from={{
           opacity: 0,
           height: 0,
@@ -57,7 +62,7 @@ const NavbarDropDown: React.FC = () => {
                 to={{ opacity: 1 }}
               >
                 {trailItem => trailProps => (
-                  <div style={{ ...trailProps, backgroundColor: trailItem.color }} className={classes.menuItem}>
+                  <div style={{ ...trailProps, zIndex: 100, backgroundColor: trailItem.color }} className={classes.menuItem}>
                     {trailItem.title}
                   </div>
                 )}

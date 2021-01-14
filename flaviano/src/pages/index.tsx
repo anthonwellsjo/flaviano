@@ -9,6 +9,7 @@ import Centralizer from "../components/StructureComponents/Centralizer/Centraliz
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Link } from "gatsby";
 import { useSpring, animated } from "react-spring";
+import BackDrop from "../components/BackDrop/BackDrop";
 
 
 const IndexPage = () => {
@@ -47,6 +48,8 @@ const IndexPage = () => {
   let parallax;
   return (
     <Parallax pages={6} scrolling={true} ref={ref => parallax = ref}>
+      <BackDrop />
+
       <LayoutHeader />
       <section style={{ position: "relative", top: "30vh", width: "50vw", left: "40vw", height: "40vh", zIndex: -1 }}>
         <ParallaxLayer offset={0} speed={0.05}>
