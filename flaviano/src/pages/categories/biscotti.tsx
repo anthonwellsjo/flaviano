@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Product, ProductQuery, QuoteStyle } from '../../../types';
 import LayoutHeader from '../../components/LayoutHeader/LayoutHeader';
@@ -9,13 +9,18 @@ import { useProductQuery } from '../../hooks/queries/useProductQuery';
 import Img from 'gatsby-image';
 import ProductView from '../../components/ProductPage/ProductView/ProductView';
 import BackDrop from '../../components/BackDrop/BackDrop';
+import { PageContext } from '../../contexts/pageContext';
 
 const BiscottiPage: React.FC = () => {
+  const [page, setPage] = useContext(PageContext);
   const products: ProductQuery = useProductQuery();
   const biscotti: Array<Product> = products.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Biscotti");
-  let page = 0;
-
+  let pageNr = 0;
   let parallax;
+
+  useEffect(() => {
+    setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }));
+  },[])
 
   return (
     <Parallax pages={3.4} scrolling={true} ref={ref => parallax = ref}>
@@ -41,10 +46,10 @@ const BiscottiPage: React.FC = () => {
 
       {biscotti.map((p: Product) => {
         console.log(p.node.title);
-        page++;
+        pageNr++;
         return (
           <section style={{ position: "relative", width: "100%", height: "100vh" }} key={p.node.id} >
-            <ParallaxLayer factor={page} speed={page / 10}>
+            <ParallaxLayer factor={pageNr} speed={pageNr / 10}>
               <ProductView
                 bcgColor={p.node.backGroundColor.hex}
                 fluidImg={p.node.productPhoto.asset.fluid}
@@ -57,9 +62,9 @@ const BiscottiPage: React.FC = () => {
           </section>
         )
       })}
-      {page++}
+      {pageNr++}
       <section style={{ position: "relative", width: "100%", height: "100vh", marginTop: "30vh" }} >
-        <ParallaxLayer factor={page} speed={page / 15}>
+        <ParallaxLayer factor={pageNr} speed={pageNr / 15}>
           <div style={{ backgroundColor: "white", width: "100%", height: "100vh", zIndex: 100 }}>
           </div>
         </ParallaxLayer>

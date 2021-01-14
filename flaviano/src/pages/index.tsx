@@ -116,7 +116,7 @@ const IndexPage = () => {
       {/* ------------------------------MATERIE PRIME SECTION */}
 
 
-      <section onMouseEnter={() => setMateriePrimeHover(true)} onMouseLeave={() => setMateriePrimeHover(false)} style={{ position: "relative", height: "190vh", marginTop: "20vh", zIndex: -1 }}>
+      <section onMouseEnter={() => setMateriePrimeHover(true)} onMouseLeave={() => setMateriePrimeHover(false)} style={{ position: "relative", height: "220vh", marginTop: "20vh", zIndex: -1 }}>
 
         <ParallaxLayer speed={0.2}>
           <Link to="/materieprime/">
@@ -145,7 +145,7 @@ const IndexPage = () => {
       </section>
 
       {/* ------------------------------CONTACT SECTION */}
-      <section style={{ position: "relative", height: "90vh", marginTop: "60vh" }}>
+      <section style={{ position: "relative", height: "90vh", marginTop: "40vh" }}>
         <ParallaxLayer factor={3} speed={0.35}>
           <div style={{ position: "absolute", backgroundColor: "#F0E9E4", width: "100%", height: "60vh", }}>
           </div>
