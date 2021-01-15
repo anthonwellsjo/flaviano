@@ -1,12 +1,30 @@
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.container{
+  position: absolute;
+  overflow: visible;
+  height: 300px;
+  top: 5vh;
+  left: 8vw;
+  transform: scale(1.1);
+  border-radius: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+
 }
 
-.container {
+.firstStartBackdrop{
+  position: absolute;
+  z-index: 1000;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: white;
+}
+
+
+
+/* .container {
+  
 }
 .logo {
 }
@@ -19,4 +37,4 @@
 .italianColors {
 }
 .titleFlower {
-}
+} */
