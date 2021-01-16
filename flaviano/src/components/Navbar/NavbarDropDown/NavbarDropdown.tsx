@@ -19,8 +19,11 @@ const NavbarDropDown: React.FC = () => {
 
   console.log("productsDropDownMenuOpen", page.productsDropDownMenuOpen);
 
-  const onMenuBtnClicked = () => {
-    setPage(prev => ({ ...prev, productsDropDownMenuOpen: !page.productsDropDownMenuOpen }))
+  const onMouseEnterEventHandler = () => {
+    setPage(prev => ({ ...prev, productsDropDownMenuOpen: true }))
+  }
+  const onMouseLeaveEventHandler = () => {
+    setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }))
   }
 
   let menuItems: Array<MenuItem> = [];
@@ -36,7 +39,7 @@ const NavbarDropDown: React.FC = () => {
 
   return (
     <>
-      <button className={classes.button} style={{ zIndex: 100, cursor: "pointer" }} onClick={onMenuBtnClicked}>Prodotti</button>
+      <button className={classes.button} style={{ zIndex: 100, cursor: "pointer" }}  onMouseEnter={onMouseEnterEventHandler}>Prodotti</button>
       <Transition
         unique
         reset
@@ -56,7 +59,7 @@ const NavbarDropDown: React.FC = () => {
         {item =>
           item &&
           (props => (
-            <div style={props} className={classes.menu}>
+            <div onMouseLeave={onMouseLeaveEventHandler} style={props} className={classes.menu}>
               <Trail
                 // unique
                 // reset

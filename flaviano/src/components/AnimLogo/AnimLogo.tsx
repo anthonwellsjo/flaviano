@@ -82,7 +82,7 @@ const AnimLogo: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setPage(prev => ({ ...prev, firstStart: false }))
-    }, 1500)
+    }, 1800)
   }, [])
 
   return (

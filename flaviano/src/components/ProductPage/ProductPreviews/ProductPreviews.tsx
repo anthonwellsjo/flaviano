@@ -12,9 +12,6 @@ const ProductPreviews = () => {
   let parallax;
   const productData: ProductQuery = useProductQuery();
 
-  console.log("productdata", productData);
-  console.log("categorydata", categoryData);
-
   return (
     <div>
       {categoryData.allSanityCategory.edges.map((e: Category, index: number) => {

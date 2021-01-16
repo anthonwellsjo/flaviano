@@ -12,7 +12,7 @@ export interface ProductPageDataQuery {
     sanityProduct: {
       id: string,
       description: string,
-      ingredients:string,
+      ingredients: string,
       conservation: string,
       category: {
         id: string,
@@ -63,6 +63,24 @@ export interface Product {
 export interface ProductQuery {
   allSanityProduct: {
     edges: Array<Product>
+  }
+}
+
+export interface BabaPageQuery {
+  sanityBabaPage: BabaPage
+}
+
+export interface BabaPage {
+  pageText: string,
+  headerImg: {
+    asset: {
+      fluid: any
+    }
+  }
+  textImg: {
+    asset: {
+      fixed: any
+    }
   }
 }
 
