@@ -1,0 +1,13 @@
+.header {
+  margin: 20px;
+}
+
+.productCard{
+  transition: transform .3s;
+}
+
+.productCard:hover {
+  transform: translateY(-250px);
+  transition: transform .3s;
+
+}

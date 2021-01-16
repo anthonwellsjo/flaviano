@@ -7,6 +7,7 @@ import Quote from '../../components/Quote/Quote';
 import Centralizer from '../../components/StructureComponents/Centralizer/Centralizer';
 import { useBabaPageQuery } from '../../hooks/queries/useBabaPageQuery';
 import Img from 'gatsby-image';
+import BabaProductsPreview from '../../components/BabaPage/BabaProductsPreview/BabaProductsPreview';
 
 const BabaPage: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
@@ -37,7 +38,7 @@ const BabaPage: React.FC = () => {
       <ParallaxLayer offset={1} speed={1}>
         <Centralizer column>
           <div style={{ position: "relative", backgroundColor: "white", width: "100%", height: "100vh", zIndex: 100 }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "10vh" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "5vh" }}>
               <div style={{ width: "90%" }}>
                 <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityBabaPage.pageText}</span>
               </div>
@@ -47,6 +48,12 @@ const BabaPage: React.FC = () => {
             </div>
           </div>
         </Centralizer>
+      </ParallaxLayer>
+      <ParallaxLayer offset={2} speed={1}>
+
+        <div style={{ zIndex: 299, width: "100vw", marginTop: "-115vh" }}>
+          <BabaProductsPreview />
+        </div>
       </ParallaxLayer>
     </Parallax >
   )
