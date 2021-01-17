@@ -7,14 +7,14 @@ export const useBabaPageQuery = () => {
           pageText
           headerImg {
             asset {
-              fluid(maxHeight: 500) {
+              fluid(maxWidth: 1000) {
                 ...GatsbySanityImageFluid
               }
             }
           }
           textImg {
             asset{
-              fixed(height: 400) {
+              fixed(width: 300) {
                 ...GatsbySanityImageFixed
               }
             }

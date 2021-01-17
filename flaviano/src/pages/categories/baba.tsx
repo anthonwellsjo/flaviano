@@ -20,22 +20,22 @@ const BabaPage: React.FC = () => {
       {/* ------------HEADER SECTION */}
 
       <ParallaxLayer factor={0} speed={-1}>
-        <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: -100, position: "relative" }}>
-          <div style={{ height: "100vh", maxHeight: "500px", width: "100vw", position: "absolute" }}>
-            <Img style={{ maxHeight: "100vh" }} fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
+        <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: 100, position: "relative", }}>
+          <div style={{ maxWidth: "100vw", width: "100vw", position: "absolute" }}>
+            <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
             {/* <p className="legend">{e.node.title}</p> */}
           </div>
           <LayoutHeader />
           <section style={{ position: "absolute", left: "0", right: "0", top: "0", height: "100vh" }}>
             <Centralizer>
-              <div style={{ position: "absolute", width: "55vw", top: "45vh", marginLeft: "25vw" }}>
-                <Quote><PageTitle>O babà é na cosa seria.</PageTitle></Quote>
+              <div style={{ position: "absolute", width: "35vw", top: "35vh", marginLeft: "25vw" }}>
+                <Quote rightQuoteY="15vh"><PageTitle letterSpacing=".1em">O babà é na cosa seria.</PageTitle></Quote>
               </div>
             </Centralizer>
           </section>
         </div>
       </ParallaxLayer>
-      <ParallaxLayer offset={1} speed={1}>
+      <ParallaxLayer offset={1} speed={2}>
         <Centralizer column>
           <div style={{ position: "relative", backgroundColor: "white", width: "100%", height: "100vh", zIndex: 100 }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "5vh" }}>
@@ -43,9 +43,11 @@ const BabaPage: React.FC = () => {
                 <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityBabaPage.pageText}</span>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "5vh" }}>
-              <Img style={{ maxheight: "100vh" }} fixed={sanityBabaPage.textImg.asset.fixed} alt="Baba image with text" />
-            </div>
+            <Centralizer>
+              <div style={{ display: "flex", maxWidth: "300px", alignItems: "center", justifyContent: "center", marginTop: "-35vh" }}>
+                <Img fixed={sanityBabaPage.textImg.asset.fixed} alt="Baba image with text" />
+              </div>
+            </Centralizer>
           </div>
         </Centralizer>
       </ParallaxLayer>

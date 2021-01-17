@@ -11,6 +11,7 @@ import ProductView from '../../components/ProductPage/ProductView/ProductView';
 import BackDrop from '../../components/BackDrop/BackDrop';
 import { PageContext } from '../../contexts/pageContext';
 
+
 const BiscottiPage: React.FC = () => {
   const [page, setPage] = useContext(PageContext);
   const products: ProductQuery = useProductQuery();
