@@ -7,7 +7,7 @@ import classes from './BabaProductsPreview.module.css';
 
 const BabaProductsPreview: React.FC = () => {
   const queryData: ProductQuery = useProductQuery();
-  const babas: Array<Product> = queryData.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Baba");
+  const babas: Array<Product> = queryData.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Babà");
   console.log("query data", babas);
 
   return (

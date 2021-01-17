@@ -23,6 +23,15 @@ export default () =>
                 ),
 
 
+              S.listItem()
+                .title('Chi Siamo Page')
+                .child(
+                  S.document()
+                    .schemaType('chiSiamoPage')
+                    .documentId('chiSiamoPage')
+                ),
+
+
             ])
         ),
 
