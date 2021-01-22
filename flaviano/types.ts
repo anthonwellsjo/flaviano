@@ -84,6 +84,26 @@ export interface BabaPage {
   }
 }
 
+export interface ChiSiamoPageQuery {
+  sanityChiSiamoPage: ChiSiamoPage
+}
+
+export interface ChiSiamoPage {
+  headerImg: {
+    asset: {
+      fluid: any
+    }
+  },
+  footerImg: {
+    asset: {
+      fluid: any
+    }
+  },
+  pageText: string,
+  quoteHeaderText: string
+}
+
+
 export interface Category {
   node: {
     categoryParallaxIcon: any,

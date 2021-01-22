@@ -6,10 +6,11 @@ import classes from './Quote.module.css';
 interface QuoteProps {
   style?: QuoteStyle,
   children: ReactElement | string,
-  rightQuoteY?: string
+  rightQuoteY?: string,
+  rightQuoteX?: string,
 }
 
-const Quote = ({ children, style, rightQuoteY }: QuoteProps) => {
+const Quote = ({ children, style, rightQuoteY, rightQuoteX }: QuoteProps) => {
   let styles: CSSProperties = {
     fontSize: "1.5rem",
     fontStyle: "italic",
@@ -44,11 +45,13 @@ const Quote = ({ children, style, rightQuoteY }: QuoteProps) => {
       <span style={{ ...styles }} className={classes.text}>
         {children}
       </span>
-      <div style={{ transform: rightQuoteY ? `translateY(${rightQuoteY})` : "translateY(0)" }}>
-        <div style={{ transform: style == QuoteStyle.header ? "translateY(60px) scale(1.3)" : "scale(1)" }} className={classes.rightQuote}>
-          <svg width="30" height="25" viewBox="0 0 30 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14.344 4.4C14.344 5.072 14.248 5.84 14.056 6.704C12.424 14 7.81601 19.808 0.232005 24.128C0.520007 22.88 1.00001 21.968 1.67201 21.392C5.32001 18.32 7.52801 14.816 8.29601 10.88C8.48801 9.728 8.24801 8.624 7.57601 7.568C6.90401 6.608 5.94401 6.032 4.69601 5.84L5.27201 4.256C6.42401 4.16 8.44001 2.96 11.32 0.656002C13.336 0.944001 14.344 2.192 14.344 4.4ZM29.176 4.4C29.176 5.072 29.08 5.84 28.888 6.704C27.64 12.944 23.752 18.368 17.224 22.976L15.064 24.128C15.352 22.88 15.832 21.968 16.504 21.392C20.152 18.32 22.36 14.816 23.128 10.88C23.32 9.728 23.08 8.624 22.408 7.568C21.736 6.608 20.776 6.032 19.528 5.84L20.104 4.256C21.832 3.968 23.656 2.864 25.576 0.944003C25.768 0.752003 25.96 0.656003 26.152 0.656003C28.168 0.944002 29.176 2.192 29.176 4.4Z" fill="#050200" />
-          </svg>
+      <div style={{ transform: rightQuoteX ? `translateX(${rightQuoteX})` : "translateX(0" }}>
+        <div style={{ transform: rightQuoteY ? `translateY(${rightQuoteY})` : "translateY(0)" }}>
+          <div style={{ transform: style == QuoteStyle.header ? "translateY(60px) scale(1.3)" : "scale(1)" }} className={classes.rightQuote}>
+            <svg width="30" height="25" viewBox="0 0 30 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.344 4.4C14.344 5.072 14.248 5.84 14.056 6.704C12.424 14 7.81601 19.808 0.232005 24.128C0.520007 22.88 1.00001 21.968 1.67201 21.392C5.32001 18.32 7.52801 14.816 8.29601 10.88C8.48801 9.728 8.24801 8.624 7.57601 7.568C6.90401 6.608 5.94401 6.032 4.69601 5.84L5.27201 4.256C6.42401 4.16 8.44001 2.96 11.32 0.656002C13.336 0.944001 14.344 2.192 14.344 4.4ZM29.176 4.4C29.176 5.072 29.08 5.84 28.888 6.704C27.64 12.944 23.752 18.368 17.224 22.976L15.064 24.128C15.352 22.88 15.832 21.968 16.504 21.392C20.152 18.32 22.36 14.816 23.128 10.88C23.32 9.728 23.08 8.624 22.408 7.568C21.736 6.608 20.776 6.032 19.528 5.84L20.104 4.256C21.832 3.968 23.656 2.864 25.576 0.944003C25.768 0.752003 25.96 0.656003 26.152 0.656003C28.168 0.944002 29.176 2.192 29.176 4.4Z" fill="#050200" />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
