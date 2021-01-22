@@ -84,6 +84,76 @@ export interface BabaPage {
   }
 }
 
+export interface MateriePrimeQuery {
+  sanityMateriePrimePage: MateriePrimePage
+}
+
+export interface MateriePrimePage {
+  albicocceColor: {
+    hex: string
+  },
+  albicocceImg: {
+    asset: {
+      fluid: any
+    }
+  },
+  albicocceText: string,
+  lievitoMadreColor: {
+    hex: string
+  },
+  lievitoMadreImg: {
+    asset: {
+      fluid: any
+    }
+  },
+  lievitoMadreText: string,
+  limoniColor: {
+    hex: string
+  },
+  limoniImg: {
+    asset: {
+      fluid: any
+    }
+  },
+  limoniText: string,
+  melaColor: {
+    hex: string
+  },
+  melaImg: {
+    asset: string
+  },
+  melaText: string,
+  mieleColor: {
+    hex: string
+  },
+  mieleImg: {
+    asset: {
+      fluid: string
+    }
+  },
+  mieleText: string,
+  nocciolaColor: {
+    hex: string
+  },
+  nocciolaImg: {
+    asset: {
+      fluid: string
+    }
+  },
+  nocciolaText: string,
+  nociColor: {
+    hex: string
+  },
+  nociImg: {
+    asset: {
+      fluid: string
+    }
+  },
+  nociText: string,
+  quoteHeaderText: string
+}
+
+
 export interface ChiSiamoPageQuery {
   sanityChiSiamoPage: ChiSiamoPage
 }

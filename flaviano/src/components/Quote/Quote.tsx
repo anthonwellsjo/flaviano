@@ -30,6 +30,14 @@ const Quote = ({ children, style, rightQuoteY, rightQuoteX }: QuoteProps) => {
       styles.fontFamily = "HomepagebaukastenBold";
       break;
     }
+    case QuoteStyle['paragraph-l']: {
+      styles.fontSize = "2rem";
+      break;
+    }
+    case QuoteStyle['paragraph-m']: {
+      styles.fontSize = "1.5rem";
+      break;
+    }
     default: {
       break;
     }

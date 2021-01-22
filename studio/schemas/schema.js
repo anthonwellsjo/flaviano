@@ -10,6 +10,7 @@ import categoryParallaxIcon from './categoryParallaxIcon'
 import product from './product'
 import babaPage from './babaPage'
 import chiSiamoPage from './chiSiamoPage'
+import materiePrimePage from './materiePrimePage'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -28,7 +29,8 @@ export default createSchema({
 
 
     babaPage,
-    chiSiamoPage
+    chiSiamoPage,
+    materiePrimePage
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

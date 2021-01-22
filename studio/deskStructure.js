@@ -32,6 +32,16 @@ export default () =>
                 ),
 
 
+
+              S.listItem()
+                .title('Materie Prime Page')
+                .child(
+                  S.document()
+                    .schemaType('materiePrimePage')
+                    .documentId('materiePrimePage')
+                ),
+
+
             ])
         ),
 
