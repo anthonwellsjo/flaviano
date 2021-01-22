@@ -6,6 +6,7 @@ import PageTitle from '../components/PageTitle/PageTitle';
 import Quote from '../components/Quote/Quote';
 import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';
 import { useMateriePrimeQuery } from '../hooks/queries/useMateriePrimeQuery';
+import Img from 'gatsby-image';
 
 const MateriePrimePage: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
@@ -34,23 +35,109 @@ const MateriePrimePage: React.FC = () => {
           </div>
         </Centralizer>
       </ParallaxLayer>
+
+      {/* LIEVITO MADRE */}
+
       <ParallaxLayer offset={0.9999} speed={1}>
         <div style={{ backgroundColor: "white", width: "100%", height: "600vh", zIndex: 100, position: "relative" }}>
-
-          {/* LIEVITO MADRE */}
-          <div style={{height: "40vh"}}>
+          <div style={{ height: "40vh" }}>
             <Centralizer>
-              <div style={{ width: "40vw", height: "23vh", backgroundColor: sanityMateriePrimePage.lievitoMadreColor.hex }}>
-                <PageTitle fontSize={"4em"} letterSpacing={".15em"}>Lievito Madre</PageTitle>
+              <div style={{ width: "45vw", height: "20vh", backgroundColor: sanityMateriePrimePage.lievitoMadreColor.hex }}>
+                <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                  <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: 0, marginRight: "15px", marginTop: "18px" }}></div>
+                  <div style={{ position: "absolute", marginTop: "32px" }}>
+                    <PageTitle fontSize={"3.2em"} letterSpacing={".15em"}>Lievito Madre</PageTitle>
+                  </div>
+                </div>
+              </div>
+              <div style={{ maxWidth: "389px", height: "30vh", width: "30vw", position: "absolute", right: "10vw", top: "25vh" }}>
+                <Img fluid={sanityMateriePrimePage.lievitoMadreImg.asset.fluid} alt="photo of lievito madre" />
+              </div>
+              <div style={{ width: "45vw", wordSpacing: ".3em", position: "absolute", top: "35vh", left: "10vw" }}>
+                <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityMateriePrimePage.lievitoMadreText}</span>
+                <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
               </div>
             </Centralizer>
           </div>
-
-
-
-
         </div>
       </ParallaxLayer>
+
+      {/* LIMONI */}
+
+      <ParallaxLayer offset={1} speed={0.5}>
+        <div style={{ height: "40vh" }}>
+          <Centralizer>
+            <div style={{ width: "100vw", height: "20vh", backgroundColor: sanityMateriePrimePage.limoniColor.hex }}>
+              <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "35%", marginRight: "15px", marginTop: "18px" }}></div>
+                <div style={{ position: "absolute", marginTop: "32px" }}>
+                  <PageTitle fontSize={"3.2em"} letterSpacing={".15em"}>Limoni di Sorrento</PageTitle>
+                </div>
+              </div>
+            </div>
+            <div style={{ maxWidth: "389px", height: "30vh", width: "30vw", position: "absolute", right: "10vw", top: "25vh" }}>
+              <Img fluid={sanityMateriePrimePage.limoniImg.asset.fluid} alt="photo of limoni di sorrento" />
+            </div>
+            <div style={{ width: "45vw", wordSpacing: ".3em", position: "absolute", top: "32vh", left: "10vw" }}>
+              <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityMateriePrimePage.limoniText}</span>
+              <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
+            </div>
+          </Centralizer>
+        </div>
+      </ParallaxLayer>
+
+
+
+      {/* MELE ANNURCA */}
+
+      <ParallaxLayer offset={1.99} speed={1}>
+        <div style={{ height: "40vh" }}>
+          <Centralizer>
+            <div style={{ width: "15vw", height: "60vh", backgroundColor: sanityMateriePrimePage.melaColor.hex, position: "absolute", left: 0, top: "8vh" }}></div>
+            <div style={{ width: "100vw", height: "20vh" }}>
+              <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "0", marginRight: "15px", marginTop: "18px" }}></div>
+                <div style={{ position: "absolute", marginTop: "32px", width: "25vw", right: 0 }}>
+                  <PageTitle fontSize={"3.2em"} letterSpacing={".15em"}>Mela Annurca</PageTitle>
+                </div>
+              </div>
+            </div>
+            <div style={{ maxWidth: "389px", height: "30vh", width: "30vw", position: "absolute", right: "10vw", top: "25vh" }}>
+              <Img fluid={sanityMateriePrimePage.melaImg.asset.fluid} alt="photo of limoni di sorrento" />
+            </div>
+            <div style={{ width: "45vw", wordSpacing: ".3em", position: "absolute", top: "32vh", left: "10vw" }}>
+              <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityMateriePrimePage.limoniText}</span>
+              <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
+            </div>
+          </Centralizer>
+        </div>
+      </ParallaxLayer>
+
+      {/* NOCE */}
+
+      <ParallaxLayer offset={2} speed={0.5}>
+        <div style={{ height: "40vh" }}>
+          <Centralizer>
+            <div style={{ width: "75vw", height: "30vh", backgroundColor: sanityMateriePrimePage.nociColor.hex, position: "absolute", right: 0, top: "12vh" }}></div>
+            <div style={{ width: "100vw", height: "20vh" }}>
+              <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "0", marginRight: "15px", marginTop: "18px" }}></div>
+                <div style={{ position: "absolute", marginTop: "32px", width: "25vw", right: 0 }}>
+                  <PageTitle fontSize={"3.2em"} letterSpacing={".1em"}>Noci di Sorrento</PageTitle>
+                </div>
+              </div>
+            </div>
+            <div style={{ maxWidth: "389px", height: "30vh", width: "30vw", position: "absolute", right: "10vw", top: "25vh" }}>
+              <Img fluid={sanityMateriePrimePage.nociImg.asset.fluid} alt="photo of limoni di sorrento" />
+            </div>
+            <div style={{ width: "45vw", wordSpacing: ".3em", position: "absolute", top: "32vh", left: "10vw" }}>
+              <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityMateriePrimePage.nociText}</span>
+              <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
+            </div>
+          </Centralizer>
+        </div>
+      </ParallaxLayer>
+
     </Parallax>
   )
 }

@@ -120,7 +120,7 @@ export interface MateriePrimePage {
     hex: string
   },
   melaImg: {
-    asset: string
+    asset:{fluid: any}
   },
   melaText: string,
   mieleColor: {
@@ -128,7 +128,7 @@ export interface MateriePrimePage {
   },
   mieleImg: {
     asset: {
-      fluid: string
+      fluid: any
     }
   },
   mieleText: string,
@@ -137,7 +137,7 @@ export interface MateriePrimePage {
   },
   nocciolaImg: {
     asset: {
-      fluid: string
+      fluid: any
     }
   },
   nocciolaText: string,
@@ -146,7 +146,7 @@ export interface MateriePrimePage {
   },
   nociImg: {
     asset: {
-      fluid: string
+      fluid: any
     }
   },
   nociText: string,
