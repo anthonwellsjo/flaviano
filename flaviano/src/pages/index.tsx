@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { QuoteStyle } from "../../types";
+import { HomePageQuery, QuoteStyle } from "../../types";
 import CategoryCarousel from "../components/CategoryCarousel/CategoryCarousel";
 import LayoutHeader from "../components/LayoutHeader/LayoutHeader"
 import PageTitle from "../components/PageTitle/PageTitle";
@@ -11,27 +11,31 @@ import { Link } from "gatsby";
 import { useSpring, animated } from "react-spring";
 import BackDrop from "../components/BackDrop/BackDrop";
 import AnimLogo from "../components/AnimLogo/AnimLogo";
+import { useHomeQuery } from "../hooks/queries/useHomeQuery";
 
 
 const IndexPage = () => {
   const [materiePrimeHover, setMateriePrimeHover] = useState(false);
+
+  const { sanityHomePage }: HomePageQuery = useHomeQuery();
+
   const materiePrimeBcgStyles = useSpring({
     reverse: materiePrimeHover,
-    from: { transform: "scale(0.9)" },
+    from: { transform: "scale(0.83)" },
     to: { transform: "scale(0.8)" },
     config: {
       mass: 1,
       tension: 300,
-      friction: 15
+      friction: 100
     }
   });
   const materiePrimeTitleStyles = useSpring({
     reverse: materiePrimeHover,
-    from: { transform: "scale(1)" },
+    from: { transform: "scale(0.95)" },
     to: { transform: "scale(0.9)" },
     config: {
       mass: 1,
-      tension: 300,
+      tension: 200,
       friction: 40
     }
   });
@@ -52,21 +56,19 @@ const IndexPage = () => {
 
   return (
     <Parallax pages={6} scrolling={true} ref={ref => parallax = ref}>
-      <AnimLogo/>
+      <AnimLogo />
       <BackDrop />
       <LayoutHeader />
       <section style={{ position: "relative", top: "30vh", width: "50vw", left: "40vw", height: "40vh", zIndex: -1 }}>
         <ParallaxLayer offset={0} speed={0.05}>
           <Quote>
-            Ci sono sapori e profumi che evocano ricordi in ognuno di noi, ci auguriamo di regalare
-            quei momenti di dolcezza ad ognuno di voi.
+            {sanityHomePage.quoteHeaderText}
           </Quote>
         </ParallaxLayer>
       </section>
 
       <section style={{ position: "relative", left: "0", right: "0", top: "0", marginTop: "8vh", height: "60vh" }}>
         <ParallaxLayer offset={0} speed={-0.05}>
-
           <CategoryCarousel />
         </ParallaxLayer>
       </section>
@@ -83,9 +85,7 @@ const IndexPage = () => {
             <Centralizer column>
               <div style={{ width: "70vw", marginTop: "-700px" }}>
                 <Quote>
-                  Flaviano nasce dal desiderio di trasmettere l’amore e la passione per l’artigianalità.
-                  Siamo artigiani moderni che si pongono l’obiettivo di promuovere la tradizione attraverso
-                  la creatività. Siamo custodi delle bontà del nostro territorio.
+                  {sanityHomePage.quoteBelowCarouselText}
                 </Quote>
               </div>
             </Centralizer>
@@ -138,7 +138,7 @@ const IndexPage = () => {
         </ParallaxLayer>
         <ParallaxLayer speed={0.25}>
           <Link to="/materieprime/">
-            <animated.div style={{ cursor: "pointer", position: "absolute", width: "45vw", marginTop: "155vh", right: "10vw" }}>
+            <animated.div style={{ cursor: "pointer", position: "absolute", width: "45vw", marginTop: "150vh", right: "10vw" }}>
               <Quote>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
             </animated.div>
           </Link>

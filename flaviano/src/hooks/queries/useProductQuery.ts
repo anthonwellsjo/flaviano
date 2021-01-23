@@ -12,6 +12,7 @@ export const useProductQuery = () => {
           }
           title
           priceEur
+          weightGr
           description
           slug {
             current
@@ -22,9 +23,10 @@ export const useProductQuery = () => {
           id
           conservation
           ingredients
+          ingredientsTwo
           productPhoto {
             asset {
-              fluid(maxWidth: 400){
+              fluid(maxWidth: 500){
                 ...GatsbySanityImageFluid
               }
           }

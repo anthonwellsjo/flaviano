@@ -10,7 +10,7 @@ export const useCategoryCarouselImagesQuery = () => {
             slug{current}
             categoryCarouselImage {
               asset {
-                  fluid(maxHeight: 220) {
+                  fluid(maxWidth: 2000) {
                 ...GatsbySanityImageFluid
                 }
             }

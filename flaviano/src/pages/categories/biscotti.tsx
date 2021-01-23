@@ -21,14 +21,15 @@ const BiscottiPage: React.FC = () => {
 
   useEffect(() => {
     setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }));
-  },[])
+  }, [])
 
   return (
-    <Parallax pages={3.4} scrolling={true} ref={ref => parallax = ref}>
+    <Parallax pages={3.3} scrolling={true} ref={ref => parallax = ref}>
+      <BackDrop />
+      <LayoutHeader />
       {/* ------------HEADER SECTION */}
       <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: -100, position: "relative" }}>
         <ParallaxLayer factor={0} speed={-1}>
-          <LayoutHeader />
           <section style={{ position: "absolute", left: "0", right: "0", top: "0", height: "100vh" }}>
             <Centralizer>
               <div style={{ position: "absolute", width: "55vw", top: "45vh", marginLeft: "25vw" }}>

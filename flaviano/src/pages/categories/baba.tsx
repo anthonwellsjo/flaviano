@@ -8,6 +8,7 @@ import Centralizer from '../../components/StructureComponents/Centralizer/Centra
 import { useBabaPageQuery } from '../../hooks/queries/useBabaPageQuery';
 import Img from 'gatsby-image';
 import BabaProductsPreview from '../../components/BabaPage/BabaProductsPreview/BabaProductsPreview';
+import BackDrop from '../../components/BackDrop/BackDrop';
 
 const BabaPage: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
@@ -17,6 +18,8 @@ const BabaPage: React.FC = () => {
 
   return (
     <Parallax pages={2} scrolling={true} ref={ref => parallax = ref}>
+      <BackDrop />
+      <LayoutHeader />
       {/* ------------HEADER SECTION */}
 
       <ParallaxLayer factor={0} speed={-1}>
@@ -25,7 +28,6 @@ const BabaPage: React.FC = () => {
             <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
             {/* <p className="legend">{e.node.title}</p> */}
           </div>
-          <LayoutHeader />
           <section style={{ position: "absolute", left: "0", right: "0", top: "0", height: "100vh" }}>
             <Centralizer>
               <div style={{ position: "absolute", width: "35vw", top: "35vh", marginLeft: "25vw" }}>
@@ -53,7 +55,7 @@ const BabaPage: React.FC = () => {
       </ParallaxLayer>
       <ParallaxLayer offset={2} speed={1}>
 
-        <div style={{ zIndex: 299, width: "100vw", marginTop: "-115vh" }}>
+        <div style={{ zIndex: 299, width: "100vw", marginTop: "-113vh" }}>
           <BabaProductsPreview />
         </div>
       </ParallaxLayer>

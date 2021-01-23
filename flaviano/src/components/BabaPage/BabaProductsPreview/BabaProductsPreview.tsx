@@ -21,6 +21,16 @@ const BabaProductsPreview: React.FC = () => {
               <br></br>
               <PageTitle fontSize={"1.8em"} letterSpacing={".2em"}>{p.node.title}</PageTitle>
             </div>
+            <div className={classes.body}>
+              <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Ingredienti</PageTitle>
+              <p className={classes.text}>{p.node.ingredients}</p>
+              <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Ingredienti Bagna</PageTitle>
+              <p className={classes.text}>{p.node.ingredientsTwo}</p>
+              <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Conservazione</PageTitle>
+              <p className={classes.text}>{p.node.conservation}</p>
+              <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Peso Netto</PageTitle>
+              <p className={classes.text}>{p.node.weightGr}g</p>
+            </div>
           </div>
         )
       }

@@ -15,6 +15,15 @@ export default () =>
             .items([
 
               S.listItem()
+                .title('Home Page')
+                .child(
+                  S.document()
+                    .schemaType('homePage')
+                    .documentId('homePage')
+                ),
+
+
+              S.listItem()
                 .title('Baba Page')
                 .child(
                   S.document()

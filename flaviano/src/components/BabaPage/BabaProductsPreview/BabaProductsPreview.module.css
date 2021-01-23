@@ -2,12 +2,21 @@
   margin: 20px;
 }
 
-.productCard{
-  transition: transform .3s;
+.body {
+  margin: 20px;
+}
+
+.text{
+  margin-top: 0;
+  font-size: .8em;
+  font-family: HomepageBaukastenBook;
+}
+
+.productCard {
+  transition: transform 0.3s;
 }
 
 .productCard:hover {
   transform: translateY(-250px);
-  transition: transform .3s;
-
+  transition: transform 0.3s;
 }

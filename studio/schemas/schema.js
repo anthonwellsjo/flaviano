@@ -11,6 +11,7 @@ import product from './product'
 import babaPage from './babaPage'
 import chiSiamoPage from './chiSiamoPage'
 import materiePrimePage from './materiePrimePage'
+import homePage from './homePage'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -27,10 +28,10 @@ export default createSchema({
     categoryParallaxIcon,
     categoryCarouselImage,
 
-
+    homePage,
     babaPage,
     chiSiamoPage,
-    materiePrimePage
+    materiePrimePage,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

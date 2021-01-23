@@ -7,6 +7,7 @@ import Quote from '../components/Quote/Quote';
 import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';
 import { useMateriePrimeQuery } from '../hooks/queries/useMateriePrimeQuery';
 import Img from 'gatsby-image';
+import BackDrop from '../components/BackDrop/BackDrop';
 
 const MateriePrimePage: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
@@ -15,6 +16,8 @@ const MateriePrimePage: React.FC = () => {
 
   return (
     <Parallax pages={4.45} scrolling={true} ref={ref => parallax = ref}>
+      <BackDrop />
+      <LayoutHeader />
       <ParallaxLayer offset={0} speed={0.5}>
         <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: 100, position: "relative", }}>
           <div style={{ width: "5em", position: "absolute", top: "10vw", left: "10vw", textAlign: "center" }}>
@@ -25,7 +28,6 @@ const MateriePrimePage: React.FC = () => {
             <PageTitle>Materie Prime</PageTitle>
             <div style={{ height: "1px", width: "25px", marginLeft: "10px", marginTop: "10px", backgroundColor: "black" }}></div>
           </div>
-          <LayoutHeader />
         </div>
       </ParallaxLayer>
       <ParallaxLayer offset={0.5} speed={0.2}>

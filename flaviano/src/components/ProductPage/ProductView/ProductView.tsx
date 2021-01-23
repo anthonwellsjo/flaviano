@@ -15,7 +15,7 @@ interface pageProps {
 const ProductView = (props: pageProps) => {
   return (
     <div style={{ position: "relative", backgroundColor: props.bcgColor, width: "100%", height: "100vh", zIndex: 100, display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
-      <div style={{ maxWidth: "400px", width: "20vw", height: "300px", marginBottom: "10vh" }}>
+      <div style={{ maxWidth: "500px",maxHeight: "300px", width: "28vw", height: "300px", marginBottom: "10vh" }}>
         <Img className={classes.fluidImg} fluid={props.fluidImg} alt="product photo" />
       </div>
       <div className={classes.textWrapper}>

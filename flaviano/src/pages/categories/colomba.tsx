@@ -2,10 +2,10 @@ import React from 'react';
 import AnimLogo from '../../components/AnimLogo/AnimLogo';
 import AnimLogoPiccolo from '../../components/AnimLogoPiccolo/AnimLogoPiccolo';
 
-const PannetonePage: React.FC = () => {
+const ColombaPage: React.FC = () => {
   return (
     <AnimLogoPiccolo/>
   )
 }
 
-export default PannetonePage;
+export default ColombaPage;

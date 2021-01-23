@@ -1,14 +1,7 @@
 .container{
   position: absolute;
-  overflow: visible;
-  height: 300px;
-  top: 5vh;
-  left: 8vw;
-  transform: scale(1.1);
-  border-radius: 100%;
-  backdrop-filter: blur(10px);
-  z-index: 9999;
-
+  right: -6vw;
+  top: -4vh;
 }
 
 .firstStartBackdrop{

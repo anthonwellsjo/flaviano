@@ -9,29 +9,7 @@ export enum QuoteStyle {
 
 export interface ProductPageDataQuery {
   data: {
-    sanityProduct: {
-      id: string,
-      description: string,
-      ingredients: string,
-      conservation: string,
-      category: {
-        id: string,
-        title: string,
-        slug: {
-          current: string
-        }
-      },
-      title: string,
-      priceEur: number,
-      slug: {
-        current: string
-      },
-      productPhoto: {
-        asset: {
-          fluid: any
-        }
-      }
-    }
+    sanityProduct: Product
   }
 }
 export interface Product {
@@ -52,6 +30,8 @@ export interface Product {
     id: string,
     conservation: string,
     ingredients: string,
+    ingredientsTwo: string,
+    weightGr: number,
     productPhoto: {
       asset: {
         fluid: any
@@ -120,7 +100,7 @@ export interface MateriePrimePage {
     hex: string
   },
   melaImg: {
-    asset:{fluid: any}
+    asset: { fluid: any }
   },
   melaText: string,
   mieleColor: {
@@ -195,3 +175,9 @@ export interface CategoryQuery {
   }
 }
 
+export interface HomePageQuery{
+  sanityHomePage: {
+    quoteHeaderText: string,
+    quoteBelowCarouselText: string
+  }
+}

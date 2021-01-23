@@ -64,10 +64,21 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'ingredientsTwo',
+      title: 'Ingredients Two',
+      type: 'text'
+    },
+    {
       name: 'conservation',
       title: 'Conservation',
       type: 'text',
       validation: Rule => Rule.required()
+    },
+    {
+      name: 'weightGr',
+      title: 'Weight in Grams',
+      type: 'number',
+      validation: n => n.positive().required()
     },
     {
       name: 'priceEur',
