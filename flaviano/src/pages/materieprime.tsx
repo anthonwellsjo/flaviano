@@ -14,7 +14,7 @@ const MateriePrimePage: React.FC = () => {
 
 
   return (
-    <Parallax pages={5} scrolling={true} ref={ref => parallax = ref}>
+    <Parallax pages={4.45} scrolling={true} ref={ref => parallax = ref}>
       <ParallaxLayer offset={0} speed={0.5}>
         <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: 100, position: "relative", }}>
           <div style={{ width: "5em", position: "absolute", top: "10vw", left: "10vw", textAlign: "center" }}>
@@ -128,10 +128,90 @@ const MateriePrimePage: React.FC = () => {
               </div>
             </div>
             <div style={{ maxWidth: "389px", height: "30vh", width: "30vw", position: "absolute", right: "10vw", top: "25vh" }}>
-              <Img fluid={sanityMateriePrimePage.nociImg.asset.fluid} alt="photo of limoni di sorrento" />
+              <Img fluid={sanityMateriePrimePage.nociImg.asset.fluid} alt="photo of Noci di Sorrento" />
             </div>
             <div style={{ width: "45vw", wordSpacing: ".3em", position: "absolute", top: "32vh", left: "10vw" }}>
               <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityMateriePrimePage.nociText}</span>
+              <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
+            </div>
+          </Centralizer>
+        </div>
+      </ParallaxLayer>
+
+
+
+
+      {/* NOCIOLA */}
+
+      <ParallaxLayer offset={2.999} speed={1}>
+        <div style={{ height: "40vh" }}>
+          <Centralizer>
+            <div style={{ width: "65vw", height: "20vh", backgroundColor: sanityMateriePrimePage.nocciolaColor.hex, position: "absolute", left: 0, top: "10vh" }}></div>
+            <div style={{ width: "100vw", height: "20vh" }}>
+              <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "50%", marginLeft: "15px", marginTop: "18px" }}></div>
+                <div style={{ position: "absolute", marginTop: "32px", width: "25vw", right: 0 }}>
+                  <PageTitle fontSize={"3.2em"} letterSpacing={".1em"}>Nocila di Gifoni</PageTitle>
+                </div>
+              </div>
+            </div>
+            <div style={{ maxWidth: "389px", height: "30vh", width: "30vw", position: "absolute", right: "10vw", top: "25vh" }}>
+              <Img fluid={sanityMateriePrimePage.nocciolaImg.asset.fluid} alt="photo of Nocila di Gifoni" />
+            </div>
+            <div style={{ width: "45vw", wordSpacing: ".3em", position: "absolute", top: "32vh", left: "10vw" }}>
+              <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityMateriePrimePage.nocciolaText}</span>
+              <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
+            </div>
+          </Centralizer>
+        </div>
+      </ParallaxLayer>
+
+
+      {/* MIELE */}
+
+      <ParallaxLayer offset={3} speed={0.5}>
+        <div style={{ height: "40vh" }}>
+          <Centralizer>
+            <div style={{ width: "20vw", height: "50%", backgroundColor: sanityMateriePrimePage.mieleColor.hex, position: "absolute", left: 0, top: "12vh" }}></div>
+            <div style={{ width: "100vw", height: "20vh" }}>
+              <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                <div style={{ height: "3px", width: "40px", backgroundColor: "black", position: "absolute", right: "0", marginRight: "4px", marginTop: "18px" }}></div>
+                <div style={{ position: "absolute", marginTop: "32px", width: "25vw", right: 0 }}>
+                  <PageTitle fontSize={"3.2em"} letterSpacing={".1em"}>Miele Millefiori</PageTitle>
+                </div>
+              </div>
+            </div>
+            <div style={{ maxWidth: "389px", height: "30vh", width: "30vw", position: "absolute", right: "10vw", top: "25vh" }}>
+              <Img fluid={sanityMateriePrimePage.mieleImg.asset.fluid} alt="photo of Miele Millefiori" />
+            </div>
+            <div style={{ width: "45vw", wordSpacing: ".3em", position: "absolute", top: "32vh", left: "10vw" }}>
+              <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityMateriePrimePage.mieleText}</span>
+              <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
+            </div>
+          </Centralizer>
+        </div>
+      </ParallaxLayer>
+
+
+      {/* NOCIOLA */}
+
+      <ParallaxLayer offset={3.999} speed={1}>
+        <div style={{ height: "40vh" }}>
+          <Centralizer>
+            <div style={{ width: "75vw", height: "50vh", backgroundColor: sanityMateriePrimePage.albicocceColor.hex, position: "absolute", left: "7vw", top: "25vh" }}></div>
+            <div style={{ width: "100vw", height: "20vh" }}>
+              <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "50%", marginLeft: "15px", marginTop: "18px" }}></div>
+                <div style={{ position: "absolute", marginTop: "32px", width: "30vw", right: 0 }}>
+                  <PageTitle fontSize={"3.2em"} letterSpacing={".1em"}>Albicocche del Vesuvio</PageTitle>
+                </div>
+              </div>
+            </div>
+            <div style={{ maxWidth: "389px", height: "30vh", width: "30vw", position: "absolute", right: "10vw", top: "25vh" }}>
+              <Img fluid={sanityMateriePrimePage.albicocceImg.asset.fluid} alt="photo of Albicocche del Vesuvio" />
+            </div>
+            <div style={{ width: "45vw", wordSpacing: ".3em", position: "absolute", top: "32vh", left: "10vw" }}>
+              <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityMateriePrimePage.albicocceText}</span>
               <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
             </div>
           </Centralizer>
