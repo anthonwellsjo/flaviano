@@ -10,7 +10,7 @@ import Centralizer from '../components/StructureComponents/Centralizer/Centraliz
 import flavianoImg from '../images/flavianoLogo.png';
 import BackDrop from '../components/BackDrop/BackDrop';
 
-const ChiSiamoPage: React.FC = () => {
+const ChiSiamoPage = () => {
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax;
 

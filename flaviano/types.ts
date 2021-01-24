@@ -156,7 +156,11 @@ export interface ChiSiamoPage {
 
 export interface Category {
   node: {
-    categoryParallaxIcon: any,
+    categoryParallaxIcon: {
+      asset: {
+        fluid: any
+      }
+    },
     id: string,
     previewColorBoxColor: {
       hex: string
@@ -175,7 +179,7 @@ export interface CategoryQuery {
   }
 }
 
-export interface HomePageQuery{
+export interface HomePageQuery {
   sanityHomePage: {
     quoteHeaderText: string,
     quoteBelowCarouselText: string

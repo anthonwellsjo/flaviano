@@ -26,7 +26,7 @@ const ProductPreviews = () => {
               products={products}
               title={e.node.title}
               color={e.node.previewColorBoxColor.hex}
-              img={e.node.categoryParallaxIcon.asset.fixed} />
+              img={e.node.categoryParallaxIcon.asset.fluid} />
           </div>
         )
       })}

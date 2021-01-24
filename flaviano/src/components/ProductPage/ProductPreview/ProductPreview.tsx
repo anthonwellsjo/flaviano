@@ -49,7 +49,7 @@ const ProductPreview = (props: ProductPreviewProps) => {
               <span className={classes.title}>{props.title}</span>
               <div className={classes.categoryDescriptionContainer}>
                 <span className={classes.categoryDescription}>
-                  { props.categoryDescription}
+                  {props.categoryDescription}
                 </span>
               </div>
             </div>
@@ -58,7 +58,9 @@ const ProductPreview = (props: ProductPreviewProps) => {
             <div className={classes.line}></div>
             <div className={classes.imageWrapper}>
               <ParallaxLayer offset={0} speed={0.1}>
-                <Img className={classes.image} fixed={props.img} alt="Product image" />
+                <div style={{width: "25vw", maxWidth:"400px", transform: "translateY(340px) translateX(-25%)"}}>
+                  <Img className={classes.image} fluid={props.img} alt="Product image" />
+                </div>
               </ParallaxLayer>
             </div>
           </div>
