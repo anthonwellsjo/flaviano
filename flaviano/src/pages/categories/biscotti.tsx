@@ -6,10 +6,10 @@ import PageTitle from '../../components/PageTitle/PageTitle';
 import Quote from '../../components/Quote/Quote';
 import Centralizer from '../../components/StructureComponents/Centralizer/Centralizer';
 import { useProductQuery } from '../../hooks/queries/useProductQuery';
-import Img from 'gatsby-image';
 import ProductView from '../../components/ProductPage/ProductView/ProductView';
 import BackDrop from '../../components/BackDrop/BackDrop';
 import { PageContext } from '../../contexts/pageContext';
+import LayoutFrame from '../../components/LayoutFrame/LayoutFrame';
 
 
 const BiscottiPage: React.FC = () => {
@@ -25,10 +25,11 @@ const BiscottiPage: React.FC = () => {
 
   return (
     <Parallax pages={3.3} scrolling={true} ref={ref => parallax = ref}>
+      <LayoutFrame>
       <BackDrop />
       <LayoutHeader />
       {/* ------------HEADER SECTION */}
-      <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: -100, position: "relative" }}>
+      <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", position: "relative" }}>
         <ParallaxLayer factor={0} speed={-1}>
           <section style={{ position: "absolute", left: "0", right: "0", top: "0", height: "100vh" }}>
             <Centralizer>
@@ -71,6 +72,7 @@ const BiscottiPage: React.FC = () => {
           </div>
         </ParallaxLayer>
       </section>
+      </LayoutFrame>
     </Parallax >
   )
 }

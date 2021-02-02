@@ -61,7 +61,6 @@ const AnimLogo: React.FC = () => {
     }
   });
   const CircleProps = useSpring({
-    reverse: hover,
     to: { transform: "rotate(360deg)" },
     from: { transform: "rotate(0deg)" },
     delay: 100,
