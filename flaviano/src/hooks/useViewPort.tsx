@@ -11,7 +11,7 @@ interface IViewport {
 }
 
 const ViewportContext = createContext<IViewport>({
-  width: window.innerWidth,
+  width: 1200,
 })
 
 export const ViewportProvider: FC = ({ children }) => {

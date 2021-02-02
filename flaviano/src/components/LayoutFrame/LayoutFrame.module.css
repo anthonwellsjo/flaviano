@@ -3,7 +3,9 @@
   width: 100vw;
   position: relative;
   background-color: white;
+  z-index: -1;
 }
+
 
 .backGround{
   

@@ -1,0 +1,94 @@
+.wrapper {
+  height: 600px;
+  width: 100vw;
+  position: relative;
+  margin: 0px;
+  top: -15vh;
+  background: linear-gradient(180deg, lightgray 80%, white 20%);
+}
+
+.innerWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorCube {
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  bottom: 0;
+}
+
+.titleWrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 30px;
+}
+
+.title {
+  font-family: HomepageBaukastenBold;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 33px;
+  letter-spacing: 0.16em;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 80%;
+  height: 320px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -100px;
+}
+
+.imgWrap {
+  width: 110%;
+  transform: translateY(220px);
+}
+
+@media (max-width: 560px) {
+  .imgWrap {
+    width: 150%;
+  }
+  .image {
+    transform: translateX(-50px);
+  }
+  .imageWrapper {
+    height: 60vw;
+  }
+  .colorCube {
+    height: 70vw;
+  }
+}
+
+.image {
+  position: absolute;
+  top: 40%;
+}
+
+.line {
+  margin-top: 10px;
+  height: 3px;
+  width: 14vw;
+  background-color: black;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.productTitle:hover {
+  /* color: rgb(71, 71, 71); */
+  font-weight: bold;
+}
