@@ -38,6 +38,7 @@
     "react-spring": "^8.0.27"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.11",
     "typescript-plugin-css-modules": "^3.0.1"
   }
 }

@@ -4,7 +4,7 @@ export enum QuoteStyle {
   "header",
   "paragraph-s",
   "paragraph-m",
-  "paragraph-l"
+  "italic"
 }
 
 export interface ProductPageDataQuery {

@@ -34,7 +34,8 @@
 .conservation {
   font-family: HomepagebaukastenBook;
   letter-spacing: 0.16em;
-  line-height: 11px;
+  line-height: 19px;
+  text-align: justify;
 }
 .descWrapper,
 .ingredWrapper,

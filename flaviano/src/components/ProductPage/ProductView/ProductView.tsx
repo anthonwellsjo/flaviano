@@ -22,15 +22,15 @@ const ProductView = (props: pageProps) => {
         <div className={classes.titleWrapper}>
           <span className={classes.title}>{props.title}</span>
         </div>
-        <div className={classes.descWrapper}>
+        <div  className={classes.descWrapper}>
           <span className={classes.descriptionTitle}>Descrizione prodotto</span>
           <br></br>
-          <span className={classes.description}>{props.description}</span>
+          <p  className={classes.description}>{props.description}</p>
         </div>
         <div className={classes.ingredWrapper}>
           <span className={classes.ingredientsTitle}>Ingredienti</span>
           <br></br>
-          <span className={classes.ingredients}>{props.ingredients}</span>
+          <p className={classes.ingredients}>{props.ingredients}</p>
         </div>
         <div className={classes.consWrapper}>
           <span className={classes.conservationTitle}>Conservazione</span>

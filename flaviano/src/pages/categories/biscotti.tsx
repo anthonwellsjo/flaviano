@@ -33,7 +33,7 @@ const BiscottiPage: React.FC = () => {
           <section style={{ position: "absolute", left: "0", right: "0", top: "0", height: "100vh" }}>
             <Centralizer>
               <div style={{ position: "absolute", width: "55vw", top: "45vh", marginLeft: "25vw" }}>
-                <Quote>Le materie prime utilizzate per i nostri prodotti provengono dalle ricche e generose terre campane che offrono eccellenze riconosciute in tutto il mondo.</Quote>
+                <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Le materie prime utilizzate per i nostri prodotti provengono dalle ricche e generose terre campane che offrono eccellenze riconosciute in tutto il mondo.</Quote>
               </div>
             </Centralizer>
             <div style={{ position: "absolute", width: "6em", marginLeft: "10vw", textAlign: "center", bottom: "30vh" }}>

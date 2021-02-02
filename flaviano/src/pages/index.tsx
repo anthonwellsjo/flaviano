@@ -61,13 +61,13 @@ const IndexPage = () => {
       <LayoutHeader />
       <section style={{ position: "relative", top: "30vh", width: "50vw", left: "40vw", height: "40vh", zIndex: -1 }}>
         <ParallaxLayer offset={0} speed={0.05}>
-          <Quote>
+          <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
             {sanityHomePage.quoteHeaderText}
           </Quote>
         </ParallaxLayer>
       </section>
 
-      <section style={{ position: "relative", left: "0", right: "0", top: "0", marginTop: "8vh", height: "60vh" }}>
+      <section style={{ position: "relative", left: "0", right: "0", top: "0", marginTop: "8vh", height: "60vw" }}>
         <ParallaxLayer offset={0} speed={-0.05}>
           <CategoryCarousel />
         </ParallaxLayer>
@@ -84,7 +84,7 @@ const IndexPage = () => {
 
             <Centralizer column>
               <div style={{ width: "70vw", marginTop: "-700px" }}>
-                <Quote>
+                <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
                   {sanityHomePage.quoteBelowCarouselText}
                 </Quote>
               </div>
@@ -139,7 +139,7 @@ const IndexPage = () => {
         <ParallaxLayer speed={0.25}>
           <Link to="/materieprime/">
             <animated.div style={{ cursor: "pointer", position: "absolute", width: "45vw", marginTop: "150vh", right: "10vw" }}>
-              <Quote>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
+              <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
             </animated.div>
           </Link>
         </ParallaxLayer>
