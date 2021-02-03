@@ -17,24 +17,13 @@ import AnimLogoMobile from '../AnimLogoMobile/AnimLogoMobile';
 import { useViewport } from '../../hooks/useViewPort';
 import MobileProductCarousel from '../MobileProductCarousel/MobileProductCarousel';
 import ScrollButton from '../ScrollButton/ScrollButton';
+import useScroll from '../../hooks/useScroll';
 
 const IndexPageMobileRender: React.FC = () => {
   const { width } = useViewport();
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
-  const [currentScroll, setCurrentScroll] = useState(0);
-
   let parallax = useRef();
-
-
-  const onScrollEventHandler = () => {
-    setCurrentScroll(parallax.current.current);
-    console.log(currentScroll);
-  }
-
-  useEffect(() => {
-    if (!parallax.current || !parallax.current.container) return
-    parallax.current.container.onscroll = onScrollEventHandler
-  })
+  const [currentScroll] = useScroll(parallax);
 
 
   return (
@@ -74,31 +63,37 @@ const IndexPageMobileRender: React.FC = () => {
 
         {/* ------------------------------PRODUCTS SECTION */}
 
-        <section id="products" style={{ position: "absolute", height: "150vh", width: "100vw", zIndex: 1 }}>
-          <ParallaxLayer offset={0.23} speed={0.2}>
-            <div style={{ background: "linear-gradient(180deg, lightgray 80%, white 20%)", height: "100vh", paddingTop: "10vh", marginTop: "-10vh" }}>
-              <MobileProductCarousel />
-            </div>
-          </ParallaxLayer>
-          <ParallaxLayer offset={0.3} speed={0.7}>
-            <div style={{ backgroundColor: "lightgray", width: "100%", height: "25vh" }} >
-              <div style={{ marginTop: "-5vh" }}>
-                <ScrollButton currentPosition={currentScroll} reactivePosition={20} />
+        <section id="products" style={{ position: "relative", width: "100vw" }}>
+          <div style={{ zIndex: 1, position: "absolute", width: "100%", backgroundColor: "red" }}>
+            <ParallaxLayer offset={0.1} speed={0.7}>
+              <div style={{ width: "100%" }} >
+                <div style={{ marginTop: "0" }}>
+                  <ScrollButton to="#products" deactivatePosition={40} currentPosition={currentScroll} reactivePosition={30} />
+                </div>
               </div>
-            </div>
-          </ParallaxLayer>
-          <ParallaxLayer offset={0.6} speed={0.6}>
-            <div style={{ marginTop: "-15vh" }}>
-              <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10vw" }}>
-                <Quote mobile style={QuoteStyle.header}>
-                  P
+            </ParallaxLayer>
+
+            <ParallaxLayer offset={0.9} speed={1.2}>
+              <div style={{ marginTop: "0", position: "relative", height: "20vh" }}>
+                <div style={{ width: "120px", textAlign: "center", position: "absolute", left: "10vw" }}>
+                  <Quote mobile style={QuoteStyle.header}>
+                    P
               </Quote>
+                </div>
+                <div style={{ width: "150px", textAlign: "center", position: "absolute", left: "50%" }}>
+                  <PageTitle fontSize={(width * 0.003).toString() + "em"}>Prodotti</PageTitle>
+                </div>
               </div>
-              <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", left: "50%" }}>
-                <PageTitle fontSize={(width * 0.003).toString() + "em"}>Prodotti</PageTitle>
+              <div style={{ background: "linear-gradient(180deg, lightgray 80%, white 20%)", height: "100vh", paddingTop: "10vh", position: "absolute" }}>
+                <MobileProductCarousel />
               </div>
-            </div>
-          </ParallaxLayer>
+            </ParallaxLayer>
+
+
+
+
+          </div>
+
 
         </section>
 

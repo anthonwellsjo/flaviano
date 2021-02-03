@@ -7,33 +7,40 @@ import classes from './ScrollButton.module.css';
 
 interface Props {
   id?: number,
+  deactivatePosition: number,
   reactivePosition: number,
-  currentPosition: number
+  currentPosition: number,
+  to: string
 }
 
 
-const ScrollButton = ({ id, reactivePosition, currentPosition }: Props) => {
-  const [isClicked, setIsClicked] = useState(false);
+const ScrollButton = ({ id, reactivePosition, currentPosition, deactivatePosition, to }: Props) => {
+  const [isActive, setIsActive] = useState(false);
 
 
   useEffect(() => {
     console.log(currentPosition, reactivePosition);
-    if (currentPosition <= reactivePosition) {
-      setIsClicked(false);
+    if (currentPosition <= reactivePosition && !isActive) {
+      console.log("reactivating button");
+      setIsActive(true);
+    }
+    if (currentPosition > deactivatePosition && isActive) {
+      console.log("deactivating button");
+
+      setIsActive(false);
     }
   }, [currentPosition]);
 
   const onClickEventHandler = () => {
     console.log("click");
-    scrollTo('#products');
-    setIsClicked(true);
+    scrollTo(to);
   }
 
 
   return (
     <Centralizer>
-      <div className={isClicked ? classes.hide : classes.animate}>
-        <button className={classes.button} onClick={() => onClickEventHandler()}><img style={{ width: "80px" }} src={img} alt="arrow" /></button>
+      <div className={isActive ? classes.animate : classes.hide}>
+        <button style={{cursor:"pointer"}} className={classes.button} onClick={() => onClickEventHandler()}><img style={{ width: "80px" }} src={img} alt="arrow" /></button>
       </div>
     </Centralizer >
   )
