@@ -23,7 +23,6 @@ const ProductPreviewMobile = (props: ProductPreviewProps) => {
   return (
     <div className={classes.wrapper}>
       <Link to={`/categories/${props.categorySlug}`}>
-
         <Centralizer>
           <div style={{ backgroundColor: props.color }} className={classes.colorCube} >
             <Centralizer>

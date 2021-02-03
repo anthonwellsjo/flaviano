@@ -8,6 +8,7 @@ module.exports = {
     title: "flaviano",
   },
   plugins: [
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
