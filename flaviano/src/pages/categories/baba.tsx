@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { BabaPageQuery, QuoteStyle } from '../../../types';
 import LayoutHeader from '../../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
@@ -10,23 +10,28 @@ import Img from 'gatsby-image';
 import BabaProductsPreview from '../../components/Desktop/Pages/BabaPage/BabaProductsPreviewDesktop/BabaProductsPreviewDesktop';
 import BackDrop from '../../components/Desktop/BackDropDesktop/BackDropDesktop';
 import LayoutFrame from '../../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
+import useScroll from '../../hooks/useScroll';
+import ScrollButton from '../../components/Desktop/ScrollButton/ScrollButton';
 
 const BabaPage: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
+  let parallax = useRef();
+  const [currentScroll] = useScroll(parallax);
 
 
-  let parallax;
+
 
   return (
-    <Parallax pages={2} scrolling={true} ref={ref => parallax = ref}>
+    <Parallax pages={2} scrolling={false} ref={parallax} config={{mass:2}}>
       <BackDrop />
       <LayoutFrame>
         <LayoutHeader />
         {/* ------------HEADER SECTION */}
+        <div id="top" style={{ position: "absolute", top: "0" }}></div>
 
-        <ParallaxLayer factor={0} speed={-1}>
+        <ParallaxLayer factor={0} speed={0} >
           <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: -1, position: "relative" }}>
-            <div style={{ maxWidth: "100vw", width: "110%", position: "absolute" }}>
+            <div style={{ maxWidth: "100vw", width: "100%", position: "absolute" }}>
               <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
               {/* <p className="legend">{e.node.title}</p> */}
             </div>
@@ -35,25 +40,32 @@ const BabaPage: React.FC = () => {
                 <div style={{ position: "absolute", width: "35vw", top: "35vh", marginLeft: "25vw" }}>
                   <Quote rightQuoteY="15vh"><PageTitle letterSpacing=".1em">O babà é na cosa seria.</PageTitle></Quote>
                 </div>
+                <div style={{ position: "absolute", bottom: "30vh" }}>
+                  <ScrollButton to="#products" currentPosition={currentScroll} deactivatePosition={9999} reactivePosition={0} />
+                </div>
               </Centralizer>
+
             </section>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={2}>
-          <Centralizer column>
-            <div style={{ position: "relative", backgroundColor: "white", width: "100%", height: "100vh", zIndex: 100 }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", marginTop: "5vh" }}>
-                <div style={{ width: "90%" }}>
-                  <span style={{ fontFamily: "HomepageBaukastenBook" }}>{sanityBabaPage.pageText}</span>
-                </div>
+
+        <div id="products" style={{ position: "absolute", top: "100vh" }}></div>
+
+
+        <ParallaxLayer offset={0.99999} speed={0.1}>
+          <div style={{ position: "relative", backgroundColor: "white", width: "100%", height: "100vh", zIndex: 100 }}>
+            <Centralizer evenly>
+              <div style={{ position: "absolute", top: "15vh" }}>
+                <ScrollButton to="#top" up currentPosition={currentScroll} deactivatePosition={9999} reactivePosition={0} />
               </div>
-              <Centralizer>
-                <div style={{ display: "flex", maxWidth: "300px", alignItems: "center", justifyContent: "center", marginTop: "-35vh" }}>
-                  <Img fixed={sanityBabaPage.textImg.asset.fixed} alt="Baba image with text" />
-                </div>
-              </Centralizer>
-            </div>
-          </Centralizer>
+              <div style={{ width: "30%" }}>
+                <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify" }}>{sanityBabaPage.pageText}</p>
+              </div>
+              <div style={{ display: "flex", maxWidth: "300px", alignItems: "center", justifyContent: "center", }}>
+                <Img fixed={sanityBabaPage.textImg.asset.fixed} alt="Baba image with text" />
+              </div>
+            </Centralizer>
+          </div>
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={1}>
 

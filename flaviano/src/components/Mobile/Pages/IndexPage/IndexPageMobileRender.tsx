@@ -17,9 +17,7 @@ const IndexPageMobileRender: React.FC = () => {
   const { width } = useViewport();
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
   let parallax = useRef();
-  const [currentScroll] = useScroll(parallax);
-
-  const Top = React.useRef<HTMLInputElement>(null);
+  
 
 
   return (
@@ -27,8 +25,9 @@ const IndexPageMobileRender: React.FC = () => {
       <BackDrop />
       <ParallaxLayer offset={0} speed={0.1}>
         <AnimLogoMobile />
-        <LayoutHeaderMobile />
       </ParallaxLayer>
+      
+      
 
       {/* ------------------------------TOP QUOTE */}
       <div id="top" style={{ position: "absolute", top: "0" }}></div>
@@ -36,17 +35,12 @@ const IndexPageMobileRender: React.FC = () => {
       <ParallaxLayer offset={0.09} speed={-0.1}>
         <div style={{ position: "relative", top: "0", width: "100vw", height: "100vh" }}>
           <Centralizer>
-            <div style={{ width: "70%", height: "50%", marginTop: "10vh" }}>
-              <Quote mobile style={QuoteStyle.italic} fontSize={"1.4em"} rightQuoteY={"17vh"} >
+            <div style={{ width: "70%", height: "50%", marginTop: "30vh" }}>
+              <Quote mobile style={QuoteStyle.italic} fontSize={"1.4em"} rightQuoteX={"-2vw"} rightQuoteY={"12vh"} >
                 {sanityHomePage.quoteHeaderText}
               </Quote>
             </div>
           </Centralizer>
-        </div>
-      </ParallaxLayer>
-      <ParallaxLayer offset={0.9} speed={1}>
-        <div style={{ width: "100%", position: "absolute", zIndex: 1 }} >
-          <ScrollButton to="#products" deactivatePosition={400} currentPosition={currentScroll} reactivePosition={30} />
         </div>
       </ParallaxLayer>
 
@@ -61,7 +55,7 @@ const IndexPageMobileRender: React.FC = () => {
 
 
       <ParallaxLayer offset={1.1} speed={-0.05}>
-        <section style={{ position: "relative", width: "100vw", height: "100vh", zIndex: -1 }}>
+        <section style={{ position: "relative", width: "100vw", height: "100vh" }}>
           <div style={{ marginTop: "0", position: "relative", height: "18vh" }}>
             <div style={{ width: "120px", textAlign: "center", position: "absolute", left: "10vw", zIndex: 1 }}>
               <Quote mobile style={QuoteStyle.header}>
@@ -75,9 +69,6 @@ const IndexPageMobileRender: React.FC = () => {
           <div style={{ marginTop: "-5vh" }}>
             <MobileProductCarousel />
           </div>
-          <div style={{ marginTop: "-5vh", width: "100%" }}>
-            <ScrollButton to="#materieprime" deactivatePosition={820} currentPosition={currentScroll} reactivePosition={700} />
-          </div>
         </section>
       </ParallaxLayer>
 
@@ -90,8 +81,8 @@ const IndexPageMobileRender: React.FC = () => {
       <div id="materieprime" style={{ position: "absolute", top: "200vh" }}></div>
 
 
-      <ParallaxLayer offset={2}>
-        <section style={{ position: "absolute", height: "100vh", width: "100vw" }}>
+      <ParallaxLayer offset={2} speed={-0.1}>
+        <section style={{ position: "absolute", height: "100vh", width: "100vw"}}>
           <Centralizer>
             <div style={{ marginTop: "-30vh", width: "100%" }}>
               <div style={{ backgroundColor: "#E3A38B", width: "80vw", height: "40vh", position: "absolute", right: 0 }}>
@@ -108,11 +99,13 @@ const IndexPageMobileRender: React.FC = () => {
               </div>
             </div>
           </Centralizer>
-          <div style={{ marginTop: "-15vh", width: "100%" }}>
-            <ScrollButton up to="#top" deactivatePosition={2000} currentPosition={currentScroll} reactivePosition={700} />
-          </div>
         </section>
       </ParallaxLayer>
+
+      <ParallaxLayer offset={0} speed={-1}>
+        <LayoutHeaderMobile />
+      </ParallaxLayer>
+      
     </Parallax >
   )
 }

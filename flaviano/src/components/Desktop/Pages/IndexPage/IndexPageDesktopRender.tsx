@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { HomePageQuery, QuoteStyle } from "../../../../../types";
 import CategoryCarousel from "../../CategoryCarousel/CategoryCarousel";
 import LayoutHeader from "../../LayoutHeaderDesktop/LayoutHeaderDesktop"
@@ -16,6 +16,10 @@ import LayoutFrame from "../../LayoutFrameDesktop/LayoutFrameDesktop";
 
 const IndexPageDesktopRender: React.FC = () => {
   const [materiePrimeHover, setMateriePrimeHover] = useState(false);
+  let parallax = useRef();
+
+
+  const Top = React.useRef<HTMLInputElement>(null);
 
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
 
@@ -50,10 +54,10 @@ const IndexPageDesktopRender: React.FC = () => {
     }
   });
 
-  let parallax;
+
 
   return (
-    <Parallax pages={6} scrolling={true} ref={ref => parallax = ref}>
+    <Parallax pages={6} scrolling={true} ref={parallax}>
       <BackDrop />
       <LayoutFrame>
         <AnimLogo />

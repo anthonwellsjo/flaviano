@@ -5,7 +5,6 @@
   margin: 0px;
   top: -15vh;
   background: linear-gradient(180deg, lightgray 80%, white 20%);
-  z-index: 100;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
