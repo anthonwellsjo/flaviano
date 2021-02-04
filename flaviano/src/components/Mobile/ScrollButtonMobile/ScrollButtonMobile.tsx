@@ -10,11 +10,12 @@ interface Props {
   deactivatePosition: number,
   reactivePosition: number,
   currentPosition: number,
-  to: string
+  to: string,
+  up?: boolean
 }
 
 
-const ScrollButtonMobile = ({ id, reactivePosition, currentPosition, deactivatePosition, to }: Props) => {
+const ScrollButtonMobile = ({ id, reactivePosition, currentPosition, deactivatePosition, to, up }: Props) => {
   const [isActive, setIsActive] = useState(false);
 
 
@@ -40,7 +41,7 @@ const ScrollButtonMobile = ({ id, reactivePosition, currentPosition, deactivateP
   return (
     <Centralizer>
       <div className={isActive ? classes.animate : classes.hide}>
-        <button style={{cursor:"pointer"}} className={classes.button} onClick={() => onClickEventHandler()}><img style={{ width: "50px" }} src={img} alt="arrow" /></button>
+        <button style={{ cursor: "pointer" }} className={classes.button} onClick={() => onClickEventHandler()}><img style={{ width: "50px", transform: up? "rotate(180deg)" : "rotate(0)" }} src={img} alt="arrow" /></button>
       </div>
     </Centralizer >
   )

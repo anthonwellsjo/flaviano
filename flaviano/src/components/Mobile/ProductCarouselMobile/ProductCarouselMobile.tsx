@@ -14,7 +14,7 @@ const ProductCarouselMobile: React.FC = () => {
   const productData: ProductQuery = useProductQuery();
 
   return (
-    <Carousel dynamicHeight width={"100vw"} showArrows={false} showIndicators={false} showThumbs={false} showStatus={false} swipeable emulateTouch infiniteLoop autoPlay>
+    <Carousel width={"100vw"} showArrows={false} showIndicators={false} showThumbs={false} showStatus={false} swipeable emulateTouch infiniteLoop autoPlay>
       {categoryData.allSanityCategory.edges.map((e: Category, index: number) => {
         const products = productData.allSanityProduct.edges.filter((p: Product) => p.node.category.id == e.node.id);
         return (
