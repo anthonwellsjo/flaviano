@@ -1,14 +1,14 @@
 import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { MateriePrimeQuery, QuoteStyle } from '../../types';
-import LayoutHeader from '../components/LayoutHeader/LayoutHeader';
-import PageTitle from '../components/PageTitle/PageTitle';
-import Quote from '../components/Quote/Quote';
+import LayoutHeader from '../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
+import PageTitle from '../components/Desktop/PageTitleDesktop/PageTitleDesktop';
+import Quote from '../components/Desktop/QuoteDesktop/QuoteDesktop';
 import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';
 import { useMateriePrimeQuery } from '../hooks/queries/useMateriePrimeQuery';
 import Img from 'gatsby-image';
-import BackDrop from '../components/BackDrop/BackDrop';
-import LayoutFrame from '../components/LayoutFrame/LayoutFrame';
+import BackDrop from '../components/Desktop/BackDropDesktop/BackDropDesktop';
+import LayoutFrame from '../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
 
 const MateriePrimePage: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();

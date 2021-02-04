@@ -3,12 +3,12 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { ProductPageDataQuery, QuoteStyle } from '../../types';
-import LayoutHeader from '../components/LayoutHeader/LayoutHeader';
+import LayoutHeader from '../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
 import classes from './ProductPage.module.css';
-import ProductDescriptionView from '../components/ProductPage/ProductDescriptionView/ProductDescriptionView';
-import Quote from '../components/Quote/Quote';
+import ProductDescriptionView from '../components/Desktop/Pages/ProductPage/ProductDescriptionViewDesktop/ProductDescriptionViewDesktop';
+import Quote from '../components/Desktop/QuoteDesktop/QuoteDesktop';
 import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';
-import PageTitle from '../components/PageTitle/PageTitle';
+import PageTitle from '../components/Desktop/PageTitleDesktop/PageTitleDesktop';
 
 const ProductPage = ({ data }: ProductPageDataQuery) => {
   console.log("product data", data)

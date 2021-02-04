@@ -1,15 +1,15 @@
 import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { BabaPageQuery, QuoteStyle } from '../../../types';
-import LayoutHeader from '../../components/LayoutHeader/LayoutHeader';
-import PageTitle from '../../components/PageTitle/PageTitle';
-import Quote from '../../components/Quote/Quote';
+import LayoutHeader from '../../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
+import PageTitle from '../../components/Desktop/PageTitleDesktop/PageTitleDesktop';
+import Quote from '../../components/Desktop/QuoteDesktop/QuoteDesktop';
 import Centralizer from '../../components/StructureComponents/Centralizer/Centralizer';
 import { useBabaPageQuery } from '../../hooks/queries/useBabaPageQuery';
 import Img from 'gatsby-image';
-import BabaProductsPreview from '../../components/BabaPage/BabaProductsPreview/BabaProductsPreview';
-import BackDrop from '../../components/BackDrop/BackDrop';
-import LayoutFrame from '../../components/LayoutFrame/LayoutFrame';
+import BabaProductsPreview from '../../components/Desktop/Pages/BabaPage/BabaProductsPreviewDesktop/BabaProductsPreviewDesktop';
+import BackDrop from '../../components/Desktop/BackDropDesktop/BackDropDesktop';
+import LayoutFrame from '../../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
 
 const BabaPage: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
@@ -19,13 +19,13 @@ const BabaPage: React.FC = () => {
 
   return (
     <Parallax pages={2} scrolling={true} ref={ref => parallax = ref}>
+      <BackDrop />
       <LayoutFrame>
-        <BackDrop />
         <LayoutHeader />
         {/* ------------HEADER SECTION */}
 
         <ParallaxLayer factor={0} speed={-1}>
-          <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: 100, position: "relative", }}>
+          <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: -1, position: "relative" }}>
             <div style={{ maxWidth: "100vw", width: "110%", position: "absolute" }}>
               <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
               {/* <p className="legend">{e.node.title}</p> */}
@@ -57,10 +57,12 @@ const BabaPage: React.FC = () => {
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={1}>
 
-          <div style={{ zIndex: 299, width: "100%", marginTop: "-113vh" }}>
+          <div style={{ zIndex: 1, width: "100%", marginTop: "-113vh" }}>
             <BabaProductsPreview />
           </div>
         </ParallaxLayer>
+
+
       </LayoutFrame>
     </Parallax >
   )

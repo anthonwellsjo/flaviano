@@ -1,15 +1,15 @@
 import React, { useContext, useEffect } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Product, ProductQuery, QuoteStyle } from '../../../types';
-import LayoutHeader from '../../components/LayoutHeader/LayoutHeader';
-import PageTitle from '../../components/PageTitle/PageTitle';
-import Quote from '../../components/Quote/Quote';
+import LayoutHeader from '../../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
+import PageTitle from '../../components/Desktop/PageTitleDesktop/PageTitleDesktop';
+import Quote from '../../components/Desktop/QuoteDesktop/QuoteDesktop';
 import Centralizer from '../../components/StructureComponents/Centralizer/Centralizer';
 import { useProductQuery } from '../../hooks/queries/useProductQuery';
-import ProductView from '../../components/ProductPage/ProductView/ProductView';
-import BackDrop from '../../components/BackDrop/BackDrop';
+import ProductView from '../../components/Desktop/Pages/ProductPage/ProductViewDesktop/ProductViewDesktop';
+import BackDrop from '../../components/Desktop/BackDropDesktop/BackDropDesktop';
 import { PageContext } from '../../contexts/pageContext';
-import LayoutFrame from '../../components/LayoutFrame/LayoutFrame';
+import LayoutFrame from '../../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
 
 
 const BiscottiPage: React.FC = () => {

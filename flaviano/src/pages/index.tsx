@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
-import IndexPageDesktopRender from "../components/IndexPage/IndexPageDesktopRender";
-import IndexPageMobileRender from "../components/IndexPage/IndexPageMobileRender";
+import IndexPageDesktopRender from "../components/Desktop/Pages/IndexPage/IndexPageDesktopRender";
+import IndexPageMobileRender from "../components/Mobile/Pages/IndexPage/IndexPageMobileRender";
 import { useViewport } from "../hooks/useViewPort";
 
 

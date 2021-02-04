@@ -1,15 +1,15 @@
 import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { ChiSiamoPageQuery } from '../../types';
-import LayoutHeader from '../components/LayoutHeader/LayoutHeader';
-import PageTitle from '../components/PageTitle/PageTitle';
+import LayoutHeader from '../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
+import PageTitle from '../components/Desktop/PageTitleDesktop/PageTitleDesktop';
 import { useChiSiamoQuery } from '../hooks/queries/useChiSiamoQuery';
 import Img from 'gatsby-image';
-import Quote from '../components/Quote/Quote';
+import Quote from '../components/Desktop/QuoteDesktop/QuoteDesktop';
 import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';
 import flavianoImg from '../images/flavianoLogo.png';
-import BackDrop from '../components/BackDrop/BackDrop';
-import LayoutFrame from '../components/LayoutFrame/LayoutFrame';
+import BackDrop from '../components/Desktop/BackDropDesktop/BackDropDesktop';
+import LayoutFrame from '../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
 
 const ChiSiamoPage = () => {
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
