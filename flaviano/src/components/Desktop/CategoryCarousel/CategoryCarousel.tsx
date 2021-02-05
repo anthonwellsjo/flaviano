@@ -18,7 +18,7 @@ const CategoryCarousel: React.FC = () => {
       <Carousel showIndicators showThumbs={false} showStatus={false} swipeable emulateTouch infiniteLoop autoPlay>
         {data.allSanityCategory.edges.map((e: any) => {
           return (
-            <div key={e.node.slug} style={{ maxWidth: "100%", height: "40vw", maxHeight: "400px", overflow: "hidden" }}>
+            <div key={e.node.slug} style={{ maxWidth: "100%", height: "30vw", maxHeight: "400px", overflow: "hidden" }}>
               <Img fluid={e.node.categoryCarouselImage.asset.fluid} alt="Category image" />
               {/* <p className="legend">{e.node.title}</p> */}
             </div>

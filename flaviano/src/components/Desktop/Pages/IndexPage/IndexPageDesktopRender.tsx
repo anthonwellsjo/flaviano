@@ -62,7 +62,7 @@ const IndexPageDesktopRender: React.FC = () => {
       <LayoutFrame>
         <AnimLogo />
         <LayoutHeader />
-        <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "40vh" }}>
+        <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "100vh" }}>
           <ParallaxLayer offset={0} speed={0.05}>
             <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
               {sanityHomePage.quoteHeaderText}
@@ -70,9 +70,11 @@ const IndexPageDesktopRender: React.FC = () => {
           </ParallaxLayer>
         </section>
 
-        <section style={{ position: "relative", left: "0", right: "0", top: "0", marginTop: "8vh", height: "60%", zIndex: 1 }}>
+        <section style={{ position: "relative", left: "0", right: "0", top: "0", height: "60%", zIndex: 1 }}>
           <ParallaxLayer offset={0} speed={-0.05}>
-            <CategoryCarousel />
+            <div style={{marginTop:"-50vh"}}>
+              <CategoryCarousel />
+            </div>
           </ParallaxLayer>
         </section>
 
@@ -83,10 +85,10 @@ const IndexPageDesktopRender: React.FC = () => {
         </ParallaxLayer>
         <section style={{ position: "relative", height: "100vh" }}>
           <div style={{ height: "40vh" }}>
-            <ParallaxLayer offset={0} speed={-0.35}>
+            <ParallaxLayer offset={0} speed={-0.25}>
 
               <Centralizer column>
-                <div style={{ width: "70%", marginTop: "-1400px" }}>
+                <div style={{ position: "absolute", width: "70%", marginTop: "-100vh" }}>
                   <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
                     {sanityHomePage.quoteBelowCarouselText}
                   </Quote>
@@ -95,6 +97,8 @@ const IndexPageDesktopRender: React.FC = () => {
             </ParallaxLayer>
 
           </div>
+
+
           <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10%", bottom: "15vh" }}>
             <Quote style={QuoteStyle.header}>
               P
