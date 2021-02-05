@@ -8,16 +8,16 @@
 }
 
 .innerWrapper {
-  width: 80vw;
+  width: 80%;
   height: 60vh;
   position: relative;
 }
 
 .colorCube {
-  width: 50vw;
+  width: 50%;
   height: 30vh;
   position: absolute;
-  right: 10vw;
+  right: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +27,7 @@
 .titleWrapper{
   position: relative;
   margin-top: -45px;
-  margin-left: -20vw;
+  margin-left: -20%;
 }
 .titleOverLine{
   position: absolute;
@@ -50,7 +50,7 @@
 .categoryDescriptionContainer{
   position: absolute;
   display: flex;
-  width: 35vw;
+  width: 35%;
   margin-top: 110px;
   flex-direction: column;
   font-size: 1.5em;
@@ -71,7 +71,7 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  margin-left: 10vw;
+  margin-left: 10%;
 }
 
 .imageWrapper {
@@ -91,7 +91,7 @@
 
 .line {
   height: 3px;
-  width: 14vw;
+  width: 14%;
   background-color: black;
   margin-bottom: 2vh;
 }

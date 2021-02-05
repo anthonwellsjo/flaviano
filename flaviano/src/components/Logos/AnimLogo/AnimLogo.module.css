@@ -3,7 +3,7 @@
   overflow: visible;
   height: 300px;
   top: 5vh;
-  left: 8vw;
+  left: 8%;
   transform: scale(1.1);
   border-radius: 100%;
   backdrop-filter: blur(10px);
@@ -13,7 +13,7 @@
 .firstStartBackdrop {
   position: absolute;
   z-index: 1000;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -23,12 +23,12 @@
 
 @media (max-width: 1200px) {
   .container {
-    transform: scale(0.9) translateX(-3vw) translateY(-3vh) ;
+    transform: scale(0.9) translateX(-3%) translateY(-3vh) ;
   }
 }
 @media (max-width: 1100px) {
   .container {
-    transform: scale(0.8) translateX(-5vw) translateY(-5vh) ;
+    transform: scale(0.8) translateX(-5%) translateY(-5vh) ;
   }
 }
 /*

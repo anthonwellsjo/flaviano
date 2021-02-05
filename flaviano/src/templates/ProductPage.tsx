@@ -23,7 +23,7 @@ const ProductPage = ({ data }: ProductPageDataQuery) => {
               <Quote style={QuoteStyle.header}>{data.sanityProduct.category.title.split("").splice(0, 1).join()}</Quote>
             </div>
           </Centralizer>
-          <div style={{ position: "absolute", top: "60vh", left: "10vw", textAlign:"right"}}>
+          <div style={{ position: "absolute", top: "60vh", left: "10%", textAlign:"right"}}>
             <div style={{ height: "3px", width: "50px", backgroundColor: "black", marginBottom: "1em" }}></div>
             <PageTitle fontSize="4.5em" letterSpacing=".15em">{data.sanityProduct.title}</PageTitle>
             <div style={{ height: "3px", width: "50px", backgroundColor: "black", marginTop: "1em", marginLeft: "auto", marginRight: ".5em" }}></div>

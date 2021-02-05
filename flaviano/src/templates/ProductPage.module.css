@@ -1,5 +1,5 @@
 .productImg {
-  width: 100vw;
+  width: 100%;
 }
 
 .firstPage {
@@ -10,7 +10,7 @@
 
 .secondPage{
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
   background-color: white;
   overflow: hidden;

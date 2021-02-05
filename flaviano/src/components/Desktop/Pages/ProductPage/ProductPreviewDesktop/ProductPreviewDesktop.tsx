@@ -58,7 +58,7 @@ const ProductPreviewDesktop = (props: ProductPreviewProps) => {
             <div className={classes.line}></div>
             <div className={classes.imageWrapper}>
               <ParallaxLayer offset={0} speed={0.1}>
-                <div style={{width: "25vw", maxWidth:"400px", transform: "translateY(340px) translateX(-25%)"}}>
+                <div style={{width: "25%", maxWidth:"400px", transform: "translateY(340px) translateX(-25%)"}}>
                   <Img className={classes.image} fluid={props.img} alt="Product image" />
                 </div>
               </ParallaxLayer>

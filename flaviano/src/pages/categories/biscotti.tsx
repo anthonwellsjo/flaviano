@@ -33,14 +33,14 @@ const BiscottiPage: React.FC = () => {
         <ParallaxLayer factor={0} speed={-1}>
           <section style={{ position: "absolute", left: "0", right: "0", top: "0", height: "100vh" }}>
             <Centralizer>
-              <div style={{ position: "absolute", width: "55vw", top: "45vh", marginLeft: "25vw" }}>
+              <div style={{ position: "absolute", width: "55%", top: "45vh", marginLeft: "25%" }}>
                 <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Le materie prime utilizzate per i nostri prodotti provengono dalle ricche e generose terre campane che offrono eccellenze riconosciute in tutto il mondo.</Quote>
               </div>
             </Centralizer>
-            <div style={{ position: "absolute", width: "6em", marginLeft: "10vw", textAlign: "center", bottom: "30vh" }}>
+            <div style={{ position: "absolute", width: "6em", marginLeft: "10%", textAlign: "center", bottom: "30vh" }}>
               <Quote style={QuoteStyle.header}>B</Quote>
             </div>
-            <div style={{ position: "absolute", right: "20vw", bottom: "15vh" }}>
+            <div style={{ position: "absolute", right: "20%", bottom: "15vh" }}>
               <PageTitle>Biscotti</PageTitle>
             </div>
           </section>

@@ -5,7 +5,7 @@ interface pageProps {
   fontSize?: string,
   letterSpacing?: string,
   children: string,
-  lineHeight?: string
+  lineHeight?: string,
 }
 
 const PageTitleDesktop = (props: pageProps) => {

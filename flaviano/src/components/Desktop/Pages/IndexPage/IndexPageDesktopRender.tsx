@@ -45,8 +45,8 @@ const IndexPageDesktopRender: React.FC = () => {
   });
   const materiePrimeLineStyles = useSpring({
     reverse: materiePrimeHover,
-    from: { width: "20vw" },
-    to: { width: "8vw" },
+    from: { width: "20%" },
+    to: { width: "8%" },
     config: {
       mass: 1,
       tension: 300,
@@ -62,7 +62,7 @@ const IndexPageDesktopRender: React.FC = () => {
       <LayoutFrame>
         <AnimLogo />
         <LayoutHeader />
-        <section style={{ position: "relative", top: "30vh", width: "50vw", left: "40vw", height: "40vh" }}>
+        <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "40vh" }}>
           <ParallaxLayer offset={0} speed={0.05}>
             <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
               {sanityHomePage.quoteHeaderText}
@@ -70,7 +70,7 @@ const IndexPageDesktopRender: React.FC = () => {
           </ParallaxLayer>
         </section>
 
-        <section style={{ position: "relative", left: "0", right: "0", top: "0", marginTop: "8vh", height: "60vw", zIndex: 1 }}>
+        <section style={{ position: "relative", left: "0", right: "0", top: "0", marginTop: "8vh", height: "60%", zIndex: 1 }}>
           <ParallaxLayer offset={0} speed={-0.05}>
             <CategoryCarousel />
           </ParallaxLayer>
@@ -86,7 +86,7 @@ const IndexPageDesktopRender: React.FC = () => {
             <ParallaxLayer offset={0} speed={-0.35}>
 
               <Centralizer column>
-                <div style={{ width: "70vw", marginTop: "-1400px" }}>
+                <div style={{ width: "70%", marginTop: "-1400px" }}>
                   <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
                     {sanityHomePage.quoteBelowCarouselText}
                   </Quote>
@@ -95,12 +95,12 @@ const IndexPageDesktopRender: React.FC = () => {
             </ParallaxLayer>
 
           </div>
-          <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10vw", bottom: "15vh" }}>
+          <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10%", bottom: "15vh" }}>
             <Quote style={QuoteStyle.header}>
               P
           </Quote>
           </div>
-          <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "35vw", bottom: "5vh" }}>
+          <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "35%", bottom: "5vh" }}>
             <PageTitle>Prodotti</PageTitle>
           </div>
 
@@ -124,13 +124,13 @@ const IndexPageDesktopRender: React.FC = () => {
 
           <ParallaxLayer speed={0.2}>
             <Link to="/materieprime/">
-              <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65vw", height: "75vh", backgroundColor: "#E3A38B", marginTop: "95vh", right: "0" }}>
+              <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65%", height: "75vh", backgroundColor: "#E3A38B", marginTop: "95vh", right: "0" }}>
               </animated.div>
             </Link>
           </ParallaxLayer>
           <ParallaxLayer speed={0.4}>
             <Link to="/materieprime/">
-              <animated.div style={{ ...materiePrimeTitleStyles, position: "absolute", marginLeft: "10vw", marginTop: "190vh" }}>
+              <animated.div style={{ ...materiePrimeTitleStyles, position: "absolute", marginLeft: "10%", marginTop: "190vh" }}>
                 <PageTitle>Materie Prime</PageTitle>
                 <Centralizer>
                   <animated.div style={{ ...materiePrimeLineStyles, cursor: "pointer", height: "2px", marginTop: "2.5vh", backgroundColor: "black" }}></animated.div>
@@ -141,7 +141,7 @@ const IndexPageDesktopRender: React.FC = () => {
           </ParallaxLayer>
           <ParallaxLayer speed={0.25}>
             <Link to="/materieprime/">
-              <animated.div style={{ cursor: "pointer", position: "absolute", width: "45vw", marginTop: "150vh", right: "10vw" }}>
+              <animated.div style={{ cursor: "pointer", position: "absolute", width: "45%", marginTop: "150vh", right: "10%" }}>
                 <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
               </animated.div>
             </Link>
@@ -155,7 +155,7 @@ const IndexPageDesktopRender: React.FC = () => {
             </div>
           </ParallaxLayer>
           <ParallaxLayer factor={3} speed={0.45}>
-            <div style={{ position: "absolute", marginTop: "50vh", left: "10vw", top: "25vh" }}>
+            <div style={{ position: "absolute", marginTop: "50vh", left: "10%", top: "25vh" }}>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", backgroundColor: "black" }}></div>
               <PageTitle>Contatti</PageTitle>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", marginTop: "4px", backgroundColor: "black" }}></div>

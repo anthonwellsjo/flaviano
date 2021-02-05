@@ -17,6 +17,6 @@
 }
 
 .productCard:hover {
-  transform: translateY(-250px);
+  transform: translateY(-300px);
   transition: transform 0.3s;
 }
