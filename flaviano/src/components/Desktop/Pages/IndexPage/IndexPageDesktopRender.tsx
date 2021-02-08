@@ -151,16 +151,16 @@ const IndexPageDesktopRender: React.FC = () => {
         </section>
 
         {/* ------------------------------CONTACT SECTION */}
-        <section style={{ position: "relative" }}>
+        <section style={{ position: "relative", height: "80vh", zIndex: 1 }}>
           <ParallaxLayer offset={0.9999} speed={0.12}>
             <ContactBar fluid={sanityHomePage.contactImg.asset.fluid} />
           </ParallaxLayer>
-          <ParallaxLayer offset={1.69} speed={0.35}>
-            <div style={{ position: "absolute", zIndex: 2, backgroundColor: "#F0E9E4", width: "100%", height: "350px", top: "200px" }}>
+          <ParallaxLayer offset={0.69} speed={0.35}>
+            <div style={{ position: "absolute", zIndex: 5, backgroundColor: "#F0E9E4", width: "100%", height: "250px", top: "175vh" }}>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={1.9999} speed={0.26}>
-            <div style={{ position: "absolute", left: "10%", zIndex: 1, marginTop: "-100px" }}>
+          <ParallaxLayer offset={0.9999} speed={0.26}>
+            <div style={{ position: "absolute", left: "10%", zIndex: 5, top: "115vh" }}>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", backgroundColor: "black" }}></div>
               <PageTitle>Contatti</PageTitle>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", marginTop: "4px", backgroundColor: "black" }}></div>

@@ -1,4 +1,43 @@
-icon{
-  width: 50px; 
-  height: 50px;
+.icon {
+  
+  padding: 8px;
+  margin-top: -30px;
+}
+
+.link {
+  cursor: pointer;
+  z-index: 100;
+  :hover {
+    backdrop-filter: blur(1px);
+    transform: scale(0.9);
+    border-radius: 100%;
+  }
+}
+
+.text {
+  font-family: HomepageBaukastenBold;
+  font-size: .9em;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.mail,
+.phone {
+  font-family: HomepageBaukastenBook;
+  color: white;
+  cursor: pointer;
+  font-size: .9em;
+}
+
+.mail:hover,
+.phone:hover {
+  color: black;
+}
+
+.mail {
+  margin-bottom: 0;
+}
+.phone {
+  margin-top: 0;
+  margin-bottom: -20px;
 }

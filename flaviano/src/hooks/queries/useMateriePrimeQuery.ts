@@ -9,7 +9,7 @@ export const useMateriePrimeQuery = () => {
       }
       albicocceImg {
         asset {
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 1000) {
             ...GatsbySanityImageFluid
           }
         }
@@ -20,7 +20,7 @@ export const useMateriePrimeQuery = () => {
       }
       lievitoMadreImg {
         asset {
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 1000) {
             ...GatsbySanityImageFluid
           }
         }
@@ -31,7 +31,7 @@ export const useMateriePrimeQuery = () => {
       }
       limoniImg {
         asset {
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 1000) {
             ...GatsbySanityImageFluid
           }
         }
@@ -42,7 +42,7 @@ export const useMateriePrimeQuery = () => {
       }
       melaImg {
         asset {
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 1000) {
             ...GatsbySanityImageFluid
           }
         }
@@ -53,7 +53,7 @@ export const useMateriePrimeQuery = () => {
       }
       mieleImg {
         asset {
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 1000) {
             ...GatsbySanityImageFluid
           }
         }
@@ -64,7 +64,7 @@ export const useMateriePrimeQuery = () => {
       }
       nocciolaImg {
         asset {
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 1000) {
             ...GatsbySanityImageFluid
           }
         }
@@ -75,7 +75,7 @@ export const useMateriePrimeQuery = () => {
       }
       nociImg {
         asset {
-          fluid(maxWidth: 500) {
+          fluid(maxWidth: 1000) {
             ...GatsbySanityImageFluid
           }
         }

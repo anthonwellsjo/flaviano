@@ -15,7 +15,7 @@ export const useCategoryPreviewQuery = () => {
           }
           categoryParallaxIcon {
             asset {
-              fluid(maxWidth: 400){
+              fluid(maxWidth: 800){
                 ...GatsbySanityImageFluid
               }
           }

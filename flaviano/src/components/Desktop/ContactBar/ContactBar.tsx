@@ -15,14 +15,25 @@ interface Props {
 const ContactBar = ({ fluid }: Props) => {
   return (
     <>
-      <div style={{ position: "absolute", marginTop: "450px", backgroundColor: "red", width: "100%", height: "200px" }}>
-        <Centralizer>
-          <img className={classes.icon} src={fb} alt="facebook social" />
-          <img src={pint} alt="pinterest social" />
-          <img src={inst} alt="instagram social" />
+      <div style={{ position: "absolute", marginTop: "450px", width: "50%", height: "200px", zIndex: 1 }}>
+        <Centralizer column>
+          <p className={classes.text}>PER MAGGIORI INFORMAZIONI CONTATTACI</p>
+          <p onClick={() => document.execCommand("info@flavianodolci.com")} className={classes.mail}>info@flavianodolci.com</p>
+          <p onClick={() => document.execCommand("+39 366 529 3028")} className={classes.phone}>+39 366 529 3028</p>
+          <Centralizer>
+            <a className={classes.link} href="www.facebook.com" target="_blank">
+              <img className={classes.icon} src={fb} alt="facebook social" />
+            </a>
+            <a className={classes.link} href="www.facebook.com" target="_blank">
+              <img className={classes.icon} src={pint} alt="pinterest social" />
+            </a>
+            <a style={{marginTop:"-4px", marginLeft: "6px"}} className={classes.link} href="www.facebook.com" target="_blank">
+              <img className={classes.icon} src={inst} alt="instagram social" />
+            </a>
+          </Centralizer>
         </Centralizer>
       </div>
-      <div style={{ maxWidth: "100%", marginTop: "350px", height: "300px", overflow: "hidden" }}>
+      <div onClick={() => alert("HEJ")} style={{ maxWidth: "100%", marginTop: "350px", height: "300px", overflow: "hidden" }}>
         <Img fluid={fluid} alt="Hands baking" />
       </div>
     </>

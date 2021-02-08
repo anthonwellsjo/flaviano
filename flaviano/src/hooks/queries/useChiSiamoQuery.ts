@@ -6,14 +6,14 @@ export const useChiSiamoQuery = () => {
           sanityChiSiamoPage {
             headerImg {
               asset {
-                fluid(maxWidth: 1000) {
+                fluid(maxWidth: 2000) {
                   ...GatsbySanityImageFluid
                 }
               }
             }
             footerImg {
               asset {
-                fluid(maxWidth: 1000) {
+                fluid(maxWidth: 2000) {
                   ...GatsbySanityImageFluid
                 }
               }

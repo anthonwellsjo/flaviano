@@ -26,7 +26,7 @@ export const useProductQuery = () => {
           ingredientsTwo
           productPhoto {
             asset {
-              fluid(maxWidth: 500){
+              fluid(maxWidth: 1000){
                 ...GatsbySanityImageFluid
               }
           }
