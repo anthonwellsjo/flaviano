@@ -3,7 +3,7 @@ import { HomePageQuery, QuoteStyle } from "../../../../../types";
 import CategoryCarousel from "../../CategoryCarousel/CategoryCarousel";
 import LayoutHeader from "../../LayoutHeaderDesktop/LayoutHeaderDesktop"
 import PageTitle from "../../PageTitleDesktop/PageTitleDesktop";
-import ProductPreviews from "../ProductPage/ProductPreviewsDesktop/ProductPreviewsDesktop";
+import ProductPreviewsDesktop from "../ProductPage/ProductPreviewsDesktop/ProductPreviewsDesktop";
 import Quote from "../../QuoteDesktop/QuoteDesktop";
 import Centralizer from "../../../StructureComponents/Centralizer/Centralizer";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
@@ -13,6 +13,8 @@ import BackDrop from "../../BackDropDesktop/BackDropDesktop";
 import AnimLogo from "../../../Logos/AnimLogo/AnimLogo";
 import { useHomeQuery } from "../../../../hooks/queries/useHomeQuery";
 import LayoutFrame from "../../LayoutFrameDesktop/LayoutFrameDesktop";
+import Img from 'gatsby-image';
+import ContactBar from '../../ContactBar/ContactBar';
 
 const IndexPageDesktopRender: React.FC = () => {
   const [materiePrimeHover, setMateriePrimeHover] = useState(false);
@@ -57,7 +59,7 @@ const IndexPageDesktopRender: React.FC = () => {
 
 
   return (
-    <Parallax pages={6} scrolling={true} ref={parallax}>
+    <Parallax pages={6.5} scrolling={true} ref={parallax}>
       <BackDrop />
       <LayoutFrame>
         <AnimLogo />
@@ -72,7 +74,7 @@ const IndexPageDesktopRender: React.FC = () => {
 
         <section style={{ position: "relative", left: "0", right: "0", top: "0", height: "60%", zIndex: 1 }}>
           <ParallaxLayer offset={0} speed={-0.05}>
-            <div style={{marginTop:"-50vh"}}>
+            <div style={{ marginTop: "-50vh" }}>
               <CategoryCarousel />
             </div>
           </ParallaxLayer>
@@ -86,7 +88,6 @@ const IndexPageDesktopRender: React.FC = () => {
         <section style={{ position: "relative", height: "100vh" }}>
           <div style={{ height: "40vh" }}>
             <ParallaxLayer offset={0} speed={-0.25}>
-
               <Centralizer column>
                 <div style={{ position: "absolute", width: "70%", marginTop: "-100vh" }}>
                   <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
@@ -99,7 +100,7 @@ const IndexPageDesktopRender: React.FC = () => {
           </div>
 
 
-          <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10%", bottom: "15vh" }}>
+          <div style={{ width: "120px", height: "150px", textAlign: "center", position: "absolute", left: "10%", bottom: "60px" }}>
             <Quote style={QuoteStyle.header}>
               P
           </Quote>
@@ -116,55 +117,56 @@ const IndexPageDesktopRender: React.FC = () => {
 
         <section style={{ position: "relative", height: "200vh", backgroundColor: "white" }}>
           <ParallaxLayer speed={-0.05}>
-
-            <ProductPreviews />
+            <ProductPreviewsDesktop />
           </ParallaxLayer>
 
         </section>
         {/* ------------------------------MATERIE PRIME SECTION */}
 
 
-        <section onMouseEnter={() => setMateriePrimeHover(true)} onMouseLeave={() => setMateriePrimeHover(false)} style={{ position: "relative", height: "220vh", marginTop: "20vh", zIndex: -1 }}>
-
-          <ParallaxLayer speed={0.2}>
+        <section style={{ position: "relative", height: "100vh", zIndex: 1 }}>
+          <ParallaxLayer offset={0.999} speed={0.1}>
             <Link to="/materieprime/">
-              <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65%", height: "75vh", backgroundColor: "#E3A38B", marginTop: "95vh", right: "0" }}>
+              <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65%", height: "500px", backgroundColor: "#E3A38B", right: "0" }}>
+                <ParallaxLayer offset={0} speed={-0.15}>
+                  <Link to="/materieprime/">
+                    <animated.div style={{ cursor: "pointer", position: "absolute", width: "80%", right: "10%", top: "-40%" }}>
+                      <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
+                    </animated.div>
+                  </Link>
+                </ParallaxLayer>
               </animated.div>
             </Link>
           </ParallaxLayer>
-          <ParallaxLayer speed={0.4}>
+          <ParallaxLayer offset={0.9} speed={0.1}>
             <Link to="/materieprime/">
-              <animated.div style={{ ...materiePrimeTitleStyles, position: "absolute", marginLeft: "10%", marginTop: "190vh" }}>
+              <animated.div onMouseEnter={() => setMateriePrimeHover(true)} onMouseLeave={() => setMateriePrimeHover(false)} style={{ ...materiePrimeTitleStyles, position: "absolute", marginLeft: "10%" }}>
                 <PageTitle>Materie Prime</PageTitle>
                 <Centralizer>
                   <animated.div style={{ ...materiePrimeLineStyles, cursor: "pointer", height: "2px", marginTop: "2.5vh", backgroundColor: "black" }}></animated.div>
                 </Centralizer>
               </animated.div>
             </Link>
-
-          </ParallaxLayer>
-          <ParallaxLayer speed={0.25}>
-            <Link to="/materieprime/">
-              <animated.div style={{ cursor: "pointer", position: "absolute", width: "45%", marginTop: "150vh", right: "10%" }}>
-                <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
-              </animated.div>
-            </Link>
           </ParallaxLayer>
         </section>
 
         {/* ------------------------------CONTACT SECTION */}
-        <section style={{ position: "relative", height: "90vh", marginTop: "40vh" }}>
-          <ParallaxLayer factor={3} speed={0.35}>
-            <div style={{ position: "absolute", backgroundColor: "#F0E9E4", width: "100%", height: "60vh", }}>
+        <section style={{ position: "relative" }}>
+          <ParallaxLayer offset={0.9999} speed={0.12}>
+            <ContactBar fluid={sanityHomePage.contactImg.asset.fluid} />
+          </ParallaxLayer>
+          <ParallaxLayer offset={1.69} speed={0.35}>
+            <div style={{ position: "absolute", zIndex: 2, backgroundColor: "#F0E9E4", width: "100%", height: "350px", top: "200px" }}>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer factor={3} speed={0.45}>
-            <div style={{ position: "absolute", marginTop: "50vh", left: "10%", top: "25vh" }}>
+          <ParallaxLayer offset={1.9999} speed={0.26}>
+            <div style={{ position: "absolute", left: "10%", zIndex: 1, marginTop: "-100px" }}>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", backgroundColor: "black" }}></div>
               <PageTitle>Contatti</PageTitle>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", marginTop: "4px", backgroundColor: "black" }}></div>
             </div>
           </ParallaxLayer>
+
         </section>
       </LayoutFrame>
     </Parallax >

@@ -6,6 +6,13 @@ export const useHomeQuery = () => {
           sanityHomePage {
             quoteHeaderText
             quoteBelowCarouselText
+            contactImg {
+            asset {
+              fluid(maxWidth: 2000){
+                ...GatsbySanityImageFluid
+              }
+          }
+        }
           }
         }        
   `

@@ -15,5 +15,16 @@ export default {
       type: 'text',
       validation: v => v.required()
     },
+    {
+      name: 'contactImg',
+      title: 'Contact Image',
+      type: 'image',
+      validation: v => v.required(),
+      options:
+      {
+        crop: true,
+        hotspot: true
+      }
+    },
   ]
 }

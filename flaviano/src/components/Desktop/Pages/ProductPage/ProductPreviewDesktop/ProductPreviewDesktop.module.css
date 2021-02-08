@@ -14,10 +14,10 @@
 }
 
 .colorCube {
-  width: 50%;
-  height: 30vh;
+  width: 70%;
+  height: 250px;
   position: absolute;
-  right: 10%;
+  right: 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,7 +50,7 @@
 .categoryDescriptionContainer{
   position: absolute;
   display: flex;
-  width: 35%;
+  width: 400px;
   margin-top: 110px;
   flex-direction: column;
   font-size: 1.5em;
@@ -91,7 +91,7 @@
 
 .line {
   height: 3px;
-  width: 14%;
+  width: 200px;
   background-color: black;
   margin-bottom: 2vh;
 }

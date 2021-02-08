@@ -182,6 +182,11 @@ export interface CategoryQuery {
 export interface HomePageQuery {
   sanityHomePage: {
     quoteHeaderText: string,
-    quoteBelowCarouselText: string
+    quoteBelowCarouselText: string,
+    contactImg: {
+      asset: {
+        fluid: any
+      }
+    },
   }
 }
