@@ -14,7 +14,8 @@ interface ProductPreviewProps {
   categorySlug: string,
   title: string,
   color: string,
-  products?: Array<Product>
+  products?: Array<Product>,
+  index: number
 }
 
 const ProductPreviewMobile = (props: ProductPreviewProps) => {
@@ -22,27 +23,23 @@ const ProductPreviewMobile = (props: ProductPreviewProps) => {
 
   return (
     <div className={classes.wrapper}>
-      <Link to={`/categories/${props.categorySlug}`}>
+      {/* <Link to={`/categories/${props.categorySlug}`}> */}
+      <div style={{ backgroundColor: props.color }} className={classes.colorCube} >
         <Centralizer>
-          <div style={{ backgroundColor: props.color }} className={classes.colorCube} >
-            <Centralizer>
-              <div className={classes.imageWrapper}>
-                <ParallaxLayer offset={0} speed={0.1}>
-                  <div className={classes.imgWrap}>
-                    <Img className={classes.image} fluid={props.img} alt="Product image" />
-                  </div>
-                </ParallaxLayer>
+          <div className={classes.imageWrapper}>
+            <ParallaxLayer offset={0} speed={0.05}>
+              <div className={classes.imgWrap}>
+                <Img className={classes.image} fluid={props.img} alt="Product image" />
               </div>
-            </Centralizer>
-            <div className={classes.titleWrapper}>
-              <span className={classes.title}>{props.title}</span>
-              <Centralizer>
-                <div className={classes.line}></div>
-              </Centralizer>
-            </div>
+            </ParallaxLayer>
           </div>
         </Centralizer>
-      </Link>
+      </div>
+      {/* </Link> */}
+      <div className={classes.titleWrapper}>
+        <span className={classes.title}>{props.title}</span>
+        <div className={classes.line}></div>
+      </div>
     </div >
 
   )

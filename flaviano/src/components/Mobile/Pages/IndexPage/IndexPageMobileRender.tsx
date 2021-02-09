@@ -9,7 +9,7 @@ import BackDrop from "../../../Desktop/BackDropDesktop/BackDropDesktop";
 import { useHomeQuery } from "../../../../hooks/queries/useHomeQuery";
 import AnimLogoMobile from '../../../Logos/AnimLogoMobile/AnimLogoMobile';
 import { useViewport } from '../../../../hooks/useViewPort';
-import MobileProductCarousel from '../../Components/ProductCarouselMobile/ProductCarouselMobile';
+import MobileProducts from '../../Components/MobileProducts/MobileProducts';
 import ScrollButton from '../../Components/ScrollButtonMobile/ScrollButtonMobile';
 import useScroll from '../../../../hooks/useScroll';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
@@ -28,7 +28,7 @@ const IndexPageMobileRender: React.FC = () => {
 
   return (
     <>
-      <Parallax pages={3} scrolling={!page.burgerMenuOpen} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={2.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.1}>
           <LayoutHeaderMobile />
@@ -60,10 +60,15 @@ const IndexPageMobileRender: React.FC = () => {
 
         <div id="products" style={{ position: "absolute", top: "100%" }}></div>
 
+        <ParallaxLayer offset={1} speed={-0.005}>
+          <div style={{ marginTop: "5%" }}>
+            <MobileProducts />
+          </div>
+        </ParallaxLayer>
 
-        <ParallaxLayer offset={0.8} speed={0.1}>
+        <ParallaxLayer offset={0.9} speed={0.1}>
           <section style={{ position: "relative", width: "100vw", height: "100%" }}>
-            <div style={{ marginTop: "-70px", position: "relative", height: "18%" }}>
+            <div style={{ marginTop: "-30px", position: "relative", height: "18%" }}>
               <div style={{ width: "30px", marginTop: "-15px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
                 <QuoteMobile leftQuoteX={"-30px"} leftQuoteY={"-20px"} rightQuoteX={"-25px"} rightQuoteY={"-45px"} fontSize={"3.5em"} mobile style={QuoteStyle.header}>
                   P
@@ -73,11 +78,9 @@ const IndexPageMobileRender: React.FC = () => {
                 <PageTitle fontSize={(width * 0.0035).toString() + "em"}>Prodotti</PageTitle>
               </div>
             </div>
-            <div style={{ marginTop: "-5%" }}>
-              <MobileProductCarousel />
-            </div>
           </section>
         </ParallaxLayer>
+
 
 
 
@@ -88,21 +91,21 @@ const IndexPageMobileRender: React.FC = () => {
         <div id="materieprime" style={{ position: "absolute", top: "200%" }}></div>
 
 
-        <ParallaxLayer offset={2} speed={-0.1}>
+        <ParallaxLayer offset={1.8} speed={0.2}>
           <section style={{ position: "absolute", height: "100%", width: "100vw" }}>
             <Centralizer>
               <div style={{ marginTop: "-30%", width: "100%" }}>
-                <div style={{ backgroundColor: "#E3A38B", width: "80vw", height: "40%", position: "absolute", right: 0 }}>
-                  <Centralizer>
-                    <div style={{ width: "60%", marginTop: "-20%" }}>
-                      <Quote mobile style={QuoteStyle.italic} fontSize={"1.2em"} rightQuoteY={"15%"} >
-                        Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.
-                    </Quote>
-                    </div>
-                  </Centralizer>
-                </div>
                 <div style={{ width: "80vw", textAlign: "center", position: "absolute", left: "10px", marginTop: "-15%" }}>
                   <PageTitle fontSize={(width * 0.004).toString() + "em"}>Materie Prime</PageTitle>
+                </div>
+                <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "150px", position: "absolute", right: "2.5%" }}>
+                  <Centralizer>
+                    <div style={{ width: "90%", marginTop: "-50px" }}>
+                      <QuoteMobile left style={QuoteStyle.italic} fontSize={".9em"} leftQuoteX={"20px"} rightQuoteY={"-5px"} rightQuoteX={"-20px"}>
+                        Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.
+                    </QuoteMobile>
+                    </div>
+                  </Centralizer>
                 </div>
               </div>
             </Centralizer>

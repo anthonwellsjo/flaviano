@@ -9,18 +9,19 @@ import { useProductQuery } from '../../../../hooks/queries/useProductQuery';
 import ProductPreviewMobile from '../ProductPreviewMobile/ProductPreviewMobile';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 
-const ProductCarouselMobile: React.FC = () => {
+const MobileProducts: React.FC = () => {
   const categoryData: CategoryQuery = useCategoryPreviewQuery();
   const productData: ProductQuery = useProductQuery();
 
   return (
-    <Carousel width={"100vw"} showArrows={false} showIndicators={false} showThumbs={false} showStatus={false} swipeable emulateTouch infiniteLoop autoPlay>
+    <>
       {categoryData.allSanityCategory.edges.map((e: Category, index: number) => {
-        const products = productData.allSanityProduct.edges.filter((p: Product) => p.node.category.id == e.node.id);
+        const products = productData.allSanityProduct.edges.filter((p: Product, index: number) => p.node.category.id == e.node.id);
         return (
           <div style={{ width: "100vw", backgroundColor: "white" }} key={e.node.id}>
             <Centralizer>
               <ProductPreviewMobile
+                index={index}
                 key={e.node.slug.current}
                 categorySlug={e.node.slug.current}
                 categoryDescription={e.node.description}
@@ -32,9 +33,9 @@ const ProductCarouselMobile: React.FC = () => {
           </div>
         )
       })}
-    </Carousel >
+    </>
   )
 }
 
-export default ProductCarouselMobile;
+export default MobileProducts;
 

@@ -1,72 +1,67 @@
 .wrapper {
-  height: 70vh;
+  height: 180px;
   width: 100%;
   position: relative;
-  margin: 0px;
-  top: -15vh;
-  background: linear-gradient(180deg, lightgray 80%, white 20%);
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-
 
 .colorCube {
   position: absolute;
-  width: 70%;
-  height: 60%;
-  bottom: 0;
+  width: 95%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .titleWrapper {
   position: absolute;
-  width: 100%;
-  bottom: -10px;
+  top: 0;
+  width: 75%;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
   font-family: HomepageBaukastenBold;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 1.2em;
   line-height: 33px;
   letter-spacing: 0.16em;
+  text-align: left;
 }
 
 .imageWrapper {
-  position: relative;
-  width: 70%;
-  height: 280px;
+  position: absolute;
+  width: 120px;
+  height: 120px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: -60px;
+  left: 10px;
 }
 
 .imgWrap {
-  width: 150%;
+  width: 180%;
   transform: translateY(200px);
-}
-
-@media (max-width: 560px) {
-  .image {
-    transform: translateX(-50px);
-  }
-  .colorCube {
-    height: 70vw;
-  }
 }
 
 .image {
   position: absolute;
-  top: 40%;
+  left: -30%;
+  top: 40px;
 }
 
 .line {
-  margin-top: 10px;
-  height: 3px;
-  width: 14%;
+  height: 1px;
+  width: 20%;
   background-color: black;
 }
 
