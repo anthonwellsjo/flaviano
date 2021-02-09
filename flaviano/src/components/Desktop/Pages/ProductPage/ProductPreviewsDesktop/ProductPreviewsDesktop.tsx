@@ -4,7 +4,7 @@ import ProductPreview from '../ProductPreviewDesktop/ProductPreviewDesktop';
 import { useProductQuery } from '../../../../../hooks/queries/useProductQuery';
 import { Category, Product, ProductQuery, CategoryQuery } from '../../../../../../types';
 import Centralizer from '../../../../StructureComponents/Centralizer/Centralizer';
-import ProductPreviewMobile from '../../../../Mobile/ProductPreviewMobile/ProductPreviewMobile';
+import ProductPreviewMobile from '../../../../Mobile/Components/ProductPreviewMobile/ProductPreviewMobile';
 
 
 interface Props {

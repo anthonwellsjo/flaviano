@@ -3,11 +3,11 @@ import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import { Carousel } from 'react-responsive-carousel';
-import { useCategoryPreviewQuery } from '../../../hooks/queries/useCategoryPreviewQuery';
-import { Category, CategoryQuery, Product, ProductQuery } from '../../../../types';
-import { useProductQuery } from '../../../hooks/queries/useProductQuery';
+import { useCategoryPreviewQuery } from '../../../../hooks/queries/useCategoryPreviewQuery';
+import { Category, CategoryQuery, Product, ProductQuery } from '../../../../../types';
+import { useProductQuery } from '../../../../hooks/queries/useProductQuery';
 import ProductPreviewMobile from '../ProductPreviewMobile/ProductPreviewMobile';
-import Centralizer from '../../StructureComponents/Centralizer/Centralizer';
+import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 
 const ProductCarouselMobile: React.FC = () => {
   const categoryData: CategoryQuery = useCategoryPreviewQuery();

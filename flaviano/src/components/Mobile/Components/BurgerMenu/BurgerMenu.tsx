@@ -1,0 +1,78 @@
+import React, { useContext } from 'react';
+import { useSpring, animated } from 'react-spring';
+import { PageContext } from '../../../../contexts/pageContext';
+import classes from './BurgerMenu.module.scss';
+import { Link } from 'gatsby';
+import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
+import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
+
+const BurgerMenu: React.FC = () => {
+  const [page, setPage] = useContext(PageContext);
+  const burgerProps = useSpring({
+    reverse: page.burgerMenuOpen,
+    to: { transform: "scale(1)" },
+    from: { transform: "scale(0)" },
+    config: {
+      mass: 1,
+      tension: 200,
+      friction: 20
+    }
+  });
+  const menuProps = useSpring({
+    reverse: page.burgerMenuOpen,
+    to: { opacity: 0 },
+    from: { opacity: 1 }
+  });
+
+  const onBurgerClickEventHandler = () => {
+    setPage(prev => ({ ...prev, burgerMenuOpen: !page.burgerMenuOpen }));
+  }
+
+  return (
+    <>
+      {page.burgerMenuOpen &&
+        <animated.div style={{ ...menuProps, position: "absolute", zIndex: 5 }} >
+          <div className={classes.linkContainer} style={{ position: "fixed", top: "5vh", left: "40vw", right: "2vw", bottom: "40vh", backgroundColor: "pink" }}>
+            <Link to="/prodotti" className={classes.link}>
+              <div className={classes.prodotti}>
+                <div className={classes.innerContainer}>
+                  <PageTitleDesktop lineHeight={"1.4em"} right fontSize={"1em"}>Prodotti</PageTitleDesktop>
+                </div>
+              </div>
+            </Link>
+            <Link to="/materieprime" className={classes.link}>
+              <div className={classes.materieprime}>
+                <div className={classes.innerContainer}>
+                  <PageTitleDesktop lineHeight={"1.4em"} right fontSize={"1em"}>Materie Prime</PageTitleDesktop>
+                </div>
+              </div>
+            </Link>
+            <Link to="/chisiamo" className={classes.link}>
+              <div className={classes.chisiamo}>
+                <div className={classes.innerContainer}>
+
+                  <PageTitleDesktop lineHeight={"1.4em"} right fontSize={"1em"}>Chi Siamo</PageTitleDesktop>
+                </div>
+              </div>
+            </Link>
+            <Link to="/contatti" className={classes.link}>
+              <div className={classes.contatti}>
+                <div className={classes.innerContainer}>
+
+                  <PageTitleDesktop lineHeight={"1.4em"} right fontSize={"1em"}>Contatti</PageTitleDesktop>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </animated.div>
+      }
+      <animated.div style={burgerProps} onClick={() => onBurgerClickEventHandler()} className={classes.container}>
+        <div className={classes.line} />
+        <div className={classes.line} />
+        <div className={classes.line} />
+      </animated.div>
+    </>
+  )
+}
+
+export default BurgerMenu;

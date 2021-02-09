@@ -10,6 +10,12 @@ export default {
       validation: v => v.required()
     },
     {
+      name: 'mobileHeaderText',
+      title: 'Mobile Header Text',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
       name: 'quoteBelowCarouselText',
       title: 'Quote Below Carousel Text',
       type: 'text',

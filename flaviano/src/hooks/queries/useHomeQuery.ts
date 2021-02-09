@@ -6,6 +6,7 @@ export const useHomeQuery = () => {
           sanityHomePage {
             quoteHeaderText
             quoteBelowCarouselText
+            mobileHeaderText
             contactImg {
             asset {
               fluid(maxWidth: 2000){

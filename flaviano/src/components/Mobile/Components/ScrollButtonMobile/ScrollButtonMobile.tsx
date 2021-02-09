@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Centralizer from '../../StructureComponents/Centralizer/Centralizer';
+import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import img from '../../../images/arrowDown.png';
 import classes from './ScrollButtonMobile.module.css';

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import classes from './ProductPreviewMobile.module.css';
 import Img, { FixedObject } from 'gatsby-image';
-import { Product } from '../../../../types';
+import { Product } from '../../../../../types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import { animated, useSpring } from 'react-spring';
 import { Link } from 'gatsby';
-import Centralizer from '../../StructureComponents/Centralizer/Centralizer';
+import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 
 interface ProductPreviewProps {
   img: FixedObject,

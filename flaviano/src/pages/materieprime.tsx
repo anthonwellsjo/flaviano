@@ -62,7 +62,7 @@ const MateriePrimePage: React.FC = () => {
                   <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "0", marginRight: "15px", marginTop: "25px" }}></div>
                 </div>
               </Centralizer>
-            </div>
+              </div>
           </div>
         </ParallaxLayer>
 

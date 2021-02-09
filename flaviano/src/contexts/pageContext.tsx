@@ -8,6 +8,7 @@ const PageContext = createContext([page, setPage])
 const PageProvider: React.FC = ({ children }) => {
   const [page, setPage] = useState({
     productsDropDownMenuOpen: false,
+    burgerMenuOpen: false,
     firstStart: true
   });
   return (

@@ -13,7 +13,7 @@ const BackDropDesktop: React.FC = () => {
   
   if (!page.productsDropDownMenuOpen) return null
   return (
-    <animated.div onClick={() => setPage(prev => ({ ...prev, productsDropDownMenuOpen: !page.productsDropDownMenuOpen }))} style={{ ...styles, zIndex: 2, position: "absolute", top: 0, left: 0, right: 0, bottom: 0, width: "100vw" }}></animated.div>
+    <animated.div onClick={() => setPage(prev => ({ ...prev, productsDropDownMenuOpen: !page.productsDropDownMenuOpen }))} style={{ ...styles, zIndex: 2, position: "absolute", top: 0, left: 0, right: 0, bottom: 0, width: "100%" }}></animated.div>
   )
 }
 

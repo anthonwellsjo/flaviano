@@ -183,6 +183,7 @@ export interface HomePageQuery {
   sanityHomePage: {
     quoteHeaderText: string,
     quoteBelowCarouselText: string,
+    mobileHeaderText: string,
     contactImg: {
       asset: {
         fluid: any
