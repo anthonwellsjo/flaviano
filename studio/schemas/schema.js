@@ -4,6 +4,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // We import object and document schemas
+import generalSettings from './generalSettings'
 import category from './category'
 import categoryCarouselImage from './categoryCarouselImage'
 import categoryParallaxIcon from './categoryParallaxIcon'
@@ -28,6 +29,7 @@ export default createSchema({
     categoryParallaxIcon,
     categoryCarouselImage,
 
+    generalSettings,
     homePage,
     babaPage,
     chiSiamoPage,
