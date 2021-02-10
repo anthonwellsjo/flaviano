@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{SJOg:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),u=t.n(a),w=t("we9E");e.default=function(){return u.a.createElement(w.a,null)}}}]);
+//# sourceMappingURL=component---src-pages-categories-colomba-tsx-f19db765e0cb99b50371.js.map
