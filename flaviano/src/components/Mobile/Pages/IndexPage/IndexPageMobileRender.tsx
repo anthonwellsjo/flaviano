@@ -71,7 +71,7 @@ const IndexPageMobileRender: React.FC = () => {
           <section style={{ position: "relative", width: "100vw", height: "100%" }}>
             <div style={{ marginTop: "-30px", position: "relative", height: "18%" }}>
               <div style={{ width: "30px", marginTop: "-15px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
-                <QuoteMobile leftQuoteX={"-30px"} leftQuoteY={"-20px"} rightQuoteX={"-25px"} rightQuoteY={"-45px"} fontSize={"3.5em"} mobile style={QuoteStyle.header}>
+                <QuoteMobile leftQuoteX={"-30px"} leftQuoteY={"-20px"} rightQuoteX={"-25px"} rightQuoteY={"-45px"} fontSize={"3.5em"} style={QuoteStyle.header}>
                   P
                 </QuoteMobile>
               </div>
@@ -92,7 +92,7 @@ const IndexPageMobileRender: React.FC = () => {
         <div id="materieprime" style={{ position: "absolute", top: "200%" }}></div>
 
 
-        <ParallaxLayer offset={1.8} speed={0.2}>
+        <ParallaxLayer offset={1.7} speed={0.2}>
           <section style={{ position: "absolute", height: "100%", width: "100vw" }}>
             <Centralizer>
               <div style={{ marginTop: "-30%", width: "100%" }}>

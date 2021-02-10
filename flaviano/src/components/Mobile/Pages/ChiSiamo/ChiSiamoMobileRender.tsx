@@ -26,9 +26,11 @@ const ChiSiamoMobileRender: React.FC = () => {
               <Img fluid={sanityChiSiamoPage.headerImg.asset.fluid} alt="Baba image" />
               {/* <p className="legend">{e.node.title}</p> */}
             </div>
-            <div style={{ width: "50%", position: "absolute", right: 0, top: "100px" }}>
+            <div style={{ width: "55%", position: "absolute", right: 0, top: "100px" }}>
               <div style={{ height: "1px", width: "19px", backgroundColor: "black", marginBottom: "4px" }}></div>
-              <PageTitleDesktop fontSize="1.5em" letterSpacing={".4em"}>Chi Siamo</PageTitleDesktop>
+              <div style={{ width: "20px"}}>
+                <PageTitleDesktop fontSize="1.5em" letterSpacing={".4em"}>Chi Siamo</PageTitleDesktop>
+              </div>
             </div>
           </div>
         </ParallaxLayer>
@@ -47,13 +49,13 @@ const ChiSiamoMobileRender: React.FC = () => {
               {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
                 if (index == 0) return (
                   <>
-                    <p style={{ fontFamily: "HomepageBaukastenBook", lineHeight: "1.2em", wordSpacing: ".5em", fontSize: "1em", textAlign: "justify", marginTop:"-2em" }}><strong>Flaviano </strong> {p}.</p>
+                    <p style={{ fontFamily: "HomepageBaukastenBook", lineHeight: "1.2em", wordSpacing: ".5em", fontSize: "1em", textAlign: "justify", marginTop: "-2em" }}><strong>Flaviano </strong> {p}.</p>
                     <br></br>
                   </>
                 )
                 return (
                   <>
-                    <p style={{ fontFamily: "HomepageBaukastenBook", lineHeight: "1.2em", wordSpacing: ".5em", fontSize: "1em", textAlign: "justify", marginTop:"-2em" }}>{p}.</p>
+                    <p style={{ fontFamily: "HomepageBaukastenBook", lineHeight: "1.2em", wordSpacing: ".5em", fontSize: "1em", textAlign: "justify", marginTop: "-2em" }}>{p}.</p>
                     <br></br>
                   </>
                 )

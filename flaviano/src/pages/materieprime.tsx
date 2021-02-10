@@ -3,13 +3,13 @@ import MateriePrimeDesktopRender from '../components/Desktop/Pages/MateriePrime/
 import { useViewport } from '../hooks/useViewPort';
 
 const MateriePrimePage: React.FC = () => {
-  
+
 
   const { width } = useViewport();
 
-  if (width > 850) return <MateriePrimeDesktopRender/>
+  if (width > 850) return <MateriePrimeDesktopRender />
 
-  return(<h1>No mobile yet!</h1>)
+  return (<h1>No mobile yet!</h1>)
 
 }
 
