@@ -15,12 +15,31 @@
   align-items: center;
   justify-content: center;
 }
+.colorCube2 {
+  position: absolute;
+  width: 95%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .titleWrapper {
   position: absolute;
   top: 0;
-  width: 75%;
+  width: 65%;
   right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.titleWrapper2 {
+  position: absolute;
+  top: 0;
+  width: 65%;
+  left: 0;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -47,16 +66,26 @@
   justify-content: center;
   left: 10px;
 }
+.imageWrapper2 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 10px;
+}
 
 .imgWrap {
-  width: 180%;
+  width: 180px;
   transform: translateY(200px);
 }
 
 .image {
   position: absolute;
-  left: -30%;
-  top: 40px;
+  left: -20%;
+  top: 50px;
 }
 
 .line {

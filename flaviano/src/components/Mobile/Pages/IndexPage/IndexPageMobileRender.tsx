@@ -17,6 +17,7 @@ import AnimLogoPiccoloMobile from '../../../Logos/AnimLogoPiccoloMobile/AnimLogo
 import BurgerMenu from '../../Components/BurgerMenu/BurgerMenu';
 import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
 import { PageContext } from '../../../../contexts/pageContext';
+import ContactBarMobile from '../../Components/ContactBarMobile/ContactBarMobile';
 
 const IndexPageMobileRender: React.FC = () => {
   const { width } = useViewport();
@@ -30,7 +31,7 @@ const IndexPageMobileRender: React.FC = () => {
     <>
       <Parallax pages={2.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
-        <ParallaxLayer offset={0} speed={0.1}>
+        <ParallaxLayer offset={0} speed={0.4}>
           <LayoutHeaderMobile />
         </ParallaxLayer>
 
@@ -66,7 +67,7 @@ const IndexPageMobileRender: React.FC = () => {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.9} speed={0.1}>
+        <ParallaxLayer offset={0.9} speed={-0.005}>
           <section style={{ position: "relative", width: "100vw", height: "100%" }}>
             <div style={{ marginTop: "-30px", position: "relative", height: "18%" }}>
               <div style={{ width: "30px", marginTop: "-15px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
@@ -74,8 +75,8 @@ const IndexPageMobileRender: React.FC = () => {
                   P
                 </QuoteMobile>
               </div>
-              <div style={{ width: "150px", textAlign: "center", position: "absolute", left: "50%" }}>
-                <PageTitle fontSize={(width * 0.0035).toString() + "em"}>Prodotti</PageTitle>
+              <div style={{ textAlign: "center", position: "absolute", right: "5%" }}>
+                <PageTitle right fontSize={"1.6em"}>Prodotti</PageTitle>
               </div>
             </div>
           </section>
@@ -95,8 +96,8 @@ const IndexPageMobileRender: React.FC = () => {
           <section style={{ position: "absolute", height: "100%", width: "100vw" }}>
             <Centralizer>
               <div style={{ marginTop: "-30%", width: "100%" }}>
-                <div style={{ width: "80vw", textAlign: "center", position: "absolute", left: "10px", marginTop: "-15%" }}>
-                  <PageTitle fontSize={(width * 0.004).toString() + "em"}>Materie Prime</PageTitle>
+                <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-15%" }}>
+                  <PageTitle right fontSize={"1.8em"}>Materie Prime</PageTitle>
                 </div>
                 <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "150px", position: "absolute", right: "2.5%" }}>
                   <Centralizer>
@@ -110,6 +111,9 @@ const IndexPageMobileRender: React.FC = () => {
               </div>
             </Centralizer>
           </section>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2.5}>
+          <ContactBarMobile />
         </ParallaxLayer>
       </Parallax >
       <BurgerMenu />
