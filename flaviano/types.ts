@@ -191,3 +191,13 @@ export interface HomePageQuery {
     },
   }
 }
+
+export interface ContactInfoQuery {
+  sanityGeneralSettings: {
+    mailFlaviano: string,
+    phoneFlaviano: string,
+    urlFacebook: string,
+    urlInsta: string,
+    urlPinterest: string
+  }
+}

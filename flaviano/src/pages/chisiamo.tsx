@@ -1,93 +1,16 @@
-import React, { useRef } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { ChiSiamoPageQuery } from '../../types';
-import LayoutHeader from '../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
-import PageTitle from '../components/Desktop/PageTitleDesktop/PageTitleDesktop';
-import { useChiSiamoQuery } from '../hooks/queries/useChiSiamoQuery';
-import Img from 'gatsby-image';
-import Quote from '../components/Desktop/QuoteDesktop/QuoteDesktop';
-import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';
-import flavianoImg from '../images/flavianoLogo.png';
-import BackDrop from '../components/Desktop/BackDropDesktop/BackDropDesktop';
-import LayoutFrame from '../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
-import ScrollButton from '../components/Desktop/ScrollButton/ScrollButton';
-import useScroll from '../hooks/useScroll';
+import React, { } from 'react';
+import ChiSiamoDesktopRender from '../components/Desktop/Pages/ChiSiamoDesktopRender/ChiSiamoDesktopRender';
+import ChiSiamoMobileRender from '../components/Mobile/Pages/ChiSiamo/ChiSiamoMobileRender';
+import { useViewport } from '../hooks/useViewPort';
 
 const ChiSiamoPage = () => {
-  const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
-  let parallax = useRef();
-  const currentScroll = useScroll(parallax);
 
+  const { width } = useViewport();
 
-  return (
-    <Parallax pages={2.3} scrolling={false} ref={ref => parallax = ref}>
-      <LayoutFrame>
-        <BackDrop />
-        <LayoutHeader />
-        <div id="top" style={{ position: "absolute", top: 0 }}></div>
-        <ParallaxLayer offset={0} speed={0.5}>
-          <div style={{ backgroundColor: "#E5E5E5", width: "100%", height: "200vh", position: "relative", }}>
-            <div style={{ maxWidth: "100%", width: "80%", position: "absolute" }}>
-              <Img fluid={sanityChiSiamoPage.headerImg.asset.fluid} alt="Baba image" />
-              {/* <p className="legend">{e.node.title}</p> */}
-            </div>
-            <div style={{ width: "20%", position: "absolute", right: "20%", top: "30vh" }}>
-              <div style={{ height: "3px", width: "40px", backgroundColor: "black", marginBottom: "30px", marginLeft: "0px" }}></div>
-              <PageTitle fontSize="3.5em" letterSpacing={".4em"}>Chi Siamo</PageTitle>
-            </div>
-          </div>
+  if (width > 850) return <ChiSiamoDesktopRender />
 
-        </ParallaxLayer>
+  return <ChiSiamoMobileRender />
 
-
-        <div id="pageTwo" style={{ position: "absolute", top: "100vh" }}></div>
-
-        <ParallaxLayer offset={0.5} speed={0.2}>
-          <Centralizer>
-            <div style={{ width: "75%", height: "100vh", marginTop: "40vh" }}>
-              <Quote fontSize={"1.8em"} rightQuoteX={"-70px"}>{sanityChiSiamoPage.quoteHeaderText}</Quote>
-            </div>
-          </Centralizer>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={0.6}>
-          <div style={{ position: "absolute", top: "30vh", width: "100%", zIndex: 300, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <ScrollButton to="#pageTwo" currentPosition={currentScroll} reactivePosition={0} deactivatePosition={50}></ScrollButton>
-          </div>
-        </ParallaxLayer>
-
-
-        <ParallaxLayer offset={0.9999} speed={0.1}>
-          <div style={{ position: "absolute", top: "15vh", width: "100%", zIndex: 300, display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <Centralizer>
-              <ScrollButton up to="#top" currentPosition={currentScroll} reactivePosition={0} deactivatePosition={50}></ScrollButton>
-            </Centralizer>
-          </div>
-          <Centralizer>
-            <div style={{ width: "80%", marginTop: "10vh" }}>
-              <p id="chisiamoText" style={{ fontFamily: "HomepageBaukastenBook", lineHeight: "1.8em", wordSpacing: ".5em", fontSize: "1em", textAlign: "justify" }}>
-                <strong>Flaviano </strong>{sanityChiSiamoPage.pageText}
-              </p>
-            </div>
-          </Centralizer>
-        </ParallaxLayer>
-        <ParallaxLayer offset={1.7} speed={0.8}>
-          <img style={{ position: "absolute", right: "10%", top: "10vh" }} src={flavianoImg} alt="logo" />
-        </ParallaxLayer>
-
-
-
-        <ParallaxLayer offset={2} speed={3}>
-          <div style={{ maxWidth: "100%", width: "100%", position: "absolute", top: "-330vh", opacity: "0.3" }}>
-            {/* <Img fluid={sanityChiSiamoPage.footerImg.asset.fluid} alt="photo of hands working a dew" /> */}
-          </div>
-        </ParallaxLayer>
-
-
-
-      </LayoutFrame>
-    </Parallax>
-  )
 }
 
 export default ChiSiamoPage;

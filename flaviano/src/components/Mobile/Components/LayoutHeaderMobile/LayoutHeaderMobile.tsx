@@ -8,10 +8,15 @@ import classes from './LayoutHeaderMobile.module.scss';
 import AnimLogoPiccoloMobile from '../../../Logos/AnimLogoPiccoloMobile/AnimLogoPiccoloMobile';
 import AnimLogoMobile from '../../../Logos/AnimLogoMobile/AnimLogoMobile';
 
-const LayoutHeaderMobile: React.FC = () => (
+interface Props{
+  home?: boolean
+}
+
+
+const LayoutHeaderMobile = ({home}:Props) => (
   <div className={classes.Layout}>
     {/* <Logo /> */}
-    <AnimLogoMobile />
+    {home && <AnimLogoMobile />}
     {/* <AnimLogoPiccoloMobile /> */}
     {/* <MainNavBar /> */}
     {/* <AnimLogo /> */}

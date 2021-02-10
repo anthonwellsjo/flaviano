@@ -32,7 +32,7 @@ const IndexPageMobileRender: React.FC = () => {
       <Parallax pages={2.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.4}>
-          <LayoutHeaderMobile />
+          <LayoutHeaderMobile home />
         </ParallaxLayer>
 
 
@@ -44,7 +44,7 @@ const IndexPageMobileRender: React.FC = () => {
           <div style={{ position: "relative", top: "0", width: "100vw", height: "100%", }}>
             <Centralizer>
               <div style={{ width: "85%", height: "50%", marginTop: "30%" }}>
-                <QuoteMobile style={QuoteStyle.italic} fontSize={".9em"} rightQuoteX={"-5px"} rightQuoteY={"-10px"} leftQuoteX={"20px"} >
+                <QuoteMobile style={QuoteStyle.italic} fontSize={"1.3em"} rightQuoteX={"-5px"} rightQuoteY={"50px"} leftQuoteX={"20px"} >
                   {sanityHomePage.mobileHeaderText}
                 </QuoteMobile>
               </div>
@@ -59,7 +59,7 @@ const IndexPageMobileRender: React.FC = () => {
         {/* ------------------------------PRODUCTS SECTION */}
         {/* ID FOR AUTOSCROLL */}
 
-        <div id="products" style={{ position: "absolute", top: "100%" }}></div>
+        <div style={{ position: "absolute", top: "100%" }}></div>
 
         <ParallaxLayer offset={1} speed={-0.005}>
           <div style={{ marginTop: "5%" }}>
@@ -99,10 +99,10 @@ const IndexPageMobileRender: React.FC = () => {
                 <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-15%" }}>
                   <PageTitle right fontSize={"1.8em"}>Materie Prime</PageTitle>
                 </div>
-                <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "150px", position: "absolute", right: "2.5%" }}>
+                <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "220px", position: "absolute", right: "2.5%" }}>
                   <Centralizer>
-                    <div style={{ width: "90%", marginTop: "-50px" }}>
-                      <QuoteMobile left style={QuoteStyle.italic} fontSize={".9em"} leftQuoteX={"20px"} rightQuoteY={"-5px"} rightQuoteX={"-20px"}>
+                    <div style={{ width: "90%", marginTop: "-100px" }}>
+                      <QuoteMobile left style={QuoteStyle.italic} fontSize={"1.3em"} leftQuoteX={"20px"} rightQuoteY={"45px"} rightQuoteX={"-20px"}>
                         Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.
                     </QuoteMobile>
                     </div>
@@ -112,7 +112,7 @@ const IndexPageMobileRender: React.FC = () => {
             </Centralizer>
           </section>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.5}>
+        <ParallaxLayer offset={2.6}>
           <ContactBarMobile />
         </ParallaxLayer>
       </Parallax >

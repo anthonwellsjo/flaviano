@@ -33,21 +33,23 @@ const BurgerMenu: React.FC = () => {
       {page.burgerMenuOpen &&
         <animated.div style={{ ...menuProps, position: "absolute", zIndex: 5 }} >
           <div className={classes.linkContainer} style={{ position: "fixed", width: "250px", height: "350px", right: "20px", top: "30px" }}>
-            <Link to="/prodotti" className={classes.link}>
+            <Link onClick={onBurgerClickEventHandler} to="/prodotti" className={classes.link}>
               <div className={classes.prodotti}>
                 <div className={classes.innerContainer}>
-                  <PageTitleDesktop letterSpacing={"0.5em"} lineHeight={"1.4em"} right fontSize={"1em"}>Prodotti</PageTitleDesktop>
+                  <Link to="/">
+                    <PageTitleDesktop letterSpacing={"0.5em"} lineHeight={"1.4em"} right fontSize={"1em"}>Prodotti</PageTitleDesktop>
+                  </Link>
                 </div>
               </div>
             </Link>
-            <Link to="/materieprime" className={classes.link}>
+            <Link onClick={onBurgerClickEventHandler} to="/materieprime" className={classes.link}>
               <div className={classes.materieprime}>
                 <div className={classes.innerContainer}>
                   <PageTitleDesktop letterSpacing={"0.5em"} lineHeight={"1.4em"} right fontSize={"1em"}>Materie Prime</PageTitleDesktop>
                 </div>
               </div>
             </Link>
-            <Link to="/chisiamo" className={classes.link}>
+            <Link onClick={onBurgerClickEventHandler} to="/chisiamo" className={classes.link}>
               <div className={classes.chisiamo}>
                 <div className={classes.innerContainer}>
 
@@ -55,7 +57,7 @@ const BurgerMenu: React.FC = () => {
                 </div>
               </div>
             </Link>
-            <Link to="/contatti" className={classes.link}>
+            <Link onClick={onBurgerClickEventHandler} to="/contatti" className={classes.link}>
               <div className={classes.contatti}>
                 <div className={classes.innerContainer}>
 
