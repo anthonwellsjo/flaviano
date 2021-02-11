@@ -6,7 +6,7 @@ interface Props {
   materiePrimi: MateriePrimePage
 }
 
-const MateriePrimi: React.FC = ({ materiePrimi }: Props) => {
+const MateriePrimi= ({ materiePrimi }: Props) => {
   return (
     <>
       <MateriaPrima height={"350px"} title={"Lievito Madre"} hexColor={materiePrimi.lievitoMadreColor.hex} fluidImg={materiePrimi.lievitoMadreImg.asset.fluid} text={materiePrimi.lievitoMadreText} />

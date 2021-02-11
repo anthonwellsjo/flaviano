@@ -1,4 +1,5 @@
 import { GatsbyGraphQLInputObjectType } from "gatsby";
+import { FluidObject } from "gatsby-image";
 
 export enum QuoteStyle {
   "header",
@@ -34,7 +35,7 @@ export interface Product {
     weightGr: number,
     productPhoto: {
       asset: {
-        fluid: any
+        fluid: FluidObject
       }
     }
   }
@@ -54,7 +55,7 @@ export interface BabaPage {
   pageText: string,
   headerImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   }
   textImg: {
@@ -74,7 +75,7 @@ export interface MateriePrimePage {
   },
   albicocceImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   },
   albicocceText: string,
@@ -83,7 +84,7 @@ export interface MateriePrimePage {
   },
   lievitoMadreImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   },
   lievitoMadreText: string,
@@ -92,7 +93,7 @@ export interface MateriePrimePage {
   },
   limoniImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   },
   limoniText: string,
@@ -100,7 +101,7 @@ export interface MateriePrimePage {
     hex: string
   },
   melaImg: {
-    asset: { fluid: any }
+    asset: { fluid: FluidObject }
   },
   melaText: string,
   mieleColor: {
@@ -108,7 +109,7 @@ export interface MateriePrimePage {
   },
   mieleImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   },
   mieleText: string,
@@ -117,7 +118,7 @@ export interface MateriePrimePage {
   },
   nocciolaImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   },
   nocciolaText: string,
@@ -126,7 +127,7 @@ export interface MateriePrimePage {
   },
   nociImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   },
   nociText: string,
@@ -141,12 +142,12 @@ export interface ChiSiamoPageQuery {
 export interface ChiSiamoPage {
   headerImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   },
   footerImg: {
     asset: {
-      fluid: any
+      fluid: FluidObject
     }
   },
   pageText: string,
@@ -158,7 +159,7 @@ export interface Category {
   node: {
     categoryParallaxIcon: {
       asset: {
-        fluid: any
+        fluid: FluidObject
       }
     },
     id: string,
@@ -186,7 +187,7 @@ export interface HomePageQuery {
     mobileHeaderText: string,
     contactImg: {
       asset: {
-        fluid: any
+        fluid: FluidObject
       }
     },
   }

@@ -10,17 +10,28 @@ import AnimLogoMobile from '../../../Logos/AnimLogoMobile/AnimLogoMobile';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 interface Props {
-  home?: boolean
+  home?: boolean,
+  backGroundFullPage?: boolean
 }
 
 
-const LayoutHeaderMobile = ({ home }: Props) => (
-  <div className={classes.Layout}>
-    {/* <Logo /> */}
-    {home && <AnimLogoMobile />}
-    {/* <AnimLogoPiccoloMobile /> */}
-    {/* <MainNavBar /> */}
-  </div>
-);
+const LayoutHeaderMobile = ({ home, backGroundFullPage }: Props) => {
+  if (backGroundFullPage) return (
+    <div style={{ height: "100vh" }} className={classes.Layout}>
+      {/* <Logo /> */}
+      {home && <AnimLogoMobile />}
+      {/* <AnimLogoPiccoloMobile /> */}
+      {/* <MainNavBar /> */}
+    </div>
+  )
+  return (
+    <div className={classes.Layout}>
+      {/* <Logo /> */}
+      {home && <AnimLogoMobile />}
+      {/* <AnimLogoPiccoloMobile /> */}
+      {/* <MainNavBar /> */}
+    </div>
+  )
+};
 
 export default LayoutHeaderMobile;

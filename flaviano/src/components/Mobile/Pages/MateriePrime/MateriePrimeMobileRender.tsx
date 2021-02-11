@@ -19,7 +19,7 @@ const MateriePrimeMobileRender: React.FC = () => {
       <Parallax pages={3.05} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0.} speed={0}>
-          <LayoutHeaderMobile />
+          <LayoutHeaderMobile backGroundFullPage />
         </ParallaxLayer>
         <ParallaxLayer offset={0.2} speed={0}>
           <div style={{ width: "30px", marginTop: "-15px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
