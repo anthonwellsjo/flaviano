@@ -1,8 +1,7 @@
 .icon {
   padding: 8px;
-  
+
   width: 22px;
-  
 }
 
 .link {
@@ -15,6 +14,8 @@
   font-size: 0.9em;
   letter-spacing: 1px;
   user-select: none;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .mail,
@@ -36,4 +37,8 @@
 .phone {
   margin-top: 0;
   margin-bottom: -20px;
+}
+
+.socialContainer {
+  margin-top: 30px;
 }

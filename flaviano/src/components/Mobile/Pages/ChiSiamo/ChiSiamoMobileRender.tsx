@@ -10,13 +10,14 @@ import BurgerMenu from '../../Components/BurgerMenu/BurgerMenu';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
+import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 
 const ChiSiamoMobileRender: React.FC = () => {
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax = useRef();
   return (
     <LayoutMobile>
-      <Parallax pages={2.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={3} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0.} speed={0.4}>
           <LayoutHeaderMobile />
@@ -62,6 +63,18 @@ const ChiSiamoMobileRender: React.FC = () => {
                 )
               })}
             </div>
+          </Centralizer>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2} speed={1}>
+          <Centralizer>
+            <div style={{ maxWidth: "200%", width: "200%", position: "absolute", marginTop: "-75px", opacity: "1" }}>
+              <Img fluid={sanityChiSiamoPage.footerImg.asset.fluid} alt="photo of hands working a dew" />
+            </div>
+          </Centralizer>
+        </ParallaxLayer>
+        <ParallaxLayer offset={2.2} speed={2}>
+          <Centralizer>
+            <ContactBarMobileSmall />
           </Centralizer>
         </ParallaxLayer>
       </Parallax>

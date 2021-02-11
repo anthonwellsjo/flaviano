@@ -1,5 +1,6 @@
 import React from 'react';
 import MateriePrimeDesktopRender from '../components/Desktop/Pages/MateriePrime/MateriePrimeDesktopRender';
+import MateriePrimeMobileRender from '../components/Mobile/Pages/MateriePrime/MateriePrimeMobileRender';
 import { useViewport } from '../hooks/useViewPort';
 
 const MateriePrimePage: React.FC = () => {
@@ -9,7 +10,7 @@ const MateriePrimePage: React.FC = () => {
 
   if (width > 850) return <MateriePrimeDesktopRender />
 
-  return (<h1>No mobile yet!</h1>)
+  return <MateriePrimeMobileRender />
 
 }
 

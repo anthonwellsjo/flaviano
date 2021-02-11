@@ -17,7 +17,7 @@ const ContactBarMobileSmall = () => {
   return (
     <div style={{ position: "absolute", width: "100%" }}>
       <Centralizer column>
-        <p onClick={() => document.execCommand("info@flavianodolci.com")} className={classes.mail}>info@flavianodolci.com</p>
+        <p onClick={() => document.execCommand(sanityGeneralSettings.mailFlaviano)} className={classes.mail}>{sanityGeneralSettings.mailFlaviano}</p>
         <Centralizer>
           <a className={classes.link} href={sanityGeneralSettings.urlFacebook} target="_blank">
             <img className={classes.icon} src={fb} alt="facebook social" />
