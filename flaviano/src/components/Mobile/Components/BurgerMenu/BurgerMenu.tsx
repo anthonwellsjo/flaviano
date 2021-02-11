@@ -52,7 +52,6 @@ const BurgerMenu: React.FC = () => {
             <Link onClick={onBurgerClickEventHandler} to="/chisiamo" className={classes.link}>
               <div className={classes.chisiamo}>
                 <div className={classes.innerContainer}>
-
                   <PageTitleDesktop letterSpacing={"0.5em"} lineHeight={"1.4em"} right fontSize={"1em"}>Chi Siamo</PageTitleDesktop>
                 </div>
               </div>
@@ -60,7 +59,6 @@ const BurgerMenu: React.FC = () => {
             <Link onClick={onBurgerClickEventHandler} to="/contatti" className={classes.link}>
               <div className={classes.contatti}>
                 <div className={classes.innerContainer}>
-
                   <PageTitleDesktop letterSpacing={"0.5em"} lineHeight={"1.4em"} right fontSize={"1em"}>Contatti</PageTitleDesktop>
                 </div>
               </div>
@@ -68,11 +66,11 @@ const BurgerMenu: React.FC = () => {
           </div>
         </animated.div>
       }
-      <animated.div style={burgerProps} onClick={() => onBurgerClickEventHandler()} className={classes.container}>
-        <div className={classes.line} />
-        <div className={classes.line} />
-        <div className={classes.line} />
-      </animated.div>
+        <animated.div style={{ ...burgerProps }} onClick={() => onBurgerClickEventHandler()} className={classes.container}>
+          <div className={classes.line} />
+          <div className={classes.line} />
+          <div className={classes.line} />
+        </animated.div>
     </>
   )
 }

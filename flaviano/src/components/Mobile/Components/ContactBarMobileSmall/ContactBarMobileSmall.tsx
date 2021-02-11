@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './ContactBarMobile.module.scss';
+import classes from './ContactBarMobileSmall.module.scss';
 import fb from '../../../../images/fb-mobile.png';
 import pint from '../../../../images/pint-mobile.png';
 import inst from '../../../../images/inst-mobile.png';
@@ -9,7 +9,7 @@ import { useContactInfoQuery } from '../../../../hooks/queries/useContactInfoQue
 
 
 
-const ContactBarMobile = () => {
+const ContactBarMobileSmall = () => {
   const { sanityGeneralSettings }: ContactInfoQuery = useContactInfoQuery();
 
 
@@ -34,4 +34,4 @@ const ContactBarMobile = () => {
   )
 }
 
-export default ContactBarMobile;
+export default ContactBarMobileSmall;

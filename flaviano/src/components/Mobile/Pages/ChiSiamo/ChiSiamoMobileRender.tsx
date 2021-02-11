@@ -9,18 +9,19 @@ import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop
 import BurgerMenu from '../../Components/BurgerMenu/BurgerMenu';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
+import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 
 const ChiSiamoMobileRender: React.FC = () => {
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax = useRef();
   return (
-    <>
+    <LayoutMobile>
       <Parallax pages={2.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
-        <ParallaxLayer offset={0} speed={0.4}>
+        <ParallaxLayer offset={0.} speed={0.4}>
           <LayoutHeaderMobile />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0.5}>
+        <ParallaxLayer offset={0.} speed={0.5}>
           <div style={{ position: "relative", }}>
             <div style={{ maxWidth: "100%", width: "90%", position: "absolute" }}>
               <Img fluid={sanityChiSiamoPage.headerImg.asset.fluid} alt="Baba image" />
@@ -28,7 +29,7 @@ const ChiSiamoMobileRender: React.FC = () => {
             </div>
             <div style={{ width: "55%", position: "absolute", right: 0, top: "100px" }}>
               <div style={{ height: "1px", width: "19px", backgroundColor: "black", marginBottom: "4px" }}></div>
-              <div style={{ width: "20px"}}>
+              <div style={{ width: "20px" }}>
                 <PageTitleDesktop fontSize="1.5em" letterSpacing={".4em"}>Chi Siamo</PageTitleDesktop>
               </div>
             </div>
@@ -64,8 +65,7 @@ const ChiSiamoMobileRender: React.FC = () => {
           </Centralizer>
         </ParallaxLayer>
       </Parallax>
-      <BurgerMenu />
-    </>
+    </LayoutMobile>
   )
 }
 

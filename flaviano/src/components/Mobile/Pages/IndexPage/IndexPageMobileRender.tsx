@@ -17,7 +17,8 @@ import AnimLogoPiccoloMobile from '../../../Logos/AnimLogoPiccoloMobile/AnimLogo
 import BurgerMenu from '../../Components/BurgerMenu/BurgerMenu';
 import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
 import { PageContext } from '../../../../contexts/pageContext';
-import ContactBarMobile from '../../Components/ContactBarMobile/ContactBarMobile';
+import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
+import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 
 const IndexPageMobileRender: React.FC = () => {
   const { width } = useViewport();
@@ -28,14 +29,12 @@ const IndexPageMobileRender: React.FC = () => {
 
 
   return (
-    <>
+    <LayoutMobile>
       <Parallax pages={2.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.4}>
           <LayoutHeaderMobile home />
         </ParallaxLayer>
-
-
         {/* ------------------------------TOP QUOTE */}
         <div id="top" style={{ position: "absolute", top: "0" }}></div>
 
@@ -113,12 +112,10 @@ const IndexPageMobileRender: React.FC = () => {
           </section>
         </ParallaxLayer>
         <ParallaxLayer offset={2.6}>
-          <ContactBarMobile />
+          <ContactBarMobileSmall/>
         </ParallaxLayer>
       </Parallax >
-      <BurgerMenu />
-
-    </>
+    </LayoutMobile>
   )
 }
 

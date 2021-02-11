@@ -7,19 +7,19 @@ import MainNavBar from '../../../Desktop/Navbar/MainNavBarDesktop/MainNavBarDesk
 import classes from './LayoutHeaderMobile.module.scss';
 import AnimLogoPiccoloMobile from '../../../Logos/AnimLogoPiccoloMobile/AnimLogoPiccoloMobile';
 import AnimLogoMobile from '../../../Logos/AnimLogoMobile/AnimLogoMobile';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
-interface Props{
+interface Props {
   home?: boolean
 }
 
 
-const LayoutHeaderMobile = ({home}:Props) => (
+const LayoutHeaderMobile = ({ home }: Props) => (
   <div className={classes.Layout}>
     {/* <Logo /> */}
     {home && <AnimLogoMobile />}
     {/* <AnimLogoPiccoloMobile /> */}
     {/* <MainNavBar /> */}
-    {/* <AnimLogo /> */}
   </div>
 );
 
