@@ -15,7 +15,7 @@ const MateriePrimi= ({ materiePrimi }: Props) => {
       <MateriaPrima height={"400px"} title={"Noci di Sorrento"} hexColor={materiePrimi.nociColor.hex} fluidImg={materiePrimi.nociImg.asset.fluid} text={materiePrimi.nociText} />
       <MateriaPrima imgBehindTitle height={"450px"} title={"Nocciola di Giffoni"} hexColor={materiePrimi.nocciolaColor.hex} fluidImg={materiePrimi.nocciolaImg.asset.fluid} text={materiePrimi.nocciolaText} />
       <MateriaPrima imgLeft height={"320px"} title={"Miele Millefiori"} hexColor={materiePrimi.mieleColor.hex} fluidImg={materiePrimi.mieleImg.asset.fluid} text={materiePrimi.mieleText} />
-      <MateriaPrima longTitle imgLeft height={"520px"} title={"Albicocche del Vesuvio"} hexColor={materiePrimi.albicocceColor.hex} fluidImg={materiePrimi.albicocceImg.asset.fluid} text={materiePrimi.albicocceText} />
+      <MateriaPrima imgBehindTitle longTitle height={"520px"} title={"Albicocche del Vesuvio"} hexColor={materiePrimi.albicocceColor.hex} fluidImg={materiePrimi.albicocceImg.asset.fluid} text={materiePrimi.albicocceText} />
     </>
   )
 }
