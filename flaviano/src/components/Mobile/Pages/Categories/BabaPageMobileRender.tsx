@@ -6,9 +6,11 @@ import LayoutHeaderMobile from '../../Components/LayoutHeaderMobile/LayoutHeader
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import { useBabaPageQuery } from '../../../../hooks/queries/useBabaPageQuery';
 import { BabaPageQuery } from '../../../../../types';
-import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
+import BabaProductsBanners from '../../Components/BabaProductsBanners/BabaProductsBanners';
+import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
+import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 
 const BabaPageMobileRender: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
@@ -17,8 +19,8 @@ const BabaPageMobileRender: React.FC = () => {
     <LayoutMobile>
       <Parallax pages={2} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
-        <ParallaxLayer offset={0} speed={1}>
-          <LayoutHeaderMobile />
+        <ParallaxLayer offset={0} speed={1.5}>
+          <LayoutHeaderMobile backGroundFullPage />
         </ParallaxLayer>
         <ParallaxLayer speed={0.1} >
           <div style={{ width: "100%", overflow: "hidden" }}>
@@ -36,15 +38,27 @@ const BabaPageMobileRender: React.FC = () => {
         </ParallaxLayer>
         <ParallaxLayer offset={0.6} speed={0}>
           <div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
-            {sanityBabaPage.pageText.split(".").map(p => {
+            {sanityBabaPage.pageTextMobile.split(".").map((p, index) => {
+              if (index == 0) return (
+                <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>"O Babà è na cosa seria" </span>{p}.</p>
+              )
               return (
                 <p>{p}.</p>
               )
             })}
+            <div style={{ height: "1px", width: "40px", backgroundColor: "black", position: "absolute", right: "2.5%", marginTop: "-20px" }}></div>
           </div>
         </ParallaxLayer>
-      </Parallax>
-    </LayoutMobile>
+        <ParallaxLayer offset={1.1} speed={0.1}>
+          <div style={{ position: "relative", width: "100vw", backgroundColor: "rgba(0, 0, 0, 0.05)", }}>
+            <BabaProductsBanners />
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer offset={1.7} speed={2}>
+          <ContactBarMobileSmall />
+        </ParallaxLayer>
+      </Parallax >
+    </LayoutMobile >
   )
 }
 

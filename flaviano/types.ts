@@ -53,6 +53,7 @@ export interface BabaPageQuery {
 
 export interface BabaPage {
   pageText: string,
+  pageTextMobile: string,
   headerImg: {
     asset: {
       fluid: FluidObject

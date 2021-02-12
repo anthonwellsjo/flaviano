@@ -5,6 +5,7 @@ export const useBabaPageQuery = () => {
       query useBabaPageQuery{
         sanityBabaPage {
           pageText
+          pageTextMobile
           headerImg {
             asset {
               fluid(maxWidth: 2000) {

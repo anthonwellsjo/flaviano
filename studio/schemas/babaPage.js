@@ -21,6 +21,12 @@ export default {
       validation: v => v.required().min(90)    
     },
     {
+      name: 'pageTextMobile',
+      title: 'Page Text Mobile',
+      type: 'text',
+      validation: v => v.required().min(45)    
+    },
+    {
       name: 'textImg',
       title: 'Small Text Image',
       type: 'image',
