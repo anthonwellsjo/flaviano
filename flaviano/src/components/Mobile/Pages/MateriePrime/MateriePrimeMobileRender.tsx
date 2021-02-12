@@ -45,14 +45,14 @@ const MateriePrimeMobileRender: React.FC = () => {
           </Centralizer>
         </ParallaxLayer>
         <ParallaxLayer offset={0.97} speed={1}>
-          {/* <MateriePrimi materiePrimi={sanityMateriePrimePage} /> */}
-          <MateriaPrima height={"350px"} title={"Lievito Madre"} hexColor={sanityMateriePrimePage.lievitoMadreColor.hex} fluidImg={sanityMateriePrimePage.lievitoMadreImg.asset.fluid} text={sanityMateriePrimePage.lievitoMadreText} />
+          <MateriePrimi materiePrimi={sanityMateriePrimePage} />
+          {/* <MateriaPrima height={"350px"} title={"Lievito Madre"} hexColor={sanityMateriePrimePage.lievitoMadreColor.hex} fluidImg={sanityMateriePrimePage.lievitoMadreImg.asset.fluid} text={sanityMateriePrimePage.lievitoMadreText} />
           <MateriaPrima whiteBehindImg imgBehindTitle height={"500px"} title={"Limoni di sorrento"} hexColor={sanityMateriePrimePage.limoniColor.hex} fluidImg={sanityMateriePrimePage.limoniImg.asset.fluid} text={sanityMateriePrimePage.limoniText} />
           <MateriaPrima imgLeft height={"400px"} title={"Mela Annurca"} hexColor={sanityMateriePrimePage.melaColor.hex} fluidImg={sanityMateriePrimePage.melaImg.asset.fluid} text={sanityMateriePrimePage.melaText} />
           <MateriaPrima height={"400px"} title={"Noci di Sorrento"} hexColor={sanityMateriePrimePage.nociColor.hex} fluidImg={sanityMateriePrimePage.nociImg.asset.fluid} text={sanityMateriePrimePage.nociText} />
           <MateriaPrima imgBehindTitle height={"450px"} title={"Nocciola di Giffoni"} hexColor={sanityMateriePrimePage.nocciolaColor.hex} fluidImg={sanityMateriePrimePage.nocciolaImg.asset.fluid} text={sanityMateriePrimePage.nocciolaText} />
           <MateriaPrima imgLeft height={"320px"} title={"Miele Millefiori"} hexColor={sanityMateriePrimePage.mieleColor.hex} fluidImg={sanityMateriePrimePage.mieleImg.asset.fluid} text={sanityMateriePrimePage.mieleText} />
-          <MateriaPrima imgBehindTitle longTitle height={"520px"} title={"Albicocche del Vesuvio"} hexColor={sanityMateriePrimePage.albicocceColor.hex} fluidImg={sanityMateriePrimePage.albicocceImg.asset.fluid} text={sanityMateriePrimePage.albicocceText} />
+          <MateriaPrima imgBehindTitle longTitle height={"520px"} title={"Albicocche del Vesuvio"} hexColor={sanityMateriePrimePage.albicocceColor.hex} fluidImg={sanityMateriePrimePage.albicocceImg.asset.fluid} text={sanityMateriePrimePage.albicocceText} /> */}
         </ParallaxLayer>
       </Parallax>
     </LayoutMobile>
