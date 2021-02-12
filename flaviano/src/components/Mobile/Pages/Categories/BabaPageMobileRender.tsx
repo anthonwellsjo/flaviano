@@ -19,7 +19,7 @@ const BabaPageMobileRender: React.FC = () => {
     <LayoutMobile>
       <Parallax pages={2} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
-        <ParallaxLayer offset={0} speed={1.5}>
+        <ParallaxLayer offset={0} speed={2.5}>
           <LayoutHeaderMobile backGroundFullPage />
         </ParallaxLayer>
         <ParallaxLayer speed={0.1} >

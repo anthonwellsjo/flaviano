@@ -11,13 +11,22 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu';
 
 interface Props {
   home?: boolean,
-  backGroundFullPage?: boolean
+  backGroundFullPage?: boolean,
+  backGroundFullPageXl?: boolean,
 }
 
 
-const LayoutHeaderMobile = ({ home, backGroundFullPage }: Props) => {
+const LayoutHeaderMobile = ({ home, backGroundFullPage,backGroundFullPageXl }: Props) => {
   if (backGroundFullPage) return (
     <div style={{ height: "100vh" }} className={classes.Layout}>
+      {/* <Logo /> */}
+      {home && <AnimLogoMobile />}
+      {/* <AnimLogoPiccoloMobile /> */}
+      {/* <MainNavBar /> */}
+    </div>
+  )
+  if (backGroundFullPageXl) return (
+    <div style={{ height: "215vh" }} className={classes.Layout}>
       {/* <Logo /> */}
       {home && <AnimLogoMobile />}
       {/* <AnimLogoPiccoloMobile /> */}
