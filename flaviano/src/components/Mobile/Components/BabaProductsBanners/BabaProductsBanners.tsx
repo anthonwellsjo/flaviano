@@ -14,7 +14,7 @@ const BabaProductsBanners: React.FC = () => {
   const limoncelloProps = useSpring({
     reverse: containersOpen.limoncello,
     to: { height: "60px", width: "100%" },
-    from: { height: "300px", width: "100%" }
+    from: { height: "300px", width: "60%" }
   })
   const stregaProps = useSpring({
     reverse: containersOpen.strega,
@@ -80,7 +80,7 @@ const BabaProductsBanners: React.FC = () => {
         const name = p.node.title.toLowerCase();
         if (name == "allo strega") return (
           <div style={{ position: "relative" }} onClick={() => onContainerClickedEventHandler(p.node.title)}>
-            <div style={{ width: "100%", display: "flex", justifyContent: "flex-start" }}>
+            <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
               <animated.div style={{ ...stregaProps, backgroundColor: p.node.backGroundColor.hex }} className={classes.container}>
                 <h1 style={{ fontFamily: "HomepageBaukastenBold", textTransform: "uppercase", fontSize: "1.5em", marginLeft: "5%", }}>{p.node.title}</h1>
 
