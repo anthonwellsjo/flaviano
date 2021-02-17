@@ -1,0 +1,12 @@
+.pageBody{
+  max-width: 1300px;
+  width: 100vw;
+  position: relative;
+  background-color: white;
+}
+
+
+.backGround{
+  
+  z-index: -100;
+}

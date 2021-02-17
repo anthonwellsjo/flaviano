@@ -1,0 +1,108 @@
+.wrapper {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.innerWrapper {
+  width: 80%;
+  height: 60vh;
+  position: relative;
+}
+
+.colorCube {
+  width: 70%;
+  height: 250px;
+  position: absolute;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleWrapper{
+  position: relative;
+  margin-top: -45px;
+  margin-left: -20%;
+}
+.titleOverLine{
+  position: absolute;
+  left:2px;
+  height: 2px;
+  background-color: black;
+}
+
+.title {
+  margin-top: 15px;
+  font-family: HomepageBaukastenBold;
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 33px;
+  letter-spacing: 0.16em;
+}
+
+
+.categoryDescriptionContainer{
+  position: absolute;
+  display: flex;
+  width: 400px;
+  margin-top: 110px;
+  flex-direction: column;
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.3em;
+  align-items: left;
+  justify-content: center;
+  font-family: Ibarra Real Nova;
+  font-style: italic;
+}
+
+.imageGroupHolder {
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 210px;
+  height: 320px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image{
+  position: absolute;
+  top: 40%;
+}
+
+.line {
+  height: 3px;
+  width: 200px;
+  background-color: black;
+  margin-bottom: 2vh;
+}
+
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.productTitle:hover{
+  /* color: rgb(71, 71, 71); */
+  font-weight: bold;
+}

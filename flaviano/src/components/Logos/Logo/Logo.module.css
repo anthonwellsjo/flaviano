@@ -1,0 +1,9 @@
+.logo{
+    position: absolute;
+    top: 5vh;
+    left: 8%;
+    transform: scale(1.1);
+    border-radius: 100%;
+    background-color: rgb(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}

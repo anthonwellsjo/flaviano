@@ -1,13 +1,20 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
+  pathPrefix: `/flaviano`,
   siteMetadata: {
     title: "flaviano",
   },
   plugins: [
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `HomepageBaukasten`,
+          `Roboto`,
         ],
         display: 'swap'
       }
@@ -15,8 +22,19 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: "d1gzutwf",
-        dataset: "production",
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        token: process.env.SANITY_TOKEN,
+        watchMode: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sanity-image",
+      options: {
+        // Sanity project info (required)
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        token: process.env.SANITY_TOKEN
       },
     },
     "gatsby-plugin-sharp",

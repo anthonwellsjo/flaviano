@@ -1,0 +1,29 @@
+.container {
+  position: absolute;
+  top: 35px;
+  overflow: visible;
+  border-radius: 100%;
+  z-index: 9999;
+  transform: scale(0.7);
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    transform: scale(0.6);
+  }
+}
+
+/*
+.logo {
+}
+.circle {
+}
+.subtitle {
+}
+.title {
+}
+.italianColors {
+}
+.titleFlower {
+} */

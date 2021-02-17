@@ -1,0 +1,71 @@
+$background: lightcoral;
+$easing: cubic-bezier(.25,1.7,.35,.8);
+$duration: 0.5s;
+
+
+.arrowIcon {
+  height: .8em;
+  width: .8em;
+  display:block;
+  padding: 0.5em;
+  margin: 1em auto;
+  transform: scale(.5);
+}
+
+.leftBar {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left:0;
+  width: 32px;
+  height: 10px;
+  display: block;
+  transform: rotate(35deg);
+  float: right;
+  &:after {
+    content:"";
+    background-color: black;
+    width: 32px;
+    height: 5px;
+    display: block;
+    float: right;
+    transition: all $duration $easing;
+    z-index: -1;
+  }
+}
+
+.rightBar {
+  position: absolute;
+  background-color: transparent;
+  top: 0px;
+  left:26px;
+  width: 32px;
+  height: 10px;
+  display: block;
+  transform: rotate(-35deg);
+  float: right;
+  &:after {
+    content:"";
+    background-color: black;
+    width: 32px;
+    height: 5px;
+    display: block;
+    float: right;
+    transition: all $duration $easing;
+    z-index: -1;
+  }
+}
+
+.open {
+    .leftBar:after {
+    transform-origin: center center;
+    transform: rotate(-70deg);
+  }
+  .rightBar:after {
+    transform-origin: center center;
+    transform: rotate(70deg);
+  }
+
+}
+
+

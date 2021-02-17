@@ -1,0 +1,44 @@
+.textWrapper {
+  width: 50%;
+  margin-bottom: 10vh;
+  position: relative;
+}
+
+.fluidImg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.title {
+  font-family: HomepagebaukastenBold;
+  letter-spacing: 0.16em;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.titleWrapper {
+  margin-bottom: 5vh;
+}
+.descriptionTitle,
+.ingredientsTitle,
+.conservationTitle {
+  font-family: HomepagebaukastenBold;
+  letter-spacing: 0.16em;
+  line-height: 11px;
+  text-transform: uppercase;
+  position: relative;
+  bottom:1vh;
+}
+.description,
+.ingredients,
+.conservation {
+  font-family: HomepagebaukastenBook;
+  letter-spacing: 0.16em;
+  line-height: 19px;
+  text-align: justify;
+}
+.descWrapper,
+.ingredWrapper,
+.consWrapper {
+  margin-top: 4vh;
+}

@@ -1,0 +1,11 @@
+.text {
+  font-family: HomepagebaukastenBold;
+  font-style: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 3em;
+  line-height: .9em;
+  letter-spacing: 0.3em;
+  margin-top: 0;
+  margin-bottom: 0;
+}

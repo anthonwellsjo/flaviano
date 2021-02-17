@@ -1,0 +1,20 @@
+.centralizer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.space {
+  justify-content: space-between;
+  width: 100%;
+}
+.evenly {
+  justify-content: space-evenly;
+  width: 100%;
+}

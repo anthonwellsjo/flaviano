@@ -1,0 +1,23 @@
+.header {
+  margin: 20px;
+}
+
+.body {
+  margin: 20px;
+}
+
+.text{
+  margin-top: 0;
+  font-size: .8em;
+  font-family: HomepageBaukastenBook;
+  text-align: justify;
+}
+
+.productCard {
+  transition: transform 0.3s;
+}
+
+.productCard:hover {
+  transform: translateY(-300px);
+  transition: transform 0.3s;
+}

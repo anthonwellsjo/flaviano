@@ -2,7 +2,8 @@
 
 */studio*/
 
-
+*/.env.development
+*/.env.production
 
 
 */backend*/

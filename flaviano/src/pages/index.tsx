@@ -1,20 +1,17 @@
-import * as React from "react"
-import Layout from "../components/Layout/Layout"
-import Quote from "../components/Quote/Quote";
+import React, { useState } from "react"
 
-// markup
+import IndexPageDesktopRender from "../components/Desktop/Pages/IndexPage/IndexPageDesktopRender";
+import IndexPageMobileRender from "../components/Mobile/Pages/IndexPage/IndexPageMobileRender";
+import { useViewport } from "../hooks/useViewPort";
+
+
 const IndexPage = () => {
-  return (
-    <>
-      <Layout />
-      <section style={{ position: "relative", top: "100px", width: "50vw", left: "30vw" }}>
-        <Quote>Ci sono sapori e profumi che evocano ricordi in ognuno di noi, ci auguriamo di regalare quei momenti di dolcezza ad ognuno di voi.</Quote>
-      </section>
-      <section>
-        
-      </section>
-    </>
-  )
+  const { width } = useViewport();
+
+  if (width > 850) return <IndexPageDesktopRender />;
+  return <IndexPageMobileRender/>
 }
 
 export default IndexPage;
+
+

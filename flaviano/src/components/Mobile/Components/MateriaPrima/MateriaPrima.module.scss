@@ -1,0 +1,28 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.colorBox{
+  width: 100%;
+  position: absolute;
+}
+
+.titleContainer {
+  position: absolute;
+  width: 12em;
+  padding: 20px;
+}
+
+.textContainer {
+  width: 95%;
+  padding-top: 20px;
+  word-spacing: 0.2em;
+  position: absolute;
+  text-align: justify;
+}
+
+.text {
+  font-size: .9em;
+  font-family: HomepageBaukastenBook;
+}
