@@ -10,7 +10,7 @@ import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 
-const BiscottiPageMobileRender: React.FC = () => {
+const BiscottiPageMobileRenderSmallHeight: React.FC = () => {
   const products: ProductQuery = useProductQuery();
   const biscotti: Array<Product> = products.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Biscotti");
   let parallax = useRef();
@@ -21,14 +21,14 @@ const BiscottiPageMobileRender: React.FC = () => {
         <ParallaxLayer offset={0} speed={0.1}>
           <LayoutHeaderMobile />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.2} speed={0}>
+        <ParallaxLayer offset={0.25} speed={0}>
           <div style={{ width: "30px", marginTop: "-15px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
             <QuoteMobile leftQuoteX={"-30px"} leftQuoteY={"-25px"} rightQuoteX={"-5px"} rightQuoteY={"-35px"} fontSize={"4em"} style={QuoteStyle.header}>
               B
             </QuoteMobile>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0.15} speed={0}>
+        <ParallaxLayer offset={0.2} speed={0}>
           <div style={{ position: "absolute", right: "10%", top: "100px" }}>
             <div style={{ position: "relative", }}>
               <div style={{ height: "0.5px", width: "70px", marginLeft: "1px", backgroundColor: "black", marginBottom: "8px" }}></div>
@@ -37,7 +37,7 @@ const BiscottiPageMobileRender: React.FC = () => {
             </div>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0.5} speed={0.8}>
+        <ParallaxLayer offset={0.7} speed={0.8}>
           {biscotti.map(b => {
             const name = b.node.title.toLowerCase();
             console.log(name);
@@ -84,7 +84,7 @@ const BiscottiPageMobileRender: React.FC = () => {
               </div>
             )
             if (name == "limone e zenzero") return (
-              <div style={{ overflow: "hidden", position: "relative" }}>
+              <div style={{ height: "300px", overflow: "hidden", position: "relative" }}>
                 <div style={{ width: "80%" }}>
                   <Img fluid={b.node.productPhoto.asset.fluid} alt="nocciola e cioccolato" />
                 </div>
@@ -110,4 +110,4 @@ const BiscottiPageMobileRender: React.FC = () => {
   )
 }
 
-export default BiscottiPageMobileRender;
+export default BiscottiPageMobileRenderSmallHeight;
