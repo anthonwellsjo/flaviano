@@ -12,19 +12,19 @@ import BabaProductsBanners from '../../Components/BabaProductsBanners/BabaProduc
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 
-const BabaPageMobileRender: React.FC = () => {
+const BabaPageMobileRenderSmallHeight: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
   let parallax = useRef();
   return (
     <LayoutMobile>
-      <Parallax pages={2} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={2.2} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={2.5}>
           <LayoutHeaderMobile backGroundFullPage />
         </ParallaxLayer>
         <ParallaxLayer speed={0.1} >
           <div style={{ width: "100%", overflow: "hidden" }}>
-            <div style={{ maxWidth: "900px", width: "700px", marginLeft: "-100px", position: "absolute" }}>
+            <div style={{ maxWidth: "900px", width: "700px", marginLeft: "-100px", marginTop:"-60px", position: "absolute" }}>
               <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
             </div>
           </div>
@@ -37,7 +37,7 @@ const BabaPageMobileRender: React.FC = () => {
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={0.6} speed={0}>
-          <div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
+          <div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: ".9em" }}>
             {sanityBabaPage.pageTextMobile.split(".").map((p, index) => {
               if (index == 0) return (
                 <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>"O Babà è na cosa seria" </span>{p}.</p>
@@ -49,12 +49,12 @@ const BabaPageMobileRender: React.FC = () => {
             <div style={{ height: "1px", width: "40px", backgroundColor: "black", position: "absolute", right: "2.5%", marginTop: "-20px" }}></div>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1.1} speed={0.1}>
+        <ParallaxLayer offset={1.2} speed={0.1}>
           <div style={{ position: "relative", width: "100vw", backgroundColor: "rgba(0, 0, 0, 0.05)", }}>
             <BabaProductsBanners />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={1.7} speed={2}>
+        <ParallaxLayer offset={2.2} speed={-.2}>
           <ContactBarMobileSmall />
         </ParallaxLayer>
       </Parallax >
@@ -62,4 +62,4 @@ const BabaPageMobileRender: React.FC = () => {
   )
 }
 
-export default BabaPageMobileRender;
+export default BabaPageMobileRenderSmallHeight;
