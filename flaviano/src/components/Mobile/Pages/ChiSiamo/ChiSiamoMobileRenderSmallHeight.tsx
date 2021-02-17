@@ -13,12 +13,12 @@ import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import flavianoImg from '../../../../images/flavianoLogo.png';
 
-const ChiSiamoMobileRender: React.FC = () => {
+const ChiSiamoMobileRenderSmallHeight = () => {
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax = useRef();
   return (
     <LayoutMobile>
-      <Parallax pages={3} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={3.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0.} speed={0.4}>
           <LayoutHeaderMobile />
@@ -45,7 +45,7 @@ const ChiSiamoMobileRender: React.FC = () => {
           </Centralizer>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.1} speed={0.1}>
+        <ParallaxLayer offset={1.3} speed={0.1}>
           <Centralizer>
             <div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
               {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
@@ -60,17 +60,17 @@ const ChiSiamoMobileRender: React.FC = () => {
             </div>
           </Centralizer>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.3} speed={0.2}>
+        <ParallaxLayer offset={2.8} speed={0.2}>
           <img style={{ position: "absolute", right: "10px", transform: "scale(0.8)" }} src={flavianoImg} alt="logo" />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.2} speed={1}>
+        <ParallaxLayer offset={2.9} speed={0.5}>
           <Centralizer>
             <div style={{ maxWidth: "200%", width: "200%", position: "absolute", marginTop: "-75px", opacity: "1" }}>
               <Img fluid={sanityChiSiamoPage.footerImg.asset.fluid} alt="photo of hands working a dew" />
             </div>
           </Centralizer>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.4} speed={2}>
+        <ParallaxLayer offset={2.9} speed={0.1}>
           <Centralizer>
             <ContactBarMobileSmall />
           </Centralizer>
@@ -80,4 +80,4 @@ const ChiSiamoMobileRender: React.FC = () => {
   )
 }
 
-export default ChiSiamoMobileRender;
+export default ChiSiamoMobileRenderSmallHeight;
