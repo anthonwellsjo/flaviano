@@ -17,7 +17,7 @@ const ContactBarMobileFull = () => {
   return (
     <div style={{ position: "absolute", width: "100%" }}>
       <Centralizer column>
-        <p className={classes.text}>Per maggiori informazione</p>
+        <p className={classes.text}>Per maggiori informazioni</p>
         <p onClick={() => document.execCommand(sanityGeneralSettings.mailFlaviano)} className={classes.mail}>{sanityGeneralSettings.mailFlaviano}</p>
         <p onClick={() => document.execCommand(sanityGeneralSettings.phoneFlaviano)} className={classes.phone}>{sanityGeneralSettings.phoneFlaviano}</p>
         <div className={classes.socialContainer}>

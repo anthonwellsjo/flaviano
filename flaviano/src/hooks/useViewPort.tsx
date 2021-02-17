@@ -7,17 +7,23 @@ import React, {
 } from 'react'
 
 interface IViewport {
-  width: number
+  width: number,
+  height: number
 }
 
 const ViewportContext = createContext<IViewport>({
-  width: 1200,
+  width: 1024,
+  height: 768
 })
 
 export const ViewportProvider: FC = ({ children }) => {
   const [width, setWidth] = useState(window.innerWidth)
+  const [height, setHeight] = useState(window.innerHeight)
 
-  const handleResize = () => setWidth(window.innerWidth)
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+  }
 
   useEffect(() => {
     window.addEventListener('resize', handleResize)
@@ -25,7 +31,7 @@ export const ViewportProvider: FC = ({ children }) => {
   }, [])
 
   return (
-    <ViewportContext.Provider value={{ width }}>
+    <ViewportContext.Provider value={{ width, height }}>
       {children}
     </ViewportContext.Provider>
   )

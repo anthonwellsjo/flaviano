@@ -39,7 +39,7 @@ const BabaPageDesktopRender: React.FC = () => {
               <Centralizer>
                 <div style={{ position: "absolute", width: "45%", top: "35vh", marginLeft: "25%" }}>
                   <Quote rightQuoteY="8vh" rightQuoteX="-3%">
-                    <PageTitle letterSpacing=".2em" fontSize="4em">O babà é na cosa seria.</PageTitle>
+                    <PageTitle letterSpacing=".2em" fontSize="3.8em">O babà é na cosa seria</PageTitle>
                   </Quote>
                 </div>
                 <div style={{ position: "absolute", bottom: "30vh" }}>
