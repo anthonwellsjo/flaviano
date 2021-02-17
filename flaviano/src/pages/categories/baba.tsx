@@ -7,7 +7,7 @@ const BabaPage: React.FC = () => {
   const { width, height } = useViewport();
 
   if (width > 850) return <BabaPageDesktopRender />
-  if (height < 650) return <BabaPageMobileRenderSmallHeight />
+  if (height < 680) return <BabaPageMobileRenderSmallHeight />
   return <BabaPageMobileRender />
 }
 
