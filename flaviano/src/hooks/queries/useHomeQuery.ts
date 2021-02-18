@@ -9,8 +9,8 @@ export const useHomeQuery = () => {
             mobileHeaderText
             contactImg {
             asset {
-              fluid(maxWidth: 2000){
-                ...GatsbySanityImageFluid
+              fixed(width: 1250){
+                ...GatsbySanityImageFixed
               }
           }
         }

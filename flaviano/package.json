@@ -40,8 +40,9 @@
     "sass": "^1.32.6"
   },
   "devDependencies": {
-    "@types/react-css-modules": "^4.6.2",
     "@types/classnames": "^2.2.11",
+    "@types/react-css-modules": "^4.6.2",
+    "@types/react-helmet": "^6.1.0",
     "typescript-plugin-css-modules": "^3.0.1"
   }
 }

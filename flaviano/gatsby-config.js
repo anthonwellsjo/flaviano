@@ -5,7 +5,11 @@ require('dotenv').config({
 module.exports = {
   pathPrefix: `/flaviano`,
   siteMetadata: {
-    title: "flaviano",
+    title: "Flaviano",
+    description: "",
+    author: "WB",
+    keywords: ["Panificio", "Baba"],
+    siteUrl: "https://anthonwellsjo.github.io/flaviano/"
   },
   plugins: [
     `gatsby-plugin-sass`,

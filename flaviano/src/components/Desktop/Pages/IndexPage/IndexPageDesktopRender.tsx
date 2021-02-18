@@ -15,6 +15,7 @@ import { useHomeQuery } from "../../../../hooks/queries/useHomeQuery";
 import LayoutFrame from "../../LayoutFrameDesktop/LayoutFrameDesktop";
 import Img from 'gatsby-image';
 import ContactBar from '../../ContactBar/ContactBar';
+import SEO from '../../../SEO/SEO';
 
 const IndexPageDesktopRender: React.FC = () => {
   const [materiePrimeHover, setMateriePrimeHover] = useState(false);
@@ -60,6 +61,7 @@ const IndexPageDesktopRender: React.FC = () => {
 
   return (
     <Parallax pages={5.9} scrolling={true} ref={parallax}>
+      <SEO title="Start Page" />
       <LayoutFrame>
         <AnimLogo />
         <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "100vh" }}>
@@ -127,11 +129,9 @@ const IndexPageDesktopRender: React.FC = () => {
             <Link to="/materieprime/">
               <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65%", height: "450px", backgroundColor: "#E3A38B", right: "0" }}>
                 <ParallaxLayer offset={0} speed={-0.15}>
-                  <Link to="/materieprime/">
-                    <animated.div style={{ cursor: "pointer", position: "absolute", width: "80%", right: "10%", top: "-320px" }}>
-                      <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
-                    </animated.div>
-                  </Link>
+                  <animated.div style={{ cursor: "pointer", position: "absolute", width: "80%", right: "10%", top: "-320px" }}>
+                    <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
+                  </animated.div>
                 </ParallaxLayer>
               </animated.div>
             </Link>
@@ -151,7 +151,7 @@ const IndexPageDesktopRender: React.FC = () => {
         {/* ------------------------------CONTACT SECTION */}
         <section style={{ position: "relative", height: "80vh", zIndex: 1 }}>
           <ParallaxLayer offset={0.30} speed={0.12}>
-            <ContactBar fluid={sanityHomePage.contactImg.asset.fluid} />
+            <ContactBar fixed={sanityHomePage.contactImg.asset.fixed} />
           </ParallaxLayer>
           <ParallaxLayer offset={1.32} speed={0.35}>
             <div style={{ position: "absolute", zIndex: 5, backgroundColor: "#F0E9E4", width: "100%", height: "250px" }}>

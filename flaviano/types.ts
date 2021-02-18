@@ -1,5 +1,5 @@
 import { GatsbyGraphQLInputObjectType } from "gatsby";
-import { FluidObject } from "gatsby-image";
+import { FixedObject, FluidObject } from "gatsby-image";
 
 export enum QuoteStyle {
   "header",
@@ -188,7 +188,7 @@ export interface HomePageQuery {
     mobileHeaderText: string,
     contactImg: {
       asset: {
-        fluid: FluidObject
+        fixed: FixedObject
       }
     },
   }
