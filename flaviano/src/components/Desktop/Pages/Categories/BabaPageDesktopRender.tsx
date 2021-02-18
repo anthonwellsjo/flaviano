@@ -12,9 +12,13 @@ import BackDrop from '../../../Desktop/BackDropDesktop/BackDropDesktop';
 import LayoutFrame from '../../../Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
 import useScroll from '../../../../hooks/useScroll';
 import ScrollButton from '../../../Desktop/ScrollButton/ScrollButton';
+import { useViewport } from '../../../../hooks/useViewPort';
 
 const BabaPageDesktopRender: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
+  const { width, height } = useViewport();
+  console.log("width/height", width / height);
+  const screenRatio = width / height;
   let parallax = useRef();
   const [currentScroll] = useScroll(parallax);
 
@@ -31,10 +35,23 @@ const BabaPageDesktopRender: React.FC = () => {
 
         <ParallaxLayer factor={0} speed={0.1} >
           <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", position: "relative" }}>
-            <div style={{ maxWidth: "100%", width: "100%", position: "absolute" }}>
-              <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
-              {/* <p className="legend">{e.node.title}</p> */}
-            </div>
+            {screenRatio < 1.3 &&
+              <div style={{ width: "140%", height: "100%", position: "absolute" }}>
+                <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
+                {/* <p className="legend">{e.node.title}</p> */}
+              </div>}
+            
+            {screenRatio < 1.55 && screenRatio >= 1.3 &&
+              <div style={{ width: "120%", height: "100%", position: "absolute" }}>
+                <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
+                {/* <p className="legend">{e.node.title}</p> */}
+              </div>}
+            {screenRatio >= 1.55 &&
+              <div style={{ maxWidth: "100%", width: "100%", height: "100%", position: "absolute" }}>
+                <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
+                {/* <p className="legend">{e.node.title}</p> */}
+              </div>}
+
             <section style={{ position: "absolute", left: "0", right: "0", top: "0", height: "100vh" }}>
               <Centralizer>
                 <div style={{ position: "absolute", width: "45%", top: "35vh", marginLeft: "25%" }}>
