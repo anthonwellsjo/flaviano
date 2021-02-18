@@ -11,7 +11,7 @@ import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
-import flavianoImg from '../../../../images/flavianoLogo.png';
+import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
 
 const ChiSiamoMobileRenderSmallHeight = () => {
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
@@ -61,9 +61,9 @@ const ChiSiamoMobileRenderSmallHeight = () => {
           </Centralizer>
         </ParallaxLayer>
         <ParallaxLayer offset={2.8} speed={0.2}>
-          <img style={{ position: "absolute", right: "10px", transform: "scale(0.8)" }} src={flavianoImg} alt="logo" />
+          <img style={{ position: "absolute", right: "20px", height: "30px" }} src={flavianoImg} alt="logo" />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.9} speed={0.5}>
+        <ParallaxLayer offset={2.8} speed={0.5}>
           <Centralizer>
             <div style={{ maxWidth: "200%", width: "200%", position: "absolute", marginTop: "-75px", opacity: "1" }}>
               <Img fluid={sanityChiSiamoPage.footerImg.asset.fluid} alt="photo of hands working a dew" />

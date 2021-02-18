@@ -98,7 +98,7 @@ const IndexPageMobileRender: React.FC = () => {
             <section style={{ position: "absolute", width: "100vw"}}>
               <Centralizer>
                 <div style={{ marginTop: "-30%", width: "100%" }}>
-                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-15%" }}>
+                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-15%", width: "200px" }}>
                     <PageTitle right fontSize={"1.8em"}>Materie Prime</PageTitle>
                   </div>
                   <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "220px", position: "absolute", right: "2.5%" }}>

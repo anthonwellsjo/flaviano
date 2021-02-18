@@ -13,14 +13,14 @@ import LayoutFrame from '../../../../components/Desktop/LayoutFrameDesktop/Layou
 
 
 const BiscottiPageDesktopRender: React.FC = () => {
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]:any = useContext(PageContext);
   const products: ProductQuery = useProductQuery();
   const biscotti: Array<Product> = products.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Biscotti");
   let pageNr = 0;
   let parallax: any = useRef();
 
   useEffect(() => {
-    setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }));
+    setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }));
   }, [])
 
   return (

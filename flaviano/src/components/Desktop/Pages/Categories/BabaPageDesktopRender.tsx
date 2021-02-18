@@ -20,7 +20,7 @@ const BabaPageDesktopRender: React.FC = () => {
   console.log("width/height", width / height);
   const screenRatio = width / height;
   let parallax: any = useRef();
-  const [currentScroll] = useScroll(parallax);
+  const currentScroll = useScroll(parallax);
 
 
 

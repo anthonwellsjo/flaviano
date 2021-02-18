@@ -3,19 +3,12 @@ import { HomePageQuery, QuoteStyle } from "../../../../../types";
 import LayoutHeaderMobile from "../../Components/LayoutHeaderMobile/LayoutHeaderMobile"
 import PageTitle from "../../../Desktop/PageTitleDesktop/PageTitleDesktop";
 import { Link } from 'gatsby';
-import Quote from "../../../Desktop/QuoteDesktop/QuoteDesktop";
 import Centralizer from "../../../StructureComponents/Centralizer/Centralizer";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import BackDrop from "../../../Desktop/BackDropDesktop/BackDropDesktop";
 import { useHomeQuery } from "../../../../hooks/queries/useHomeQuery";
-import AnimLogoMobile from '../../../Logos/AnimLogoMobile/AnimLogoMobile';
 import { useViewport } from '../../../../hooks/useViewPort';
 import MobileProducts from '../../Components/MobileProducts/MobileProducts';
-import ScrollButton from '../../Components/ScrollButtonMobile/ScrollButtonMobile';
-import useScroll from '../../../../hooks/useScroll';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
-import AnimLogoPiccoloMobile from '../../../Logos/AnimLogoPiccoloMobile/AnimLogoPiccoloMobile';
-import BurgerMenu from '../../Components/BurgerMenu/BurgerMenu';
 import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
 import { PageContext } from '../../../../contexts/pageContext';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
@@ -98,7 +91,7 @@ const IndexPageMobileRenderSmallHeight: React.FC = () => {
             <section style={{ position: "absolute", width: "100vw" }}>
               <Centralizer>
                 <div style={{ marginTop: "-30%", width: "100%" }}>
-                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-25%" }}>
+                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-25%", width: "200px" }}>
                     <PageTitle right fontSize={"1.8em"}>Materie Prime</PageTitle>
                   </div>
                   <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "220px", position: "absolute", right: "2.5%" }}>

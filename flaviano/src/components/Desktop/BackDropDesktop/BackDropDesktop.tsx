@@ -3,7 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import { PageContext } from '../../../contexts/pageContext';
 
 const BackDropDesktop: React.FC = () => {
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
   const styles = useSpring({
     reverse: !page.productsDropDownMenuOpen,
     from: { backdropFilter: "blur(0px)", backgroundColor: "rgb(255,255,255,0)" },
@@ -13,7 +13,7 @@ const BackDropDesktop: React.FC = () => {
   
   if (!page.productsDropDownMenuOpen) return null
   return (
-    <animated.div onClick={() => setPage(prev => ({ ...prev, productsDropDownMenuOpen: !page.productsDropDownMenuOpen }))} style={{ ...styles, zIndex: 2, position: "absolute", top: 0, left: 0, right: 0, bottom: 0, width: "100%" }}></animated.div>
+    <animated.div onClick={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: !page.productsDropDownMenuOpen }))} style={{ ...styles, zIndex: 2, position: "absolute", top: 0, left: 0, right: 0, bottom: 0, width: "100%" }}></animated.div>
   )
 }
 

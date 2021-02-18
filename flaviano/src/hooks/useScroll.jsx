@@ -23,7 +23,7 @@ const useScroll = (parallax) => {
     })
   })
 
-  return [currentScroll];
+  return currentScroll;
 }
 
 export default useScroll;

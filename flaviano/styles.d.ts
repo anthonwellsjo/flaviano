@@ -8,3 +8,5 @@ declare module "*.module.css" {
   export default classes;
 }
 
+declare module '*.jpg';
+declare module '*.png';

@@ -1,4 +1,3 @@
-import { FluidArgs } from 'gatsby-source-sanity/lib-es5/images/getGatsbyImageProps';
 import React from 'react';
 import Img, { FluidObject } from 'gatsby-image';
 import classes from './ContactBar.module.scss';

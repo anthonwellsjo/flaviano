@@ -30,7 +30,7 @@ const BabaProductsPreviewDesktop = () => {
   const babas: Array<Product> = queryData.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Babà");
   console.log("query data", babas);
 
-  const onMouseEnterEventHandler = (index) => {
+  const onMouseEnterEventHandler = (index: number) => {
     if (index == 0) {
       setPhotosToShow({
         leftUp: "",
@@ -79,12 +79,12 @@ const BabaProductsPreviewDesktop = () => {
       {babas.map((p: Product, index) => {
         return (
           <>
-            <div key={p.node.id} onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index)} key={p.node.id} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
+            <div key={p.node.id} onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index)} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
               <div className={classes.header}>
                 <div style={{ position: "absolute", height: "2px", width: "20px", backgroundColor: "black", top: "12px" }}></div>
-                <PageTitle fontSize={`${width/700}em`} lineHeight={`${width/500000}em`} letterSpacing={`${width/10000}em`}>Babà</PageTitle>
+                <PageTitle fontSize={`${width / 700}em`} lineHeight={`${width / 500000}em`} letterSpacing={`${width / 10000}em`}>Babà</PageTitle>
                 <br></br>
-                <PageTitle fontSize={`${width/700}em`} letterSpacing={`${width/10000}em`}>{p.node.title}</PageTitle>
+                <PageTitle fontSize={`${width / 700}em`} letterSpacing={`${width / 10000}em`}>{p.node.title}</PageTitle>
               </div>
               <div className={classes.body}>
                 <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Ingredienti</PageTitle>
