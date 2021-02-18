@@ -12,8 +12,10 @@ import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
+import { useViewport } from '../../../../hooks/useViewPort';
 
 const ChiSiamoMobileRenderSmallHeight = () => {
+  const { width } = useViewport();
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax: any = useRef();
   return (
@@ -47,17 +49,32 @@ const ChiSiamoMobileRenderSmallHeight = () => {
 
         <ParallaxLayer offset={1.3} speed={0.1}>
           <Centralizer>
-            <div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
-              {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
-                if (index == 0) return (
-                  <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>Flaviano </span>{p}.</p>
-                )
-                if (index == sanityChiSiamoPage.pageText.split(".").length - 1) return <p>{p}</p>
-                return (
-                  <p>{p}.</p>
-                )
-              })}
-            </div>
+            {width > 370 &&
+              < div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
+                {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
+                  if (index == 0) return (
+                    <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>Flaviano </span>{p}.</p>
+                  )
+                  if (index == sanityChiSiamoPage.pageText.split(".").length - 1) return <p>{p}</p>
+                  return (
+                    <p>{p}.</p>
+                  )
+                })}
+              </div>
+            }
+            {width <= 370 &&
+              < div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: ".9em" }}>
+                {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
+                  if (index == 0) return (
+                    <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>Flaviano </span>{p}.</p>
+                  )
+                  if (index == sanityChiSiamoPage.pageText.split(".").length - 1) return <p>{p}</p>
+                  return (
+                    <p>{p}.</p>
+                  )
+                })}
+              </div>
+            }
           </Centralizer>
         </ParallaxLayer>
         <ParallaxLayer offset={2.8} speed={0.2}>
@@ -76,7 +93,7 @@ const ChiSiamoMobileRenderSmallHeight = () => {
           </Centralizer>
         </ParallaxLayer>
       </Parallax>
-    </LayoutMobile>
+    </LayoutMobile >
   )
 }
 
