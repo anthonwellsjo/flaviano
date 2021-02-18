@@ -17,7 +17,7 @@ const MateriePrimeDesktopRender: React.FC = () => {
 
 
   return (
-    <Parallax pages={4.45} scrolling={true} ref={ref => parallax = ref}>
+    <Parallax pages={4.4} scrolling={true} ref={ref => parallax = ref}>
       <LayoutFrameDesktop>
         <ParallaxLayer offset={0} speed={0.5}>
           <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", zIndex: 100, position: "relative", }}>
@@ -76,7 +76,7 @@ const MateriePrimeDesktopRender: React.FC = () => {
         {/* LIMONI */}
 
         <ParallaxLayer offset={1} speed={0.5}>
-          <div style={{ height: "40vh" }}>
+          <div style={{ height: "40vh", }}>
             <Centralizer>
               <div style={{ maxWidth: "389px", height: "30vh", width: "30%", position: "absolute", right: "10%", top: "25vh" }}>
                 <Img fluid={sanityMateriePrimePage.limoniImg.asset.fluid} alt="photo of limoni di sorrento" />
@@ -242,7 +242,7 @@ const MateriePrimeDesktopRender: React.FC = () => {
 
         {/* ALBICOCCHE */}
 
-        <ParallaxLayer offset={3.999} speed={1}>
+        <ParallaxLayer offset={3.799} speed={1}>
           <div style={{ height: "40vh" }}>
             <Centralizer>
               <div style={{ width: "75%", height: "420px", backgroundColor: sanityMateriePrimePage.albicocceColor.hex, position: "absolute", left: "7%", top: "220px" }}></div>
