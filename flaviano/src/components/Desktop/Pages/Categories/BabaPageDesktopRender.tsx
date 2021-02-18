@@ -35,18 +35,18 @@ const BabaPageDesktopRender: React.FC = () => {
 
         <ParallaxLayer factor={0} speed={0.1} >
           <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", position: "relative" }}>
-            {screenRatio < 1.3 &&
+            {screenRatio < 1.39 &&
               <div style={{ width: "140%", height: "100%", position: "absolute" }}>
                 <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
                 {/* <p className="legend">{e.node.title}</p> */}
               </div>}
-            
-            {screenRatio < 1.55 && screenRatio >= 1.3 &&
+
+            {screenRatio < 1.64 && screenRatio >= 1.39 &&
               <div style={{ width: "120%", height: "100%", position: "absolute" }}>
                 <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
                 {/* <p className="legend">{e.node.title}</p> */}
               </div>}
-            {screenRatio >= 1.55 &&
+            {screenRatio >= 1.64 &&
               <div style={{ maxWidth: "100%", width: "100%", height: "100%", position: "absolute" }}>
                 <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
                 {/* <p className="legend">{e.node.title}</p> */}
@@ -59,7 +59,7 @@ const BabaPageDesktopRender: React.FC = () => {
                     <PageTitle letterSpacing=".2em" fontSize="3.8em">O babà é na cosa seria</PageTitle>
                   </Quote>
                 </div>
-                <div style={{ position: "absolute", bottom: "30vh" }}>
+                <div style={{ position: "absolute", bottom: "20vh" }}>
                   <ScrollButton to="#products" currentPosition={currentScroll} deactivatePosition={9999} reactivePosition={0} />
                 </div>
               </Centralizer>

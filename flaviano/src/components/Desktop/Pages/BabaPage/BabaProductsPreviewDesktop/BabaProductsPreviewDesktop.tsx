@@ -79,8 +79,8 @@ const BabaProductsPreviewDesktop = () => {
           <>
             <div onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index)} key={p.node.id} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
               <div className={classes.header}>
-                <div style={{ height: "3px", width: "2%", backgroundColor: "black", marginBottom: ".5em" }}></div>
-                <PageTitle fontSize={"1.8em"} letterSpacing={".2em"}>Babà</PageTitle>
+                <div style={{ position:"absolute", height: "2px", width: "20px", backgroundColor: "black", top: "12px" }}></div>
+                <PageTitle fontSize={"1.8em"} lineHeight={".2em"} letterSpacing={".2em"}>Babà</PageTitle>
                 <br></br>
                 <PageTitle fontSize={"1.8em"} letterSpacing={".2em"}>{p.node.title}</PageTitle>
               </div>

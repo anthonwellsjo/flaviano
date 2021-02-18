@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Centralizer from '../../StructureComponents/Centralizer/Centralizer';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import img from '../../../images/arrowDown.png';
+import img from '../../../images//down-chevron.png';
 import classes from './ScrollButton.module.css';
 
 
@@ -44,7 +44,7 @@ const ScrollButton = ({ id, reactivePosition, currentPosition, deactivatePositio
   return (
     <Centralizer>
       <div className={isActive ? classes.animate : classes.hide}>
-        <button style={{ cursor: "pointer" }} className={classes.button} onClick={() => onClickEventHandler()}><img style={{ width: "50px", transform: up ? "rotate(180deg)" : "rotate(0)" }} src={img} alt="arrow" /></button>
+        <button style={{ cursor: "pointer" }} className={classes.button} onClick={() => onClickEventHandler()}><img style={{ width: "80px", transform: up ? "rotate(180deg)" : "rotate(0)" }} src={img} alt="arrow" /></button>
       </div>
     </Centralizer >
   )

@@ -28,6 +28,10 @@
   animation: wave 1s infinite ease-in-out;
   transition: all .3s;
 }
+.animate:hover {
+  animation: none !important;
+  transition: all .5s;
+}
 
 .hide{
   opacity: 0;
