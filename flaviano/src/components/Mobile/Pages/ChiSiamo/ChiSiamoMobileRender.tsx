@@ -60,7 +60,7 @@ const ChiSiamoMobileRender: React.FC = () => {
             </div>
           </Centralizer>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.3} speed={0.2}>
+        <ParallaxLayer offset={2.15} speed={0.2}>
           <img style={{ position: "absolute", right: "10px", transform: "scale(0.8)" }} src={flavianoImg} alt="logo" />
         </ParallaxLayer>
         <ParallaxLayer offset={2.2} speed={1}>
