@@ -12,8 +12,10 @@ import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
+import { useViewport } from '../../../../hooks/useViewPort';
 
 const ChiSiamoMobileRender: React.FC = () => {
+  const {width} = useViewport();
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax: any = useRef();
   return (
