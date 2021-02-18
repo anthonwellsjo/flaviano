@@ -31,7 +31,7 @@ const ChiSiamoDesktopRender = () => {
               {/* <p className="legend">{e.node.title}</p> */}
             </div>
             <div style={{ width: "20%", position: "absolute", right: "20%", top: "30vh" }}>
-              <div style={{ height: "3px", width: "40px", backgroundColor: "black", marginBottom: "30px", marginLeft: "0px" }}></div>
+              <div style={{ height: "3px", width: "40px", backgroundColor: "black", marginBottom: "15px", marginLeft: "0px" }}></div>
               <PageTitle fontSize="3.5em" letterSpacing={".4em"}>Chi Siamo</PageTitle>
             </div>
           </div>
@@ -57,7 +57,7 @@ const ChiSiamoDesktopRender = () => {
 
 
         <ParallaxLayer offset={0.9999} speed={0.1}>
-          <div style={{ position: "absolute", top: "15vh", width: "100%", zIndex: 300, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ position: "absolute", top: "8vh", width: "100%", zIndex: 300, display: "flex", alignItems: "center", justifyContent: "center" }}>
             <Centralizer>
               <ScrollButton up to="#top" currentPosition={currentScroll} reactivePosition={0} deactivatePosition={50}></ScrollButton>
             </Centralizer>
