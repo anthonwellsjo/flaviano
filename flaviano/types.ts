@@ -61,7 +61,7 @@ export interface BabaPage {
   }
   textImg: {
     asset: {
-      fixed: any
+      fluid: FluidObject
     }
   }
 }

@@ -79,7 +79,7 @@ const BabaProductsPreviewDesktop = () => {
       {babas.map((p: Product, index) => {
         return (
           <>
-            <div onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index)} key={p.node.id} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
+            <div key={p.node.id} onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index)} key={p.node.id} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
               <div className={classes.header}>
                 <div style={{ position: "absolute", height: "2px", width: "20px", backgroundColor: "black", top: "12px" }}></div>
                 <PageTitle fontSize={`${width/700}em`} lineHeight={`${width/500000}em`} letterSpacing={`${width/10000}em`}>Babà</PageTitle>

@@ -65,18 +65,19 @@ const BabaPageDesktopRender: React.FC = () => {
             </section>
           </div>
         </ParallaxLayer>
-
         <div id="products" style={{ position: "absolute", top: "100vh" }}></div>
-
-
         <ParallaxLayer offset={0.99999} speed={0.1}>
           <div style={{ position: "relative", backgroundColor: "white", width: "100%", height: "100vh", zIndex: 0, marginTop: "10vh" }}>
             <Centralizer evenly>
-              <div style={{ width: "30%" }}>
-                <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify" }}>{sanityBabaPage.pageText}</p>
+              <div style={{ width: "50%" }}>
+                <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify", fontSize: "1.3em", margin: "-25px 10% 10% 10%" }}>{sanityBabaPage.pageText}</p>
               </div>
-              <div style={{ display: "flex", maxWidth: "300px", alignItems: "center", justifyContent: "center", }}>
-                <Img fixed={sanityBabaPage.textImg.asset.fixed} alt="Baba image with text" />
+              <div style={{ width: "50%" }}>
+                <Centralizer>
+                  <div style={{ width: "400px", alignItems: "center", justifyContent: "center", marginTop: "-50px" }}>
+                    <Img fluid={sanityBabaPage.textImg.asset.fluid} alt="Baba image with text" />
+                  </div>
+                </Centralizer>
               </div>
             </Centralizer>
           </div>
@@ -84,7 +85,7 @@ const BabaPageDesktopRender: React.FC = () => {
             <BabaProductsPreview />
           </div>
           <Centralizer>
-            <div style={{ position: "absolute", top: "15vh", zIndex: 2 }}>
+            <div style={{ position: "absolute", top: "10vh", zIndex: 2 }}>
               <ScrollButton to="#top" up currentPosition={currentScroll} deactivatePosition={9999} reactivePosition={0} />
             </div>
           </Centralizer>

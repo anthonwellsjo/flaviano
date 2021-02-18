@@ -15,8 +15,8 @@ export const useBabaPageQuery = () => {
           }
           textImg {
             asset{
-              fixed(width: 300) {
-                ...GatsbySanityImageFixed
+              fluid(maxWidth: 500) {
+                ...GatsbySanityImageFluid
               }
             }
           }
