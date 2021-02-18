@@ -5,15 +5,12 @@ import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
 import LayoutHeaderMobile from '../../Components/LayoutHeaderMobile/LayoutHeaderMobile';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
-import Img from 'gatsby-image';
 import { MateriePrimeQuery, QuoteStyle } from '../../../../../types';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import { useMateriePrimeQuery } from '../../../../hooks/queries/useMateriePrimeQuery';
 import MateriePrimi from '../../Components/MateriePrimi/MateriePrimi';
-import MateriaPrima from '../../Components/MateriaPrima/MateriaPrima';
-import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 
-const MateriePrimeMobileRender: React.FC = () => {
+const MateriePrimeMobileRenderSmallHeight: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
   let parallax: any = useRef();
   return (
@@ -24,7 +21,7 @@ const MateriePrimeMobileRender: React.FC = () => {
           <LayoutHeaderMobile backGroundFullPage />
         </ParallaxLayer>
         <ParallaxLayer offset={0.2} speed={0}>
-          <div style={{ width: "30px", marginTop: "-15px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
+          <div style={{ width: "30px", marginTop: "0px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
             <QuoteMobile leftQuoteX={"-30px"} leftQuoteY={"-25px"} rightQuoteX={"-5px"} rightQuoteY={"-35px"} fontSize={"4em"} style={QuoteStyle.header}>
               M
             </QuoteMobile>
@@ -38,10 +35,10 @@ const MateriePrimeMobileRender: React.FC = () => {
             </div>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0.1} speed={0}>
+        <ParallaxLayer offset={0.05} speed={0}>
           <Centralizer>
             <div style={{ width: "75%", marginTop: "0" }}>
-              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"70px"}>{sanityMateriePrimePage.quoteHeaderText}</QuoteMobile>
+              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"0px"} rightQuoteY={"90px"}>{sanityMateriePrimePage.quoteHeaderText}</QuoteMobile>
             </div>
           </Centralizer>
         </ParallaxLayer>
@@ -61,4 +58,4 @@ const MateriePrimeMobileRender: React.FC = () => {
   )
 }
 
-export default MateriePrimeMobileRender;
+export default MateriePrimeMobileRenderSmallHeight;

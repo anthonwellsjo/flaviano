@@ -6,14 +6,14 @@ import classes from './MainNavBarDesktop.module.css';
 
 
 const MainNavBarDesktop: React.FC = () => {
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
 
   return (
     <nav className={classes.navbar}>
-      <Link className={classes.link} onMouseEnter={() => setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }))} to="/chisiamo">Chi siamo</Link>
+      <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/chisiamo">Chi siamo</Link>
       <NavbarDropDown />
-      <Link className={classes.link} onMouseEnter={() => setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }))} to="/materieprime">Materie prime</Link>
-      <Link className={classes.link} onMouseEnter={() => setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }))} to="/contact">Contatti</Link>
+      <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/materieprime">Materie prime</Link>
+      <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/contact">Contatti</Link>
       <button className={classes.button}>Ita/Eng</button>
     </nav>
   )

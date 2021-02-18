@@ -18,7 +18,7 @@ import ContactBar from '../../ContactBar/ContactBar';
 
 const IndexPageDesktopRender: React.FC = () => {
   const [materiePrimeHover, setMateriePrimeHover] = useState(false);
-  let parallax = useRef();
+  let parallax: any = useRef();
 
 
   const Top = React.useRef<HTMLInputElement>(null);
@@ -59,11 +59,9 @@ const IndexPageDesktopRender: React.FC = () => {
 
 
   return (
-    <Parallax pages={6.5} scrolling={true} ref={parallax}>
-      <BackDrop />
+    <Parallax pages={5.9} scrolling={true} ref={parallax}>
       <LayoutFrame>
         <AnimLogo />
-        <LayoutHeader />
         <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "100vh" }}>
           <ParallaxLayer offset={0} speed={0.05}>
             <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
@@ -125,12 +123,12 @@ const IndexPageDesktopRender: React.FC = () => {
 
 
         <section style={{ position: "relative", height: "100vh", zIndex: 1 }}>
-          <ParallaxLayer offset={0.999} speed={0.1}>
+          <ParallaxLayer offset={0.79} speed={0.1}>
             <Link to="/materieprime/">
-              <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65%", height: "500px", backgroundColor: "#E3A38B", right: "0" }}>
+              <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65%", height: "450px", backgroundColor: "#E3A38B", right: "0" }}>
                 <ParallaxLayer offset={0} speed={-0.15}>
                   <Link to="/materieprime/">
-                    <animated.div style={{ cursor: "pointer", position: "absolute", width: "80%", right: "10%", top: "-40%" }}>
+                    <animated.div style={{ cursor: "pointer", position: "absolute", width: "80%", right: "10%", top: "-320px" }}>
                       <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
                     </animated.div>
                   </Link>
@@ -138,7 +136,7 @@ const IndexPageDesktopRender: React.FC = () => {
               </animated.div>
             </Link>
           </ParallaxLayer>
-          <ParallaxLayer offset={0.9} speed={0.1}>
+          <ParallaxLayer offset={0.7} speed={0.1}>
             <Link to="/materieprime/">
               <animated.div onMouseEnter={() => setMateriePrimeHover(true)} onMouseLeave={() => setMateriePrimeHover(false)} style={{ ...materiePrimeTitleStyles, position: "absolute", marginLeft: "10%" }}>
                 <PageTitle>Materie Prime</PageTitle>
@@ -152,14 +150,14 @@ const IndexPageDesktopRender: React.FC = () => {
 
         {/* ------------------------------CONTACT SECTION */}
         <section style={{ position: "relative", height: "80vh", zIndex: 1 }}>
-          <ParallaxLayer offset={0.9999} speed={0.12}>
+          <ParallaxLayer offset={0.30} speed={0.12}>
             <ContactBar fluid={sanityHomePage.contactImg.asset.fluid} />
           </ParallaxLayer>
-          <ParallaxLayer offset={0.69} speed={0.35}>
-            <div style={{ position: "absolute", zIndex: 5, backgroundColor: "#F0E9E4", width: "100%", height: "250px", top: "175vh" }}>
+          <ParallaxLayer offset={1.32} speed={0.35}>
+            <div style={{ position: "absolute", zIndex: 5, backgroundColor: "#F0E9E4", width: "100%", height: "250px" }}>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={0.9999} speed={0.26}>
+          <ParallaxLayer offset={0.30} speed={0.26}>
             <div style={{ position: "absolute", left: "10%", zIndex: 5, top: "115vh" }}>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", backgroundColor: "black" }}></div>
               <PageTitle>Contatti</PageTitle>

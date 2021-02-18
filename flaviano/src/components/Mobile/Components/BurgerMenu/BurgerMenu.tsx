@@ -33,7 +33,7 @@ const BurgerMenu: React.FC = () => {
       {page.burgerMenuOpen &&
         <animated.div style={{ ...menuProps, position: "absolute", zIndex: 5 }} >
           <div className={classes.linkContainer} style={{ position: "fixed", width: "250px", height: "350px", right: "20px", top: "30px" }}>
-            <Link onClick={onBurgerClickEventHandler} to="/prodotti" className={classes.link}>
+            <Link onClick={onBurgerClickEventHandler} to="/" className={classes.link}>
               <div className={classes.prodotti}>
                 <div className={classes.innerContainer}>
                   <Link to="/">

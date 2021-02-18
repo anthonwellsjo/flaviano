@@ -14,13 +14,13 @@ import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/Contac
 import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
 import { useViewport } from '../../../../hooks/useViewPort';
 
-const ChiSiamoMobileRender: React.FC = () => {
-  const {width} = useViewport();
+const ChiSiamoMobileRenderSmallHeight = () => {
+  const { width } = useViewport();
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax: any = useRef();
   return (
     <LayoutMobile>
-      <Parallax pages={3} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={3.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0.} speed={0.4}>
           <LayoutHeaderMobile />
@@ -47,9 +47,9 @@ const ChiSiamoMobileRender: React.FC = () => {
           </Centralizer>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.1} speed={0.1}>
+        <ParallaxLayer offset={1.3} speed={0.1}>
           <Centralizer>
-          {width > 370 &&
+            {width > 370 &&
               < div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
                 {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
                   if (index == 0) return (
@@ -77,24 +77,24 @@ const ChiSiamoMobileRender: React.FC = () => {
             }
           </Centralizer>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.15} speed={0.2}>
-          <img style={{ position: "absolute", right: "30px", height:"40px" }} src={flavianoImg} alt="logo" />
+        <ParallaxLayer offset={2.65} speed={0.2}>
+          <img style={{ position: "absolute", right: "20px", height: "30px" }} src={flavianoImg} alt="logo" />
         </ParallaxLayer>
-        <ParallaxLayer offset={2} speed={1}>
+        <ParallaxLayer offset={2.8} speed={0.5}>
           <Centralizer>
             <div style={{ maxWidth: "200%", width: "200%", position: "absolute", marginTop: "-75px", opacity: "1" }}>
               <Img fluid={sanityChiSiamoPage.footerImg.asset.fluid} alt="photo of hands working a dew" />
             </div>
           </Centralizer>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.2} speed={2}>
+        <ParallaxLayer offset={2.9} speed={0.1}>
           <Centralizer>
             <ContactBarMobileSmall />
           </Centralizer>
         </ParallaxLayer>
       </Parallax>
-    </LayoutMobile>
+    </LayoutMobile >
   )
 }
 
-export default ChiSiamoMobileRender;
+export default ChiSiamoMobileRenderSmallHeight;

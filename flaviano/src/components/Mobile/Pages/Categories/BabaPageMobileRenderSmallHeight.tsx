@@ -14,7 +14,7 @@ import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/Contac
 
 const BabaPageMobileRenderSmallHeight: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
-  let parallax = useRef();
+  let parallax: any = useRef();
   return (
     <LayoutMobile>
       <Parallax pages={2.2} scrolling={true} config={{ mass: 1 }} ref={parallax}>

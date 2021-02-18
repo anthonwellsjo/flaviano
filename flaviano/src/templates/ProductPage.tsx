@@ -12,7 +12,7 @@ import PageTitle from '../components/Desktop/PageTitleDesktop/PageTitleDesktop';
 
 const ProductPage = ({ data }: ProductPageDataQuery) => {
   console.log("product data", data)
-  let parallax;
+  let parallax: any;
   return (
     <Parallax pages={2} scrolling={true} ref={ref => parallax = ref}>
       <div style={{ width: "100%", height: "100vh", zIndex: -100, position: "relative" }}>

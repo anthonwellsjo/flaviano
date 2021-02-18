@@ -2,26 +2,19 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { HomePageQuery, QuoteStyle } from "../../../../../types";
 import LayoutHeaderMobile from "../../Components/LayoutHeaderMobile/LayoutHeaderMobile"
 import PageTitle from "../../../Desktop/PageTitleDesktop/PageTitleDesktop";
-import {Link} from 'gatsby';
-import Quote from "../../../Desktop/QuoteDesktop/QuoteDesktop";
+import { Link } from 'gatsby';
 import Centralizer from "../../../StructureComponents/Centralizer/Centralizer";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import BackDrop from "../../../Desktop/BackDropDesktop/BackDropDesktop";
 import { useHomeQuery } from "../../../../hooks/queries/useHomeQuery";
-import AnimLogoMobile from '../../../Logos/AnimLogoMobile/AnimLogoMobile';
 import { useViewport } from '../../../../hooks/useViewPort';
 import MobileProducts from '../../Components/MobileProducts/MobileProducts';
-import ScrollButton from '../../Components/ScrollButtonMobile/ScrollButtonMobile';
-import useScroll from '../../../../hooks/useScroll';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
-import AnimLogoPiccoloMobile from '../../../Logos/AnimLogoPiccoloMobile/AnimLogoPiccoloMobile';
-import BurgerMenu from '../../Components/BurgerMenu/BurgerMenu';
 import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
 import { PageContext } from '../../../../contexts/pageContext';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 
-const IndexPageMobileRender: React.FC = () => {
+const IndexPageMobileRenderSmallHeight: React.FC = () => {
   const { width } = useViewport();
   const [page, setPage] = useContext(PageContext);
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
@@ -34,7 +27,7 @@ const IndexPageMobileRender: React.FC = () => {
       <Parallax pages={2.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.4}>
-          <LayoutHeaderMobile home />
+          <LayoutHeaderMobile home backGroundFullPage />
         </ParallaxLayer>
         {/* ------------------------------TOP QUOTE */}
         <div id="top" style={{ position: "absolute", top: "0" }}></div>
@@ -62,7 +55,7 @@ const IndexPageMobileRender: React.FC = () => {
         <div style={{ position: "absolute", top: "100%" }}></div>
 
         <ParallaxLayer offset={0.9} speed={-0.005}>
-          <section style={{ position: "relative", width: "100vw"}}>
+          <section style={{ position: "relative", width: "100vw" }}>
             <div style={{ marginTop: "-30px", position: "relative", height: "18%" }}>
               <div style={{ width: "30px", marginTop: "-15px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
                 <QuoteMobile leftQuoteX={"-30px"} leftQuoteY={"-20px"} rightQuoteX={"-25px"} rightQuoteY={"-45px"} fontSize={"3.5em"} style={QuoteStyle.header}>
@@ -77,7 +70,7 @@ const IndexPageMobileRender: React.FC = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={-0.005}>
-          <div style={{position:"absolute" }}>
+          <div style={{ position: "absolute" }}>
             <MobileProducts />
           </div>
         </ParallaxLayer>
@@ -93,12 +86,12 @@ const IndexPageMobileRender: React.FC = () => {
         <div id="materieprime" style={{ position: "absolute", top: "200%" }}></div>
 
 
-        <ParallaxLayer offset={2.05} speed={0.2}>
+        <ParallaxLayer offset={2.15} speed={0.2}>
           <Link to={"/materieprime"}>
-            <section style={{ position: "absolute", width: "100vw"}}>
+            <section style={{ position: "absolute", width: "100vw" }}>
               <Centralizer>
                 <div style={{ marginTop: "-30%", width: "100%" }}>
-                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-15%", width: "200px" }}>
+                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-25%", width: "200px" }}>
                     <PageTitle right fontSize={"1.8em"}>Materie Prime</PageTitle>
                   </div>
                   <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "220px", position: "absolute", right: "2.5%" }}>
@@ -123,4 +116,4 @@ const IndexPageMobileRender: React.FC = () => {
   )
 }
 
-export default IndexPageMobileRender;
+export default IndexPageMobileRenderSmallHeight;
