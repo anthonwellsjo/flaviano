@@ -13,7 +13,7 @@ import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 const BiscottiPageMobileRender: React.FC = () => {
   const products: ProductQuery = useProductQuery();
   const biscotti: Array<Product> = products.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Biscotti");
-  let parallax = useRef();
+  let parallax: any = useRef();
   return (
     <LayoutMobile>
       <Parallax pages={1.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>

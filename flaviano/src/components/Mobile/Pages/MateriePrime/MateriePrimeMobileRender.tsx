@@ -11,13 +11,14 @@ import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import { useMateriePrimeQuery } from '../../../../hooks/queries/useMateriePrimeQuery';
 import MateriePrimi from '../../Components/MateriePrimi/MateriePrimi';
 import MateriaPrima from '../../Components/MateriaPrima/MateriaPrima';
+import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 
 const MateriePrimeMobileRender: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
-  let parallax = useRef();
+  let parallax: any = useRef();
   return (
     <LayoutMobile>
-      <Parallax pages={3.6} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={4.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0.} speed={0}>
           <LayoutHeaderMobile backGroundFullPage />
@@ -44,7 +45,8 @@ const MateriePrimeMobileRender: React.FC = () => {
             </div>
           </Centralizer>
         </ParallaxLayer>
-        <ParallaxLayer offset={0.97} speed={1}>
+
+        <ParallaxLayer offset={0.97} speed={0.5}>
           <MateriePrimi materiePrimi={sanityMateriePrimePage} />
           {/* <MateriaPrima height={"350px"} title={"Lievito Madre"} hexColor={sanityMateriePrimePage.lievitoMadreColor.hex} fluidImg={sanityMateriePrimePage.lievitoMadreImg.asset.fluid} text={sanityMateriePrimePage.lievitoMadreText} />
           <MateriaPrima whiteBehindImg imgBehindTitle height={"500px"} title={"Limoni di sorrento"} hexColor={sanityMateriePrimePage.limoniColor.hex} fluidImg={sanityMateriePrimePage.limoniImg.asset.fluid} text={sanityMateriePrimePage.limoniText} />

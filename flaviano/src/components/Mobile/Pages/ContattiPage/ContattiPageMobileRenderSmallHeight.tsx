@@ -14,7 +14,7 @@ import ContactBarMobileFull from '../../Components/ContactBarMobileFull/ContactB
 
 const ContattiPageMobileRenderSmallHeight: React.FC = () => {
   const { sanityGeneralSettings: ContactInfoQuery } = useContactInfoQuery();
-  let parallax = useRef();
+  let parallax: any = useRef();
 
   return (
     <LayoutMobile>

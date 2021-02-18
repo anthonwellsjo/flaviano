@@ -25,7 +25,7 @@ const IndexPageMobileRender: React.FC = () => {
   const { width } = useViewport();
   const [page, setPage] = useContext(PageContext);
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
-  let parallax = useRef();
+  let parallax: any = useRef();
 
 
 

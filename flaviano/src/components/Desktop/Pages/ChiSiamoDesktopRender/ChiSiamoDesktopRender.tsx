@@ -16,7 +16,7 @@ import useScroll from '../../../../hooks/useScroll';
 const ChiSiamoDesktopRender = () => {
 
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
-  let parallax = useRef();
+  let parallax: any = useRef();
   const currentScroll = useScroll(parallax);
 
 

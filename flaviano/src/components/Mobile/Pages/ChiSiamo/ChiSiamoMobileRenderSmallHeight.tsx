@@ -15,7 +15,7 @@ import flavianoImg from '../../../../images/flavianoLogo.png';
 
 const ChiSiamoMobileRenderSmallHeight = () => {
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
-  let parallax = useRef();
+  let parallax: any = useRef();
   return (
     <LayoutMobile>
       <Parallax pages={3.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>

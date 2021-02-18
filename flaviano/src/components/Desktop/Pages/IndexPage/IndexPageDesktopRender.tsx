@@ -18,7 +18,7 @@ import ContactBar from '../../ContactBar/ContactBar';
 
 const IndexPageDesktopRender: React.FC = () => {
   const [materiePrimeHover, setMateriePrimeHover] = useState(false);
-  let parallax = useRef();
+  let parallax: any = useRef();
 
 
   const Top = React.useRef<HTMLInputElement>(null);

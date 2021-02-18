@@ -13,7 +13,7 @@ import Img from 'gatsby-image';
 
 const MateriePrimeDesktopRender: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
-  let parallax;
+  let parallax: any;
 
 
   return (

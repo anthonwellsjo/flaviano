@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { Product, ProductQuery, QuoteStyle } from '../../../../../types';
 import LayoutHeader from '../../../../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
@@ -17,7 +17,7 @@ const BiscottiPageDesktopRender: React.FC = () => {
   const products: ProductQuery = useProductQuery();
   const biscotti: Array<Product> = products.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Biscotti");
   let pageNr = 0;
-  let parallax;
+  let parallax: any = useRef();
 
   useEffect(() => {
     setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }));

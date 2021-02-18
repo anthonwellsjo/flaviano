@@ -6,3 +6,11 @@
   background-color: white;
   
 }
+
+.homeButton{
+  position: fixed;
+  z-index: 2;
+  top: 5px;
+  left: -15px;
+  transform: scale(.6);
+}

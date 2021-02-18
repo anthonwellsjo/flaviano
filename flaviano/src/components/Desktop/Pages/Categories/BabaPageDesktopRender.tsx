@@ -19,7 +19,7 @@ const BabaPageDesktopRender: React.FC = () => {
   const { width, height } = useViewport();
   console.log("width/height", width / height);
   const screenRatio = width / height;
-  let parallax = useRef();
+  let parallax: any = useRef();
   const [currentScroll] = useScroll(parallax);
 
 
@@ -52,9 +52,9 @@ const BabaPageDesktopRender: React.FC = () => {
 
             <section style={{ position: "absolute", left: "0", right: "0", top: "0", height: "100vh" }}>
               <Centralizer>
-                <div style={{ position: "absolute", width: "45%", top: "35vh", marginLeft: "25%" }}>
-                  <Quote rightQuoteY="8vh" rightQuoteX="-3%">
-                    <PageTitle letterSpacing=".2em" fontSize="3.8em">O babà é na cosa seria</PageTitle>
+                <div style={{ position: "absolute", width: "45%", top: "35vh", marginLeft: "25%", }}>
+                  <Quote rightQuoteY={`${height / 15}px`} rightQuoteX={`-${height / 10}px`}>
+                    <PageTitle letterSpacing={".2em"} fontSize={`${(width / 500) + 0.7}em`}>O babà é na cosa seria</PageTitle>
                   </Quote>
                 </div>
                 <div style={{ position: "absolute", bottom: "25vh" }}>
