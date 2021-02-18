@@ -6,10 +6,12 @@ import Centralizer from '../../../../StructureComponents/Centralizer/Centralizer
 import classes from './BabaProductsPreviewDesktop.module.css';
 import { useSpring, animated } from 'react-spring';
 import BabaProductPhotosAnimation from '../BabaProductPhotosAnimation/BabaProductPhotosAnimation';
+import { useViewport } from '../../../../../hooks/useViewPort';
 
 
 
 const BabaProductsPreviewDesktop = () => {
+  const { width } = useViewport();
   const [productHover, setProductHover] = useState(false);
   const backDropSpring = useSpring({
     reverse: productHover,
@@ -79,10 +81,10 @@ const BabaProductsPreviewDesktop = () => {
           <>
             <div onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index)} key={p.node.id} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
               <div className={classes.header}>
-                <div style={{ position:"absolute", height: "2px", width: "20px", backgroundColor: "black", top: "12px" }}></div>
-                <PageTitle fontSize={"1.8em"} lineHeight={".2em"} letterSpacing={".2em"}>Babà</PageTitle>
+                <div style={{ position: "absolute", height: "2px", width: "20px", backgroundColor: "black", top: "12px" }}></div>
+                <PageTitle fontSize={`${width/700}em`} lineHeight={`${width/500000}em`} letterSpacing={`${width/10000}em`}>Babà</PageTitle>
                 <br></br>
-                <PageTitle fontSize={"1.8em"} letterSpacing={".2em"}>{p.node.title}</PageTitle>
+                <PageTitle fontSize={`${width/700}em`} letterSpacing={`${width/10000}em`}>{p.node.title}</PageTitle>
               </div>
               <div className={classes.body}>
                 <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Ingredienti</PageTitle>

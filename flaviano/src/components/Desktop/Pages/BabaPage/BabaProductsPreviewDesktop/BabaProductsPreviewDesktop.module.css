@@ -1,5 +1,6 @@
 .header {
-  margin: 20px;
+  margin-top: 30px;
+  margin-left: 10px;
   padding:10px;
 }
 
@@ -19,6 +20,6 @@
 }
 
 .productCard:hover {
-  transform: translateY(-300px);
+  transform: translateY(-320px);
   transition: transform 0.3s;
 }
