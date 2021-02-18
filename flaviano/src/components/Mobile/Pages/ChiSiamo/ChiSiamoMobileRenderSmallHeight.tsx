@@ -77,7 +77,7 @@ const ChiSiamoMobileRenderSmallHeight = () => {
             }
           </Centralizer>
         </ParallaxLayer>
-        <ParallaxLayer offset={2.8} speed={0.2}>
+        <ParallaxLayer offset={2.65} speed={0.2}>
           <img style={{ position: "absolute", right: "20px", height: "30px" }} src={flavianoImg} alt="logo" />
         </ParallaxLayer>
         <ParallaxLayer offset={2.8} speed={0.5}>
