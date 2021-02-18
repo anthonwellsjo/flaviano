@@ -16,7 +16,7 @@ const BiscottiPageMobileRenderSmallHeight: React.FC = () => {
   let parallax: any = useRef();
   return (
     <LayoutMobile>
-      <Parallax pages={1.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={1.65} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.1}>
           <LayoutHeaderMobile />

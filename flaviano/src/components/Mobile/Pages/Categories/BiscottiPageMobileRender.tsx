@@ -16,7 +16,7 @@ const BiscottiPageMobileRender: React.FC = () => {
   let parallax: any = useRef();
   return (
     <LayoutMobile>
-      <Parallax pages={1.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={1.7} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.1}>
           <LayoutHeaderMobile />
@@ -37,7 +37,7 @@ const BiscottiPageMobileRender: React.FC = () => {
             </div>
           </div>
         </ParallaxLayer>
-        <ParallaxLayer offset={0.5} speed={0.8}>
+        <ParallaxLayer offset={0.65} speed={0.8}>
           {biscotti.map(b => {
             const name = b.node.title.toLowerCase();
             console.log(name);
