@@ -26,8 +26,6 @@ const BiscottiPageDesktopRender: React.FC = () => {
   return (
     <Parallax pages={3.3} scrolling={true} ref={ref => parallax = ref}>
       <LayoutFrame>
-      <BackDrop />
-      <LayoutHeader />
       {/* ------------HEADER SECTION */}
       <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", position: "relative" }}>
         <ParallaxLayer factor={0} speed={-1}>
@@ -68,7 +66,7 @@ const BiscottiPageDesktopRender: React.FC = () => {
       {pageNr++}
       <section style={{ position: "relative", width: "100%", height: "100vh", marginTop: "30vh" }} >
         <ParallaxLayer factor={pageNr} speed={pageNr / 15}>
-          <div style={{ backgroundColor: "white", width: "100%", height: "100vh", zIndex: 100 }}>
+          <div style={{ backgroundColor: "white", width: "100%", height: "100vh", }}>
           </div>
         </ParallaxLayer>
       </section>

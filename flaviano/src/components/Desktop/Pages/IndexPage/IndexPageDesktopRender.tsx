@@ -60,10 +60,8 @@ const IndexPageDesktopRender: React.FC = () => {
 
   return (
     <Parallax pages={6.5} scrolling={true} ref={parallax}>
-      <BackDrop />
       <LayoutFrame>
         <AnimLogo />
-        <LayoutHeader />
         <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "100vh" }}>
           <ParallaxLayer offset={0} speed={0.05}>
             <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>

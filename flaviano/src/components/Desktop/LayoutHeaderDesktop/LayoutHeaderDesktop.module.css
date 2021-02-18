@@ -1,4 +1,7 @@
 .Layout {
-  position: relative;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 100%;
   z-index: 2;
 }

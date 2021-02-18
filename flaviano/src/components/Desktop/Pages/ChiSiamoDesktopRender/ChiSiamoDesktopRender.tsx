@@ -14,7 +14,7 @@ import ScrollButton from '../../ScrollButton/ScrollButton';
 import useScroll from '../../../../hooks/useScroll';
 
 const ChiSiamoDesktopRender = () => {
-  
+
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax = useRef();
   const currentScroll = useScroll(parallax);
@@ -23,8 +23,6 @@ const ChiSiamoDesktopRender = () => {
   return (
     <Parallax pages={2.3} scrolling={false} ref={ref => parallax = ref}>
       <LayoutFrame>
-        <BackDrop />
-        <LayoutHeader />
         <div id="top" style={{ position: "absolute", top: 0 }}></div>
         <ParallaxLayer offset={0} speed={0.5}>
           <div style={{ backgroundColor: "#E5E5E5", width: "100%", height: "200vh", position: "relative", }}>

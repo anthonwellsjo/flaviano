@@ -27,9 +27,7 @@ const BabaPageDesktopRender: React.FC = () => {
 
   return (
     <Parallax pages={1} scrolling={false} ref={parallax} config={{ mass: 2 }}>
-      <BackDrop />
       <LayoutFrame>
-        <LayoutHeader />
         {/* ------------HEADER SECTION */}
         <div id="top" style={{ position: "absolute", top: "0" }}></div>
 
@@ -59,7 +57,7 @@ const BabaPageDesktopRender: React.FC = () => {
                     <PageTitle letterSpacing=".2em" fontSize="3.8em">O babà é na cosa seria</PageTitle>
                   </Quote>
                 </div>
-                <div style={{ position: "absolute", bottom: "20vh" }}>
+                <div style={{ position: "absolute", bottom: "25vh" }}>
                   <ScrollButton to="#products" currentPosition={currentScroll} deactivatePosition={9999} reactivePosition={0} />
                 </div>
               </Centralizer>
