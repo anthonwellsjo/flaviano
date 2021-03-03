@@ -199,6 +199,11 @@ export interface HomePageQuery {
     },
   }
 }
+export interface ContactPageQuery {
+  sanityContattiPage: {
+    quoteHeaderText: string,
+  }
+}
 
 export interface ContactInfoQuery {
   sanityGeneralSettings: {

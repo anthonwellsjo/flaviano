@@ -1,19 +1,17 @@
 import React, { useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { QuoteStyle } from '../../../../../types';
-import { useContactInfoQuery } from '../../../../hooks/queries/useContactInfoQuery';
+import { ContactPageQuery, QuoteStyle } from '../../../../../types';
 import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
-import BurgerMenu from '../../Components/BurgerMenu/BurgerMenu';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import LayoutHeaderMobile from '../../Components/LayoutHeaderMobile/LayoutHeaderMobile';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
-import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import ContactBarMobileFull from '../../Components/ContactBarMobileFull/ContactBarMobileFull';
+import { useContactQuery } from '../../../../hooks/queries/useContactQuery';
 
 const ContattiPageMobileRender: React.FC = () => {
-  const { sanityGeneralSettings: ContactInfoQuery } = useContactInfoQuery();
+  const { sanityContattiPage }: ContactPageQuery = useContactQuery()
   let parallax: any = useRef();
 
   return (
@@ -41,7 +39,7 @@ const ContattiPageMobileRender: React.FC = () => {
         <ParallaxLayer offset={0.1} speed={0.1}>
           <Centralizer>
             <div style={{ width: "75%", marginTop: "0" }}>
-              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"50px"}>Le materie prime utilizzate per i nostri prodotti provengono dalle ricche e generose terre campane che offrono eccellenze riconosciute in tutto il mondo.</QuoteMobile>
+              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"50px"}>{sanityContattiPage.quoteHeaderText}</QuoteMobile>
             </div>
           </Centralizer>
         </ParallaxLayer>

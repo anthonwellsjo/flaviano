@@ -13,6 +13,7 @@ import babaPage from './babaPage'
 import chiSiamoPage from './chiSiamoPage'
 import materiePrimePage from './materiePrimePage'
 import homePage from './homePage'
+import contattiPage from './contattiPage'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -28,7 +29,7 @@ export default createSchema({
     category,
     categoryParallaxIcon,
     categoryCarouselImage,
-
+    contattiPage,
     generalSettings,
     homePage,
     babaPage,

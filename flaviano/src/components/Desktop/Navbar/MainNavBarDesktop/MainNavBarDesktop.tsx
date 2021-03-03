@@ -13,7 +13,7 @@ const MainNavBarDesktop: React.FC = () => {
       <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/chisiamo">Chi siamo</Link>
       <NavbarDropDown />
       <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/materieprime">Materie prime</Link>
-      <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/contact">Contatti</Link>
+      <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/contatti">Contatti</Link>
       <button className={classes.button}>Ita/Eng</button>
     </nav>
   )

@@ -19,7 +19,7 @@ const MobileProducts: React.FC = () => {
       {categoryData.allSanityCategory.edges.map((e: Category, index: number) => {
         const products = productData.allSanityProduct.edges.filter((p: Product, index: number) => p.node.category.id == e.node.id);
         return (
-          <Link to={`/categories/${e.node.slug.current}`}>
+          <Link key={e.node.id} to={`/categories/${e.node.slug.current}`}>
             <div style={{ width: "100vw", backgroundColor: "white" }} key={e.node.id}>
               <Centralizer>
                 <ProductPreviewMobile
