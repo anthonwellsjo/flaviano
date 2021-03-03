@@ -80,6 +80,7 @@ export interface MateriePrimePage {
     }
   },
   albicocceText: string,
+  albicocceTextMobile: string,
   lievitoMadreColor: {
     hex: string
   },
@@ -89,6 +90,7 @@ export interface MateriePrimePage {
     }
   },
   lievitoMadreText: string,
+  lievitoMadreTextMobile: string,
   limoniColor: {
     hex: string
   },
@@ -98,6 +100,7 @@ export interface MateriePrimePage {
     }
   },
   limoniText: string,
+  limoniTextMobile: string,
   melaColor: {
     hex: string
   },
@@ -105,6 +108,7 @@ export interface MateriePrimePage {
     asset: { fluid: FluidObject }
   },
   melaText: string,
+  melaTextMobile: string,
   mieleColor: {
     hex: string
   },
@@ -114,6 +118,7 @@ export interface MateriePrimePage {
     }
   },
   mieleText: string,
+  mieleTextMobile: string,
   nocciolaColor: {
     hex: string
   },
@@ -123,6 +128,7 @@ export interface MateriePrimePage {
     }
   },
   nocciolaText: string,
+  nocciolaTextMobile: string,
   nociColor: {
     hex: string
   },
@@ -132,9 +138,9 @@ export interface MateriePrimePage {
     }
   },
   nociText: string,
+  nociTextMobile: string,
   quoteHeaderText: string
 }
-
 
 export interface ChiSiamoPageQuery {
   sanityChiSiamoPage: ChiSiamoPage

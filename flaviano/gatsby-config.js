@@ -5,10 +5,10 @@ require('dotenv').config({
 module.exports = {
   pathPrefix: `/flaviano`,
   siteMetadata: {
-    title: "Flaviano",
-    description: "",
+    title: "titolo sito",
+    description: "decrizione sito",
     author: "WB",
-    keywords: ["Panificio", "Baba"],
+    keywords: ["parole chiave di ricerca", "pane", "dolci", "baba"],
     siteUrl: "https://anthonwellsjo.github.io/flaviano/"
   },
   plugins: [

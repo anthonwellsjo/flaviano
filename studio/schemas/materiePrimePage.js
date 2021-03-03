@@ -16,6 +16,12 @@ export default {
       validation: v => v.required()  
     },
     {
+      name: 'lievitoMadreTextMobile',
+      title: 'Lievito Madre Text Mobile',
+      type: 'text',
+      validation: v => v.required()  
+    },
+    {
       name: 'lievitoMadreImg',
       title: 'Lievito Madre Image',
       type: 'image',
@@ -35,6 +41,12 @@ export default {
     {
       name: 'limoniText',
       title: 'Limoni Text',
+      type: 'text',
+      validation: v => v.required()  
+    },
+    {
+      name: 'limoniTextMobile',
+      title: 'Limoni Text Mobile',
       type: 'text',
       validation: v => v.required()  
     },
@@ -62,6 +74,12 @@ export default {
       validation: v => v.required()  
     },
     {
+      name: 'melaTextMobile',
+      title: 'Mela Text Mobile',
+      type: 'text',
+      validation: v => v.required()  
+    },
+    {
       name: 'melaImg',
       title: 'Mela Image',
       type: 'image',
@@ -81,6 +99,12 @@ export default {
     {
       name: 'nociText',
       title: 'Noci Text',
+      type: 'text',
+      validation: v => v.required()  
+    },
+    {
+      name: 'nociTextMobile',
+      title: 'Noci Text Mobile',
       type: 'text',
       validation: v => v.required()  
     },
@@ -108,6 +132,12 @@ export default {
       validation: v => v.required()  
     },
     {
+      name: 'nocciolaTextMobile',
+      title: 'Nocciola Text Mobile',
+      type: 'text',
+      validation: v => v.required()  
+    },
+    {
       name: 'nocciolaImg',
       title: 'Nocciola Image',
       type: 'image',
@@ -131,6 +161,12 @@ export default {
       validation: v => v.required()  
     },
     {
+      name: 'mieleTextMobile',
+      title: 'Miele Text Mobile',
+      type: 'text',
+      validation: v => v.required()  
+    },
+    {
       name: 'mieleImg',
       title: 'Miele Image',
       type: 'image',
@@ -150,6 +186,12 @@ export default {
     {
       name: 'albicocceText',
       title: 'Albicocce Text',
+      type: 'text',
+      validation: v => v.required()  
+    },
+    {
+      name: 'albicocceTextMobile',
+      title: 'Albicocce Text Mobile',
       type: 'text',
       validation: v => v.required()  
     },

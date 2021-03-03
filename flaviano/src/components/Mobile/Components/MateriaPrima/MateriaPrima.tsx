@@ -32,7 +32,8 @@ const MateriaPrima = ({ fluidImg, hexColor, text, title, height, imgLeft, imgBeh
       </div>
       <Centralizer>
         <div className={classes.textContainer}>
-          <p className={classes.text}>{text}</p>
+          {text.split(".").map((t, i) => <p className={classes.text}>{t}.</p>
+          )}
         </div>
       </Centralizer>
     </div>
@@ -46,13 +47,14 @@ const MateriaPrima = ({ fluidImg, hexColor, text, title, height, imgLeft, imgBeh
           <Img fluid={fluidImg} alt="Lievtio Madre" />
         </div>
       </div>
-      <div className={classes.titleContainer} style={{ marginTop: "5px", width: longTitle ? "15em" : "12em"  }}>
+      <div className={classes.titleContainer} style={{ marginTop: "5px", width: longTitle ? "15em" : "12em" }}>
         <div style={{ height: "1px", width: "20px", backgroundColor: "black", position: "absolute", marginTop: "-5px" }}></div>
         <PageTitleDesktop letterSpacing={".2em"} fontSize={"1.5em"}>{title}</PageTitleDesktop>
       </div>
       <Centralizer>
         <div className={classes.textContainer}>
-          <p className={classes.text}>{text}</p>
+        {text.split(".").map((t, i) => <p className={classes.text}>{t}.</p>
+          )}
         </div>
       </Centralizer>
     </div>
@@ -72,7 +74,8 @@ const MateriaPrima = ({ fluidImg, hexColor, text, title, height, imgLeft, imgBeh
       </div>
       <Centralizer>
         <div className={classes.textContainer}>
-          <p className={classes.text}>{text}</p>
+        {text.split(".").map((t, i) => <p className={classes.text}>{t}.</p>
+          )}
         </div>
       </Centralizer>
 
