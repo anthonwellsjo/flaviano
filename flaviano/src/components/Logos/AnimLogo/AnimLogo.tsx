@@ -11,8 +11,8 @@ const AnimLogo: React.FC = () => {
 
 
   const LogoProps = useSpring({
-    to: [{ transform: "scale(1)" }],
-    from: { transform: "scale(0)" },
+    to: [{ transform: "scale(1)", opacity: 1 }],
+    from: { transform: "scale(0.5)", opacity: 0 },
     delay: 200,
     config: {
       mass: 1,
@@ -61,8 +61,8 @@ const AnimLogo: React.FC = () => {
     }
   });
   const CircleProps = useSpring({
-    to: { transform: "rotate(360deg)" },
-    from: { transform: "rotate(0deg)" },
+    to: { transform: "rotate(0deg)" },
+    from: { transform: "rotate(-45deg)" },
     delay: 100,
     config: {
       mass: 5,
@@ -87,8 +87,8 @@ const AnimLogo: React.FC = () => {
   return (
     <>
       {page.firstStart && <animated.div style={backDropStyle} className={classes.firstStartBackdrop}></animated.div>}
-      <animated.div className={classes.container}>
-        <animated.svg onMouseEnter={() => setHover(!hover)} style={{ ...LogoProps }} width="243" height="235" viewBox="0 0 243 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <animated.div style={{...LogoProps}} className={classes.container}>
+        <animated.svg onMouseEnter={() => setHover(!hover)} width="243" height="235" viewBox="0 0 243 235" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g className={classes.logo}>
             <animated.g style={{ ...CircleProps, transformOrigin: "center", transformBox: "fill-box" }} className={classes.circle}>
               <g id="Group">
