@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { BabaPageQuery, QuoteStyle } from '../../../../../types';
 import LayoutHeader from '../../../Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
@@ -13,8 +13,10 @@ import LayoutFrame from '../../../Desktop/LayoutFrameDesktop/LayoutFrameDesktop'
 import useScroll from '../../../../hooks/useScroll';
 import ScrollButton from '../../../Desktop/ScrollButton/ScrollButton';
 import { useViewport } from '../../../../hooks/useViewPort';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const BabaPageDesktopRender: React.FC = () => {
+  const [page, setPage]:any = useContext(PageContext);
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
   const { width, height } = useViewport();
   console.log("width/height", width / height);
@@ -22,7 +24,9 @@ const BabaPageDesktopRender: React.FC = () => {
   let parallax: any = useRef();
   const currentScroll = useScroll(parallax);
 
-
+  useEffect(() => {
+    setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }));
+  }, [])
 
 
   return (
