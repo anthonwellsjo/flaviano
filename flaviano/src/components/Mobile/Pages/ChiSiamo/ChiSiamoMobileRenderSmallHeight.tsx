@@ -13,6 +13,7 @@ import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
 import { useViewport } from '../../../../hooks/useViewPort';
+import SEO from '../../../SEO/SEO';
 
 const ChiSiamoMobileRenderSmallHeight = () => {
   const { width } = useViewport();

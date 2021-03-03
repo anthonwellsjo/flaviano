@@ -12,6 +12,7 @@ import BackDrop from '../../BackDropDesktop/BackDropDesktop';
 import LayoutFrame from '../../LayoutFrameDesktop/LayoutFrameDesktop';
 import ScrollButton from '../../ScrollButton/ScrollButton';
 import useScroll from '../../../../hooks/useScroll';
+import SEO from '../../../SEO/SEO';
 
 const ChiSiamoDesktopRender = () => {
 

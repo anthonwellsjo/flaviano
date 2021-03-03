@@ -61,7 +61,6 @@ const IndexPageDesktopRender: React.FC = () => {
 
   return (
     <Parallax pages={5.9} scrolling={true} ref={parallax}>
-      <SEO title="Start Page" />
       <LayoutFrame>
         <AnimLogo />
         <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "100vh" }}>

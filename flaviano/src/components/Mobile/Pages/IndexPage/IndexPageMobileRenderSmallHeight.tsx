@@ -13,6 +13,7 @@ import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
 import { PageContext } from '../../../../contexts/pageContext';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
+import SEO from '../../../SEO/SEO';
 
 const IndexPageMobileRenderSmallHeight: React.FC = () => {
   const { width } = useViewport();

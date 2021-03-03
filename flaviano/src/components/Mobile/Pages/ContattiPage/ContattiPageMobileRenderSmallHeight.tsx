@@ -11,6 +11,7 @@ import LayoutHeaderMobile from '../../Components/LayoutHeaderMobile/LayoutHeader
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import ContactBarMobileFull from '../../Components/ContactBarMobileFull/ContactBarMobileFull';
+import SEO from '../../../SEO/SEO';
 
 const ContattiPageMobileRenderSmallHeight: React.FC = () => {
   const { sanityGeneralSettings: ContactInfoQuery } = useContactInfoQuery();
