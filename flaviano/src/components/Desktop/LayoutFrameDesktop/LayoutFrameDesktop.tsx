@@ -2,7 +2,7 @@ import React from 'react';
 import Centralizer from '../../StructureComponents/Centralizer/Centralizer';
 import BackDropDesktop from '../BackDropDesktop/BackDropDesktop';
 import LayoutHeaderDesktop from '../LayoutHeaderDesktop/LayoutHeaderDesktop';
-import classes from './LayoutFrameDesktop.module.css';
+import classes from './LayoutFrameDesktop.module.scss';
 
 const LayoutFrameDesktop: React.FC = ({ children }) => {
   return (

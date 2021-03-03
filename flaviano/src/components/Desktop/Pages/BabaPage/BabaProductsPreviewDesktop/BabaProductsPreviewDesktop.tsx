@@ -3,7 +3,7 @@ import { Product, ProductQuery } from '../../../../../../types';
 import { useProductQuery } from '../../../../../hooks/queries/useProductQuery';
 import PageTitle from '../../../PageTitleDesktop/PageTitleDesktop';
 import Centralizer from '../../../../StructureComponents/Centralizer/Centralizer';
-import classes from './BabaProductsPreviewDesktop.module.css';
+import classes from './BabaProductsPreviewDesktop.module.scss';
 import { useSpring, animated } from 'react-spring';
 import BabaProductPhotosAnimation from '../BabaProductPhotosAnimation/BabaProductPhotosAnimation';
 import { useViewport } from '../../../../../hooks/useViewPort';

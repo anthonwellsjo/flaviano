@@ -4,7 +4,7 @@ import { Trail, Transition } from 'react-spring/renderprops';
 import { Category, CategoryQuery } from '../../../../../types';
 import { PageContext } from '../../../../contexts/pageContext';
 import { useCategoryPreviewQuery } from '../../../../hooks/queries/useCategoryPreviewQuery';
-import classes from './NavbarDropDownDesktop.module.css';
+import classes from './NavbarDropDownDesktop.module.scss';
 
 interface MenuItem {
   title: string,

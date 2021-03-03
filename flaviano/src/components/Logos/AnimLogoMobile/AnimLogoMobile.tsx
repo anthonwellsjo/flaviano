@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { PageContext } from '../../../contexts/pageContext';
 import Centralizer from '../../StructureComponents/Centralizer/Centralizer';
-import classes from './AnimLogoMobile.module.css';
+import classes from './AnimLogoMobile.module.scss';
 
 const AnimLogoMobile: React.FC = () => {
   const [page, setPage] = useContext(PageContext);

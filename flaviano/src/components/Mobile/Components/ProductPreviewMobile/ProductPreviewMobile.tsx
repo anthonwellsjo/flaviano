@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classes from './ProductPreviewMobile.module.css';
+import classes from './ProductPreviewMobile.module.scss';
 import Img, { FixedObject, FluidObject } from 'gatsby-image';
 import { Product } from '../../../../../types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';

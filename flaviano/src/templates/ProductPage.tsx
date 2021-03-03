@@ -4,7 +4,7 @@ import React from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { ProductPageDataQuery, QuoteStyle } from '../../types';
 import LayoutHeader from '../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
-import classes from './ProductPage.module.css';
+import classes from './ProductPage.module.scss';
 import ProductDescriptionView from '../components/Desktop/Pages/ProductPage/ProductDescriptionViewDesktop/ProductDescriptionViewDesktop';
 import Quote from '../components/Desktop/QuoteDesktop/QuoteDesktop';
 import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';

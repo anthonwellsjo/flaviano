@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './centralizer.module.css';
+import classes from './centralizer.module.scss';
 import classnames from 'classnames';
 
 const Centralizer = props => {

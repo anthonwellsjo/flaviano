@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 
 import { useSpring, animated } from 'react-spring';
 import { PageContext } from '../../../contexts/pageContext';
-import classes from './AnimLogo.module.css';
+import classes from './AnimLogo.module.scss';
 
 const AnimLogo: React.FC = () => {
   const [hover, setHover] = useState(false);

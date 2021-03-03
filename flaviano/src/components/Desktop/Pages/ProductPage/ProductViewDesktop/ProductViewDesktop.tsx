@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Img from 'gatsby-image';
 import Centralizer from '../../../../StructureComponents/Centralizer/Centralizer';
-import classes from './ProductViewDesktop.module.css';
+import classes from './ProductViewDesktop.module.scss';
 
 interface pageProps {
   bcgColor: string,

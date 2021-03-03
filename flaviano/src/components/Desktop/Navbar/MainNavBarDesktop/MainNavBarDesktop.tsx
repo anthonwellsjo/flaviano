@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import React, { useContext } from 'react';
 import { PageContext } from '../../../../contexts/pageContext';
 import NavbarDropDown from '../NavbarDropDownDesktop/NavbarDropDownDesktop';
-import classes from './MainNavBarDesktop.module.css';
+import classes from './MainNavBarDesktop.module.scss';
 
 
 const MainNavBarDesktop: React.FC = () => {
