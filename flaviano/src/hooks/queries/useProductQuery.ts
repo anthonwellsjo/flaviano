@@ -29,25 +29,28 @@ export const useProductQuery = () => {
               fluid(maxWidth: 1000){
                 ...GatsbySanityImageFluid
               }
+              fixed(height: 300, width: 150){
+                ...GatsbySanityImageFixed
+              }
           }
         }
           productDetailPhoto1 {
             asset {
-              fixed(width: 300){
+              fixed(width: 200, height: 200){
                 ...GatsbySanityImageFixed
               }
           }
         }
           productDetailPhoto2 {
             asset {
-              fixed(width: 300){
+              fixed(width: 200, height: 200){
                 ...GatsbySanityImageFixed
               }
           }
         }
           productDetailPhoto3 {
             asset {
-              fixed(width: 300){
+              fixed(width: 200, height: 200){
                 ...GatsbySanityImageFixed
               }
           }

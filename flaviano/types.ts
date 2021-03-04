@@ -35,7 +35,8 @@ export interface Product {
     weightGr: number,
     productPhoto: {
       asset: {
-        fluid: FluidObject
+        fluid: FluidObject,
+        fixed: FixedObject
       }
     },
     productDetailPhoto1: {
