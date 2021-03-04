@@ -29,7 +29,7 @@ export const useProductQuery = () => {
               fluid(maxWidth: 1000){
                 ...GatsbySanityImageFluid
               }
-              fixed(height: 300, width: 150){
+              fixed(height: 300, width: 340){
                 ...GatsbySanityImageFixed
               }
           }

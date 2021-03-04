@@ -6,25 +6,27 @@ import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import SwitchArrow from '../SwitchArrow/SwitchArrow';
 import classes from './BabaProductsBanners.module.scss';
 import Img from 'gatsby-image';
+import { useViewport } from '../../../../hooks/useViewPort';
 
 const BabaProductsBanners: React.FC = () => {
   const queryData: ProductQuery = useProductQuery();
+  const { width } = useViewport();
   const babas: Array<Product> = queryData.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Babà");
   const [containersOpen, setContainersOpen] = useState({ strega: false, limoncello: false, mela: false });
 
   const stregaBcgPicProp = useSpring({
     reverse: !containersOpen.strega,
-    to: [{ height: "300px", width: "150px" }],
+    to: [{ height: "300px", width: `${width/2.5}px` }],
     from: { height: "0px", width: "0px" }
   })
   const limoBcgPicProp = useSpring({
     reverse: !containersOpen.limoncello,
-    to: [{ height: "300px", width: "150px" }],
+    to: [{ height: "300px", width: `${width/2.5}px` }],
     from: { height: "0px", width: "0px" }
   })
   const melaBcgPicProp = useSpring({
     reverse: !containersOpen.mela,
-    to: [{ height: "300px", width: "150px" }],
+    to: [{ height: "300px", width: `${width/2.5}px` }],
     from: { height: "0px", width: "0px" }
   })
   const limoncelloProps = useSpring({
@@ -103,8 +105,10 @@ const BabaProductsBanners: React.FC = () => {
               <div style={{ position: "absolute", right: "15%", bottom: "-5px" }}>
                 <SwitchArrow open={containersOpen.strega} />
               </div>
-              <animated.div style={{ ...stregaBcgPicProp, position: "absolute", left: "-6px", top: 0, opacity: 0.3, overflow: "hidden", backgroundColor: "red" }}>
-                <Img fixed={p.node.productPhoto.asset.fixed} alt="baba background photo" />
+              <animated.div style={{ ...stregaBcgPicProp, position: "absolute", left: 0, top: 0, opacity: 0.3, overflow: "hidden" }}>
+                <div style={{ width: "200px", height: "300px" }}>
+                  <Img fixed={p.node.productPhoto.asset.fixed} alt="baba background photo" />
+                </div>
               </animated.div>
             </div>
             {containersOpen.strega &&
@@ -128,7 +132,7 @@ const BabaProductsBanners: React.FC = () => {
               <div style={{ position: "absolute", right: "15%", bottom: "-5px" }}>
                 <SwitchArrow open={containersOpen.limoncello} />
               </div>
-              <animated.div style={{ ...limoBcgPicProp, position: "absolute", left: "-6px", top: 0, opacity: 0.3, overflow: "hidden", backgroundColor: "red" }}>
+              <animated.div style={{ ...limoBcgPicProp, position: "absolute", left: 0, top: 0, opacity: 0.3, overflow: "hidden" }}>
                 <Img fixed={p.node.productPhoto.asset.fixed} alt="baba background photo" />
               </animated.div>
             </div>
@@ -152,7 +156,7 @@ const BabaProductsBanners: React.FC = () => {
               <div style={{ position: "absolute", right: "15%", bottom: "-5px" }}>
                 <SwitchArrow open={containersOpen.mela} />
               </div>
-              <animated.div style={{ ...melaBcgPicProp, position: "absolute", left: "-6px", top: 0, opacity: 0.3, overflow: "hidden", backgroundColor: "red" }}>
+              <animated.div style={{ ...melaBcgPicProp, position: "absolute", left: 0, top: 0, opacity: 0.3, overflow: "hidden" }}>
                 <Img fixed={p.node.productPhoto.asset.fixed} alt="baba background photo" />
               </animated.div>
             </div>
