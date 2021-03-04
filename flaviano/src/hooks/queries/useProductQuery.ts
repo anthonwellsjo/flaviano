@@ -30,6 +30,27 @@ export const useProductQuery = () => {
                 ...GatsbySanityImageFluid
               }
           }
+        }
+          productDetailPhoto1 {
+            asset {
+              fixed(width: 300){
+                ...GatsbySanityImageFixed
+              }
+          }
+        }
+          productDetailPhoto2 {
+            asset {
+              fixed(width: 300){
+                ...GatsbySanityImageFixed
+              }
+          }
+        }
+          productDetailPhoto3 {
+            asset {
+              fixed(width: 300){
+                ...GatsbySanityImageFixed
+              }
+          }
           }
         }
       }

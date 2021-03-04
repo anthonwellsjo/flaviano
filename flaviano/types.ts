@@ -37,7 +37,22 @@ export interface Product {
       asset: {
         fluid: FluidObject
       }
-    }
+    },
+    productDetailPhoto1: {
+      asset: {
+        fixed: FixedObject
+      }
+    },
+    productDetailPhoto2: {
+      asset: {
+        fixed: FixedObject
+      }
+    },
+    productDetailPhoto3: {
+      asset: {
+        fixed: FixedObject
+      }
+    },
   }
 }
 

@@ -19,43 +19,43 @@ const BabaProductsPreviewDesktop = () => {
     from: { opacity: 1 }
   })
   const [photosToShow, setPhotosToShow] = useState({
-    leftUp: "",
-    leftDown: "",
-    middleCenter: "",
-    rightUp: "",
-    rightDown: ""
+    leftUp: {},
+    leftDown: {},
+    middleCenter: {},
+    rightUp: {},
+    rightDown: {}
   });
 
   const queryData: ProductQuery = useProductQuery();
   const babas: Array<Product> = queryData.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Babà");
   console.log("query data", babas);
 
-  const onMouseEnterEventHandler = (index: number) => {
+  const onMouseEnterEventHandler = (index: number, p: Product) => {
     if (index == 0) {
       setPhotosToShow({
-        leftUp: "",
-        leftDown: "",
-        middleCenter: "middleCenter",
-        rightUp: "rightUp",
-        rightDown: "rightDown"
+        leftUp: {},
+        leftDown: {},
+        middleCenter: p.node.productDetailPhoto1.asset.fixed,
+        rightUp: p.node.productDetailPhoto2.asset.fixed,
+        rightDown: p.node.productDetailPhoto3.asset.fixed
       })
     }
     if (index == 1) {
       setPhotosToShow({
-        leftUp: "leftUp",
-        leftDown: "leftDown",
-        middleCenter: "",
-        rightUp: "rightUp",
-        rightDown: ""
+        leftUp: p.node.productDetailPhoto1.asset.fixed,
+        leftDown: p.node.productDetailPhoto2.asset.fixed,
+        middleCenter: {},
+        rightUp: p.node.productDetailPhoto3.asset.fixed,
+        rightDown: {}
       })
     }
     if (index == 2) {
       setPhotosToShow({
-        leftUp: "leftUp",
-        leftDown: "leftDown",
-        middleCenter: "middleCenter",
-        rightUp: "",
-        rightDown: ""
+        leftUp: p.node.productDetailPhoto1.asset.fixed,
+        leftDown: p.node.productDetailPhoto2.asset.fixed,
+        middleCenter: p.node.productDetailPhoto3.asset.fixed,
+        rightUp: {},
+        rightDown: {}
       })
     }
 
@@ -66,11 +66,11 @@ const BabaProductsPreviewDesktop = () => {
     setProductHover(false);
 
     setPhotosToShow({
-      leftUp: "",
-      leftDown: "",
-      middleCenter: "",
-      rightUp: "",
-      rightDown: ""
+      leftUp: {},
+      leftDown: {},
+      middleCenter: {},
+      rightUp: {},
+      rightDown: {}
     })
   }
 
@@ -79,7 +79,7 @@ const BabaProductsPreviewDesktop = () => {
       {babas.map((p: Product, index) => {
         return (
           <>
-            <div key={p.node.id} onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index)} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
+            <div key={p.node.id} onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index, p)} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
               <div className={classes.header}>
                 <div style={{ position: "absolute", height: "2px", width: "20px", backgroundColor: "black", top: "12px" }}></div>
                 <PageTitle fontSize={`${width / 700}em`} lineHeight={`${width / 500000}em`} letterSpacing={`${width / 10000}em`}>Babà</PageTitle>
