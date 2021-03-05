@@ -3,7 +3,9 @@ export default {
   title: 'Product',
   type: 'document',
   validation: Rule => Rule.custom(fields => {
+    console.log(fields.category._ref);
     if (fields.category._ref == "42ff39b0-35fd-4e32-81eb-cb8a585fd225" && (fields.productDetailPhoto1 == undefined || fields.productDetailPhoto2 == undefined || fields.productDetailPhoto3 == undefined)) return "Babà product requires three product detail photos."
+    if (fields.category._ref == "1527d51f-a0be-4c77-9f7e-05adc3533533" && (fields.productDetailPhoto1 == undefined || fields.productDetailPhoto2 == undefined || fields.productDetailPhoto3 == undefined)) return "Biscotti product requires three product detail photos."
     return true;
   }),
   fields: [
