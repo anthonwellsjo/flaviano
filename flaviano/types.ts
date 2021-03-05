@@ -8,53 +8,55 @@ export enum QuoteStyle {
   "italic"
 }
 
+export interface SanityProduct {
+  category: {
+    id: string,
+    title: string
+  },
+  description: string,
+  priceEur: number,
+  slug: {
+    current: string
+  },
+  title: string,
+  backGroundColor: {
+    hex: string
+  },
+  id: string,
+  conservation: string,
+  ingredients: string,
+  ingredientsTwo: string,
+  weightGr: number,
+  productPhoto: {
+    asset: {
+      fluid: FluidObject,
+      fixed: FixedObject
+    }
+  },
+  productDetailPhoto1: {
+    asset: {
+      fixed: FixedObject
+    }
+  },
+  productDetailPhoto2: {
+    asset: {
+      fixed: FixedObject
+    }
+  },
+  productDetailPhoto3: {
+    asset: {
+      fixed: FixedObject
+    }
+  },
+}
+
 export interface ProductPageDataQuery {
   data: {
-    sanityProduct: Product
+    sanityProduct: SanityProduct
   }
 }
 export interface Product {
-  node: {
-    category: {
-      id: string,
-      title: string
-    },
-    description: string,
-    priceEur: number,
-    slug: {
-      current: string
-    },
-    title: string,
-    backGroundColor: {
-      hex: string
-    },
-    id: string,
-    conservation: string,
-    ingredients: string,
-    ingredientsTwo: string,
-    weightGr: number,
-    productPhoto: {
-      asset: {
-        fluid: FluidObject,
-        fixed: FixedObject
-      }
-    },
-    productDetailPhoto1: {
-      asset: {
-        fixed: FixedObject
-      }
-    },
-    productDetailPhoto2: {
-      asset: {
-        fixed: FixedObject
-      }
-    },
-    productDetailPhoto3: {
-      asset: {
-        fixed: FixedObject
-      }
-    },
-  }
+  node: SanityProduct
 }
 
 export interface ProductQuery {

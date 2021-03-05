@@ -10,10 +10,10 @@ const MainNavBarDesktop: React.FC = () => {
 
   return (
     <nav className={classes.navbar}>
-      <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/chisiamo">Chi siamo</Link>
+      <Link activeClassName={classes.active} className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/chisiamo">Chi siamo</Link>
       <NavbarDropDown />
-      <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/materieprime">Materie prime</Link>
-      <Link className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/contatti">Contatti</Link>
+      <Link activeClassName={classes.active} className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/materieprime">Materie prime</Link>
+      <Link activeClassName={classes.active} className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/contatti">Contatti</Link>
       <button className={classes.button}>Ita/Eng</button>
     </nav>
   )

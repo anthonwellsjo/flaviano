@@ -39,16 +39,17 @@
 
 
 .imgsWrapper{
-  width: 100%;
+  width: 90%;
   position: relative;
+  bottom: 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between  ;
 }
 
 .imgLeft,
 .imgCenter,
 .imgRight{
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   background-color: aquamarine;
 }

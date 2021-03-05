@@ -19,30 +19,28 @@ const ProductPage = ({ data }: ProductPageDataQuery) => {
       <LayoutFrameDesktop>
         <div style={{ width: "100%", height: "100vh", position: "relative" }}>
           <ParallaxLayer factor={0} speed={-1}>
-            <Centralizer>
-              <div style={{ width: "7em", marginTop: "45vh", textAlign: "center" }}>
-                <Quote style={QuoteStyle.header}>{data.sanityProduct.category.title.split("").splice(0, 1).join()}</Quote>
-              </div>
-            </Centralizer>
-            <div style={{ position: "absolute", top: "40vh", left: "4%", width: "35%", textAlign: "left" }}>
-              <div style={{ height: "3px", width: "50px", marginLeft: "0px", backgroundColor: "black", marginBottom: "1em" }}></div>
-              <PageTitle fontSize="3em" letterSpacing=".15em">{data.sanityProduct.title}</PageTitle>
-              <div style={{ height: "3px", width: "50px", backgroundColor: "black", marginTop: "1em", marginLeft: "auto", marginRight: "50px" }}></div>
-            </div>
             <section className={classes.firstPage}>
               <div className={classes.productImg}>
                 {(data.sanityProduct.productPhoto != null) && <Img style={{ zIndex: -1 }} fluid={data.sanityProduct.productPhoto.asset.fluid} alt="product photo" />}
               </div>
             </section>
           </ParallaxLayer>
+          <ParallaxLayer factor={0} speed={-1}>
+            <Centralizer>
+              <div style={{ width: "7em", marginTop: "45vh", textAlign: "center" }}>
+                <Quote rightQuoteX={"15px"} style={QuoteStyle.header}>{data.sanityProduct.category.title.split("").splice(0, 1).join()}</Quote>
+              </div>
+            </Centralizer>
+            <div style={{ position: "absolute", top: "40vh", left: "4%", width: "35%", textAlign: "left" }}>
+              <PageTitle fontSize="3em" letterSpacing=".15em">{data.sanityProduct.title}</PageTitle>
+              <div style={{ height: "3px", width: "50px", marginLeft: "0px", backgroundColor: "black", marginTop: "1em" }}></div>
+            </div>
+          </ParallaxLayer>
         </div>
         <ParallaxLayer offset={0} speed={0}>
           <section className={classes.secondPage}>
             <ProductDescriptionView
-              title={data.sanityProduct.title}
-              description={data.sanityProduct.description}
-              conservation={data.sanityProduct.conservation}
-              ingredients={data.sanityProduct.ingredients}
+              product={data.sanityProduct}
             />
           </section>
         </ParallaxLayer>
@@ -79,5 +77,26 @@ query($id: String) {
           }
        }
       }
+      productDetailPhoto1 {
+        asset {
+          fixed(width: 300, height: 300){
+            ...GatsbySanityImageFixed
+          }
+      }
+    }
+      productDetailPhoto2 {
+        asset {
+          fixed(width: 300, height: 300){
+            ...GatsbySanityImageFixed
+          }
+      }
+    }
+      productDetailPhoto3 {
+        asset {
+          fixed(width: 300, height: 300){
+            ...GatsbySanityImageFixed
+          }
+      }
+    }
   }
 }`
