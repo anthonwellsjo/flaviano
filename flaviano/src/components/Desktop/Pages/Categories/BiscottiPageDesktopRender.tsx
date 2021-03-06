@@ -9,7 +9,7 @@ import { useProductQuery } from '../../../../hooks/queries/useProductQuery';
 import ProductView from '../../../../components/Desktop/Pages/ProductPage/ProductViewDesktop/ProductViewDesktop';
 import BackDrop from '../../../../components/Desktop/BackDropDesktop/BackDropDesktop';
 import { PageContext } from '../../../../contexts/pageContext';
-import LayoutFrame from '../../../../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
+import LayoutFrameDesktop from '../../../../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
 
 
 const BiscottiPageDesktopRender: React.FC = () => {
@@ -25,7 +25,7 @@ const BiscottiPageDesktopRender: React.FC = () => {
 
   return (
     <Parallax pages={3.3} scrolling={true} ref={ref => parallax = ref}>
-      <LayoutFrame>
+      <LayoutFrameDesktop>
         {/* ------------HEADER SECTION */}
         <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", position: "relative" }}>
           <ParallaxLayer factor={0} speed={-1}>
@@ -70,7 +70,7 @@ const BiscottiPageDesktopRender: React.FC = () => {
             </div>
           </ParallaxLayer>
         </section>
-      </LayoutFrame>
+      </LayoutFrameDesktop>
     </Parallax >
   )
 }

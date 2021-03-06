@@ -15,7 +15,7 @@ const LayoutFrameDesktop: React.FC = ({ children }) => {
           <BackDropDesktop />
         </Centralizer>
       </div>
-      <div style={{ width: "100vw", maxWidth: "1300px", position: "relative", zIndex: 2 }}>
+      <div style={{ width: "100vw", maxWidth: "1300px", position: "fixed", zIndex: 2 }}>
         <LayoutHeaderDesktop />
       </div>
     </>
