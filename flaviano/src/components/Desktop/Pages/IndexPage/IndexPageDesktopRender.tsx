@@ -12,7 +12,7 @@ import { useSpring, animated } from "react-spring";
 import BackDrop from "../../BackDropDesktop/BackDropDesktop";
 import AnimLogo from "../../../Logos/AnimLogo/AnimLogo";
 import { useHomeQuery } from "../../../../hooks/queries/useHomeQuery";
-import LayoutFrame from "../../LayoutFrameDesktop/LayoutFrameDesktop";
+import LayoutFrameDesktop from "../../LayoutFrameDesktop/LayoutFrameDesktop";
 import Img from 'gatsby-image';
 import ContactBar from '../../ContactBar/ContactBar';
 import SEO from '../../../SEO/SEO';
@@ -61,7 +61,7 @@ const IndexPageDesktopRender: React.FC = () => {
 
   return (
     <Parallax pages={5.9} scrolling={true} ref={parallax}>
-      <LayoutFrame>
+      <LayoutFrameDesktop>
         <AnimLogo />
         <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "100vh" }}>
           <ParallaxLayer offset={0} speed={0.05}>
@@ -165,7 +165,7 @@ const IndexPageDesktopRender: React.FC = () => {
           </ParallaxLayer>
 
         </section>
-      </LayoutFrame>
+      </LayoutFrameDesktop>
     </Parallax >
   )
 }

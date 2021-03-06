@@ -39,7 +39,7 @@ const NavbarDropDownDesktop: React.FC = () => {
 
   return (
     <>
-      <button className={classes.button} style={{ zIndex: 100, cursor: "pointer" }}  onMouseEnter={onMouseEnterEventHandler}>Prodotti</button>
+      <button className={classes.button} style={{ zIndex: 100, cursor: "pointer" }} onMouseEnter={onMouseEnterEventHandler}>Prodotti</button>
       <Transition
         unique
         reset
@@ -68,7 +68,7 @@ const NavbarDropDownDesktop: React.FC = () => {
                 to={{ opacity: 1 }}
               >
                 {trailItem => trailProps => (
-                  <Link to={`/categories/${trailItem.slug}`}>
+                  <Link activeClassName={classes.active} to={`/categories/${trailItem.slug}`}>
                     <div style={{ ...trailProps, zIndex: 100, backgroundColor: trailItem.color }} className={classes.menuItem}>
                       {trailItem.title}
                     </div>

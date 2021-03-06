@@ -8,13 +8,15 @@ const LayoutFrameDesktop: React.FC = ({ children }) => {
   return (
     <>
       <div className={classes.backGround}>
-        <Centralizer>
+        <Centralizer column>
           <div className={classes.pageBody}>
             {children}
           </div>
+          <BackDropDesktop />
         </Centralizer>
-        <BackDropDesktop />
-      <LayoutHeaderDesktop />
+      </div>
+      <div style={{ width: "100vw", maxWidth: "1300px", position: "relative", zIndex: 2 }}>
+        <LayoutHeaderDesktop />
       </div>
     </>
   )

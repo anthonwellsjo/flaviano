@@ -1,11 +1,10 @@
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 15vh;
-  right: 5%;
+  width: 100vw;
 }
 
 .link,
-.link:hover,
 .link:active,
 .link:focus {
   margin: 1vw;
