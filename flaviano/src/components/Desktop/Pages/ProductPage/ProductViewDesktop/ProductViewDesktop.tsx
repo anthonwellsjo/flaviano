@@ -22,20 +22,24 @@ const ProductViewDesktop = (props: pageProps) => {
         <div className={classes.titleWrapper}>
           <span className={classes.title}>{props.title}</span>
         </div>
-        <div className={classes.descWrapper}>
-          <span className={classes.descriptionTitle}>Descrizione prodotto</span>
-          <br></br>
-          <p className={classes.description}>{props.description}</p>
-        </div>
-        <div className={classes.ingredWrapper}>
-          <span className={classes.ingredientsTitle}>Ingredienti</span>
-          <br></br>
-          <p className={classes.ingredients}>{props.ingredients}</p>
-        </div>
-        <div className={classes.consWrapper}>
-          <span className={classes.conservationTitle}>Conservazione</span>
-          <br></br>
-          <span className={classes.conservation}>{props.conservation}</span>
+        <div className={classes.textBody}>
+          <div>
+            <div className={classes.descWrapper}>
+              <span className={classes.descriptionTitle}>Descrizione prodotto</span>
+              <br></br>
+              <p className={classes.description}>{props.description}</p>
+            </div>
+            <div className={classes.ingredWrapper}>
+              <span className={classes.ingredientsTitle}>Ingredienti</span>
+              <br></br>
+              <p className={classes.ingredients}>{props.ingredients}</p>
+            </div>
+            <div className={classes.consWrapper}>
+              <span className={classes.conservationTitle}>Conservazione</span>
+              <br></br>
+              <span className={classes.conservation}>{props.conservation}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -49,20 +53,24 @@ const ProductViewDesktop = (props: pageProps) => {
         <div className={classes.titleWrapper}>
           <span className={classes.title}>{props.title}</span>
         </div>
-        <div className={classes.descWrapper}>
-          <span className={classes.descriptionTitle}>Descrizione prodotto</span>
-          <br></br>
-          <p className={classes.description}>{props.description}</p>
-        </div>
-        <div className={classes.ingredWrapper}>
-          <span className={classes.ingredientsTitle}>Ingredienti</span>
-          <br></br>
-          <p className={classes.ingredients}>{props.ingredients}</p>
-        </div>
-        <div className={classes.consWrapper}>
-          <span className={classes.conservationTitle}>Conservazione</span>
-          <br></br>
-          <span className={classes.conservation}>{props.conservation}</span>
+        <div className={classes.textBody}>
+          <div>
+            <div className={classes.descWrapper}>
+              <span className={classes.descriptionTitle}>Descrizione prodotto</span>
+              <br></br>
+              <p className={classes.description}>{props.description}</p>
+            </div>
+            <div className={classes.ingredWrapper}>
+              <span className={classes.ingredientsTitle}>Ingredienti</span>
+              <br></br>
+              <p className={classes.ingredients}>{props.ingredients}</p>
+            </div>
+            <div className={classes.consWrapper}>
+              <span className={classes.conservationTitle}>Conservazione</span>
+              <br></br>
+              <span className={classes.conservation}>{props.conservation}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

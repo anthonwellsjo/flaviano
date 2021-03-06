@@ -1,7 +1,15 @@
 .textWrapper {
   width: 50%;
-  margin-bottom: 10vh;
+  height: 100%;
   position: relative;
+}
+
+.textBody{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
 }
 
 .fluidImg {
@@ -17,12 +25,14 @@
   text-transform: uppercase;
 }
 .titleWrapper {
-  margin-bottom: 5vh;
+  position: absolute;
+  top: 20px;
 }
 .descriptionTitle,
 .ingredientsTitle,
 .conservationTitle {
   font-family: HomepagebaukastenBold;
+  font-size: .8em;
   letter-spacing: 0.16em;
   line-height: 11px;
   text-transform: uppercase;
@@ -32,7 +42,9 @@
 .description,
 .ingredients,
 .conservation {
+  margin-top: -5px;
   font-family: HomepagebaukastenBook;
+  font-size: .9em;
   letter-spacing: 0.16em;
   line-height: 19px;
   text-align: justify;
