@@ -10,7 +10,8 @@ const ColombaPage: React.FC = () => {
   return (
     <>
       <SEO title="Dolce tipico della tradizione pasquale italiana|Prodotto artigianale" />
-      {width > 850 && <ColombaPageDesktopRender />}
+      {height > 860 && <h1>x-treme size window render</h1>}
+      {width > 850 && height <=860 && <ColombaPageDesktopRender />}
       {/* {height < 680 && width <= 850 && <BiscottiPageMobileRenderSmallHeight />} */}
       {/* {height >= 680 && width <= 850 && <BiscottiPageMobileRender />} */}
       {width <= 850 && <ColombaPageMobileRender />}

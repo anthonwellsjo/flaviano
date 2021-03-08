@@ -13,7 +13,8 @@ const IndexPage = () => {
   return (
     <>
       <SEO title="Produzione dolciaria artigianale | Biscotti, babà, colombe e panettoni" />
-      {width > 850 && <IndexPageDesktopRender />}
+      {height > 860 && <h1>x-treme size window render</h1>}
+      {width > 850 && height <=860 && <IndexPageDesktopRender />}
       {height < 680 && width <= 850 && <IndexPageMobileRenderSmallHeight />}
       {height >= 680 && width <= 850 && <IndexPageMobileRender />}
     </>

@@ -9,7 +9,7 @@ export const useHomeQuery = () => {
             mobileHeaderText
             contactImg {
             asset {
-              fixed(width: 1250){
+              fixed(width: 1300){
                 ...GatsbySanityImageFixed
               }
           }

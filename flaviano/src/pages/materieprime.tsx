@@ -13,7 +13,8 @@ const MateriePrimePage: React.FC = () => {
   return (
     <>
       <SEO title="Materie prime pregiate, di qualità delle ricche terre campane" />
-      {width > 850 && <MateriePrimeDesktopRender />}
+      {height > 860 && <h1>x-treme size window render</h1>}
+      {width > 850 && height <=860 && <MateriePrimeDesktopRender />}
       {height < 680 && width <= 850 && <MateriePrimeMobileRenderSmallHeight />}
       {height >= 680 && width <= 850 && <MateriePrimeMobileRender />}
     </>

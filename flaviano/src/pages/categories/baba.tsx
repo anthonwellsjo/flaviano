@@ -10,7 +10,8 @@ const BabaPage: React.FC = () => {
   return (
     <>
       <SEO title="O babà è na cosa seria | Prodotto dolciario artigianale" />
-      {width > 850 && <BabaPageDesktopRender />}
+      {height > 860 && <h1>x-treme size window render</h1>}
+      {width > 850 && height <=860 && <BabaPageDesktopRender />}
       {height < 680 && width <= 850 && <BabaPageMobileRenderSmallHeight />}
       {height >= 680 && width <= 850 && <BabaPageMobileRender />}
     </>

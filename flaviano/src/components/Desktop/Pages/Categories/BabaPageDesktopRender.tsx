@@ -49,7 +49,7 @@ const BabaPageDesktopRender: React.FC = () => {
                 {/* <p className="legend">{e.node.title}</p> */}
               </div>}
             {screenRatio >= 1.64 &&
-              <div style={{ maxWidth: "100%", width: "100%", height: "100%", position: "absolute" }}>
+              <div style={{ width: "130%", height: "130%", position: "absolute"}}>
                 <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
                 {/* <p className="legend">{e.node.title}</p> */}
               </div>}

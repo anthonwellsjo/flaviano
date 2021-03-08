@@ -21,12 +21,15 @@
 .title {
   font-family: HomepagebaukastenBold;
   letter-spacing: 0.16em;
-  font-size: 1.5em;
+  font-size: 1.8em;
   text-transform: uppercase;
 }
 .titleWrapper {
   position: absolute;
-  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
 }
 .descriptionTitle,
 .ingredientsTitle,

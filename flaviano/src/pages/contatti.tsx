@@ -10,7 +10,8 @@ const ContattiPage: React.FC = () => {
   return (
     <>
       <SEO title="Artigiani moderni|Informazioni e richieste personalizzate" />
-      {width > 850 && <h1>no contact page for desktop yet</h1>}
+      {height > 860 && <h1>x-treme size window render</h1>}
+      {width > 850 && height <=860 && <h1>no contact page for desktop yet</h1>}
       {height < 680 && width <= 850 && <ContattiPageMobileRenderSmallHeight />}
       {height >= 680 && width <= 850 && <ContattiPageMobileRender />}
     </>

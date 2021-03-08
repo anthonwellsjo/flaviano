@@ -12,7 +12,8 @@ const ChiSiamoPage = () => {
   return (
     <>
       <SEO title="Prodotti artigianali moderni|Tradizione dolciaria fatta a mano con amore" />
-      {width > 850 && <ChiSiamoDesktopRender />}
+      {height > 860 && <h1>x-treme size window render</h1>}
+      {width > 850 && height <=860 && <ChiSiamoDesktopRender />}
       {height < 680 && width <= 850 && <ChiSiamoMobileRenderSmallHeight />}
       {height >= 680 && width <= 850 && <ChiSiamoMobileRender />}
     </>
