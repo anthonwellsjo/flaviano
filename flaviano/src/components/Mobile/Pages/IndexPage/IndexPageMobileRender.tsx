@@ -24,10 +24,21 @@ import SEO from '../../../SEO/SEO';
 
 const IndexPageMobileRender: React.FC = () => {
   const { width } = useViewport();
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
   let parallax: any = useRef();
+  const currentScroll = useScroll(parallax);
 
+  useEffect(() => {
+    if (currentScroll < 10) {
+      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: true }))
+    } else {
+      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: false }))
+    }
+    return (() => {
+      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: false }))
+    })
+  }, [currentScroll]);
 
 
   return (

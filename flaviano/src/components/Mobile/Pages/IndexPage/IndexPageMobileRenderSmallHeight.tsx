@@ -18,19 +18,19 @@ import useScroll from '../../../../hooks/useScroll';
 
 const IndexPageMobileRenderSmallHeight: React.FC = () => {
   const { width } = useViewport();
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
   let parallax: any = useRef();
   const currentScroll = useScroll(parallax);
 
   useEffect(() => {
     if (currentScroll < 10) {
-      setPage(prev => ({ ...prev, hideMobileNavbarLogo: true }))
+      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: true }))
     } else {
-      setPage(prev => ({ ...prev, hideMobileNavbarLogo: false }))
+      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: false }))
     }
     return (() => {
-      setPage(prev => ({ ...prev, hideMobileNavbarLogo: false }))
+      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: false }))
     })
   }, [currentScroll]);
 
