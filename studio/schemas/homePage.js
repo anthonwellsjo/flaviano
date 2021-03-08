@@ -22,6 +22,24 @@ export default {
       validation: v => v.required()
     },
     {
+      name: 'quoteHeaderTextEng',
+      title: 'Quote Header Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'mobileHeaderTextEng',
+      title: 'Mobile Header Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'quoteBelowCarouselTextEng',
+      title: 'Quote Below Carousel Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
       name: 'contactImg',
       title: 'Contact Image',
       type: 'image',

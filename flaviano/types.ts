@@ -26,6 +26,9 @@ export interface SanityProduct {
   conservation: string,
   ingredients: string,
   ingredientsTwo: string,
+  conservationEng: string,
+  ingredientsEng: string,
+  ingredientsTwoEng: string,
   weightGr: number,
   productPhoto: {
     asset: {
@@ -72,6 +75,8 @@ export interface BabaPageQuery {
 export interface BabaPage {
   pageText: string,
   pageTextMobile: string,
+  pageTextEng: string,
+  pageTextMobileEng: string,
   headerImg: {
     asset: {
       fluid: FluidObject
@@ -99,6 +104,8 @@ export interface MateriePrimePage {
   },
   albicocceText: string,
   albicocceTextMobile: string,
+  albicocceTextEng: string,
+  albicocceTextMobileEng: string,
   lievitoMadreColor: {
     hex: string
   },
@@ -107,8 +114,8 @@ export interface MateriePrimePage {
       fluid: FluidObject
     }
   },
-  lievitoMadreText: string,
-  lievitoMadreTextMobile: string,
+  lievitoMadreTextEng: string,
+  lievitoMadreTextMobileEng: string,
   limoniColor: {
     hex: string
   },
@@ -119,6 +126,8 @@ export interface MateriePrimePage {
   },
   limoniText: string,
   limoniTextMobile: string,
+  limoniTextEng: string,
+  limoniTextMobileEng: string,
   melaColor: {
     hex: string
   },
@@ -127,6 +136,8 @@ export interface MateriePrimePage {
   },
   melaText: string,
   melaTextMobile: string,
+  melaTextEng: string,
+  melaTextMobileEng: string,
   mieleColor: {
     hex: string
   },
@@ -137,6 +148,8 @@ export interface MateriePrimePage {
   },
   mieleText: string,
   mieleTextMobile: string,
+  mieleTextEng: string,
+  mieleTextMobileEng: string,
   nocciolaColor: {
     hex: string
   },
@@ -147,6 +160,8 @@ export interface MateriePrimePage {
   },
   nocciolaText: string,
   nocciolaTextMobile: string,
+  nocciolaTextEng: string,
+  nocciolaTextMobileEng: string,
   nociColor: {
     hex: string
   },
@@ -157,7 +172,10 @@ export interface MateriePrimePage {
   },
   nociText: string,
   nociTextMobile: string,
-  quoteHeaderText: string
+  nociTextEng: string,
+  nociTextMobileEng: string,
+  quoteHeaderText: string,
+  quoteHeaderTextEng: string
 }
 
 export interface ChiSiamoPageQuery {
@@ -177,6 +195,8 @@ export interface ChiSiamoPage {
   },
   pageText: string,
   quoteHeaderText: string
+  pageTextEng: string,
+  quoteHeaderTextEng: string
 }
 
 
@@ -195,7 +215,8 @@ export interface Category {
       current: string
     },
     title: string,
-    description: string
+    description: string,
+    descriptionEng: string,
   }
 }
 
@@ -210,6 +231,9 @@ export interface HomePageQuery {
     quoteHeaderText: string,
     quoteBelowCarouselText: string,
     mobileHeaderText: string,
+    quoteHeaderTextEng: string,
+    quoteBelowCarouselTextEng: string,
+    mobileHeaderTextEng: string,
     contactImg: {
       asset: {
         fixed: FixedObject
@@ -220,6 +244,7 @@ export interface HomePageQuery {
 export interface ContactPageQuery {
   sanityContattiPage: {
     quoteHeaderText: string,
+    quoteHeaderTextEng: string,
   }
 }
 

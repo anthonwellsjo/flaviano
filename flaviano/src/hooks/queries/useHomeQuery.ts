@@ -7,6 +7,9 @@ export const useHomeQuery = () => {
             quoteHeaderText
             quoteBelowCarouselText
             mobileHeaderText
+            quoteHeaderTextEng
+            quoteBelowCarouselTextEng
+            mobileHeaderTextEng
             contactImg {
             asset {
               fixed(width: 1300){

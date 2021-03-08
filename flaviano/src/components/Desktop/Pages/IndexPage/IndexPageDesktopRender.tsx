@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { HomePageQuery, QuoteStyle } from "../../../../../types";
 import CategoryCarousel from "../../CategoryCarousel/CategoryCarousel";
 import LayoutHeader from "../../LayoutHeaderDesktop/LayoutHeaderDesktop"
@@ -16,9 +16,11 @@ import LayoutFrameDesktop from "../../LayoutFrameDesktop/LayoutFrameDesktop";
 import Img from 'gatsby-image';
 import ContactBar from '../../ContactBar/ContactBar';
 import SEO from '../../../SEO/SEO';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const IndexPageDesktopRender: React.FC = () => {
   const [materiePrimeHover, setMateriePrimeHover] = useState(false);
+  const [page, setPage]: any = useContext(PageContext);
   let parallax: any = useRef();
 
 
@@ -66,7 +68,7 @@ const IndexPageDesktopRender: React.FC = () => {
         <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "100vh" }}>
           <ParallaxLayer offset={0} speed={0.05}>
             <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
-              {sanityHomePage.quoteHeaderText}
+              {page.english ? sanityHomePage.quoteHeaderTextEng : sanityHomePage.quoteHeaderText}
             </Quote>
           </ParallaxLayer>
         </section>
@@ -90,7 +92,7 @@ const IndexPageDesktopRender: React.FC = () => {
               <Centralizer column>
                 <div style={{ position: "absolute", width: "70%", marginTop: "-100vh" }}>
                   <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
-                    {sanityHomePage.quoteBelowCarouselText}
+                    {page.english ? sanityHomePage.quoteBelowCarouselTextEng : sanityHomePage.quoteBelowCarouselText}
                   </Quote>
                 </div>
               </Centralizer>

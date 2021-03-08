@@ -24,6 +24,9 @@ export const useProductQuery = () => {
           conservation
           ingredients
           ingredientsTwo
+          conservationEng
+          ingredientsEng
+          ingredientsTwoEng
           productPhoto {
             asset {
               fluid(maxWidth: 1000){

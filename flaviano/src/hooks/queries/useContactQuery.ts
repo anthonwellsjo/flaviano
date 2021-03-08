@@ -5,6 +5,7 @@ export const useContactQuery = () => {
       query useContactQuery{
         sanityContattiPage {
           quoteHeaderText
+          quoteHeaderTextEng
         } 
         }        
   `

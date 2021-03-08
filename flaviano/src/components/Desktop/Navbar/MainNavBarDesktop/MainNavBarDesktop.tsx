@@ -18,11 +18,11 @@ const MainNavBarDesktop: React.FC = () => {
             <NavbarDropDown />
             <Link activeClassName={classes.active} className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/materieprime">Materie prime</Link>
             <Link activeClassName={classes.active} className={classes.link} onMouseEnter={() => setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))} to="/contatti">Contatti</Link>
-            <button className={classes.button}>Ita/Eng</button>
+            <button onClick={() => setPage((prev: any) => ({ english: !page.english }))} className={classes.button}>{page.english ? <span>Ita / <span className={classes.active}>Eng</span></span> : <span><span className={classes.active}>Ita </span>/ Eng</span>} </button>
           </div>
         </div>
-      </Centralizer>
-    </nav>
+      </Centralizer >
+    </nav >
   )
 }
 

@@ -9,5 +9,11 @@ export default {
       type: 'text',
       validation: v => v.required()
     },
+    {
+      name: 'quoteHeaderTextEng',
+      title: 'Quote Header Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
   ]
 }

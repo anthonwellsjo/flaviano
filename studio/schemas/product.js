@@ -91,8 +91,20 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'descriptionEng',
+      title: 'Description English',
+      type: 'text',
+      validation: Rule => Rule.required()
+    },
+    {
       name: 'ingredients',
       title: 'Ingredients',
+      type: 'text',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'ingredientsEng',
+      title: 'Ingredients English',
       type: 'text',
       validation: Rule => Rule.required()
     },
@@ -102,8 +114,19 @@ export default {
       type: 'text'
     },
     {
+      name: 'ingredientsTwoEng',
+      title: 'Ingredients Two English',
+      type: 'text'
+    },
+    {
       name: 'conservation',
       title: 'Conservation',
+      type: 'text',
+      validation: Rule => Rule.required()
+    },
+    {
+      name: 'conservationEng',
+      title: 'Conservation English',
       type: 'text',
       validation: Rule => Rule.required()
     },
