@@ -114,6 +114,8 @@ export interface MateriePrimePage {
       fluid: FluidObject
     }
   },
+  lievitoMadreText: string,
+  lievitoMadreTextMobile: string,
   lievitoMadreTextEng: string,
   lievitoMadreTextMobileEng: string,
   limoniColor: {

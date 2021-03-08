@@ -13,6 +13,7 @@
   height: 180px;
 }
 
+
 .menuItem {
   padding: 25px 5px 25px 50px;
   font-family: HomepagebaukastenBold;
@@ -33,7 +34,6 @@
 }
 
 .button,
-.button:hover,
 .button:active,
 .button:focus {
   font-family: HomepagebaukastenBold;
@@ -53,4 +53,9 @@
   padding-bottom: 4px;
   border-bottom: 1px solid black;
   outline: 0;
+}
+
+.activeYeah {
+  font-family: HomepagebaukastenBold;
+  font-size: 0.8rem;
 }

@@ -16,7 +16,7 @@ import { useViewport } from '../../../../hooks/useViewPort';
 import { PageContext } from '../../../../contexts/pageContext';
 
 const BabaPageDesktopRender: React.FC = () => {
-  const [page, setPage]:any = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
   const { width, height } = useViewport();
   console.log("width/height", width / height);
@@ -37,7 +37,12 @@ const BabaPageDesktopRender: React.FC = () => {
 
         <ParallaxLayer factor={0} speed={0.1} >
           <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", position: "relative" }}>
-            {screenRatio < 1.39 &&
+            {screenRatio < 1.19 &&
+              <div style={{ width: "160%", height: "100%", position: "absolute" }}>
+                <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
+                {/* <p className="legend">{e.node.title}</p> */}
+              </div>}
+            {screenRatio < 1.39 && screenRatio >= 1.19 &&
               <div style={{ width: "140%", height: "100%", position: "absolute" }}>
                 <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
                 {/* <p className="legend">{e.node.title}</p> */}
@@ -49,7 +54,7 @@ const BabaPageDesktopRender: React.FC = () => {
                 {/* <p className="legend">{e.node.title}</p> */}
               </div>}
             {screenRatio >= 1.64 &&
-              <div style={{ width: "130%", height: "130%", position: "absolute"}}>
+              <div style={{ width: "110%", height: "130%", position: "absolute" }}>
                 <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
                 {/* <p className="legend">{e.node.title}</p> */}
               </div>}

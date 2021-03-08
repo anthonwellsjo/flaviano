@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import { Link } from 'gatsby';
 import React, { useContext, useState } from 'react';
 import { Trail, Transition } from 'react-spring/renderprops';
@@ -14,16 +15,17 @@ interface MenuItem {
 
 
 const NavbarDropDownDesktop: React.FC = () => {
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
   const CategoryData: CategoryQuery = useCategoryPreviewQuery();
 
   console.log("productsDropDownMenuOpen", page.productsDropDownMenuOpen);
+  console.log("pathname", location.pathname,location.pathname.split("/").includes("categories"));
 
   const onMouseEnterEventHandler = () => {
-    setPage(prev => ({ ...prev, productsDropDownMenuOpen: true }))
+    setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: true }))
   }
   const onMouseLeaveEventHandler = () => {
-    setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }))
+    setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))
   }
 
   let menuItems: Array<MenuItem> = [];
@@ -39,7 +41,7 @@ const NavbarDropDownDesktop: React.FC = () => {
 
   return (
     <>
-      <button className={classes.button} style={{ zIndex: 100, cursor: "pointer" }} onMouseEnter={onMouseEnterEventHandler}>Prodotti</button>
+      <button className={location.pathname.split("/").includes("categories") ? classnames(classes.button, classes.activeYeah) : classes.button} style={{ zIndex: 100, cursor: "pointer" }} onMouseEnter={onMouseEnterEventHandler}>Prodotti</button>
       <Transition
         unique
         reset
