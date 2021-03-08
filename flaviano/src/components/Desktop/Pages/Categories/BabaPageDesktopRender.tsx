@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { BabaPageQuery, QuoteStyle } from '../../../../../types';
-import LayoutHeader from '../../../Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import PageTitle from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
 import Quote from '../../../Desktop/QuoteDesktop/QuoteDesktop';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
@@ -23,6 +23,23 @@ const BabaPageDesktopRender: React.FC = () => {
   const screenRatio = width / height;
   let parallax: any = useRef();
   const currentScroll = useScroll(parallax);
+
+  const onScrollEventHandler = (event) => {
+    if (event.deltaY < 0) {
+      scrollTo("#top")
+    }
+    else if (event.deltaY > 0) {
+      scrollTo("#products")
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("wheel", e => onScrollEventHandler(e))
+
+    return (() => {
+      window.removeEventListener("wheel", onScrollEventHandler);
+    })
+  }, [])
 
   useEffect(() => {
     setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }));

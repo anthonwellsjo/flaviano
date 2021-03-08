@@ -1,7 +1,7 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { ChiSiamoPageQuery } from '../../../../../types';
-import LayoutHeader from '../../LayoutHeaderDesktop/LayoutHeaderDesktop';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import PageTitle from '../../PageTitleDesktop/PageTitleDesktop';
 import { useChiSiamoQuery } from '../../../../hooks/queries/useChiSiamoQuery';
 import Img from 'gatsby-image';
@@ -20,6 +20,24 @@ const ChiSiamoDesktopRender = () => {
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax: any = useRef();
   const currentScroll = useScroll(parallax);
+
+  const onScrollEventHandler = (event) => {
+    if (event.deltaY < 0) {
+      scrollTo("#top")
+    }
+    else if (event.deltaY > 0) {
+      scrollTo("#pageTwo")
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("wheel", e => onScrollEventHandler(e))
+
+    return (() => {
+      window.removeEventListener("wheel", onScrollEventHandler);
+    })
+  }, [])
+
 
 
   return (
@@ -67,7 +85,7 @@ const ChiSiamoDesktopRender = () => {
           <Centralizer>
             <div style={{ width: "80%", marginTop: "10vh" }}>
               <p id="chisiamoText" style={{ fontFamily: "HomepageBaukastenBook", lineHeight: "1.8em", wordSpacing: ".5em", fontSize: "1em", textAlign: "justify" }}>
-                <strong>Flaviano </strong>{page.english? sanityChiSiamoPage.pageTextEng : sanityChiSiamoPage.pageText}
+                <strong>Flaviano </strong>{page.english ? sanityChiSiamoPage.pageTextEng : sanityChiSiamoPage.pageText}
               </p>
             </div>
           </Centralizer>
