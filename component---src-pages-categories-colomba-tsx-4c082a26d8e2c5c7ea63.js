@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{SJOg:function(e,n,t){"use strict";t.r(n);var l=t("q1tI"),a=t.n(l),r=function(){return a.a.createElement("h1",null,"ColombaPageDesktopRender")},u=function(){return a.a.createElement("h1",null,"mobile")},c=t("sKf1");n.default=function(){return Object(c.b)().width>850?a.a.createElement(r,null):a.a.createElement(u,null)}}}]);
-//# sourceMappingURL=component---src-pages-categories-colomba-tsx-4c082a26d8e2c5c7ea63.js.map
