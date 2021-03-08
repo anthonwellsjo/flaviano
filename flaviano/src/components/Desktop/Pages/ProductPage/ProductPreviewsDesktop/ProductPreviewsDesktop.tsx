@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useCategoryPreviewQuery } from '../../../../../hooks/queries/useCategoryPreviewQuery';
 import ProductPreview from '../ProductPreviewDesktop/ProductPreviewDesktop';
 import { useProductQuery } from '../../../../../hooks/queries/useProductQuery';
 import { Category, Product, ProductQuery, CategoryQuery } from '../../../../../../types';
+import { PageContext } from '../../../../../contexts/pageContext';
 
 const ProductPreviewsDesktop = () => {
   const categoryData: CategoryQuery = useCategoryPreviewQuery();
   const productData: ProductQuery = useProductQuery();
+  const [page, setPage]: any = useContext(PageContext);
 
   return (
     <div>
@@ -19,10 +21,12 @@ const ProductPreviewsDesktop = () => {
               key={e.node.slug.current}
               categorySlug={e.node.slug.current}
               categoryDescription={e.node.description}
+              categoryDescriptionEnglish={e.node.descriptionEng}
               products={products}
               title={e.node.title}
               color={e.node.previewColorBoxColor.hex}
-              img={e.node.categoryParallaxIcon.asset.fluid} />
+              img={e.node.categoryParallaxIcon.asset.fluid}
+              english={page.english} />
           </div>
         )
       })}

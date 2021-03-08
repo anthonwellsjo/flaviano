@@ -49,6 +49,15 @@ export default () =>
 
 
               S.listItem()
+                .title('Biscotti Page')
+                .child(
+                  S.document()
+                    .schemaType('biscottiPage')
+                    .documentId('biscottiPage')
+                ),
+
+
+              S.listItem()
                 .title('Chi Siamo Page')
                 .child(
                   S.document()

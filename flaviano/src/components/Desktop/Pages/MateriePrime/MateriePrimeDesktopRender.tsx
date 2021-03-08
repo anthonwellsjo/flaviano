@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { MateriePrimeQuery, QuoteStyle } from '../../../../../types';
 import { useMateriePrimeQuery } from '../../../../hooks/queries/useMateriePrimeQuery';
@@ -9,10 +9,12 @@ import LayoutHeaderDesktop from '../../LayoutHeaderDesktop/LayoutHeaderDesktop';
 import PageTitleDesktop from '../../PageTitleDesktop/PageTitleDesktop';
 import QuoteDesktop from '../../QuoteDesktop/QuoteDesktop';
 import Img from 'gatsby-image';
+import { PageContext } from '../../../../contexts/pageContext';
 
 
 const MateriePrimeDesktopRender: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
+  const [page, setPage]: any = useContext(PageContext);
   let parallax: any;
 
 
@@ -26,7 +28,7 @@ const MateriePrimeDesktopRender: React.FC = () => {
             </div>
             <div style={{ position: "absolute", top: "45vh", right: "10%" }}>
               <div style={{ height: "1px", width: "30px", marginLeft: "7px", marginBottom: "8px", backgroundColor: "black" }}></div>
-              <PageTitleDesktop>Materie Prime</PageTitleDesktop>
+              <PageTitleDesktop>{page.english ? "Materials" : "Materie Prime"}</PageTitleDesktop>
               <div style={{ height: "1px", width: "25px", marginLeft: "10px", marginTop: "10px", backgroundColor: "black" }}></div>
             </div>
           </div>
@@ -34,7 +36,7 @@ const MateriePrimeDesktopRender: React.FC = () => {
         <ParallaxLayer offset={0.5} speed={0.2}>
           <Centralizer>
             <div style={{ width: "65%", height: "100vh", marginTop: "50vh", zIndex: -1 }}>
-              <QuoteDesktop rightQuoteY="3vh" fontSize="1.8em" style={QuoteStyle['paragraph-m']} >{sanityMateriePrimePage.quoteHeaderText}</QuoteDesktop>
+              <QuoteDesktop rightQuoteY="3vh" fontSize="1.8em" style={QuoteStyle['paragraph-m']} >{page.english ? sanityMateriePrimePage.quoteHeaderTextEng : sanityMateriePrimePage.quoteHeaderText}</QuoteDesktop>
             </div>
           </Centralizer>
         </ParallaxLayer>
@@ -109,13 +111,13 @@ const MateriePrimeDesktopRender: React.FC = () => {
         {/* MELE ANNURCA */}
 
         <ParallaxLayer offset={1.99} speed={1}>
-          <div style={{ height: "40vh", backgroundColor:"white", position:"relative" }}>
+          <div style={{ height: "40vh", backgroundColor: "white", position: "relative" }}>
             <Centralizer>
               <div style={{ width: "15%", height: "60vh", backgroundColor: sanityMateriePrimePage.melaColor.hex, position: "absolute", left: 0, top: "0" }}></div>
               <div style={{ maxWidth: "389px", height: "30vh", width: "30%", position: "absolute", right: "10%", top: "100px" }}>
                 <Img fluid={sanityMateriePrimePage.melaImg.asset.fluid} alt="photo of limoni di sorrento" />
               </div>
-              <div style={{ position:"absolute", top:0, width: "100%", height: "20vh" }}>
+              <div style={{ position: "absolute", top: 0, width: "100%", height: "20vh" }}>
                 <div style={{ width: "50%", textAlign: "right", position: "absolute" }}>
                   <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "100px", marginRight: "15px", marginTop: "18px" }}></div>
                   <div style={{ position: "absolute", marginTop: "32px", width: "25%", right: "200px" }}>
@@ -192,7 +194,7 @@ const MateriePrimeDesktopRender: React.FC = () => {
                 </div>
               </div>
               <div style={{ width: "45%", wordSpacing: ".3em", position: "absolute", top: "300px", left: "10%" }}>
-              {sanityMateriePrimePage.nocciolaText.split(". ").map((s, index) => {
+                {sanityMateriePrimePage.nocciolaText.split(". ").map((s, index) => {
                   if (index == sanityMateriePrimePage.nocciolaText.split(". ").length - 1) return (
                     <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify", marginTop: "-1em", fontSize: "1.2em" }}>{s}</p>
                   )
@@ -225,7 +227,7 @@ const MateriePrimeDesktopRender: React.FC = () => {
                 </div>
               </div>
               <div style={{ width: "45%", wordSpacing: ".3em", position: "absolute", top: "32vh", left: "10%" }}>
-              {sanityMateriePrimePage.mieleText.split(". ").map((s, index) => {
+                {sanityMateriePrimePage.mieleText.split(". ").map((s, index) => {
                   if (index == sanityMateriePrimePage.mieleText.split(". ").length - 1) return (
                     <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify", marginTop: "-1em", fontSize: "1.2em" }}>{s}</p>
                   )
@@ -258,7 +260,7 @@ const MateriePrimeDesktopRender: React.FC = () => {
                 </div>
               </div>
               <div style={{ width: "45%", wordSpacing: ".3em", position: "absolute", top: "260px", left: "10%" }}>
-              {sanityMateriePrimePage.albicocceText.split(". ").map((s, index) => {
+                {sanityMateriePrimePage.albicocceText.split(". ").map((s, index) => {
                   if (index == sanityMateriePrimePage.albicocceText.split(". ").length - 1) return (
                     <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify", marginTop: "-1em", fontSize: "1.2em" }}>{s}</p>
                   )

@@ -41,7 +41,7 @@ const NavbarDropDownDesktop: React.FC = () => {
 
   return (
     <>
-      <button className={location.pathname.split("/").includes("categories") ? classnames(classes.button, classes.activeYeah) : classes.button} style={{ zIndex: 100, cursor: "pointer" }} onMouseEnter={onMouseEnterEventHandler}>Prodotti</button>
+      <button className={location.pathname.split("/").includes("categories") ? classnames(classes.button, classes.activeYeah) : classes.button} style={{ zIndex: 100, cursor: "pointer" }} onMouseEnter={onMouseEnterEventHandler}>{page.english? "Products" : "Prodotti"}</button>
       <Transition
         unique
         reset

@@ -14,6 +14,7 @@ import chiSiamoPage from './chiSiamoPage'
 import materiePrimePage from './materiePrimePage'
 import homePage from './homePage'
 import contattiPage from './contattiPage'
+import biscottiPage from './biscottiPage'
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -33,6 +34,7 @@ export default createSchema({
     generalSettings,
     homePage,
     babaPage,
+    biscottiPage,
     chiSiamoPage,
     materiePrimePage,
     // When added to this list, object types can be used as

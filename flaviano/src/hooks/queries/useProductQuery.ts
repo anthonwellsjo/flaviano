@@ -14,6 +14,7 @@ export const useProductQuery = () => {
           priceEur
           weightGr
           description
+          descriptionEng
           slug {
             current
           }

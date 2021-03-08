@@ -66,6 +66,12 @@ const BabaPageDesktopRender: React.FC = () => {
                     <PageTitle letterSpacing={".2em"} fontSize={`${(width / 500) + 0.7}em`}>O babà é na cosa seria</PageTitle>
                   </Quote>
                 </div>
+                {page.english &&
+                  <div>
+                    <div style={{ position: "absolute", top: "48vh", right: "25%" }}>
+                      <p style={{ fontFamily: "IbarraRealNovaItalic", fontStyle: "italic", fontWeight: "normal", fontSize: "1.3em" }}>-Babà is serious business.</p>
+                    </div>
+                  </div>}
                 <div style={{ position: "absolute", bottom: "25vh" }}>
                   <ScrollButton to="#products" currentPosition={currentScroll} deactivatePosition={9999} reactivePosition={0} />
                 </div>
@@ -79,7 +85,7 @@ const BabaPageDesktopRender: React.FC = () => {
           <div style={{ position: "relative", backgroundColor: "white", width: "100%", height: "100vh", zIndex: 0, marginTop: "10vh" }}>
             <Centralizer evenly>
               <div style={{ width: "50%" }}>
-                <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify", fontSize: "1.3em", margin: "-25px 10% 10% 10%" }}>{sanityBabaPage.pageText}</p>
+                <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify", fontSize: "1.3em", margin: "-25px 10% 10% 10%" }}>{page.english ? sanityBabaPage.pageTextEng : sanityBabaPage.pageText}</p>
               </div>
               <div style={{ width: "50%" }}>
                 <Centralizer>

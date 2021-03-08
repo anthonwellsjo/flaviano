@@ -10,9 +10,16 @@ interface pageProps {
   description: string,
   ingredients: string,
   conservation: string
+  descriptionEng: string,
+  ingredientsEng: string,
+  conservationEng: string,
+  english: boolean
 }
 
 const ProductViewDesktop = (props: pageProps) => {
+
+
+
   if (props.title.toUpperCase() == "LIMONE E ZENZERO") return (
     <div style={{ position: "relative", backgroundColor: props.bcgColor, width: "100%", height: "100vh", zIndex: 100, display: "flex", justifyContent: "space-evenly", alignItems: "center" }}>
       <div style={{ maxWidth: "500px", maxHeight: "300px", width: "350px", height: "300px", marginBottom: "10vh" }}>
@@ -25,19 +32,19 @@ const ProductViewDesktop = (props: pageProps) => {
         <div className={classes.textBody}>
           <div>
             <div className={classes.descWrapper}>
-              <span className={classes.descriptionTitle}>Descrizione prodotto</span>
+              <span className={classes.descriptionTitle}>{props.english ? "Description" : "Descrizione prodotto"} </span>
               <br></br>
-              <p className={classes.description}>{props.description}</p>
+              <p className={classes.description}>{props.english ? props.descriptionEng : props.description}</p>
             </div>
             <div className={classes.ingredWrapper}>
-              <span className={classes.ingredientsTitle}>Ingredienti</span>
+              <span className={classes.ingredientsTitle}>{props.english ? "Ingredients" : "Ingredienti"}</span>
               <br></br>
-              <p className={classes.ingredients}>{props.ingredients}</p>
+              <p className={classes.ingredients}>{props.english ? props.ingredientsEng : props.ingredients}</p>
             </div>
             <div className={classes.consWrapper}>
-              <span className={classes.conservationTitle}>Conservazione</span>
+              <span className={classes.conservationTitle}>{props.english ? "Conservation" : "Conservazione"}</span>
               <br></br>
-              <span className={classes.conservation}>{props.conservation}</span>
+              <span className={classes.conservation}>{props.english ? props.conservationEng :props.conservation}</span>
             </div>
           </div>
         </div>
@@ -56,19 +63,19 @@ const ProductViewDesktop = (props: pageProps) => {
         <div className={classes.textBody}>
           <div>
             <div className={classes.descWrapper}>
-              <span className={classes.descriptionTitle}>Descrizione prodotto</span>
+              <span className={classes.descriptionTitle}>{props.english ? "Description" : "Descrizione prodotto"} </span>
               <br></br>
-              <p className={classes.description}>{props.description}</p>
+              <p className={classes.description}>{props.english ? props.descriptionEng : props.description}</p>
             </div>
             <div className={classes.ingredWrapper}>
-              <span className={classes.ingredientsTitle}>Ingredienti</span>
+              <span className={classes.ingredientsTitle}>{props.english ? "Ingredients" : "Ingredienti"}</span>
               <br></br>
-              <p className={classes.ingredients}>{props.ingredients}</p>
+              <p className={classes.ingredients}>{props.english ? props.ingredientsEng : props.ingredients}</p>
             </div>
             <div className={classes.consWrapper}>
-              <span className={classes.conservationTitle}>Conservazione</span>
+              <span className={classes.conservationTitle}>{props.english ? "Conservation" : "Conservazione"}</span>
               <br></br>
-              <span className={classes.conservation}>{props.conservation}</span>
+              <span className={classes.conservation}>{props.english ? props.conservationEng :props.conservation}</span>
             </div>
           </div>
         </div>

@@ -40,6 +40,18 @@ export default {
       validation: v => v.required()
     },
     {
+      name: 'materiePrimeBannerQuoteText',
+      title: 'Materie Prime Banner Quote Text',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'materiePrimeBannerQuoteTextEng',
+      title: 'Materie Prime Banner Quote Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
       name: 'contactImg',
       title: 'Contact Image',
       type: 'image',

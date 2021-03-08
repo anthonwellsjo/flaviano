@@ -107,7 +107,7 @@ const IndexPageDesktopRender: React.FC = () => {
           </Quote>
           </div>
           <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "35%", bottom: "5vh" }}>
-            <PageTitle>Prodotti</PageTitle>
+            <PageTitle>{page.english? "Products" : "Prodotti"}</PageTitle>
           </div>
 
         </section>
@@ -131,7 +131,7 @@ const IndexPageDesktopRender: React.FC = () => {
               <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65%", height: "450px", backgroundColor: "#E3A38B", right: "0" }}>
                 <ParallaxLayer offset={0} speed={-0.15}>
                   <animated.div style={{ cursor: "pointer", position: "absolute", width: "80%", right: "10%", top: "-320px" }}>
-                    <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
+                    <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>{page.english ? sanityHomePage.materiePrimeBannerQuoteTextEng : sanityHomePage.materiePrimeBannerQuoteText}</Quote>
                   </animated.div>
                 </ParallaxLayer>
               </animated.div>
@@ -140,7 +140,7 @@ const IndexPageDesktopRender: React.FC = () => {
           <ParallaxLayer offset={0.7} speed={0.1}>
             <Link to="/materieprime/">
               <animated.div onMouseEnter={() => setMateriePrimeHover(true)} onMouseLeave={() => setMateriePrimeHover(false)} style={{ ...materiePrimeTitleStyles, position: "absolute", marginLeft: "10%" }}>
-                <PageTitle>Materie Prime</PageTitle>
+                <PageTitle>{page.english ? "Materials" : "Materie Prime"}</PageTitle>
                 <Centralizer>
                   <animated.div style={{ ...materiePrimeLineStyles, cursor: "pointer", height: "2px", marginTop: "2.5vh", backgroundColor: "black" }}></animated.div>
                 </Centralizer>
@@ -161,7 +161,7 @@ const IndexPageDesktopRender: React.FC = () => {
           <ParallaxLayer offset={0.30} speed={0.26}>
             <div style={{ position: "absolute", left: "10%", zIndex: 5, top: "115vh" }}>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", backgroundColor: "black" }}></div>
-              <PageTitle>Contatti</PageTitle>
+              <PageTitle>{page.english ? "Contact" : "Contatti"}</PageTitle>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", marginTop: "4px", backgroundColor: "black" }}></div>
             </div>
           </ParallaxLayer>

@@ -10,10 +10,12 @@ interface ProductPreviewProps {
   img: FluidObject,
   key: any,
   categoryDescription: string,
+  categoryDescriptionEnglish: string,
   categorySlug: string,
   title: string,
   color: string,
-  products?: Array<Product>
+  products?: Array<Product>,
+  english: boolean
 }
 
 const ProductPreviewDesktop = (props: ProductPreviewProps) => {
@@ -49,7 +51,7 @@ const ProductPreviewDesktop = (props: ProductPreviewProps) => {
               <span className={classes.title}>{props.title}</span>
               <div className={classes.categoryDescriptionContainer}>
                 <span className={classes.categoryDescription}>
-                  {props.categoryDescription}
+                  {props.english ? props.categoryDescriptionEnglish : props.categoryDescription}
                 </span>
               </div>
             </div>
@@ -58,7 +60,7 @@ const ProductPreviewDesktop = (props: ProductPreviewProps) => {
             <div className={classes.line}></div>
             <div className={classes.imageWrapper}>
               <ParallaxLayer offset={0} speed={0.1}>
-                <div style={{width: "400px", maxWidth:"400px", transform: "translateY(340px) translateX(-25%)"}}>
+                <div style={{ width: "400px", maxWidth: "400px", transform: "translateY(340px) translateX(-25%)" }}>
                   <Img className={classes.image} fluid={props.img} alt="Product image" />
                 </div>
               </ParallaxLayer>

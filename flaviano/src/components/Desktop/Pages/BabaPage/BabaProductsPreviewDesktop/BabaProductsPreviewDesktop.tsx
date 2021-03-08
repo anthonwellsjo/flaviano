@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Product, ProductQuery } from '../../../../../../types';
 import { useProductQuery } from '../../../../../hooks/queries/useProductQuery';
 import PageTitle from '../../../PageTitleDesktop/PageTitleDesktop';
@@ -7,11 +7,13 @@ import classes from './BabaProductsPreviewDesktop.module.scss';
 import { useSpring, animated } from 'react-spring';
 import BabaProductPhotosAnimation from '../BabaProductPhotosAnimation/BabaProductPhotosAnimation';
 import { useViewport } from '../../../../../hooks/useViewPort';
+import { PageContext } from '../../../../../contexts/pageContext';
 
 
 
 const BabaProductsPreviewDesktop = () => {
   const { width } = useViewport();
+  const [page, setPage]: any = useContext(PageContext);
   const [productHover, setProductHover] = useState(false);
   const backDropSpring = useSpring({
     reverse: productHover,
@@ -87,13 +89,13 @@ const BabaProductsPreviewDesktop = () => {
                 <PageTitle fontSize={`${width / 700}em`} letterSpacing={`${width / 10000}em`}>{p.node.title}</PageTitle>
               </div>
               <div className={classes.body}>
-                <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Ingredienti</PageTitle>
-                <p className={classes.text}>{p.node.ingredients}</p>
-                <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Ingredienti Bagna</PageTitle>
-                <p className={classes.text}>{p.node.ingredientsTwo}</p>
-                <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Conservazione</PageTitle>
-                <p className={classes.text}>{p.node.conservation}</p>
-                <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>Peso Netto</PageTitle>
+                <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>{page.english ? "Ingredients" : "Ingredienti"}</PageTitle>
+                <p className={classes.text}>{page.english ? p.node.ingredientsEng : p.node.ingredients}</p>
+                <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>{page.english ? "Liquor Ingredients" : "Ingredienti Bagna"}</PageTitle>
+                <p className={classes.text}>{page.english ? p.node.ingredientsTwoEng : p.node.ingredientsTwo}</p>
+                <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>{page.english ? "Conservation" : "Conservazione"}</PageTitle>
+                <p className={classes.text}>{page.english ? p.node.conservationEng : p.node.conservation}</p>
+                <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>{page.english ? "Net Weight" : "Peso Netto"}</PageTitle>
                 <p className={classes.text}>{p.node.weightGr}g</p>
               </div>
             </div>

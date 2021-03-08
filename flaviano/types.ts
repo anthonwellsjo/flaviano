@@ -14,6 +14,7 @@ export interface SanityProduct {
     title: string
   },
   description: string,
+  descriptionEng: string,
   priceEur: number,
   slug: {
     current: string
@@ -87,6 +88,14 @@ export interface BabaPage {
       fluid: FluidObject
     }
   }
+}
+export interface BiscottiPageQuery {
+  sanityBiscottiPage: BiscottiPage
+}
+
+export interface BiscottiPage {
+  quoteHeaderText: string,
+  quoteHeaderTextEng: string
 }
 
 export interface MateriePrimeQuery {
@@ -236,6 +245,8 @@ export interface HomePageQuery {
     quoteHeaderTextEng: string,
     quoteBelowCarouselTextEng: string,
     mobileHeaderTextEng: string,
+    materiePrimeBannerQuoteText: string,
+    materiePrimeBannerQuoteTextEng: string,
     contactImg: {
       asset: {
         fixed: FixedObject
