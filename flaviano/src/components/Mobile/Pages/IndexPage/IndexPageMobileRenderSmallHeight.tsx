@@ -14,14 +14,25 @@ import { PageContext } from '../../../../contexts/pageContext';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import SEO from '../../../SEO/SEO';
+import useScroll from '../../../../hooks/useScroll';
 
 const IndexPageMobileRenderSmallHeight: React.FC = () => {
   const { width } = useViewport();
   const [page, setPage] = useContext(PageContext);
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
   let parallax: any = useRef();
+  const currentScroll = useScroll(parallax);
 
-
+  useEffect(() => {
+    if (currentScroll < 10) {
+      setPage(prev => ({ ...prev, hideMobileNavbarLogo: true }))
+    } else {
+      setPage(prev => ({ ...prev, hideMobileNavbarLogo: false }))
+    }
+    return (() => {
+      setPage(prev => ({ ...prev, hideMobileNavbarLogo: false }))
+    })
+  }, [currentScroll]);
 
   return (
     <LayoutMobile>

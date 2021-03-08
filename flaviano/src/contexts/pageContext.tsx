@@ -9,7 +9,8 @@ const PageProvider: React.FC = ({ children }) => {
   const [page, setPage] = useState({
     productsDropDownMenuOpen: false,
     burgerMenuOpen: false,
-    firstStart: true
+    firstStart: true,
+    hideMobileNavbarLogo: false
   });
   return (
     <PageContext.Provider value={[page, setPage]}>
