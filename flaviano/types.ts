@@ -8,9 +8,17 @@ export enum QuoteStyle {
   "italic"
 }
 
-export enum MediaTypes {
+export enum MediaPort {
   xtremeDesktop,
+  desktop,
+  mobile,
+  mobileSmallHeight,
+  mobileHorizontal
+}
 
+export interface ScreenSize {
+  height: number,
+  width: number
 }
 
 

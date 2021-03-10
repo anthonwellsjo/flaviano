@@ -3,12 +3,12 @@ import MateriePrimeDesktopRender from '../components/Desktop/Pages/MateriePrime/
 import MateriePrimeMobileRender from '../components/Mobile/Pages/MateriePrime/MateriePrimeMobileRender';
 import MateriePrimeMobileRenderSmallHeight from '../components/Mobile/Pages/MateriePrime/MateriePrimeMobileRenderSmallHeight';
 import SEO from '../components/SEO/SEO';
+import useGetMediaPort from '../hooks/useGetMediaPort';
 import { useViewport } from '../hooks/useViewPort';
 
 const MateriePrimePage: React.FC = () => {
-
-
   const { width, height } = useViewport();
+  const mediaPort = useGetMediaPort({ height: height, width: width });
 
   return (
     <>
