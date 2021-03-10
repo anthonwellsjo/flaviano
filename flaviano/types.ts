@@ -8,6 +8,12 @@ export enum QuoteStyle {
   "italic"
 }
 
+export enum MediaTypes {
+  xtremeDesktop,
+
+}
+
+
 export interface SanityProduct {
   category: {
     id: string,
@@ -270,3 +276,6 @@ export interface ContactInfoQuery {
     urlPinterest: string
   }
 }
+
+
+

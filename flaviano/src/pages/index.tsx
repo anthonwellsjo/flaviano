@@ -9,6 +9,7 @@ import { useViewport } from "../hooks/useViewPort";
 
 const IndexPage = () => {
   const { width, height } = useViewport();
+  const 
 
   return (
     <>
