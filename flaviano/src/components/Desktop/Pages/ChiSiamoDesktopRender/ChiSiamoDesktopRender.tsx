@@ -21,7 +21,7 @@ const ChiSiamoDesktopRender = () => {
   let parallax: any = useRef();
   const currentScroll = useScroll(parallax);
 
-  const onScrollEventHandler = (event) => {
+  const onScrollEventHandler = (event: WheelEvent) => {
     if (event.deltaY < 0) {
       scrollTo("#top")
     }

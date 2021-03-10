@@ -24,17 +24,19 @@ const BabaPageMobileRenderSmallHeight: React.FC = () => {
         </ParallaxLayer>
         <ParallaxLayer speed={0.1} >
           <div style={{ width: "100%", overflow: "hidden" }}>
-            <div style={{ maxWidth: "900px", width: "700px", marginLeft: "-100px", marginTop:"-60px", position: "absolute" }}>
+            <div style={{ maxWidth: "900px", width: "700px", marginLeft: "-100px", marginTop: "-60px", position: "absolute" }}>
               <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
             </div>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={0.2} speed={-0.1}>
-          <div style={{ position: "absolute", top: "40px", right: "-10px", width: "300px" }}>
-            <QuoteMobile rightQuoteY={"20px"} rightQuoteX={"10px"}>
-              <PageTitleDesktop right letterSpacing=".2em" fontSize="2em">O babà é na cosa seria.</PageTitleDesktop>
-            </QuoteMobile>
-          </div>
+          <Centralizer>
+            <div style={{ position: "absolute", top: "40px", width: "300px" }}>
+              <QuoteMobile rightQuoteY={"20px"} rightQuoteX={"10px"}>
+                <PageTitleDesktop right letterSpacing=".2em" fontSize="2em">O babà é na cosa seria.</PageTitleDesktop>
+              </QuoteMobile>
+            </div>
+          </Centralizer>
         </ParallaxLayer>
         <ParallaxLayer offset={0.6} speed={0}>
           <div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: ".9em" }}>

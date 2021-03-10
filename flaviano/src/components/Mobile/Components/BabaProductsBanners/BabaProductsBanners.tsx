@@ -17,17 +17,17 @@ const BabaProductsBanners: React.FC = () => {
   const stregaBcgPicProp = useSpring({
     reverse: !containersOpen.strega,
     to: [{ height: "300px", width: `${width/2.5}px` }],
-    from: { height: "0px", width: "0px" }
+    from: { height: "60px", width: "0px" }
   })
   const limoBcgPicProp = useSpring({
     reverse: !containersOpen.limoncello,
     to: [{ height: "300px", width: `${width/2.5}px` }],
-    from: { height: "0px", width: "0px" }
+    from: { height: "60px", width: "0px" }
   })
   const melaBcgPicProp = useSpring({
     reverse: !containersOpen.mela,
     to: [{ height: "300px", width: `${width/2.5}px` }],
-    from: { height: "0px", width: "0px" }
+    from: { height: "60px", width: "0px" }
   })
   const limoncelloProps = useSpring({
     reverse: containersOpen.limoncello,
