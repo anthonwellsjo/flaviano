@@ -1,4 +1,5 @@
 import React from 'react';
+import { MediaPort } from '../../types';
 import MateriePrimeDesktopRender from '../components/Desktop/Pages/MateriePrime/MateriePrimeDesktopRender';
 import MateriePrimeMobileRender from '../components/Mobile/Pages/MateriePrime/MateriePrimeMobileRender';
 import MateriePrimeMobileRenderSmallHeight from '../components/Mobile/Pages/MateriePrime/MateriePrimeMobileRenderSmallHeight';
@@ -13,10 +14,11 @@ const MateriePrimePage: React.FC = () => {
   return (
     <>
       <SEO title="Materie prime pregiate, di qualità delle ricche terre campane" />
-      {height > 860 && <h1>x-treme size window render</h1>}
-      {width > 850 && height <=860 && <MateriePrimeDesktopRender />}
-      {height < 680 && width <= 850 && <MateriePrimeMobileRenderSmallHeight />}
-      {height >= 680 && width <= 850 && <MateriePrimeMobileRender />}
+      {mediaPort == MediaPort.xtremeDesktop && <h1>x-treme size window render</h1>}
+      {mediaPort == MediaPort.desktop && <MateriePrimeDesktopRender />}
+      {mediaPort == MediaPort.mobile && <MateriePrimeMobileRender />}
+      {mediaPort == MediaPort.mobileSmallHeight && <MateriePrimeMobileRenderSmallHeight />}
+      {mediaPort == MediaPort.mobileHorizontal && <h1>horizontal mobile</h1>}
     </>
   )
 }
