@@ -1,6 +1,7 @@
 import React from 'react';
 import { MediaPort } from '../../types';
 import MateriePrimeDesktopRender from '../components/Desktop/Pages/MateriePrime/MateriePrimeDesktopRender';
+import MateriePrimeXtremeDesktopRender from '../components/Desktop/Pages/MateriePrime/MateriePrimeXtremeDesktopRender';
 import MateriePrimeMobileRender from '../components/Mobile/Pages/MateriePrime/MateriePrimeMobileRender';
 import MateriePrimeMobileRenderSmallHeight from '../components/Mobile/Pages/MateriePrime/MateriePrimeMobileRenderSmallHeight';
 import SEO from '../components/SEO/SEO';
@@ -14,7 +15,7 @@ const MateriePrimePage: React.FC = () => {
   return (
     <>
       <SEO title="Materie prime pregiate, di qualità delle ricche terre campane" />
-      {mediaPort == MediaPort.xtremeDesktop && <h1>x-treme size window render</h1>}
+      {mediaPort == MediaPort.xtremeDesktop && <MateriePrimeXtremeDesktopRender/>}
       {mediaPort == MediaPort.desktop && <MateriePrimeDesktopRender />}
       {mediaPort == MediaPort.mobile && <MateriePrimeMobileRender />}
       {mediaPort == MediaPort.mobileSmallHeight && <MateriePrimeMobileRenderSmallHeight />}
