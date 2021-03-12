@@ -7,6 +7,7 @@ import { animated, useSpring } from 'react-spring';
 import { Link } from 'gatsby';
 
 interface ProductPreviewProps {
+  parallax: boolean,
   img: FluidObject,
   key: any,
   categoryDescription: string,
@@ -41,7 +42,8 @@ const ProductPreviewDesktop = (props: ProductPreviewProps) => {
     }
   })
 
-  return (
+
+  if (props.parallax) return (
     <Link to={`/categories/${props.categorySlug}`}>
       <div onMouseLeave={() => setHover(false)} onMouseEnter={() => setHover(true)} className={classes.wrapper}>
         <div className={classes.innerWrapper}>
@@ -64,6 +66,33 @@ const ProductPreviewDesktop = (props: ProductPreviewProps) => {
                   <Img className={classes.image} fluid={props.img} alt="Product image" />
                 </div>
               </ParallaxLayer>
+            </div>
+          </div>
+        </div>
+      </div >
+    </Link>
+  )
+  return (
+    <Link to={`/categories/${props.categorySlug}`}>
+      <div onMouseLeave={() => setHover(false)} onMouseEnter={() => setHover(true)} className={classes.wrapper}>
+        <div className={classes.innerWrapper}>
+          <animated.div style={{ ...previewSyles, backgroundColor: props.color }} className={classes.colorCube} >
+            <div className={classes.titleWrapper}>
+              <animated.div style={lineStyles} className={classes.titleOverLine}></animated.div>
+              <span className={classes.title}>{props.title}</span>
+              <div className={classes.categoryDescriptionContainer}>
+                <span className={classes.categoryDescription}>
+                  {props.english ? props.categoryDescriptionEnglish : props.categoryDescription}
+                </span>
+              </div>
+            </div>
+          </animated.div>
+          <div className={classes.imageGroupHolder}>
+            <div className={classes.line}></div>
+            <div className={classes.imageWrapper}>
+              <div style={{ width: "400px", maxWidth: "400px" }}>
+                <Img className={classes.image} fluid={props.img} alt="Product image" />
+              </div>
             </div>
           </div>
         </div>

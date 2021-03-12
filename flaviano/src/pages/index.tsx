@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { MediaPort, ScreenSize } from "../../types";
 
 import IndexPageDesktopRender from "../components/Desktop/Pages/IndexPage/IndexPageDesktopRender";
+import IndexPageXtremeDesktopRender from "../components/Desktop/Pages/IndexPage/IndexPageXtremeDesktopRender";
 import IndexPageMobileRender from "../components/Mobile/Pages/IndexPage/IndexPageMobileRender";
 import IndexPageMobileRenderSmallHeight from "../components/Mobile/Pages/IndexPage/IndexPageMobileRenderSmallHeight";
 import SEO from "../components/SEO/SEO";
@@ -16,7 +17,7 @@ const IndexPage = () => {
   return (
     <>
       <SEO title="Produzione dolciaria artigianale | Biscotti, babà, colombe e panettoni" />
-      {mediaPort == MediaPort.xtremeDesktop && <h1>x-treme size window render</h1>}
+      {mediaPort == MediaPort.xtremeDesktop && <IndexPageXtremeDesktopRender />}
       {mediaPort == MediaPort.desktop && <IndexPageDesktopRender />}
       {mediaPort == MediaPort.mobile && <IndexPageMobileRender />}
       {mediaPort == MediaPort.mobileSmallHeight && <IndexPageMobileRenderSmallHeight />}
