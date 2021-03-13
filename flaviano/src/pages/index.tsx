@@ -4,6 +4,7 @@ import { MediaPort, ScreenSize } from "../../types";
 import IndexPageDesktopRender from "../components/Desktop/Pages/IndexPage/IndexPageDesktopRender";
 import IndexPageXtremeDesktopRender from "../components/Desktop/Pages/IndexPage/IndexPageXtremeDesktopRender";
 import IndexPageMobileRender from "../components/Mobile/Pages/IndexPage/IndexPageMobileRender";
+import IndexPageMobileRenderHorizontal from "../components/Mobile/Pages/IndexPage/IndexPageMobileRenderHorizontal";
 import IndexPageMobileRenderSmallHeight from "../components/Mobile/Pages/IndexPage/IndexPageMobileRenderSmallHeight";
 import SEO from "../components/SEO/SEO";
 import useGetMediaPort from "../hooks/useGetMediaPort";
@@ -21,7 +22,7 @@ const IndexPage = () => {
       {mediaPort == MediaPort.desktop && <IndexPageDesktopRender />}
       {mediaPort == MediaPort.mobile && <IndexPageMobileRender />}
       {mediaPort == MediaPort.mobileSmallHeight && <IndexPageMobileRenderSmallHeight />}
-      {mediaPort == MediaPort.mobileHorizontal && <h1>horizontal mobile</h1>}
+      {mediaPort == MediaPort.mobileHorizontal && <IndexPageMobileRenderHorizontal/>}
     </>
   )
 }

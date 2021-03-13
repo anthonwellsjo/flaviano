@@ -5,8 +5,15 @@ import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
 import { Link } from 'gatsby';
 import { useSpring, animated } from 'react-spring';
 import { PageContext } from '../../../../contexts/pageContext';
-const LayoutMobile: React.FC = ({ children }) => {
+
+interface props {
+  horizontal?: boolean | undefined
+}
+
+const LayoutMobile: React.FC = ({ children,  }, props: props) => {
   const [page, setPage]: any = useContext(PageContext);
+  const isHorizontal = props.horizontal == undefined || !props.horizontal ? false : true;
+  console.log("horizontal", isHorizontal);
   const logoProps = useSpring({
     reverse: page.hideMobileNavbarLogo,
     to: { transform: "translateY(-60px)" },
@@ -17,7 +24,7 @@ const LayoutMobile: React.FC = ({ children }) => {
   return (
     <>
       {children}
-      <BurgerMenu />
+      <BurgerMenu isHorizontal={isHorizontal} />
       <div className={classes.navbar}>
       </div>
       <animated.div style={logoProps}>

@@ -40,21 +40,21 @@ export const useProductQuery = () => {
         }
           productDetailPhoto1 {
             asset {
-              fixed(width: 200, height: 200){
+              fixed(width: 300, height: 300){
                 ...GatsbySanityImageFixed
               }
           }
         }
           productDetailPhoto2 {
             asset {
-              fixed(width: 200, height: 200){
+              fixed(width: 300, height: 300){
                 ...GatsbySanityImageFixed
               }
           }
         }
           productDetailPhoto3 {
             asset {
-              fixed(width: 200, height: 200){
+              fixed(width: 300, height: 300){
                 ...GatsbySanityImageFixed
               }
           }

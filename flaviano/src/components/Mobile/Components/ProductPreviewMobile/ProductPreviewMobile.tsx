@@ -15,7 +15,8 @@ interface ProductPreviewProps {
   title: string,
   color: string,
   products?: Array<Product>,
-  index: number
+  index: number,
+  isHorizontal: boolean
 }
 
 const ProductPreviewMobile = (props: ProductPreviewProps) => {
@@ -26,11 +27,17 @@ const ProductPreviewMobile = (props: ProductPreviewProps) => {
       <div style={{ backgroundColor: props.color }} className={classes.colorCube2} >
         <Centralizer>
           <div className={classes.imageWrapper2}>
-            <ParallaxLayer offset={0} speed={0.05}>
-              <div className={classes.imgWrap}>
-                <Img className={classes.image} fluid={props.img} alt="Product image" />
-              </div>
-            </ParallaxLayer>
+            {!props.isHorizontal &&
+              <ParallaxLayer offset={0} speed={0.05}>
+                <div className={classes.imgWrap}>
+                  <Img className={classes.image} fluid={props.img} alt="Product image" />
+                </div>
+              </ParallaxLayer>}
+            {props.isHorizontal &&
+              <div style={{ transform: "translateY(0)", width: "250px" }}>
+                <Img fluid={props.img} alt="Product image" />
+              </div>}
+
           </div>
         </Centralizer>
       </div>
@@ -48,11 +55,16 @@ const ProductPreviewMobile = (props: ProductPreviewProps) => {
       <div style={{ backgroundColor: props.color }} className={classes.colorCube} >
         <Centralizer>
           <div className={classes.imageWrapper}>
-            <ParallaxLayer offset={0} speed={0.05}>
-              <div className={classes.imgWrap}>
-                <Img className={classes.image} fluid={props.img} alt="Product image" />
-              </div>
-            </ParallaxLayer>
+            {!props.isHorizontal &&
+              <ParallaxLayer offset={0} speed={0.05}>
+                <div className={classes.imgWrap}>
+                  <Img className={classes.image} fluid={props.img} alt="Product image" />
+                </div>
+              </ParallaxLayer>}
+            {props.isHorizontal &&
+              <div style={{ transform: "translateY(0)", width: "250px" }}>
+                <Img fluid={props.img} alt="Product image" />
+              </div>}
           </div>
         </Centralizer>
       </div>

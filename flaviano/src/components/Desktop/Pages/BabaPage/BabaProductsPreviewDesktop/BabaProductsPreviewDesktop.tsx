@@ -9,9 +9,12 @@ import BabaProductPhotosAnimation from '../BabaProductPhotosAnimation/BabaProduc
 import { useViewport } from '../../../../../hooks/useViewPort';
 import { PageContext } from '../../../../../contexts/pageContext';
 
+interface props {
+  bigDesktop?: boolean | undefined
+}
 
-
-const BabaProductsPreviewDesktop = () => {
+const BabaProductsPreviewDesktop = ({ bigDesktop }: props) => {
+  const bigScreen = bigDesktop === undefined || bigDesktop === false ? false : true;
   const { width } = useViewport();
   const [page, setPage]: any = useContext(PageContext);
   const [productHover, setProductHover] = useState(false);
@@ -101,7 +104,7 @@ const BabaProductsPreviewDesktop = () => {
             </div>
             <animated.div style={{ ...backDropSpring, position: "fixed", width: "100%", height: "100vh", top: 0, left: 0, backgroundColor: "white" }}>
               <Centralizer>
-                <BabaProductPhotosAnimation photos={photosToShow} show={productHover} />
+                <BabaProductPhotosAnimation bigDesktop={bigScreen} photos={photosToShow} show={productHover} />
               </Centralizer>
             </animated.div>
           </>

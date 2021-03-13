@@ -133,7 +133,7 @@ const MateriePrimeXtremeDesktopRender: React.FC = () => {
               </div>
               <div style={{ position: "absolute", top: 0, width: "100%", height: "20vh" }}>
                 <div style={{ width: "50%", textAlign: "right", position: "absolute" }}>
-                  <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "100px", marginRight: "15px", marginTop: "18px" }}></div>
+                  <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "100px", marginRight: "145px", marginTop: "18px" }}></div>
                   <div style={{ position: "absolute", marginTop: "32px", width: "25%", right: "200px" }}>
                     <PageTitleDesktop fontSize={"3.2em"} letterSpacing={".15em"}>{page.english ? "Annurca Apples" : "Mela Annurca"}</PageTitleDesktop>
                   </div>
@@ -175,7 +175,7 @@ const MateriePrimeXtremeDesktopRender: React.FC = () => {
               </div>
               <div style={{ width: "100%", height: "20vh" }}>
                 <div style={{ width: "50%", textAlign: "right", position: "relative", top: "10px" }}>
-                  <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "100px", marginRight: "15px", marginTop: "22px" }}></div>
+                  <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "10px", marginRight: "15px", marginTop: "22px" }}></div>
                   <div style={{ position: "absolute", marginTop: "32px", width: "350px", right: "0px" }}>
                     <PageTitleDesktop fontSize={"3.2em"} letterSpacing={".1em"}>{page.english ? "Sorrento Walnuts" : "Noci di Sorrento"}</PageTitleDesktop>
                   </div>
@@ -260,7 +260,7 @@ const MateriePrimeXtremeDesktopRender: React.FC = () => {
               </div>
               <div style={{ width: "100%", height: "20vh" }}>
                 <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
-                  <div style={{ height: "3px", width: "40px", backgroundColor: "black", position: "absolute", right: "200px", marginRight: "4px", marginTop: "18px" }}></div>
+                  <div style={{ height: "3px", width: "40px", backgroundColor: "black", position: "absolute", right: "200px", marginRight: "4px", marginTop: "58px" }}></div>
                   <div style={{ position: "absolute", marginTop: "80px", width: "25%", right: "200px" }}>
                     <PageTitleDesktop fontSize={"3.2em"} letterSpacing={".1em"}>{page.english ? "Millefiori Honey" : "Miele Millefiori"}</PageTitleDesktop>
                   </div>

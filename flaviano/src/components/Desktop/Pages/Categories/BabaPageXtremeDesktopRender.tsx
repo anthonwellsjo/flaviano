@@ -99,7 +99,7 @@ const BabaPageXtremeDesktopRender: React.FC = () => {
             </Centralizer>
           </div>
           <div style={{ position: "absolute", zIndex: 2, width: "100%", marginTop: "-100px" }}>
-            <BabaProductsPreview />
+            <BabaProductsPreview bigDesktop/>
           </div>
           <Centralizer>
             <div style={{ position: "absolute", top: "10vh", zIndex: 2 }}>

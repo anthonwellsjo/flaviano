@@ -10,7 +10,12 @@ import ProductPreviewMobile from '../ProductPreviewMobile/ProductPreviewMobile';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import { Link } from 'gatsby';
 
-const MobileProducts: React.FC = () => {
+interface props {
+  horizontal?: boolean | undefined
+}
+
+const MobileProducts = ({ horizontal }: props) => {
+  const isHorizontal = !horizontal || horizontal === undefined ? false : true;
   const categoryData: CategoryQuery = useCategoryPreviewQuery();
   const productData: ProductQuery = useProductQuery();
 
@@ -23,6 +28,7 @@ const MobileProducts: React.FC = () => {
             <div style={{ width: "100vw", backgroundColor: "white" }} key={e.node.id}>
               <Centralizer>
                 <ProductPreviewMobile
+                  isHorizontal={isHorizontal}
                   index={index}
                   key={e.node.slug.current}
                   categorySlug={e.node.slug.current}
