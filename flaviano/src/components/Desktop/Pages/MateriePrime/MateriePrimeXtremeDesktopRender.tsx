@@ -51,7 +51,7 @@ const MateriePrimeXtremeDesktopRender: React.FC = () => {
                   <Img fluid={sanityMateriePrimePage.lievitoMadreImg.asset.fluid} alt="photo of lievito madre" />
                 </div>
                 <div style={{ width: "45%", height: "20vh", backgroundColor: sanityMateriePrimePage.lievitoMadreColor.hex }}>
-                  <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                  <div style={{ width: "50%", textAlign: "right", position: "relative", marginTop:"30px" }}>
                     <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: 0, marginRight: "15px", marginTop: "18px" }}></div>
                     <div style={{ position: "absolute", marginTop: "32px" }}>
                       <PageTitleDesktop fontSize={"3.2em"} letterSpacing={".15em"}>{page.english ? "Sour Dough" : "Lievito Madre"}</PageTitleDesktop>
@@ -91,7 +91,7 @@ const MateriePrimeXtremeDesktopRender: React.FC = () => {
                 <Img fluid={sanityMateriePrimePage.limoniImg.asset.fluid} alt="photo of limoni di sorrento" />
               </div>
               <div style={{ width: "100%", height: "20vh", backgroundColor: sanityMateriePrimePage.limoniColor.hex }}>
-                <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
+                <div style={{ width: "50%", textAlign: "right", position: "relative", marginTop:"20px" }}>
                   <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", right: "35%", marginRight: "15px", marginTop: "18px" }}></div>
                   <div style={{ position: "absolute", marginTop: "32px" }}>
                     <PageTitleDesktop fontSize={"3.2em"} letterSpacing={".15em"}>{page.english ? "Sorrento Lemons" : "Limoni di Sorrento"}</PageTitleDesktop>
@@ -261,7 +261,7 @@ const MateriePrimeXtremeDesktopRender: React.FC = () => {
               <div style={{ width: "100%", height: "20vh" }}>
                 <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
                   <div style={{ height: "3px", width: "40px", backgroundColor: "black", position: "absolute", right: "200px", marginRight: "4px", marginTop: "18px" }}></div>
-                  <div style={{ position: "absolute", marginTop: "32px", width: "25%", right: "200px" }}>
+                  <div style={{ position: "absolute", marginTop: "80px", width: "25%", right: "200px" }}>
                     <PageTitleDesktop fontSize={"3.2em"} letterSpacing={".1em"}>{page.english ? "Millefiori Honey" : "Miele Millefiori"}</PageTitleDesktop>
                   </div>
                 </div>
@@ -300,7 +300,7 @@ const MateriePrimeXtremeDesktopRender: React.FC = () => {
               <div style={{ maxWidth: "389px", height: "30vh", width: "30%", position: "absolute", right: "10%", top: "220px" }}>
                 <Img fluid={sanityMateriePrimePage.albicocceImg.asset.fluid} alt="photo of Albicocche del Vesuvio" />
               </div>
-              <div style={{ width: "100%", height: "20vh" }}>
+              <div style={{ width: "100%", height: "300px" }}>
                 <div style={{ width: "50%", textAlign: "right", position: "relative" }}>
                   <div style={{ height: "3px", width: "70px", backgroundColor: "black", position: "absolute", left: "50%", marginLeft: "15px", marginTop: "18px" }}></div>
                   <div style={{ position: "absolute", marginTop: "32px", width: "450px", right: "0px" }}>

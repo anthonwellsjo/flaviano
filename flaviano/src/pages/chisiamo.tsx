@@ -1,6 +1,7 @@
 import React, { } from 'react';
 import { MediaPort } from '../../types';
 import ChiSiamoDesktopRender from '../components/Desktop/Pages/ChiSiamoDesktopRender/ChiSiamoDesktopRender';
+import ChiSiamoXtremeDesktopRender from '../components/Desktop/Pages/ChiSiamoXtremeDesktopRender/ChiSiamoXtremeDesktopRender';
 import ChiSiamoMobileRender from '../components/Mobile/Pages/ChiSiamo/ChiSiamoMobileRender';
 import ChiSiamoMobileRenderSmallHeight from '../components/Mobile/Pages/ChiSiamo/ChiSiamoMobileRenderSmallHeight';
 import SEO from '../components/SEO/SEO';
@@ -15,7 +16,7 @@ const ChiSiamoPage = () => {
   return (
     <>
       <SEO title="Prodotti artigianali moderni|Tradizione dolciaria fatta a mano con amore" />
-      {mediaPort == MediaPort.xtremeDesktop && <h1>x-treme size window render</h1>}
+      {mediaPort == MediaPort.xtremeDesktop && <ChiSiamoXtremeDesktopRender />}
       {mediaPort == MediaPort.desktop && <ChiSiamoDesktopRender />}
       {mediaPort == MediaPort.mobile && <ChiSiamoMobileRender />}
       {mediaPort == MediaPort.mobileSmallHeight && <ChiSiamoMobileRenderSmallHeight />}

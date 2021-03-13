@@ -1,6 +1,7 @@
 import React from 'react';
 import { MediaPort } from '../../../types';
 import BabaPageDesktopRender from '../../components/Desktop/Pages/Categories/BabaPageDesktopRender';
+import BabaPageXtremeDesktopRender from '../../components/Desktop/Pages/Categories/BabaPageXtremeDesktopRender';
 import BabaPageMobileRender from '../../components/Mobile/Pages/Categories/BabaPageMobileRender';
 import BabaPageMobileRenderSmallHeight from '../../components/Mobile/Pages/Categories/BabaPageMobileRenderSmallHeight';
 import SEO from '../../components/SEO/SEO';
@@ -13,7 +14,7 @@ const BabaPage: React.FC = () => {
   return (
     <>
       <SEO title="O babà è na cosa seria | Prodotto dolciario artigianale" />
-      {mediaPort == MediaPort.xtremeDesktop && <h1>x-treme size window render</h1>}
+      {mediaPort == MediaPort.xtremeDesktop && <BabaPageXtremeDesktopRender/>}
       {mediaPort == MediaPort.desktop && <BabaPageDesktopRender />}
       {mediaPort == MediaPort.mobile && <BabaPageMobileRender />}
       {mediaPort == MediaPort.mobileSmallHeight && <BabaPageMobileRenderSmallHeight />}
