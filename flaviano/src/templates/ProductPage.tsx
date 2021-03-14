@@ -1,51 +1,23 @@
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import React from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { ProductPageDataQuery, QuoteStyle } from '../../types';
-import LayoutHeader from '../components/Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
-import classes from './ProductPage.module.scss';
-import ProductDescriptionView from '../components/Desktop/Pages/ProductPage/ProductDescriptionViewDesktop/ProductDescriptionViewDesktop';
-import Quote from '../components/Desktop/QuoteDesktop/QuoteDesktop';
-import Centralizer from '../components/StructureComponents/Centralizer/Centralizer';
-import PageTitle from '../components/Desktop/PageTitleDesktop/PageTitleDesktop';
-import LayoutFrameDesktop from '../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
+import { MediaPort, ProductPageDataQuery, QuoteStyle } from '../../types';
+import ProductPageTemplateDesktopRender from '../components/Desktop/Pages/ProductPageTemplateDesktopRender/ProductPageTemplateDesktopRender';
+import SEO from '../components/SEO/SEO';
+import useGetMediaPort from '../hooks/useGetMediaPort';
+import { useViewport } from '../hooks/useViewPort';
 
 const ProductPage = ({ data }: ProductPageDataQuery) => {
-  console.log("product data", data)
-  let parallax: any;
+  const { width, height } = useViewport();
+  const mediaPort = useGetMediaPort({ height: height, width: width });
   return (
-    <Parallax pages={2} scrolling={true} ref={ref => parallax = ref}>
-      <LayoutFrameDesktop>
-        <div style={{ width: "100%", height: "100vh", position: "relative" }}>
-          <ParallaxLayer factor={0} speed={-1}>
-            <section className={classes.firstPage}>
-              <div className={classes.productImg}>
-                {(data.sanityProduct.productPhoto != null) && <Img style={{ zIndex: -1 }} fluid={data.sanityProduct.productPhoto.asset.fluid} alt="product photo" />}
-              </div>
-            </section>
-          </ParallaxLayer>
-          <ParallaxLayer factor={0} speed={-1}>
-            <Centralizer>
-              <div style={{ width: "7em", marginTop: "45vh", textAlign: "center" }}>
-                <Quote rightQuoteX={"15px"} style={QuoteStyle.header}>{data.sanityProduct.category.title.split("").splice(0, 1).join()}</Quote>
-              </div>
-            </Centralizer>
-            <div style={{ position: "absolute", top: "40vh", left: "4%", width: "35%", textAlign: "left" }}>
-              <PageTitle fontSize="3em" letterSpacing=".15em">{data.sanityProduct.title}</PageTitle>
-              <div style={{ height: "3px", width: "50px", marginLeft: "0px", backgroundColor: "black", marginTop: "1em" }}></div>
-            </div>
-          </ParallaxLayer>
-        </div>
-        <ParallaxLayer offset={0} speed={0}>
-          <section className={classes.secondPage}>
-            <ProductDescriptionView
-              product={data.sanityProduct}
-            />
-          </section>
-        </ParallaxLayer>
-      </LayoutFrameDesktop>
-    </Parallax>
+    <>
+      <SEO title="Produzione dolciaria artigianale | Biscotti, babà, colombe e panettoni" />
+      {mediaPort == MediaPort.xtremeDesktop && <ProductPageTemplateDesktopRender data={data} />}
+      {mediaPort == MediaPort.desktop && <ProductPageTemplateDesktopRender data={data} />}
+      {mediaPort == MediaPort.mobile && <ProductPageTemplateDesktopRender data={data} />}
+      {mediaPort == MediaPort.mobileSmallHeight && <ProductPageTemplateDesktopRender data={data} />}
+      {mediaPort == MediaPort.mobileHorizontal && <ProductPageTemplateDesktopRender data={data} />}
+    </>
   )
 }
 

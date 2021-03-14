@@ -9,6 +9,7 @@ import LayoutHeaderMobile from '../../Components/LayoutHeaderMobile/LayoutHeader
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
+import { Link } from 'gatsby';
 
 const BiscottiPageMobileRender: React.FC = () => {
   const products: ProductQuery = useProductQuery();
@@ -43,66 +44,72 @@ const BiscottiPageMobileRender: React.FC = () => {
               const name = b.node.title.toLowerCase();
               console.log(name);
               if (name == "nocciola e cioccolato") return (
-                <div style={{ overflow: "hidden", position: "relative" }}>
-                  <div style={{ width: "100%" }}>
-                    <Img fluid={b.node.productPhoto.asset.fluid} alt="nocciola e cioccolato" />
-                  </div>
-                  <div style={{ position: "absolute", left: "0", top: 0, width: "100%", height: "100%", display: "flex", alignItems: "center" }}>
-                    <div style={{ width: "20em", marginLeft: "20px" }}>
-                      <div style={{ height: "0.5px", width: "20px", backgroundColor: "black", marginBottom: "3px" }} />
-                      <PageTitleDesktop fontSize="1.5em" letterSpacing={".1em"}>{b.node.title.split(" e ").map((l, index) => {
-                        if (index == 0) return (
-                          l + " & "
-                        )
-                        return l;
-                      }).join("")}
-                      </PageTitleDesktop>
-                      <div style={{ height: "0.5px", width: "20px", backgroundColor: "black", marginTop: "3px" }} />
+                <Link to={`/products/${b.node.slug.current}`}>
+                  <div style={{ overflow: "hidden", position: "relative" }}>
+                    <div style={{ width: "100%" }}>
+                      <Img fluid={b.node.productPhoto.asset.fluid} alt="nocciola e cioccolato" />
+                    </div>
+                    <div style={{ position: "absolute", left: "0", top: 0, width: "100%", height: "100%", display: "flex", alignItems: "center" }}>
+                      <div style={{ width: "20em", marginLeft: "20px" }}>
+                        <div style={{ height: "0.5px", width: "20px", backgroundColor: "black", marginBottom: "3px" }} />
+                        <PageTitleDesktop fontSize="1.5em" letterSpacing={".1em"}>{b.node.title.split(" e ").map((l, index) => {
+                          if (index == 0) return (
+                            l + " & "
+                          )
+                          return l;
+                        }).join("")}
+                        </PageTitleDesktop>
+                        <div style={{ height: "0.5px", width: "20px", backgroundColor: "black", marginTop: "3px" }} />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               )
               if (name == "noci e miele") return (
-                <div style={{ overflow: "hidden", position: "relative" }}>
-                  <div style={{ width: "50%", overflow: "hidden" }}>
-                    <div style={{ width: "80vw", maxWidth: "80vw" }}>
-                      <Img fluid={b.node.productPhoto.asset.fluid} alt="noci e miele" />
+                <Link to={`/products/${b.node.slug.current}`}>
+                  <div style={{ overflow: "hidden", position: "relative" }}>
+                    <div style={{ width: "50%", overflow: "hidden" }}>
+                      <div style={{ width: "80vw", maxWidth: "80vw" }}>
+                        <Img fluid={b.node.productPhoto.asset.fluid} alt="noci e miele" />
+                      </div>
+                    </div>
+                    <div style={{ position: "absolute", left: "0", top: 0, width: "100%", height: "100%", display: "flex", alignItems: "center" }}>
+                      <div style={{ position: "absolute", width: "10em", left: "55%" }}>
+                        <div style={{ position: "absolute", left: "0", height: "0.5px", width: "20px", backgroundColor: "black", marginBottom: "10px" }} />
+                        <PageTitleDesktop fontSize="1.5em" letterSpacing={".1em"}>{b.node.title.split(" e ").map((l, index) => {
+                          if (index == 0) return (
+                            l + "& "
+                          )
+                          return l;
+                        }).join("")}
+                        </PageTitleDesktop>
+                        <div style={{ position: "absolute", left: "0", height: "0.5px", width: "20px", backgroundColor: "black", marginTop: "0px" }} />
+                      </div>
                     </div>
                   </div>
-                  <div style={{ position: "absolute", left: "0", top: 0, width: "100%", height: "100%", display: "flex", alignItems: "center" }}>
-                    <div style={{ position: "absolute", width: "10em", left: "55%" }}>
-                      <div style={{ position: "absolute", left: "0", height: "0.5px", width: "20px", backgroundColor: "black", marginBottom: "10px" }} />
-                      <PageTitleDesktop fontSize="1.5em" letterSpacing={".1em"}>{b.node.title.split(" e ").map((l, index) => {
-                        if (index == 0) return (
-                          l + "& "
-                        )
-                        return l;
-                      }).join("")}
-                      </PageTitleDesktop>
-                      <div style={{ position: "absolute", left: "0", height: "0.5px", width: "20px", backgroundColor: "black", marginTop: "0px" }} />
-                    </div>
-                  </div>
-                </div>
+                </Link>
               )
               if (name == "limone e zenzero") return (
-                <div style={{ overflow: "hidden", position: "relative" }}>
-                  <div style={{ width: "80%" }}>
-                    <Img fluid={b.node.productPhoto.asset.fluid} alt="limone e zenzero" />
-                  </div>
-                  <div style={{ position: "absolute", left: "0", top: 0, width: "100%", height: "100%", display: "flex", alignItems: "center" }}>
-                    <div style={{ position: "absolute", width: "10em", marginRight: "20px", right: 0 }}>
-                      <div style={{ position: "absolute", right: "0", height: "0.5px", width: "20px", backgroundColor: "black", marginBottom: "3px" }} />
-                      <PageTitleDesktop right fontSize="1.5em" letterSpacing={".1em"}>{b.node.title.split(" e ").map((l, index) => {
-                        if (index == 0) return (
-                          l + "& "
-                        )
-                        return l;
-                      }).join("")}
-                      </PageTitleDesktop>
-                      <div style={{ position: "absolute", right: "0", height: "0.5px", width: "20px", backgroundColor: "black", marginTop: "0px" }} />
+                <Link to={`/products/${b.node.slug.current}`}>
+                  <div style={{ overflow: "hidden", position: "relative" }}>
+                    <div style={{ width: "80%" }}>
+                      <Img fluid={b.node.productPhoto.asset.fluid} alt="limone e zenzero" />
+                    </div>
+                    <div style={{ position: "absolute", left: "0", top: 0, width: "100%", height: "100%", display: "flex", alignItems: "center" }}>
+                      <div style={{ position: "absolute", width: "10em", marginRight: "20px", right: 0 }}>
+                        <div style={{ position: "absolute", right: "0", height: "0.5px", width: "20px", backgroundColor: "black", marginBottom: "3px" }} />
+                        <PageTitleDesktop right fontSize="1.5em" letterSpacing={".1em"}>{b.node.title.split(" e ").map((l, index) => {
+                          if (index == 0) return (
+                            l + "& "
+                          )
+                          return l;
+                        }).join("")}
+                        </PageTitleDesktop>
+                        <div style={{ position: "absolute", right: "0", height: "0.5px", width: "20px", backgroundColor: "black", marginTop: "0px" }} />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               )
             })}
           </section>

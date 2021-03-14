@@ -11,6 +11,7 @@ import BackDrop from '../../../../components/Desktop/BackDropDesktop/BackDropDes
 import { PageContext } from '../../../../contexts/pageContext';
 import LayoutFrameDesktop from '../../../../components/Desktop/LayoutFrameDesktop/LayoutFrameDesktop';
 import { useBiscottiPageQuery } from '../../../../hooks/queries/useBiscottiPageQuery';
+import { Link } from 'gatsby';
 
 
 const BiscottiPageDesktopRender: React.FC = () => {
@@ -51,22 +52,24 @@ const BiscottiPageDesktopRender: React.FC = () => {
           console.log(p.node);
           pageNr++;
           return (
-            <section style={{ position: "relative", width: "100%", height: "100vh" }} key={p.node.id} >
-              <ParallaxLayer factor={pageNr} speed={pageNr / 10}>
-                <ProductView
-                  bcgColor={p.node.backGroundColor.hex}
-                  fluidImg={p.node.productPhoto.asset.fluid}
-                  title={p.node.title}
-                  description={p.node.description}
-                  conservation={p.node.conservation}
-                  ingredients={p.node.ingredients}
-                  descriptionEng={p.node.descriptionEng}
-                  conservationEng={p.node.conservationEng}
-                  ingredientsEng={p.node.ingredientsEng}
-                  english={page.english}
-                />
-              </ParallaxLayer>
-            </section>
+            <Link to={`/products/${p.node.slug.current}`}>
+              <section style={{ position: "relative", width: "100%", height: "100vh" }} key={p.node.id} >
+                <ParallaxLayer factor={pageNr} speed={pageNr / 10}>
+                  <ProductView
+                    bcgColor={p.node.backGroundColor.hex}
+                    fluidImg={p.node.productPhoto.asset.fluid}
+                    title={p.node.title}
+                    description={p.node.description}
+                    conservation={p.node.conservation}
+                    ingredients={p.node.ingredients}
+                    descriptionEng={p.node.descriptionEng}
+                    conservationEng={p.node.conservationEng}
+                    ingredientsEng={p.node.ingredientsEng}
+                    english={page.english}
+                  />
+                </ParallaxLayer>
+              </section>
+            </Link>
           )
         })}
         {pageNr++}
