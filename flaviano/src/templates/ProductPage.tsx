@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import { MediaPort, ProductPageDataQuery, QuoteStyle } from '../../types';
+import { MediaPort, ProductPageDataQuery } from '../../types';
 import ProductPageTemplateDesktopRender from '../components/Desktop/Pages/ProductPageTemplateDesktopRender/ProductPageTemplateDesktopRender';
 import SEO from '../components/SEO/SEO';
 import useGetMediaPort from '../hooks/useGetMediaPort';
@@ -12,11 +12,11 @@ const ProductPage = ({ data }: ProductPageDataQuery) => {
   return (
     <>
       <SEO title="Produzione dolciaria artigianale | Biscotti, babà, colombe e panettoni" />
-      {mediaPort == MediaPort.xtremeDesktop && <ProductPageTemplateDesktopRender data={data} />}
+      {mediaPort == MediaPort.xtremeDesktop && <h1>no viewport</h1>}
       {mediaPort == MediaPort.desktop && <ProductPageTemplateDesktopRender data={data} />}
-      {mediaPort == MediaPort.mobile && <ProductPageTemplateDesktopRender data={data} />}
-      {mediaPort == MediaPort.mobileSmallHeight && <ProductPageTemplateDesktopRender data={data} />}
-      {mediaPort == MediaPort.mobileHorizontal && <ProductPageTemplateDesktopRender data={data} />}
+      {mediaPort == MediaPort.mobile && <h1>no viewport</h1>}
+      {mediaPort == MediaPort.mobileSmallHeight && <h1>no viewport</h1>}
+      {mediaPort == MediaPort.mobileHorizontal && <h1>no viewport</h1>}
     </>
   )
 }

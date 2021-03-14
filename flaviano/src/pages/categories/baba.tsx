@@ -3,6 +3,7 @@ import { MediaPort } from '../../../types';
 import BabaPageDesktopRender from '../../components/Desktop/Pages/Categories/BabaPageDesktopRender';
 import BabaPageXtremeDesktopRender from '../../components/Desktop/Pages/Categories/BabaPageXtremeDesktopRender';
 import BabaPageMobileRender from '../../components/Mobile/Pages/Categories/BabaPageMobileRender';
+import BabaPageMobileRenderHorizontal from '../../components/Mobile/Pages/Categories/BabaPageMobileRenderHorizontal';
 import BabaPageMobileRenderSmallHeight from '../../components/Mobile/Pages/Categories/BabaPageMobileRenderSmallHeight';
 import SEO from '../../components/SEO/SEO';
 import useGetMediaPort from '../../hooks/useGetMediaPort';
@@ -14,11 +15,11 @@ const BabaPage: React.FC = () => {
   return (
     <>
       <SEO title="O babà è na cosa seria | Prodotto dolciario artigianale" />
-      {mediaPort == MediaPort.xtremeDesktop && <BabaPageXtremeDesktopRender/>}
+      {mediaPort == MediaPort.xtremeDesktop && <BabaPageXtremeDesktopRender />}
       {mediaPort == MediaPort.desktop && <BabaPageDesktopRender />}
       {mediaPort == MediaPort.mobile && <BabaPageMobileRender />}
       {mediaPort == MediaPort.mobileSmallHeight && <BabaPageMobileRenderSmallHeight />}
-      {mediaPort == MediaPort.mobileHorizontal && <h1>horizontal mobile</h1>}
+      {mediaPort == MediaPort.mobileHorizontal && <BabaPageMobileRenderHorizontal />}
     </>
   )
 }
