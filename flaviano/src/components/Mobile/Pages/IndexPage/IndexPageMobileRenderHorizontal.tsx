@@ -13,39 +13,24 @@ import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
 import { PageContext } from '../../../../contexts/pageContext';
 import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
-import SEO from '../../../SEO/SEO';
 import useScroll from '../../../../hooks/useScroll';
 
 const IndexPageMobileRenderHorizontal: React.FC = () => {
-  const { width } = useViewport();
-  const [page, setPage]: any = useContext(PageContext);
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
-  let parallax: any = useRef();
-  const currentScroll = useScroll(parallax);
-
-  useEffect(() => {
-    if (currentScroll < 10) {
-      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: true }))
-    } else {
-      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: false }))
-    }
-    return (() => {
-      setPage((prev: any) => ({ ...prev, hideMobileNavbarLogo: false }))
-    })
-  }, [currentScroll]);
+  let parallax: any = useRef();  
 
   return (
     <LayoutMobile horizontal>
-      <Parallax pages={4.7} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+      <Parallax pages={4.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.4}>
-          <LayoutHeaderMobile home backGroundFullPage />
+          <LayoutHeaderMobile home horizontal backGroundFullPage />
         </ParallaxLayer>
         {/* ------------------------------TOP QUOTE */}
         <div id="top" style={{ position: "absolute", top: "0" }}></div>
 
 
-        <ParallaxLayer offset={0.19} speed={0.3}>
+        <ParallaxLayer offset={0} speed={0.3}>
           <div style={{ position: "relative", top: "0", width: "100vw", height: "100%", }}>
             <Centralizer>
               <div style={{ width: "85%", height: "50%", marginTop: "30%" }}>

@@ -7,12 +7,13 @@ import { useSpring, animated } from 'react-spring';
 import { PageContext } from '../../../../contexts/pageContext';
 
 interface props {
-  horizontal?: boolean | undefined
+  horizontal?: boolean | undefined,
+  children: React.ReactNode
 }
 
-const LayoutMobile: React.FC = ({ children,  }, props: props) => {
+const LayoutMobile = ({ children, horizontal }: props) => {
   const [page, setPage]: any = useContext(PageContext);
-  const isHorizontal = props.horizontal == undefined || !props.horizontal ? false : true;
+  const isHorizontal = horizontal == undefined || !horizontal ? false : true;
   console.log("horizontal", isHorizontal);
   const logoProps = useSpring({
     reverse: page.hideMobileNavbarLogo,
@@ -21,6 +22,19 @@ const LayoutMobile: React.FC = ({ children,  }, props: props) => {
   })
 
 
+  if (horizontal) return (
+    <>
+      {children}
+      <BurgerMenu isHorizontal={isHorizontal} />
+      <div className={classes.navbar}>
+      </div>
+      <animated.div style={logoProps}>
+        <Link to="/">
+          <img className={classes.homeButton} src={flavianoImg} alt="home button logo" />
+        </Link>
+      </animated.div>
+    </>
+  )
   return (
     <>
       {children}

@@ -37,7 +37,7 @@ const BurgerMenu = (props: props) => {
     <>
       {page.burgerMenuOpen &&
         <animated.div style={{ ...menuProps, position: "absolute", zIndex: 5 }} >
-          <div className={classes.linkContainer} style={{ position: "fixed", width: "250px", height: "350px", right: "20px", top: "30px" }}>
+          <div className={classes.linkContainer} style={{ position: "fixed", width: "250px", height: "250px", right: "20px", top: "30px" }}>
             <Link onClick={onBurgerClickEventHandler} to="/" className={classes.link}>
               <div className={classes.prodottiHor}>
                 <div className={classes.innerContainer}>

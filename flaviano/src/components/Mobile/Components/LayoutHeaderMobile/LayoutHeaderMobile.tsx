@@ -13,14 +13,16 @@ interface Props {
   home?: boolean,
   backGroundFullPage?: boolean,
   backGroundFullPageXl?: boolean,
+  horizontal?: boolean
 }
 
 
-const LayoutHeaderMobile = ({ home, backGroundFullPage,backGroundFullPageXl }: Props) => {
+const LayoutHeaderMobile = ({ home, backGroundFullPage, backGroundFullPageXl, horizontal }: Props) => {
+  const isHoriozontal = horizontal === undefined || !horizontal ? false : true;
   if (backGroundFullPage) return (
     <div style={{ height: "100vh" }} className={classes.Layout}>
       {/* <Logo /> */}
-      {home && <AnimLogoMobile />}
+      {home && !isHoriozontal && <AnimLogoMobile />}
       {/* <AnimLogoPiccoloMobile /> */}
       {/* <MainNavBar /> */}
     </div>
