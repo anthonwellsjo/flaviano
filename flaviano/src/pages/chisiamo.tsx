@@ -3,6 +3,7 @@ import { MediaPort } from '../../types';
 import ChiSiamoDesktopRender from '../components/Desktop/Pages/ChiSiamoDesktopRender/ChiSiamoDesktopRender';
 import ChiSiamoXtremeDesktopRender from '../components/Desktop/Pages/ChiSiamoXtremeDesktopRender/ChiSiamoXtremeDesktopRender';
 import ChiSiamoMobileRender from '../components/Mobile/Pages/ChiSiamo/ChiSiamoMobileRender';
+import ChiSiamoMobileRenderHorizontal from '../components/Mobile/Pages/ChiSiamo/ChiSiamoMobileRenderHorizontal';
 import ChiSiamoMobileRenderSmallHeight from '../components/Mobile/Pages/ChiSiamo/ChiSiamoMobileRenderSmallHeight';
 import SEO from '../components/SEO/SEO';
 import useGetMediaPort from '../hooks/useGetMediaPort';
@@ -20,7 +21,7 @@ const ChiSiamoPage = () => {
       {mediaPort == MediaPort.desktop && <ChiSiamoDesktopRender />}
       {mediaPort == MediaPort.mobile && <ChiSiamoMobileRender />}
       {mediaPort == MediaPort.mobileSmallHeight && <ChiSiamoMobileRenderSmallHeight />}
-      {mediaPort == MediaPort.mobileHorizontal && <h1>horizontal mobile</h1>}
+      {mediaPort == MediaPort.mobileHorizontal && <ChiSiamoMobileRenderHorizontal/>}
     </>
   )
 }

@@ -14,11 +14,11 @@ const MateriePrimeMobileRenderHorizontal: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
   let parallax: any = useRef();
   return (
-    <LayoutMobile>
-      <Parallax pages={8.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>
+    <LayoutMobile horizontal>
+      <Parallax pages={5.5} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
-        <ParallaxLayer offset={0.} speed={0}>
-          <LayoutHeaderMobile backGroundFullPage />
+        <ParallaxLayer offset={0.} speed={0.2}>
+          <LayoutHeaderMobile horizontal />
         </ParallaxLayer>
         <ParallaxLayer offset={1.2} speed={0}>
           <div style={{ width: "30px", marginTop: "0px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
@@ -44,7 +44,7 @@ const MateriePrimeMobileRenderHorizontal: React.FC = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.9} speed={0.5}>
-          <MateriePrimi materiePrimi={sanityMateriePrimePage} />
+          <MateriePrimi horizontal materiePrimi={sanityMateriePrimePage} />
           {/* <MateriaPrima height={"350px"} title={"Lievito Madre"} hexColor={sanityMateriePrimePage.lievitoMadreColor.hex} fluidImg={sanityMateriePrimePage.lievitoMadreImg.asset.fluid} text={sanityMateriePrimePage.lievitoMadreText} />
           <MateriaPrima whiteBehindImg imgBehindTitle height={"500px"} title={"Limoni di sorrento"} hexColor={sanityMateriePrimePage.limoniColor.hex} fluidImg={sanityMateriePrimePage.limoniImg.asset.fluid} text={sanityMateriePrimePage.limoniText} />
           <MateriaPrima imgLeft height={"400px"} title={"Mela Annurca"} hexColor={sanityMateriePrimePage.melaColor.hex} fluidImg={sanityMateriePrimePage.melaImg.asset.fluid} text={sanityMateriePrimePage.melaText} />

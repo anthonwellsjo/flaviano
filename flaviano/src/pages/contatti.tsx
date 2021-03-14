@@ -1,6 +1,7 @@
 import React from 'react';
 import { MediaPort } from '../../types';
 import ContattiPageMobileRender from '../components/Mobile/Pages/ContattiPage/ContattiPageMobileRender';
+import ContattiPageMobileRenderHorizontal from '../components/Mobile/Pages/ContattiPage/ContattiPageMobileRenderHorizontal';
 import ContattiPageMobileRenderSmallHeight from '../components/Mobile/Pages/ContattiPage/ContattiPageMobileRenderSmallHeight';
 import SEO from '../components/SEO/SEO';
 import useGetMediaPort from '../hooks/useGetMediaPort';
@@ -18,7 +19,7 @@ const ContattiPage: React.FC = () => {
       {mediaPort == MediaPort.desktop && <h1>no contact page for desktop yet</h1>}
       {mediaPort == MediaPort.mobile && <ContattiPageMobileRender />}
       {mediaPort == MediaPort.mobileSmallHeight && <ContattiPageMobileRenderSmallHeight />}
-      {mediaPort == MediaPort.mobileHorizontal && <h1>horizontal mobile</h1>}
+      {mediaPort == MediaPort.mobileHorizontal && <ContattiPageMobileRenderHorizontal />}
     </>
   )
 }
