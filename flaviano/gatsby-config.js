@@ -5,7 +5,14 @@ require('dotenv').config({
 module.exports = {
   pathPrefix: `/flaviano`,
   siteMetadata: {
-    title: "flaviano",
+    title: "Flaviano | Dolci di Qualità",
+    description: "produzione di biscotti, babà, colombe e panettoni artigianali, genuini, di qualità, fatti a mano con materie prime tipiche delle terre campane.",
+    author: "Carl Anthon Wellsjö",
+    keywords: ["Baba", "babà", "babba", "biscotti", "forno", "vasocottura", "colomba", "colombe", "artigiani", "campania", "melannurca",
+    "strega", "limoncello", "limoni", "sorrento", "noci", "miele", "lievito", "madre", "albicocche", "lievitati", "panettone",
+    "panettoni", "fichi", "dolci da forno", "dolci", "artigianali", "dolci di qualità e pregiati", "dolci fatti a mano",
+    "tradizione", "dolciaria", "artigianale"],
+    siteUrl: "https://anthonwellsjo.github.io/flaviano/"
   },
   plugins: [
     `gatsby-plugin-sass`,

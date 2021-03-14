@@ -1,5 +1,5 @@
 import React from 'react';
-import Img, { FluidObject } from 'gatsby-image';
+import Img, { FixedObject, FluidObject } from 'gatsby-image';
 import classes from './ContactBar.module.scss';
 import fb from '../../../images/jam_facebook-circle.png';
 import pint from '../../../images/jam_pinterest-circle.png';
@@ -10,10 +10,10 @@ import { ContactInfoQuery } from '../../../../types';
 
 
 interface Props {
-  fluid: FluidObject
+  fixed: FixedObject
 }
 
-const ContactBar = ({ fluid }: Props) => {
+const ContactBar = ({ fixed }: Props) => {
   const { sanityGeneralSettings }: ContactInfoQuery = useContactInfoQuery();
 
   return (
@@ -36,8 +36,8 @@ const ContactBar = ({ fluid }: Props) => {
           </Centralizer>
         </Centralizer>
       </div>
-      <div onClick={() => alert("HEJ")} style={{ maxWidth: "100%", marginTop: "350px", height: "300px", overflow: "hidden" }}>
-        <Img fluid={fluid} alt="Hands baking" />
+      <div style={{ marginTop: "350px", overflow: "hidden" }}>
+        <Img fixed={fixed} alt="Hands baking" />
       </div>
     </>
   )

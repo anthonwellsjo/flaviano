@@ -26,6 +26,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'descriptionEng',
+      title: 'Description English',
+      type: 'text',
+      validation: Rule => Rule.required()
+    },
+    {
       name: 'categoryCarouselImage',
       title: 'Category Carousel Image',
       type: 'categoryCarouselImage',

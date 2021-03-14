@@ -20,6 +20,8 @@ export const useChiSiamoQuery = () => {
             }
             pageText
             quoteHeaderText
+            pageTextEng
+            quoteHeaderTextEng
           }
         }        
   `

@@ -26,16 +26,26 @@
   width: 100%;
   height: 25%;
 }
-.prodotti {
+.prodottiHor,
+.materieprimeHor,
+.chisiamoHor,
+.contattiHor {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 25%;
+}
+.prodotti, .prodottiHor {
   background-color: #f0e9e4;
 }
-.materieprime {
+.materieprime, .materieprimeHor {
   background-color: #e3a38b;
 }
-.chisiamo {
+.chisiamo, .chisiamoHor {
   background-color: #dcb477;
 }
-.contatti {
+.contatti, .contattiHor {
   background-color: #96765f;
 }
 

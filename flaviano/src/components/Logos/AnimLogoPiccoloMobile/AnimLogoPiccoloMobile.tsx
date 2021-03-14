@@ -3,7 +3,7 @@ import React, { useState, useContext, useEffect } from 'react';
 
 import { useSpring, animated } from 'react-spring';
 import { PageContext } from '../../../contexts/pageContext';
-import classes from './AnimLogoPiccoloMobile.module.css';
+import classes from './AnimLogoPiccoloMobile.module.scss';
 
 const AnimLogoPiccoloMobile: React.FC = () => {
   const [hover, setHover] = useState(false);

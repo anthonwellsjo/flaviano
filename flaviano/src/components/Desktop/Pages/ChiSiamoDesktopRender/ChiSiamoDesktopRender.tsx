@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { ChiSiamoPageQuery } from '../../../../../types';
-import LayoutHeader from '../../LayoutHeaderDesktop/LayoutHeaderDesktop';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import PageTitle from '../../PageTitleDesktop/PageTitleDesktop';
 import { useChiSiamoQuery } from '../../../../hooks/queries/useChiSiamoQuery';
 import Img from 'gatsby-image';
@@ -12,12 +12,32 @@ import BackDrop from '../../BackDropDesktop/BackDropDesktop';
 import LayoutFrame from '../../LayoutFrameDesktop/LayoutFrameDesktop';
 import ScrollButton from '../../ScrollButton/ScrollButton';
 import useScroll from '../../../../hooks/useScroll';
+import SEO from '../../../SEO/SEO';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const ChiSiamoDesktopRender = () => {
-
+  const [page, setPage]: any = useContext(PageContext);
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax: any = useRef();
   const currentScroll = useScroll(parallax);
+
+  const onScrollEventHandler = (event: WheelEvent) => {
+    if (event.deltaY < 0) {
+      scrollTo("#top")
+    }
+    else if (event.deltaY > 0) {
+      scrollTo("#pageTwo")
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("wheel", e => onScrollEventHandler(e))
+
+    return (() => {
+      window.removeEventListener("wheel", onScrollEventHandler);
+    })
+  }, [])
+
 
 
   return (
@@ -32,7 +52,7 @@ const ChiSiamoDesktopRender = () => {
             </div>
             <div style={{ width: "20%", position: "absolute", right: "20%", top: "30vh" }}>
               <div style={{ height: "3px", width: "40px", backgroundColor: "black", marginBottom: "15px", marginLeft: "0px" }}></div>
-              <PageTitle fontSize="3.5em" letterSpacing={".4em"}>Chi Siamo</PageTitle>
+              <PageTitle fontSize="3.5em" letterSpacing={".4em"}>{page.english ? "About Us" : "Chi Siamo"}</PageTitle>
             </div>
           </div>
 
@@ -44,7 +64,7 @@ const ChiSiamoDesktopRender = () => {
         <ParallaxLayer offset={0.5} speed={0.2}>
           <Centralizer>
             <div style={{ width: "75%", height: "100vh", marginTop: "40vh" }}>
-              <Quote fontSize={"1.8em"} rightQuoteX={"-70px"}>{sanityChiSiamoPage.quoteHeaderText}</Quote>
+              <Quote fontSize={"1.8em"} rightQuoteX={"-70px"}>{page.english ? sanityChiSiamoPage.quoteHeaderTextEng : sanityChiSiamoPage.quoteHeaderText}</Quote>
             </div>
           </Centralizer>
         </ParallaxLayer>
@@ -65,7 +85,7 @@ const ChiSiamoDesktopRender = () => {
           <Centralizer>
             <div style={{ width: "80%", marginTop: "10vh" }}>
               <p id="chisiamoText" style={{ fontFamily: "HomepageBaukastenBook", lineHeight: "1.8em", wordSpacing: ".5em", fontSize: "1em", textAlign: "justify" }}>
-                <strong>Flaviano </strong>{sanityChiSiamoPage.pageText}
+                <strong>Flaviano </strong>{page.english ? sanityChiSiamoPage.pageTextEng : sanityChiSiamoPage.pageText}
               </p>
             </div>
           </Centralizer>

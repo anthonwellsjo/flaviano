@@ -1,6 +1,6 @@
 import React, { CSSProperties, ReactElement } from 'react';
 import { QuoteStyle } from '../../../../../types';
-import classes from './QuoteMobile.module.css';
+import classes from './QuoteMobile.module.scss';
 import classnames from 'classnames';
 import { useViewport } from '../../../../hooks/useViewPort';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';

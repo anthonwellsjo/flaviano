@@ -15,6 +15,9 @@ export const useMateriePrimeQuery = () => {
         }
       }
       albicocceText
+      albicocceTextMobile
+      albicocceTextEng
+      albicocceTextMobileEng
       lievitoMadreColor {
         hex
       }
@@ -26,6 +29,9 @@ export const useMateriePrimeQuery = () => {
         }
       }
       lievitoMadreText
+      lievitoMadreTextMobile
+      lievitoMadreTextEng
+      lievitoMadreTextMobileEng
       limoniColor {
         hex
       }
@@ -37,6 +43,9 @@ export const useMateriePrimeQuery = () => {
         }
       }
       limoniText
+      limoniTextMobile
+      limoniTextEng
+      limoniTextMobileEng
       melaColor {
         hex
       }
@@ -48,6 +57,9 @@ export const useMateriePrimeQuery = () => {
         }
       }
       melaText
+      melaTextMobile
+      melaTextEng
+      melaTextMobileEng
       mieleColor {
         hex
       }
@@ -59,6 +71,9 @@ export const useMateriePrimeQuery = () => {
         }
       }
       mieleText
+      mieleTextMobile
+      mieleTextEng
+      mieleTextMobileEng
       nocciolaColor {
         hex
       }
@@ -70,6 +85,9 @@ export const useMateriePrimeQuery = () => {
         }
       }
       nocciolaText
+      nocciolaTextMobile
+      nocciolaTextEng
+      nocciolaTextMobileEng
       nociColor {
         hex
       }
@@ -81,7 +99,11 @@ export const useMateriePrimeQuery = () => {
         }
       }
       nociText
+      nociTextMobile
+      nociTextEng
+      nociTextMobileEng
       quoteHeaderText
+      quoteHeaderTextEng
     } 
   }
   `

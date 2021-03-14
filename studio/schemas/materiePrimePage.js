@@ -7,13 +7,37 @@ export default {
       name: 'quoteHeaderText',
       title: 'Quote Header Text',
       type: 'text',
-      validation: v => v.required()  
+      validation: v => v.required()
+    },
+    {
+      name: 'quoteHeaderTextEng',
+      title: 'Quote Header Text English',
+      type: 'text',
+      validation: v => v.required()
     },
     {
       name: 'lievitoMadreText',
       title: 'Lievito Madre Text',
       type: 'text',
-      validation: v => v.required()  
+      validation: v => v.required()
+    },
+    {
+      name: 'lievitoMadreTextEng',
+      title: 'Lievito Madre Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'lievitoMadreTextMobile',
+      title: 'Lievito Madre Text Mobile',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'lievitoMadreTextMobileEng',
+      title: 'Lievito Madre Text Mobile English',
+      type: 'text',
+      validation: v => v.required()
     },
     {
       name: 'lievitoMadreImg',
@@ -36,7 +60,25 @@ export default {
       name: 'limoniText',
       title: 'Limoni Text',
       type: 'text',
-      validation: v => v.required()  
+      validation: v => v.required()
+    },
+    {
+      name: 'limoniTextEng',
+      title: 'Limoni Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'limoniTextMobile',
+      title: 'Limoni Text Mobile',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'limoniTextMobileEng',
+      title: 'Limoni Text Mobile English',
+      type: 'text',
+      validation: v => v.required()
     },
     {
       name: 'limoniImg',
@@ -59,7 +101,25 @@ export default {
       name: 'melaText',
       title: 'Mela Text',
       type: 'text',
-      validation: v => v.required()  
+      validation: v => v.required()
+    },
+    {
+      name: 'melaTextEng',
+      title: 'Mela Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'melaTextMobile',
+      title: 'Mela Text Mobile',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'melaTextMobileEng',
+      title: 'Mela Text Mobile English',
+      type: 'text',
+      validation: v => v.required()
     },
     {
       name: 'melaImg',
@@ -82,7 +142,25 @@ export default {
       name: 'nociText',
       title: 'Noci Text',
       type: 'text',
-      validation: v => v.required()  
+      validation: v => v.required()
+    },
+    {
+      name: 'nociTextEng',
+      title: 'Noci Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'nociTextMobile',
+      title: 'Noci Text Mobile',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'nociTextMobileEng',
+      title: 'Noci Text Mobile English',
+      type: 'text',
+      validation: v => v.required()
     },
     {
       name: 'nociImg',
@@ -105,7 +183,25 @@ export default {
       name: 'nocciolaText',
       title: 'Nocciola Text',
       type: 'text',
-      validation: v => v.required()  
+      validation: v => v.required()
+    },
+    {
+      name: 'nocciolaTextEng',
+      title: 'Nocciola Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'nocciolaTextMobile',
+      title: 'Nocciola Text Mobile',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'nocciolaTextMobileEng',
+      title: 'Nocciola Text Mobile English',
+      type: 'text',
+      validation: v => v.required()
     },
     {
       name: 'nocciolaImg',
@@ -128,7 +224,25 @@ export default {
       name: 'mieleText',
       title: 'Miele Text',
       type: 'text',
-      validation: v => v.required()  
+      validation: v => v.required()
+    },
+    {
+      name: 'mieleTextEng',
+      title: 'Miele Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'mieleTextMobile',
+      title: 'Miele Text Mobile',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'mieleTextMobileEng',
+      title: 'Miele Text Mobile English',
+      type: 'text',
+      validation: v => v.required()
     },
     {
       name: 'mieleImg',
@@ -151,7 +265,25 @@ export default {
       name: 'albicocceText',
       title: 'Albicocce Text',
       type: 'text',
-      validation: v => v.required()  
+      validation: v => v.required()
+    },
+    {
+      name: 'albicocceTextEng',
+      title: 'Albicocce Text English',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'albicocceTextMobile',
+      title: 'Albicocce Text Mobile',
+      type: 'text',
+      validation: v => v.required()
+    },
+    {
+      name: 'albicocceTextMobileEng',
+      title: 'Albicocce Text Mobile English',
+      type: 'text',
+      validation: v => v.required()
     },
     {
       name: 'albicocceImg',

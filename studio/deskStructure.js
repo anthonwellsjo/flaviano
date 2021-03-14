@@ -31,11 +31,29 @@ export default () =>
 
 
               S.listItem()
+                .title('Contact Page')
+                .child(
+                  S.document()
+                    .schemaType('contattiPage')
+                    .documentId('contattiPage')
+                ),
+
+
+              S.listItem()
                 .title('Baba Page')
                 .child(
                   S.document()
                     .schemaType('babaPage')
                     .documentId('babaPage')
+                ),
+
+
+              S.listItem()
+                .title('Biscotti Page')
+                .child(
+                  S.document()
+                    .schemaType('biscottiPage')
+                    .documentId('biscottiPage')
                 ),
 
 

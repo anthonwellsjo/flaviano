@@ -14,6 +14,7 @@ export const useProductQuery = () => {
           priceEur
           weightGr
           description
+          descriptionEng
           slug {
             current
           }
@@ -24,10 +25,37 @@ export const useProductQuery = () => {
           conservation
           ingredients
           ingredientsTwo
+          conservationEng
+          ingredientsEng
+          ingredientsTwoEng
           productPhoto {
             asset {
               fluid(maxWidth: 1000){
                 ...GatsbySanityImageFluid
+              }
+              fixed(height: 300, width: 340){
+                ...GatsbySanityImageFixed
+              }
+          }
+        }
+          productDetailPhoto1 {
+            asset {
+              fixed(width: 300, height: 300){
+                ...GatsbySanityImageFixed
+              }
+          }
+        }
+          productDetailPhoto2 {
+            asset {
+              fixed(width: 300, height: 300){
+                ...GatsbySanityImageFixed
+              }
+          }
+        }
+          productDetailPhoto3 {
+            asset {
+              fixed(width: 300, height: 300){
+                ...GatsbySanityImageFixed
               }
           }
           }

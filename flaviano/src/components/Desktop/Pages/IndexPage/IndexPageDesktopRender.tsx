@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { HomePageQuery, QuoteStyle } from "../../../../../types";
 import CategoryCarousel from "../../CategoryCarousel/CategoryCarousel";
 import LayoutHeader from "../../LayoutHeaderDesktop/LayoutHeaderDesktop"
@@ -12,12 +12,15 @@ import { useSpring, animated } from "react-spring";
 import BackDrop from "../../BackDropDesktop/BackDropDesktop";
 import AnimLogo from "../../../Logos/AnimLogo/AnimLogo";
 import { useHomeQuery } from "../../../../hooks/queries/useHomeQuery";
-import LayoutFrame from "../../LayoutFrameDesktop/LayoutFrameDesktop";
+import LayoutFrameDesktop from "../../LayoutFrameDesktop/LayoutFrameDesktop";
 import Img from 'gatsby-image';
 import ContactBar from '../../ContactBar/ContactBar';
+import SEO from '../../../SEO/SEO';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const IndexPageDesktopRender: React.FC = () => {
   const [materiePrimeHover, setMateriePrimeHover] = useState(false);
+  const [page, setPage]: any = useContext(PageContext);
   let parallax: any = useRef();
 
 
@@ -60,12 +63,12 @@ const IndexPageDesktopRender: React.FC = () => {
 
   return (
     <Parallax pages={5.9} scrolling={true} ref={parallax}>
-      <LayoutFrame>
+      <LayoutFrameDesktop>
         <AnimLogo />
         <section style={{ position: "relative", top: "30vh", width: "50%", left: "40%", height: "100vh" }}>
           <ParallaxLayer offset={0} speed={0.05}>
             <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
-              {sanityHomePage.quoteHeaderText}
+              {page.english ? sanityHomePage.quoteHeaderTextEng : sanityHomePage.quoteHeaderText}
             </Quote>
           </ParallaxLayer>
         </section>
@@ -89,7 +92,7 @@ const IndexPageDesktopRender: React.FC = () => {
               <Centralizer column>
                 <div style={{ position: "absolute", width: "70%", marginTop: "-100vh" }}>
                   <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>
-                    {sanityHomePage.quoteBelowCarouselText}
+                    {page.english ? sanityHomePage.quoteBelowCarouselTextEng : sanityHomePage.quoteBelowCarouselText}
                   </Quote>
                 </div>
               </Centralizer>
@@ -104,7 +107,7 @@ const IndexPageDesktopRender: React.FC = () => {
           </Quote>
           </div>
           <div style={{ width: "150px", height: "150px", textAlign: "center", position: "absolute", right: "35%", bottom: "5vh" }}>
-            <PageTitle>Prodotti</PageTitle>
+            <PageTitle>{page.english? "Products" : "Prodotti"}</PageTitle>
           </div>
 
         </section>
@@ -127,11 +130,9 @@ const IndexPageDesktopRender: React.FC = () => {
             <Link to="/materieprime/">
               <animated.div style={{ ...materiePrimeBcgStyles, cursor: "pointer", position: "absolute", width: "65%", height: "450px", backgroundColor: "#E3A38B", right: "0" }}>
                 <ParallaxLayer offset={0} speed={-0.15}>
-                  <Link to="/materieprime/">
-                    <animated.div style={{ cursor: "pointer", position: "absolute", width: "80%", right: "10%", top: "-320px" }}>
-                      <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.</Quote>
-                    </animated.div>
-                  </Link>
+                  <animated.div style={{ cursor: "pointer", position: "absolute", width: "80%", right: "10%", top: "-320px" }}>
+                    <Quote style={QuoteStyle.italic} fontSize={"Quote-M"}>{page.english ? sanityHomePage.materiePrimeBannerQuoteTextEng : sanityHomePage.materiePrimeBannerQuoteText}</Quote>
+                  </animated.div>
                 </ParallaxLayer>
               </animated.div>
             </Link>
@@ -139,7 +140,7 @@ const IndexPageDesktopRender: React.FC = () => {
           <ParallaxLayer offset={0.7} speed={0.1}>
             <Link to="/materieprime/">
               <animated.div onMouseEnter={() => setMateriePrimeHover(true)} onMouseLeave={() => setMateriePrimeHover(false)} style={{ ...materiePrimeTitleStyles, position: "absolute", marginLeft: "10%" }}>
-                <PageTitle>Materie Prime</PageTitle>
+                <PageTitle>{page.english ? "Materials" : "Materie Prime"}</PageTitle>
                 <Centralizer>
                   <animated.div style={{ ...materiePrimeLineStyles, cursor: "pointer", height: "2px", marginTop: "2.5vh", backgroundColor: "black" }}></animated.div>
                 </Centralizer>
@@ -151,7 +152,7 @@ const IndexPageDesktopRender: React.FC = () => {
         {/* ------------------------------CONTACT SECTION */}
         <section style={{ position: "relative", height: "80vh", zIndex: 1 }}>
           <ParallaxLayer offset={0.30} speed={0.12}>
-            <ContactBar fluid={sanityHomePage.contactImg.asset.fluid} />
+            <ContactBar fixed={sanityHomePage.contactImg.asset.fixed} />
           </ParallaxLayer>
           <ParallaxLayer offset={1.32} speed={0.35}>
             <div style={{ position: "absolute", zIndex: 5, backgroundColor: "#F0E9E4", width: "100%", height: "250px" }}>
@@ -160,13 +161,13 @@ const IndexPageDesktopRender: React.FC = () => {
           <ParallaxLayer offset={0.30} speed={0.26}>
             <div style={{ position: "absolute", left: "10%", zIndex: 5, top: "115vh" }}>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", backgroundColor: "black" }}></div>
-              <PageTitle>Contatti</PageTitle>
+              <PageTitle>{page.english ? "Contact" : "Contatti"}</PageTitle>
               <div style={{ height: "2px", width: "2em", marginLeft: "3px", marginTop: "4px", backgroundColor: "black" }}></div>
             </div>
           </ParallaxLayer>
 
         </section>
-      </LayoutFrame>
+      </LayoutFrameDesktop>
     </Parallax >
   )
 }

@@ -13,10 +13,11 @@ interface Props {
   imgBehindTitle?: boolean,
   height: string,
   whiteBehindImg?: boolean,
-  longTitle?: boolean
+  longTitle?: boolean,
+  marginTop?: string | undefined
 }
 
-const MateriaPrima = ({ fluidImg, hexColor, text, title, height, imgLeft, imgBehindTitle, whiteBehindImg, longTitle }: Props) => {
+const MateriaPrima = ({ fluidImg, hexColor, text, title, height, imgLeft, imgBehindTitle, whiteBehindImg, longTitle, marginTop }: Props) => {
 
   if (imgLeft) return (
     <div style={{ height: height }} className={classes.container}>
@@ -31,8 +32,9 @@ const MateriaPrima = ({ fluidImg, hexColor, text, title, height, imgLeft, imgBeh
         <PageTitleDesktop right letterSpacing={".2em"} fontSize={"1.5em"}>{title}</PageTitleDesktop>
       </div>
       <Centralizer>
-        <div className={classes.textContainer}>
-          <p className={classes.text}>{text}</p>
+        <div className={classes.textContainer} style={{ marginTop: marginTop ? marginTop : "0px" }}>
+          {text.split(".").map((t, i) => <p className={classes.text}>{t}.</p>
+          )}
         </div>
       </Centralizer>
     </div>
@@ -46,13 +48,14 @@ const MateriaPrima = ({ fluidImg, hexColor, text, title, height, imgLeft, imgBeh
           <Img fluid={fluidImg} alt="Lievtio Madre" />
         </div>
       </div>
-      <div className={classes.titleContainer} style={{ marginTop: "5px", width: longTitle ? "15em" : "12em"  }}>
+      <div className={classes.titleContainer} style={{ marginTop: "5px", width: longTitle ? "15em" : "12em" }}>
         <div style={{ height: "1px", width: "20px", backgroundColor: "black", position: "absolute", marginTop: "-5px" }}></div>
         <PageTitleDesktop letterSpacing={".2em"} fontSize={"1.5em"}>{title}</PageTitleDesktop>
       </div>
       <Centralizer>
-        <div className={classes.textContainer}>
-          <p className={classes.text}>{text}</p>
+        <div className={classes.textContainer} style={{ marginTop: marginTop ? marginTop : "0px" }}>
+          {text.split(".").map((t, i) => <p className={classes.text}>{t}.</p>
+          )}
         </div>
       </Centralizer>
     </div>
@@ -71,8 +74,9 @@ const MateriaPrima = ({ fluidImg, hexColor, text, title, height, imgLeft, imgBeh
         <PageTitleDesktop letterSpacing={".2em"} fontSize={"1.5em"}>{title}</PageTitleDesktop>
       </div>
       <Centralizer>
-        <div className={classes.textContainer}>
-          <p className={classes.text}>{text}</p>
+        <div className={classes.textContainer} style={{ marginTop: marginTop ? marginTop : "0px" }}>
+          {text.split(".").map((t, i) => <p className={classes.text}>{t}.</p>
+          )}
         </div>
       </Centralizer>
 

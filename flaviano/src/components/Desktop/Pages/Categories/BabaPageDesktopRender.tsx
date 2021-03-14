@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { BabaPageQuery, QuoteStyle } from '../../../../../types';
-import LayoutHeader from '../../../Desktop/LayoutHeaderDesktop/LayoutHeaderDesktop';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import PageTitle from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
 import Quote from '../../../Desktop/QuoteDesktop/QuoteDesktop';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
@@ -13,8 +13,10 @@ import LayoutFrame from '../../../Desktop/LayoutFrameDesktop/LayoutFrameDesktop'
 import useScroll from '../../../../hooks/useScroll';
 import ScrollButton from '../../../Desktop/ScrollButton/ScrollButton';
 import { useViewport } from '../../../../hooks/useViewPort';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const BabaPageDesktopRender: React.FC = () => {
+  const [page, setPage]: any = useContext(PageContext);
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
   const { width, height } = useViewport();
   console.log("width/height", width / height);
@@ -22,7 +24,26 @@ const BabaPageDesktopRender: React.FC = () => {
   let parallax: any = useRef();
   const currentScroll = useScroll(parallax);
 
+  const onScrollEventHandler = (event: WheelEvent) => {
+    if (event.deltaY < 0) {
+      scrollTo("#top")
+    }
+    else if (event.deltaY > 0) {
+      scrollTo("#products")
+    }
+  }
 
+  useEffect(() => {
+    window.addEventListener("wheel", e => onScrollEventHandler(e))
+
+    return (() => {
+      window.removeEventListener("wheel", onScrollEventHandler);
+    })
+  }, [])
+
+  useEffect(() => {
+    setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }));
+  }, [])
 
 
   return (
@@ -33,7 +54,12 @@ const BabaPageDesktopRender: React.FC = () => {
 
         <ParallaxLayer factor={0} speed={0.1} >
           <div style={{ backgroundColor: "#F0E9E4", width: "100%", height: "100vh", position: "relative" }}>
-            {screenRatio < 1.39 &&
+            {screenRatio < 1.19 &&
+              <div style={{ width: "160%", height: "100%", position: "absolute" }}>
+                <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
+                {/* <p className="legend">{e.node.title}</p> */}
+              </div>}
+            {screenRatio < 1.39 && screenRatio >= 1.19 &&
               <div style={{ width: "140%", height: "100%", position: "absolute" }}>
                 <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
                 {/* <p className="legend">{e.node.title}</p> */}
@@ -45,7 +71,7 @@ const BabaPageDesktopRender: React.FC = () => {
                 {/* <p className="legend">{e.node.title}</p> */}
               </div>}
             {screenRatio >= 1.64 &&
-              <div style={{ maxWidth: "100%", width: "100%", height: "100%", position: "absolute" }}>
+              <div style={{ width: "110%", height: "130%", position: "absolute" }}>
                 <Img fluid={sanityBabaPage.headerImg.asset.fluid} alt="Baba image" />
                 {/* <p className="legend">{e.node.title}</p> */}
               </div>}
@@ -57,6 +83,12 @@ const BabaPageDesktopRender: React.FC = () => {
                     <PageTitle letterSpacing={".2em"} fontSize={`${(width / 500) + 0.7}em`}>O babà é na cosa seria</PageTitle>
                   </Quote>
                 </div>
+                {page.english &&
+                  <div>
+                    <div style={{ position: "absolute", top: "48vh", right: "25%" }}>
+                      <p style={{ fontFamily: "IbarraRealNovaItalic", fontStyle: "italic", fontWeight: "normal", fontSize: "1.3em" }}>-Babà is serious business.</p>
+                    </div>
+                  </div>}
                 <div style={{ position: "absolute", bottom: "25vh" }}>
                   <ScrollButton to="#products" currentPosition={currentScroll} deactivatePosition={9999} reactivePosition={0} />
                 </div>
@@ -70,7 +102,7 @@ const BabaPageDesktopRender: React.FC = () => {
           <div style={{ position: "relative", backgroundColor: "white", width: "100%", height: "100vh", zIndex: 0, marginTop: "10vh" }}>
             <Centralizer evenly>
               <div style={{ width: "50%" }}>
-                <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify", fontSize: "1.3em", margin: "-25px 10% 10% 10%" }}>{sanityBabaPage.pageText}</p>
+                <p style={{ fontFamily: "HomepageBaukastenBook", textAlign: "justify", fontSize: "1.3em", margin: "-25px 10% 10% 10%" }}>{page.english ? sanityBabaPage.pageTextEng : sanityBabaPage.pageText}</p>
               </div>
               <div style={{ width: "50%" }}>
                 <Centralizer>

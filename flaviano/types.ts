@@ -1,5 +1,5 @@
 import { GatsbyGraphQLInputObjectType } from "gatsby";
-import { FluidObject } from "gatsby-image";
+import { FixedObject, FluidObject } from "gatsby-image";
 
 export enum QuoteStyle {
   "header",
@@ -8,37 +8,73 @@ export enum QuoteStyle {
   "italic"
 }
 
+export enum MediaPort {
+  xtremeDesktop,
+  desktop,
+  mobile,
+  mobileSmallHeight,
+  mobileHorizontal
+}
+
+export interface ScreenSize {
+  height: number,
+  width: number
+}
+
+
+export interface SanityProduct {
+  category: {
+    id: string,
+    title: string
+  },
+  description: string,
+  descriptionEng: string,
+  priceEur: number,
+  slug: {
+    current: string
+  },
+  title: string,
+  backGroundColor: {
+    hex: string
+  },
+  id: string,
+  conservation: string,
+  ingredients: string,
+  ingredientsTwo: string,
+  conservationEng: string,
+  ingredientsEng: string,
+  ingredientsTwoEng: string,
+  weightGr: number,
+  productPhoto: {
+    asset: {
+      fluid: FluidObject,
+      fixed: FixedObject
+    }
+  },
+  productDetailPhoto1: {
+    asset: {
+      fixed: FixedObject
+    }
+  },
+  productDetailPhoto2: {
+    asset: {
+      fixed: FixedObject
+    }
+  },
+  productDetailPhoto3: {
+    asset: {
+      fixed: FixedObject
+    }
+  },
+}
+
 export interface ProductPageDataQuery {
   data: {
-    sanityProduct: Product
+    sanityProduct: SanityProduct
   }
 }
 export interface Product {
-  node: {
-    category: {
-      id: string,
-      title: string
-    },
-    description: string,
-    priceEur: number,
-    slug: {
-      current: string
-    },
-    title: string,
-    backGroundColor: {
-      hex: string
-    },
-    id: string,
-    conservation: string,
-    ingredients: string,
-    ingredientsTwo: string,
-    weightGr: number,
-    productPhoto: {
-      asset: {
-        fluid: FluidObject
-      }
-    }
-  }
+  node: SanityProduct
 }
 
 export interface ProductQuery {
@@ -54,6 +90,8 @@ export interface BabaPageQuery {
 export interface BabaPage {
   pageText: string,
   pageTextMobile: string,
+  pageTextEng: string,
+  pageTextMobileEng: string,
   headerImg: {
     asset: {
       fluid: FluidObject
@@ -64,6 +102,14 @@ export interface BabaPage {
       fluid: FluidObject
     }
   }
+}
+export interface BiscottiPageQuery {
+  sanityBiscottiPage: BiscottiPage
+}
+
+export interface BiscottiPage {
+  quoteHeaderText: string,
+  quoteHeaderTextEng: string
 }
 
 export interface MateriePrimeQuery {
@@ -80,6 +126,9 @@ export interface MateriePrimePage {
     }
   },
   albicocceText: string,
+  albicocceTextMobile: string,
+  albicocceTextEng: string,
+  albicocceTextMobileEng: string,
   lievitoMadreColor: {
     hex: string
   },
@@ -89,6 +138,9 @@ export interface MateriePrimePage {
     }
   },
   lievitoMadreText: string,
+  lievitoMadreTextMobile: string,
+  lievitoMadreTextEng: string,
+  lievitoMadreTextMobileEng: string,
   limoniColor: {
     hex: string
   },
@@ -98,6 +150,9 @@ export interface MateriePrimePage {
     }
   },
   limoniText: string,
+  limoniTextMobile: string,
+  limoniTextEng: string,
+  limoniTextMobileEng: string,
   melaColor: {
     hex: string
   },
@@ -105,6 +160,9 @@ export interface MateriePrimePage {
     asset: { fluid: FluidObject }
   },
   melaText: string,
+  melaTextMobile: string,
+  melaTextEng: string,
+  melaTextMobileEng: string,
   mieleColor: {
     hex: string
   },
@@ -114,6 +172,9 @@ export interface MateriePrimePage {
     }
   },
   mieleText: string,
+  mieleTextMobile: string,
+  mieleTextEng: string,
+  mieleTextMobileEng: string,
   nocciolaColor: {
     hex: string
   },
@@ -123,6 +184,9 @@ export interface MateriePrimePage {
     }
   },
   nocciolaText: string,
+  nocciolaTextMobile: string,
+  nocciolaTextEng: string,
+  nocciolaTextMobileEng: string,
   nociColor: {
     hex: string
   },
@@ -132,9 +196,12 @@ export interface MateriePrimePage {
     }
   },
   nociText: string,
-  quoteHeaderText: string
+  nociTextMobile: string,
+  nociTextEng: string,
+  nociTextMobileEng: string,
+  quoteHeaderText: string,
+  quoteHeaderTextEng: string
 }
-
 
 export interface ChiSiamoPageQuery {
   sanityChiSiamoPage: ChiSiamoPage
@@ -153,6 +220,8 @@ export interface ChiSiamoPage {
   },
   pageText: string,
   quoteHeaderText: string
+  pageTextEng: string,
+  quoteHeaderTextEng: string
 }
 
 
@@ -171,7 +240,8 @@ export interface Category {
       current: string
     },
     title: string,
-    description: string
+    description: string,
+    descriptionEng: string,
   }
 }
 
@@ -186,11 +256,22 @@ export interface HomePageQuery {
     quoteHeaderText: string,
     quoteBelowCarouselText: string,
     mobileHeaderText: string,
+    quoteHeaderTextEng: string,
+    quoteBelowCarouselTextEng: string,
+    mobileHeaderTextEng: string,
+    materiePrimeBannerQuoteText: string,
+    materiePrimeBannerQuoteTextEng: string,
     contactImg: {
       asset: {
-        fluid: FluidObject
+        fixed: FixedObject
       }
     },
+  }
+}
+export interface ContactPageQuery {
+  sanityContattiPage: {
+    quoteHeaderText: string,
+    quoteHeaderTextEng: string,
   }
 }
 
@@ -203,3 +284,6 @@ export interface ContactInfoQuery {
     urlPinterest: string
   }
 }
+
+
+

@@ -2,17 +2,17 @@ import React, { useState, useContext, useEffect } from 'react';
 
 import { useSpring, animated } from 'react-spring';
 import { PageContext } from '../../../contexts/pageContext';
-import classes from './AnimLogo.module.css';
+import classes from './AnimLogo.module.scss';
 
 const AnimLogo: React.FC = () => {
   const [hover, setHover] = useState(false);
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
 
 
 
   const LogoProps = useSpring({
-    to: [{ transform: "scale(1)" }],
-    from: { transform: "scale(0)" },
+    to: [{ transform: "scale(1)", opacity: 1 }],
+    from: { transform: "scale(0.5)", opacity: 0 },
     delay: 200,
     config: {
       mass: 1,
@@ -61,8 +61,8 @@ const AnimLogo: React.FC = () => {
     }
   });
   const CircleProps = useSpring({
-    to: { transform: "rotate(360deg)" },
-    from: { transform: "rotate(0deg)" },
+    to: { transform: "rotate(0deg)" },
+    from: { transform: "rotate(-45deg)" },
     delay: 100,
     config: {
       mass: 5,
@@ -80,15 +80,15 @@ const AnimLogo: React.FC = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setPage(prev => ({ ...prev, firstStart: false }))
+      setPage((prev: any) => ({ ...prev, firstStart: false }))
     }, 1800)
   }, [])
 
   return (
     <>
       {page.firstStart && <animated.div style={backDropStyle} className={classes.firstStartBackdrop}></animated.div>}
-      <animated.div className={classes.container}>
-        <animated.svg onMouseEnter={() => setHover(!hover)} style={{ ...LogoProps }} width="243" height="235" viewBox="0 0 243 235" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <animated.div style={{ ...LogoProps }} className={classes.container}>
+        <animated.svg onMouseEnter={() => setHover(!hover)} width="243" height="235" viewBox="0 0 243 235" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g className={classes.logo}>
             <animated.g style={{ ...CircleProps, transformOrigin: "center", transformBox: "fill-box" }} className={classes.circle}>
               <g id="Group">
@@ -150,10 +150,10 @@ const AnimLogo: React.FC = () => {
             <animated.g style={{ ...colorsProps, transformOrigin: "center", transformBox: "fill-box" }} className={classes.italianColors}>
               <path id="Vector_28" d="M84.1077 129.2C90.4403 128.986 96.7729 128.843 103.1 128.771C109.432 128.683 115.765 128.661 122.092 128.65C128.425 128.661 134.757 128.683 141.084 128.771C147.417 128.843 153.749 128.986 160.076 129.2C153.744 129.414 147.411 129.557 141.084 129.629C134.751 129.716 128.419 129.738 122.092 129.749C115.759 129.738 109.427 129.716 103.1 129.629C96.7729 129.552 90.4403 129.409 84.1077 129.2Z" fill="url(#paint0_linear)" />
             </animated.g>
-              <animated.g style={{ ...FlowerProps, transformOrigin: "center", transformBox: "fill-box" }} className={classes.titleFlower}>
-                <path id="Vector_29" d="M131.365 107.901C131.365 107.901 134.746 110.335 141.794 105.439C141.794 105.439 135.198 103.362 131.365 107.901Z" fill="#CA8860" />
-                <path id="Vector_30" d="M129.065 99.8988C129.065 99.8988 125.89 101.834 130.004 107.874C130.009 107.874 133.327 103.559 129.065 99.8988Z" fill="#D3B9A7" stroke="white" strokeWidth="0.5969" strokeMiterlimit="10" />
-              </animated.g>
+            <animated.g style={{ ...FlowerProps, transformOrigin: "center", transformBox: "fill-box" }} className={classes.titleFlower}>
+              <path id="Vector_29" d="M131.365 107.901C131.365 107.901 134.746 110.335 141.794 105.439C141.794 105.439 135.198 103.362 131.365 107.901Z" fill="#CA8860" />
+              <path id="Vector_30" d="M129.065 99.8988C129.065 99.8988 125.89 101.834 130.004 107.874C130.009 107.874 133.327 103.559 129.065 99.8988Z" fill="#D3B9A7" stroke="white" strokeWidth="0.5969" strokeMiterlimit="10" />
+            </animated.g>
           </g>
           <defs>
             <linearGradient id="paint0_linear" x1="84.1096" y1="129.197" x2="160.089" y2="129.197" gradientUnits="userSpaceOnUse">

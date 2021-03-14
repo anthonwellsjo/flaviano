@@ -4,11 +4,9 @@
 
 .menu {
   background: white;
-
-  /* margin: 0 23%; */
   position: fixed;
-  right: 30%;
   margin-top: 10px;
+  margin-left: 50px;
   width: 180px;
   height: 180px;
 }
@@ -20,19 +18,20 @@
   letter-spacing: 0.4em;
   text-transform: uppercase;
   text-align: right;
-  transition: font-size 0.1s;
 }
 
 .menuItem:hover {
-  font-size: 0.8em;
-  transition: font-size 0.1s;
+  background: linear-gradient(0deg, #463f3f10 40%, #4d3c3c39 100%);
+}
+
+.active {
+  font-family: HomepagebaukastenBold;
+  font-size: 1.5em;
 }
 
 .button,
-.button:hover,
-.button:active,
-.button:focus {
-  font-family: HomepagebaukastenBold;
+.button:active {
+  font-family: HomepagebaukastenBook;
   font-style: normal;
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -49,4 +48,9 @@
   padding-bottom: 4px;
   border-bottom: 1px solid black;
   outline: 0;
+}
+
+.activeYeah {
+  font-family: HomepagebaukastenBold;
+  font-size: 0.8rem;
 }

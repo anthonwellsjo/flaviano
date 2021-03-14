@@ -5,7 +5,7 @@ import AnimLogo from '../../Logos/AnimLogo/AnimLogo';
 import AnimLogoPiccolo from '../../Logos/AnimLogoPiccolo/AnimLogoPiccolo';
 import Logo from '../../Logos/Logo/Logo';
 import MainNavBar from '../Navbar/MainNavBarDesktop/MainNavBarDesktop';
-import classes from './LayoutHeaderDesktop.module.css';
+import classes from './LayoutHeaderDesktop.module.scss';
 
 const LayoutHeaderDesktop: React.FC = () => (
   <div className={classes.Layout}>

@@ -1,7 +1,15 @@
 .textWrapper {
   width: 50%;
-  margin-bottom: 10vh;
+  height: 100%;
   position: relative;
+}
+
+.textBody {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
 }
 
 .fluidImg {
@@ -13,26 +21,33 @@
 .title {
   font-family: HomepagebaukastenBold;
   letter-spacing: 0.16em;
-  font-size: 1.5em;
+  font-size: 1.8em;
   text-transform: uppercase;
 }
 .titleWrapper {
-  margin-bottom: 5vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
 }
 .descriptionTitle,
 .ingredientsTitle,
 .conservationTitle {
   font-family: HomepagebaukastenBold;
+  font-size: 0.8em;
   letter-spacing: 0.16em;
   line-height: 11px;
   text-transform: uppercase;
   position: relative;
-  bottom:1vh;
+  bottom: 1vh;
 }
 .description,
 .ingredients,
 .conservation {
+  margin-top: -5px;
   font-family: HomepagebaukastenBook;
+  font-size: 0.9em;
   letter-spacing: 0.16em;
   line-height: 19px;
   text-align: justify;
@@ -41,4 +56,23 @@
 .ingredWrapper,
 .consWrapper {
   margin-top: 4vh;
+}
+
+.container {
+  position: relative;
+}
+
+.ghost {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.5);
+}
+.ghost:hover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  background: none;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './PageTitleDesktop.module.css';
+import classes from './PageTitleDesktop.module.scss';
 
 interface pageProps {
   fontSize?: string,

@@ -1,10 +1,11 @@
+import classnames from 'classnames';
 import { Link } from 'gatsby';
 import React, { useContext, useState } from 'react';
 import { Trail, Transition } from 'react-spring/renderprops';
 import { Category, CategoryQuery } from '../../../../../types';
 import { PageContext } from '../../../../contexts/pageContext';
 import { useCategoryPreviewQuery } from '../../../../hooks/queries/useCategoryPreviewQuery';
-import classes from './NavbarDropDownDesktop.module.css';
+import classes from './NavbarDropDownDesktop.module.scss';
 
 interface MenuItem {
   title: string,
@@ -14,16 +15,17 @@ interface MenuItem {
 
 
 const NavbarDropDownDesktop: React.FC = () => {
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
   const CategoryData: CategoryQuery = useCategoryPreviewQuery();
 
   console.log("productsDropDownMenuOpen", page.productsDropDownMenuOpen);
+  console.log("pathname", location.pathname,location.pathname.split("/").includes("categories"));
 
   const onMouseEnterEventHandler = () => {
-    setPage(prev => ({ ...prev, productsDropDownMenuOpen: true }))
+    setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: true }))
   }
   const onMouseLeaveEventHandler = () => {
-    setPage(prev => ({ ...prev, productsDropDownMenuOpen: false }))
+    setPage((prev: any) => ({ ...prev, productsDropDownMenuOpen: false }))
   }
 
   let menuItems: Array<MenuItem> = [];
@@ -39,7 +41,7 @@ const NavbarDropDownDesktop: React.FC = () => {
 
   return (
     <>
-      <button className={classes.button} style={{ zIndex: 100, cursor: "pointer" }}  onMouseEnter={onMouseEnterEventHandler}>Prodotti</button>
+      <button className={location.pathname.split("/").includes("categories") ? classnames(classes.button, classes.activeYeah) : classes.button} style={{ zIndex: 100, cursor: "pointer" }} onMouseEnter={onMouseEnterEventHandler}>{page.english? "Products" : "Prodotti"}</button>
       <Transition
         unique
         reset
@@ -68,7 +70,7 @@ const NavbarDropDownDesktop: React.FC = () => {
                 to={{ opacity: 1 }}
               >
                 {trailItem => trailProps => (
-                  <Link to={`/categories/${trailItem.slug}`}>
+                  <Link activeClassName={classes.active} to={`/categories/${trailItem.slug}`}>
                     <div style={{ ...trailProps, zIndex: 100, backgroundColor: trailItem.color }} className={classes.menuItem}>
                       {trailItem.title}
                     </div>

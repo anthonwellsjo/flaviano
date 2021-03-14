@@ -27,6 +27,18 @@ export default {
       validation: v => v.required().min(90)    
     },
     {
+      name: 'quoteHeaderTextEng',
+      title: 'Quote Header Text English',
+      type: 'text',
+      validation: v => v.required().min(90)    
+    },
+    {
+      name: 'pageTextEng',
+      title: 'Page Text English',
+      type: 'text',
+      validation: v => v.required().min(90)    
+    },
+    {
       name: 'footerImg',
       title: 'Footer Image',
       type: 'image',

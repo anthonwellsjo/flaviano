@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useCategoryPreviewQuery } from '../../../../../hooks/queries/useCategoryPreviewQuery';
 import ProductPreview from '../ProductPreviewDesktop/ProductPreviewDesktop';
 import { useProductQuery } from '../../../../../hooks/queries/useProductQuery';
 import { Category, Product, ProductQuery, CategoryQuery } from '../../../../../../types';
+import { PageContext } from '../../../../../contexts/pageContext';
 
-const ProductPreviewsDesktop = () => {
+interface props {
+  parallax?: boolean | undefined
+}
+
+const ProductPreviewsDesktop = ({ parallax }: props) => {
   const categoryData: CategoryQuery = useCategoryPreviewQuery();
   const productData: ProductQuery = useProductQuery();
+  const [page, setPage]: any = useContext(PageContext);
+  const parallaxSelection = parallax || parallax == undefined ? true : false;
 
   return (
     <div>
@@ -16,13 +23,16 @@ const ProductPreviewsDesktop = () => {
           <div key={e.node.id}>
             <div style={{ height: "50px" }}></div>
             <ProductPreview
+              parallax={parallaxSelection}
               key={e.node.slug.current}
               categorySlug={e.node.slug.current}
               categoryDescription={e.node.description}
+              categoryDescriptionEnglish={e.node.descriptionEng}
               products={products}
               title={e.node.title}
               color={e.node.previewColorBoxColor.hex}
-              img={e.node.categoryParallaxIcon.asset.fluid} />
+              img={e.node.categoryParallaxIcon.asset.fluid}
+              english={page.english} />
           </div>
         )
       })}

@@ -27,6 +27,18 @@ export default {
       validation: v => v.required().min(45)    
     },
     {
+      name: 'pageTextEng',
+      title: 'Page Text English',
+      type: 'text',
+      validation: v => v.required().min(90)    
+    },
+    {
+      name: 'pageTextMobileEng',
+      title: 'Page Text Mobile English',
+      type: 'text',
+      validation: v => v.required().min(45)    
+    },
+    {
       name: 'textImg',
       title: 'Small Text Image',
       type: 'image',

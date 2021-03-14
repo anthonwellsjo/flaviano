@@ -13,9 +13,10 @@ import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
 import { useViewport } from '../../../../hooks/useViewPort';
+import SEO from '../../../SEO/SEO';
 
 const ChiSiamoMobileRender: React.FC = () => {
-  const {width} = useViewport();
+  const { width } = useViewport();
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
   let parallax: any = useRef();
   return (
@@ -49,7 +50,7 @@ const ChiSiamoMobileRender: React.FC = () => {
 
         <ParallaxLayer offset={1.1} speed={0.1}>
           <Centralizer>
-          {width > 370 &&
+            {width > 370 &&
               < div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
                 {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
                   if (index == 0) return (
@@ -78,7 +79,7 @@ const ChiSiamoMobileRender: React.FC = () => {
           </Centralizer>
         </ParallaxLayer>
         <ParallaxLayer offset={2.15} speed={0.2}>
-          <img style={{ position: "absolute", right: "30px", height:"40px" }} src={flavianoImg} alt="logo" />
+          <img style={{ position: "absolute", right: "30px", height: "40px" }} src={flavianoImg} alt="logo" />
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={1}>
           <Centralizer>

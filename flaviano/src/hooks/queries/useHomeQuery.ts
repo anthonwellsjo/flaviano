@@ -7,10 +7,15 @@ export const useHomeQuery = () => {
             quoteHeaderText
             quoteBelowCarouselText
             mobileHeaderText
+            quoteHeaderTextEng
+            quoteBelowCarouselTextEng
+            mobileHeaderTextEng
+            materiePrimeBannerQuoteText
+            materiePrimeBannerQuoteTextEng
             contactImg {
             asset {
-              fluid(maxWidth: 2000){
-                ...GatsbySanityImageFluid
+              fixed(width: 1300){
+                ...GatsbySanityImageFixed
               }
           }
         }

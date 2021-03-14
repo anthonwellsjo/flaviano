@@ -30,11 +30,13 @@ const BabaPageMobileRender: React.FC = () => {
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={0.2} speed={-0.1}>
-          <div style={{ position: "absolute", top: "40px", right: "-10px", width: "300px" }}>
-            <QuoteMobile rightQuoteY={"20px"} rightQuoteX={"10px"}>
-              <PageTitleDesktop right letterSpacing=".2em" fontSize="2em">O babà é na cosa seria.</PageTitleDesktop>
-            </QuoteMobile>
-          </div>
+          <Centralizer>
+            <div style={{ position: "absolute", top: "40px", width: "300px" }}>
+              <QuoteMobile rightQuoteY={"20px"} rightQuoteX={"10px"}>
+                <PageTitleDesktop right letterSpacing=".2em" fontSize="2em">O babà é na cosa seria.</PageTitleDesktop>
+              </QuoteMobile>
+            </div>
+          </Centralizer>
         </ParallaxLayer>
         <ParallaxLayer offset={0.6} speed={0}>
           <div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
