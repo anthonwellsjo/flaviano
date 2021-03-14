@@ -16,11 +16,11 @@ const BiscottiPageMobileRenderHorizontal: React.FC = () => {
   const biscotti: Array<Product> = products.allSanityProduct.edges.filter((p: Product) => p.node.category.title == "Biscotti");
   let parallax: any = useRef();
   return (
-    <LayoutMobile>
+    <LayoutMobile horizontal>
       <Parallax pages={2.65} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.8}>
-          <LayoutHeaderMobile backGroundFullPage />
+          <LayoutHeaderMobile horizontal backGroundFullPage />
         </ParallaxLayer>
         <ParallaxLayer offset={0.45} speed={0.2}>
           <div style={{ width: "30px", marginTop: "-15px", textAlign: "center", position: "absolute", left: "20%", zIndex: 1 }}>
@@ -68,7 +68,7 @@ const BiscottiPageMobileRenderHorizontal: React.FC = () => {
               if (name == "noci e miele") return (
                 <Link to={`/products/${b.node.slug.current}`}>
                   <div style={{ overflow: "hidden", position: "relative", width: "100%" }}>
-                    <div style={{ width: "50%"}}>
+                    <div style={{ width: "50%" }}>
                       <Img fluid={b.node.productPhoto.asset.fluid} alt="nocciola e cioccolato" />
                     </div>
                     <div style={{ position: "absolute", left: "0", top: 0, width: "100%", height: "100%", display: "flex", alignItems: "center" }}>

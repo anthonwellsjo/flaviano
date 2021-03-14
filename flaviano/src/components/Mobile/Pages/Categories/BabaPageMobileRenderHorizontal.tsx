@@ -16,11 +16,11 @@ const BabaPageMobileRenderHorizontal: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
   let parallax: any = useRef();
   return (
-    <LayoutMobile>
+    <LayoutMobile horizontal>
       <Parallax pages={3.8} scrolling={true} config={{ mass: 1 }} ref={parallax}>
         <BackDropMobile />
         <ParallaxLayer offset={0} speed={0.25}>
-          <LayoutHeaderMobile backGroundFullPage />
+          <LayoutHeaderMobile horizontal backGroundFullPage />
         </ParallaxLayer>
         <ParallaxLayer speed={0.1} >
           <div style={{ width: "100%", overflow: "hidden" }}>
