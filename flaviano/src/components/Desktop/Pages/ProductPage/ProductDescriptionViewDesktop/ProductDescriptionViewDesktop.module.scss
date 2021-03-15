@@ -1,7 +1,6 @@
 .textWrapper {
-  margin-top: 5vh;
+  margin-top: 200px;
   width: 80%;
-  margin-bottom: 10vh;
   position: relative;
 }
 
@@ -42,6 +41,13 @@
   width: 90%;
   position: relative;
   bottom: 30px;
+  display: flex;
+  justify-content: space-between  ;
+}
+.imgsWrapperMobile{
+  width: 90%;
+  position: relative;
+  bottom: -100px;
   display: flex;
   justify-content: space-between  ;
 }
