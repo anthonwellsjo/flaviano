@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import SEOImage from '../../images/logo@3x.jpg';
+import SEOImage from '../../images/logoSEO.jpg';
 
-function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
+function SEO({ description, lang, meta, title, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -21,14 +21,16 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
     `
   )
 
-  const metaImageGo = image | { src: SEOImage, height: 600, width: 600 };
+  const metaImage = { src: SEOImage, height: 600, width: 600 };
 
   const metaDescription = description || site.siteMetadata.description
   const image =
-    metaImageGo && metaImageGo.src
+    metaImage && metaImage.src
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
       : null
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+
+  console.log("metaadata image url", `${site.siteMetadata.siteUrl}${metaImage.src}`);
 
   return (
     <Helmet
@@ -99,7 +101,7 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
               {
                 name: "twitter:card",
                 content: "summary_large_image",
-              },
+              }
             ]
             : [
               {
