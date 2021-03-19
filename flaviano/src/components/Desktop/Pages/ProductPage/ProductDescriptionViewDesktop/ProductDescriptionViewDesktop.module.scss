@@ -1,6 +1,21 @@
 .textWrapper {
+  margin-top: 20px;
+  width: 80%;
+  position: relative;
+}
+.textWrapperMobile {
   margin-top: 200px;
   width: 80%;
+  position: relative;
+}
+.textWrapperSmallMobile {
+  margin-top: 200px;
+  width: 80%;
+  position: relative;
+}
+.textWrapperHor {
+  margin-top: 50px;
+  width: 95%;
   position: relative;
 }
 
@@ -40,16 +55,14 @@
 .imgsWrapper{
   width: 90%;
   position: relative;
-  bottom: 30px;
+  bottom: -20px;
   display: flex;
   justify-content: space-between  ;
 }
 .imgsWrapperMobile{
-  width: 90%;
   position: relative;
   bottom: -100px;
-  display: flex;
-  justify-content: space-between  ;
+  background-color: white;
 }
 
 .imgLeft,
@@ -57,5 +70,17 @@
 .imgRight{
   width: 300px;
   height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aquamarine;
+}
+
+.horImg{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: aquamarine;
 }

@@ -3,7 +3,9 @@ import React from 'react';
 import { MediaPort, ProductPageDataQuery } from '../../types';
 import ProductPageTemplateDesktopRender from '../components/Desktop/Pages/ProductPageTemplateDesktopRender/ProductPageTemplateDesktopRender';
 import ProductPageTemplateXtremeDesktopRender from '../components/Desktop/Pages/ProductPageTemplateXtremeDesktopRender/ProductPageTemplateXtremeDesktopRender';
+import ProductPageTemplateMobileHorizontalRender from '../components/Mobile/Pages/ProductPageTemplateMobileRender/ProductPageTemplateMobileHorizontalRender';
 import ProductPageTemplateMobileRender from '../components/Mobile/Pages/ProductPageTemplateMobileRender/ProductPageTemplateMobileRender';
+import ProductPageTemplateMobileSmallHeightRender from '../components/Mobile/Pages/ProductPageTemplateMobileRender/ProductPageTemplateMobileSmallHeightRender';
 import SEO from '../components/SEO/SEO';
 import useGetMediaPort from '../hooks/useGetMediaPort';
 import { useViewport } from '../hooks/useViewPort';
@@ -17,8 +19,8 @@ const ProductPage = ({ data }: ProductPageDataQuery) => {
       {mediaPort == MediaPort.xtremeDesktop && <ProductPageTemplateXtremeDesktopRender data={data} />}
       {mediaPort == MediaPort.desktop && <ProductPageTemplateDesktopRender data={data} />}
       {mediaPort == MediaPort.mobile && <ProductPageTemplateMobileRender data={data} />}
-      {mediaPort == MediaPort.mobileSmallHeight && <h1>no viewport</h1>}
-      {mediaPort == MediaPort.mobileHorizontal && <h1>no viewport</h1>}
+      {mediaPort == MediaPort.mobileSmallHeight && <ProductPageTemplateMobileSmallHeightRender data={data} />}
+      {mediaPort == MediaPort.mobileHorizontal && <ProductPageTemplateMobileHorizontalRender data={data} />}
     </>
   )
 }

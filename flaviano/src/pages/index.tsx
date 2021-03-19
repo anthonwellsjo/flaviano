@@ -7,7 +7,6 @@ import IndexPageMobileRender from "../components/Mobile/Pages/IndexPage/IndexPag
 import IndexPageMobileRenderHorizontal from "../components/Mobile/Pages/IndexPage/IndexPageMobileRenderHorizontal";
 import IndexPageMobileRenderSmallHeight from "../components/Mobile/Pages/IndexPage/IndexPageMobileRenderSmallHeight";
 import SEO from "../components/SEO/SEO";
-import SEOImg from '../images/logo@2x.png';
 import useGetMediaPort from "../hooks/useGetMediaPort";
 import { useViewport } from "../hooks/useViewPort";
 
@@ -18,7 +17,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <SEO title="Produzione dolciaria artigianale | Biscotti, babà, colombe e panettoni" image={{src:SEOImg, height: 200, width: 200}} />
+      <SEO title="Produzione dolciaria artigianale | Biscotti, babà, colombe e panettoni" />
       {mediaPort == MediaPort.xtremeDesktop && <IndexPageXtremeDesktopRender />}
       {mediaPort == MediaPort.desktop && <IndexPageDesktopRender />}
       {mediaPort == MediaPort.mobile && <IndexPageMobileRender />}

@@ -1,0 +1,21 @@
+.productImg {
+  width: 100vw;
+  position: absolute;
+  bottom: 5%;
+}
+
+.firstPage {
+  height: 45vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 55vh;
+}
+
+.secondPage{
+  height: 200vh;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+}
