@@ -12,7 +12,7 @@ module.exports = {
     "strega", "limoncello", "limoni", "sorrento", "noci", "miele", "lievito", "madre", "albicocche", "lievitati", "panettone",
     "panettoni", "fichi", "dolci da forno", "dolci", "artigianali", "dolci di qualità e pregiati", "dolci fatti a mano",
     "tradizione", "dolciaria", "artigianale"],
-    siteUrl: "https://anthonwellsjo.github.io/flaviano/"
+    siteUrl: "https://www.flavianodolci.com/"
   },
   plugins: [
     `gatsby-plugin-sass`,
