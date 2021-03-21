@@ -4,15 +4,13 @@ import { PageContext } from '../../../../contexts/pageContext';
 import classes from './BurgerMenu.module.scss';
 import { Link } from 'gatsby';
 import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
-import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
-import ProductPreviewsDesktop from '../../../Desktop/Pages/ProductPage/ProductPreviewsDesktop/ProductPreviewsDesktop';
 
 interface props {
   isHorizontal: boolean
 }
 
 const BurgerMenu = (props: props) => {
-  const [page, setPage] = useContext(PageContext);
+  const [page, setPage]: any = useContext(PageContext);
   const burgerProps = useSpring({
     reverse: page.burgerMenuOpen,
     to: { transform: "scale(1)" },
@@ -30,7 +28,7 @@ const BurgerMenu = (props: props) => {
   });
 
   const onBurgerClickEventHandler = () => {
-    setPage(prev => ({ ...prev, burgerMenuOpen: !page.burgerMenuOpen }));
+    setPage((prev: any) => ({ ...prev, burgerMenuOpen: !page.burgerMenuOpen }));
   }
 
   if (props.isHorizontal) return (

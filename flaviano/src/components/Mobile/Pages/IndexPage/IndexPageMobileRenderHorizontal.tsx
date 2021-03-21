@@ -16,8 +16,9 @@ import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/Contac
 import useScroll from '../../../../hooks/useScroll';
 
 const IndexPageMobileRenderHorizontal: React.FC = () => {
+  const [page, setPage]: any = useContext(PageContext);
   const { sanityHomePage }: HomePageQuery = useHomeQuery();
-  let parallax: any = useRef();  
+  let parallax: any = useRef();
 
   return (
     <LayoutMobile horizontal>
@@ -35,7 +36,7 @@ const IndexPageMobileRenderHorizontal: React.FC = () => {
             <Centralizer>
               <div style={{ width: "85%", height: "50%", marginTop: "30%" }}>
                 <QuoteMobile style={QuoteStyle.italic} fontSize={"1.3em"} rightQuoteX={"-5px"} rightQuoteY={"10px"} leftQuoteX={"20px"} >
-                  {sanityHomePage.mobileHeaderText}
+                  {page.english ? sanityHomePage.mobileHeaderTextEng : sanityHomePage.mobileHeaderText}
                 </QuoteMobile>
               </div>
             </Centralizer>
@@ -60,7 +61,7 @@ const IndexPageMobileRenderHorizontal: React.FC = () => {
                 </QuoteMobile>
               </div>
               <div style={{ textAlign: "center", position: "absolute", right: "5%" }}>
-                <PageTitle right fontSize={"1.6em"}>Prodotti</PageTitle>
+                <PageTitle right fontSize={"1.6em"}>{page.english ? "Products" : "Prodotti"}</PageTitle>
               </div>
             </div>
           </section>
@@ -68,7 +69,7 @@ const IndexPageMobileRenderHorizontal: React.FC = () => {
 
         <ParallaxLayer offset={1.45} speed={-0.005}>
           <div style={{ position: "absolute" }}>
-            <MobileProducts horizontal/>
+            <MobileProducts horizontal />
           </div>
         </ParallaxLayer>
 
@@ -88,14 +89,14 @@ const IndexPageMobileRenderHorizontal: React.FC = () => {
             <section style={{ position: "absolute", width: "100vw" }}>
               <Centralizer>
                 <div style={{ marginTop: "", width: "100%" }}>
-                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-80px", width: "200px" }}>
-                    <PageTitle right fontSize={"1.8em"}>Materie Prime</PageTitle>
+                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-80px", width: "300px" }}>
+                    <PageTitle right fontSize={"1.8em"}>{page.english ? "Raw Materials" : "Materie Prime"}</PageTitle>
                   </div>
                   <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "220px", position: "absolute", right: "2.5%" }}>
                     <Centralizer>
                       <div style={{ width: "90%", marginTop: "-65px" }}>
                         <QuoteMobile left style={QuoteStyle.italic} fontSize={"1.3em"} leftQuoteX={"20px"} rightQuoteY={"25px"} rightQuoteX={"-20px"}>
-                          Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.
+                        {page.english ? sanityHomePage.materiePrimeBannerQuoteTextEng : sanityHomePage.materiePrimeBannerQuoteText}
                     </QuoteMobile>
                       </div>
                     </Centralizer>

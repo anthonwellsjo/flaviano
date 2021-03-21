@@ -5,6 +5,8 @@ import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
 import { Link } from 'gatsby';
 import { useSpring, animated } from 'react-spring';
 import { PageContext } from '../../../../contexts/pageContext';
+import ita from '../../../../images/italyFlag.png';
+import eng from '../../../../images/britainFlag.png';
 
 interface props {
   horizontal?: boolean | undefined,
@@ -33,6 +35,7 @@ const LayoutMobile = ({ children, horizontal }: props) => {
           <img className={classes.homeButton} src={flavianoImg} alt="home button logo" />
         </Link>
       </animated.div>
+      <button className={classes.langHor} onClick={() => setPage((prev: any) => ({ ...prev, english: !page.english }))}> {page.english ? <img style={{height:"30px"}} src={eng} alt="english" /> : <img style={{height:"30px"}} src={ita} alt="italiano" />}</button>
     </>
   )
   return (
@@ -46,6 +49,7 @@ const LayoutMobile = ({ children, horizontal }: props) => {
           <img className={classes.homeButton} src={flavianoImg} alt="home button logo" />
         </Link>
       </animated.div>
+      <button className={classes.lang} onClick={() => setPage((prev: any) => ({ ...prev, english: !page.english }))}> {page.english ? <img style={{height:"25px"}} src={eng} alt="english" /> : <img style={{height:"25px"}} src={ita} alt="italiano" />}</button>
     </>
   )
 }

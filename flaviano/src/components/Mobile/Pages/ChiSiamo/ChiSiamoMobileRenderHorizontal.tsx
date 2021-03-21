@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import Img from 'gatsby-image';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { ChiSiamoPageQuery } from '../../../../../types';
@@ -11,10 +11,12 @@ import LayoutMobile from '../../Components/LayoutMobile/LayoutMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import flavianoImg from '../../../../images/flavianoLogoNavbar.png';
 import { useViewport } from '../../../../hooks/useViewPort';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const ChiSiamoMobileRenderHorizontal = () => {
   const { width } = useViewport();
   const { sanityChiSiamoPage }: ChiSiamoPageQuery = useChiSiamoQuery();
+  const [page, setPage]: any = useContext(PageContext);
   let parallax: any = useRef();
   return (
     <LayoutMobile horizontal>
@@ -33,14 +35,14 @@ const ChiSiamoMobileRenderHorizontal = () => {
         <ParallaxLayer offset={0.05} speed={0.2}>
           <Centralizer>
             <div style={{ width: "75%", marginTop: "0" }}>
-              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"10px"}>{sanityChiSiamoPage.quoteHeaderText}</QuoteMobile>
+              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"10px"}>{page.english? sanityChiSiamoPage.quoteHeaderTextEng : sanityChiSiamoPage.quoteHeaderText}</QuoteMobile>
             </div>
           </Centralizer>
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.3} speed={0.1}>
           <Centralizer>
-            {width > 370 &&
+          {width > 370 && !page.english &&
               < div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
                 {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
                   if (index == 0) return (
@@ -53,13 +55,39 @@ const ChiSiamoMobileRenderHorizontal = () => {
                 })}
               </div>
             }
-            {width <= 370 &&
+            {width <= 370 && !page.english &&
               < div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: ".9em" }}>
                 {sanityChiSiamoPage.pageText.split(".").map((p, index) => {
                   if (index == 0) return (
                     <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>Flaviano </span>{p}.</p>
                   )
                   if (index == sanityChiSiamoPage.pageText.split(".").length - 1) return <p>{p}</p>
+                  return (
+                    <p>{p}.</p>
+                  )
+                })}
+              </div>
+            }
+            {width > 370 && page.english &&
+              < div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
+                {sanityChiSiamoPage.pageTextEng.split(".").map((p, index) => {
+                  if (index == 0) return (
+                    <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>Flaviano </span>{p}.</p>
+                  )
+                  if (index == sanityChiSiamoPage.pageTextEng.split(".").length - 1) return <p>{p}</p>
+                  return (
+                    <p>{p}.</p>
+                  )
+                })}
+              </div>
+            }
+            {width <= 370 && page.english &&
+              < div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: ".9em" }}>
+                {sanityChiSiamoPage.pageTextEng.split(".").map((p, index) => {
+                  if (index == 0) return (
+                    <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>Flaviano </span>{p}.</p>
+                  )
+                  if (index == sanityChiSiamoPage.pageTextEng.split(".").length - 1) return <p>{p}</p>
                   return (
                     <p>{p}.</p>
                   )

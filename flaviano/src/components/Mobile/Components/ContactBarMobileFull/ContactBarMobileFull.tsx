@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classes from './ContactBarMobileFull.module.scss';
 import fb from '../../../../images/fb-mobile.png';
 import pint from '../../../../images/pint-mobile.png';
@@ -6,18 +6,20 @@ import inst from '../../../../images/inst-mobile.png';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import { ContactInfoQuery } from '../../../../../types';
 import { useContactInfoQuery } from '../../../../hooks/queries/useContactInfoQuery';
+import { PageContext } from '../../../../contexts/pageContext';
 
 
 
 const ContactBarMobileFull = () => {
   const { sanityGeneralSettings }: ContactInfoQuery = useContactInfoQuery();
+  const [page, setPage]: any = useContext(PageContext);
 
 
 
   return (
     <div style={{ position: "absolute", width: "100%" }}>
       <Centralizer column>
-        <p className={classes.text}>Per maggiori informazioni</p>
+        <p className={classes.text}>{page.english? "For more information" : "Per maggiori informazioni"}</p>
         <p onClick={() => document.execCommand(sanityGeneralSettings.mailFlaviano)} className={classes.mail}>{sanityGeneralSettings.mailFlaviano}</p>
         <p onClick={() => document.execCommand(sanityGeneralSettings.phoneFlaviano)} className={classes.phone}>{sanityGeneralSettings.phoneFlaviano}</p>
         <div className={classes.socialContainer}>

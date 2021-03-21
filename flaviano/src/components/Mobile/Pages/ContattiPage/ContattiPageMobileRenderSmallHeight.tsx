@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { QuoteStyle } from '../../../../../types';
+import { ContactPageQuery, QuoteStyle } from '../../../../../types';
 import { useContactInfoQuery } from '../../../../hooks/queries/useContactInfoQuery';
 import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
@@ -12,10 +12,15 @@ import QuoteMobile from '../../Components/QuoteMobile/QuoteMobile';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
 import ContactBarMobileFull from '../../Components/ContactBarMobileFull/ContactBarMobileFull';
 import SEO from '../../../SEO/SEO';
+import { PageContext } from '../../../../contexts/pageContext';
+import { useContactQuery } from '../../../../hooks/queries/useContactQuery';
 
 const ContattiPageMobileRenderSmallHeight: React.FC = () => {
   const { sanityGeneralSettings: ContactInfoQuery } = useContactInfoQuery();
+  const [page, setPage]: any = useContext(PageContext);
   let parallax: any = useRef();
+  const { sanityContattiPage }: ContactPageQuery = useContactQuery()
+
 
   return (
     <LayoutMobile>
@@ -35,14 +40,14 @@ const ContattiPageMobileRenderSmallHeight: React.FC = () => {
           <div style={{ width: "60%", position: "absolute", right: 0, top: "100px" }}>
             <div style={{ height: "1px", width: "15px", marginLeft: "1px", backgroundColor: "black", marginBottom: "4px" }}></div>
             <div style={{ width: "20px" }}>
-              <PageTitleDesktop fontSize="1.3em" letterSpacing={".4em"}>Contatti</PageTitleDesktop>
+              <PageTitleDesktop fontSize="1.3em" letterSpacing={".4em"}>{page.english ? "Contact" : "Contatti"}</PageTitleDesktop>
             </div>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={0.1} speed={0.1}>
           <Centralizer>
             <div style={{ width: "75%", marginTop: "0" }}>
-              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"50px"}>Le materie prime utilizzate per i nostri prodotti provengono dalle ricche e generose terre campane che offrono eccellenze riconosciute in tutto il mondo.</QuoteMobile>
+              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"50px"}>{page.english ? sanityContattiPage.quoteHeaderTextEng : sanityContattiPage.quoteHeaderText}</QuoteMobile>
             </div>
           </Centralizer>
         </ParallaxLayer>

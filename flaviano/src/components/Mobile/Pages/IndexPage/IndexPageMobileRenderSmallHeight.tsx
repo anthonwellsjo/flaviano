@@ -49,8 +49,8 @@ const IndexPageMobileRenderSmallHeight: React.FC = () => {
           <div style={{ position: "relative", top: "0", width: "100vw", height: "100%", }}>
             <Centralizer>
               <div style={{ width: "85%", height: "50%", marginTop: "30%" }}>
-                <QuoteMobile style={QuoteStyle.italic} fontSize={"1.3em"} rightQuoteX={"-5px"} rightQuoteY={"50px"} leftQuoteX={"20px"} >
-                  {sanityHomePage.mobileHeaderText}
+                <QuoteMobile style={QuoteStyle.italic} fontSize={"1.3em"} rightQuoteX={"-5px"} rightQuoteY={"70px"} leftQuoteX={"20px"} >
+                {page.english ? sanityHomePage.mobileHeaderTextEng : sanityHomePage.mobileHeaderText}
                 </QuoteMobile>
               </div>
             </Centralizer>
@@ -75,7 +75,7 @@ const IndexPageMobileRenderSmallHeight: React.FC = () => {
                 </QuoteMobile>
               </div>
               <div style={{ textAlign: "center", position: "absolute", right: "5%" }}>
-                <PageTitle right fontSize={"1.6em"}>Prodotti</PageTitle>
+                <PageTitle right fontSize={"1.6em"}>{page.english ? "Products" : "Prodotti"}</PageTitle>
               </div>
             </div>
           </section>
@@ -103,14 +103,14 @@ const IndexPageMobileRenderSmallHeight: React.FC = () => {
             <section style={{ position: "absolute", width: "100vw" }}>
               <Centralizer>
                 <div style={{ marginTop: "-30%", width: "100%" }}>
-                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-25%", width: "200px" }}>
-                    <PageTitle right fontSize={"1.8em"}>Materie Prime</PageTitle>
+                  <div style={{ textAlign: "center", position: "absolute", right: "5%", marginTop: "-25%", width: "300px" }}>
+                    <PageTitle right fontSize={"1.8em"}>{page.english ? "Raw Materials" : "Materie Prime"}</PageTitle>
                   </div>
                   <div style={{ backgroundColor: "#E3A38B", width: "90%", height: "220px", position: "absolute", right: "2.5%" }}>
                     <Centralizer>
-                      <div style={{ width: "90%", marginTop: "-100px" }}>
-                        <QuoteMobile left style={QuoteStyle.italic} fontSize={"1.3em"} leftQuoteX={"20px"} rightQuoteY={"45px"} rightQuoteX={"-20px"}>
-                          Siamo custodi del nostro territorio. Per questo la nostra produzione si basa sull’attenta e accurata scelta di materie prime pregiate e di prima qualità.
+                      <div style={{ width: "90%", marginTop: "-140px" }}>
+                        <QuoteMobile left style={QuoteStyle.italic} fontSize={"1.3em"} leftQuoteX={"20px"} rightQuoteY={"85px"} rightQuoteX={"-20px"}>
+                        {page.english ? sanityHomePage.materiePrimeBannerQuoteTextEng : sanityHomePage.materiePrimeBannerQuoteText}
                     </QuoteMobile>
                       </div>
                     </Centralizer>

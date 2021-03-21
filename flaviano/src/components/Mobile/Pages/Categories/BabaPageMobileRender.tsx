@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import Img from 'gatsby-image';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
@@ -11,9 +11,11 @@ import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop
 import BabaProductsBanners from '../../Components/BabaProductsBanners/BabaProductsBanners';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import ContactBarMobileSmall from '../../Components/ContactBarMobileSmall/ContactBarMobileSmall';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const BabaPageMobileRender: React.FC = () => {
   const { sanityBabaPage }: BabaPageQuery = useBabaPageQuery();
+  const [page, setPage]: any = useContext(PageContext);
   let parallax: any = useRef();
   return (
     <LayoutMobile>
@@ -40,14 +42,25 @@ const BabaPageMobileRender: React.FC = () => {
         </ParallaxLayer>
         <ParallaxLayer offset={0.6} speed={0}>
           <div style={{ fontFamily: "HomepageBaukastenBook", margin: "2.5%", textAlign: "justify", fontSize: "1em" }}>
-            {sanityBabaPage.pageTextMobile.split(".").map((p, index) => {
-              if (index == 0) return (
-                <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>"O Babà è na cosa seria" </span>{p}.</p>
-              )
-              return (
-                <p>{p}.</p>
-              )
-            })}
+            {page.english ?
+              sanityBabaPage.pageTextMobileEng.split(".").map((p, index) => {
+                if (index == 0) return (
+                  <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>"O Babà è na cosa seria" </span>{p}.</p>
+                )
+                return (
+                  <p>{p}.</p>
+                )
+              }) :
+              sanityBabaPage.pageTextMobile.split(".").map((p, index) => {
+                if (index == 0) return (
+                  <p><span style={{ fontFamily: "HomepageBaukastenBold" }}>"O Babà è na cosa seria" </span>{p}.</p>
+                )
+                return (
+                  <p>{p}.</p>
+                )
+              })
+            }
+
             <div style={{ height: "1px", width: "40px", backgroundColor: "black", position: "absolute", right: "2.5%", marginTop: "-20px" }}></div>
           </div>
         </ParallaxLayer>
