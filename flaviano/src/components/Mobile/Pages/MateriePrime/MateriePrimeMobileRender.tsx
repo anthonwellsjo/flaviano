@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
 import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
@@ -9,9 +9,11 @@ import { MateriePrimeQuery, QuoteStyle } from '../../../../../types';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import MateriePrimi from '../../Components/MateriePrimi/MateriePrimi';
 import { useMateriePrimeQuery } from '../../../../hooks/queries/useMateriePrimeQuery';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const MateriePrimeMobileRender: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
+  const [page, setPage]: any = useContext(PageContext);
   let parallax: any = useRef();
   return (
     <LayoutMobile>
@@ -31,20 +33,20 @@ const MateriePrimeMobileRender: React.FC = () => {
           <div style={{ width: "60%", position: "absolute", right: 0, top: "100px" }}>
             <div style={{ height: "1px", width: "15px", marginLeft: "1px", backgroundColor: "black", marginBottom: "4px" }}></div>
             <div style={{ width: "20px" }}>
-              <PageTitleDesktop fontSize="1.5em" letterSpacing={".4em"}>Materie Prime</PageTitleDesktop>
+              <PageTitleDesktop fontSize="1.5em" letterSpacing={".4em"}>{page.english ? "Raw Materials" : "Materie Prime"}</PageTitleDesktop>
             </div>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={0.1} speed={0}>
           <Centralizer>
             <div style={{ width: "75%", marginTop: "0" }}>
-              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"70px"}>{sanityMateriePrimePage.quoteHeaderText}</QuoteMobile>
+              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"-10px"} rightQuoteY={"70px"}>{page.english ? sanityMateriePrimePage.quoteHeaderTextEng : sanityMateriePrimePage.quoteHeaderText}</QuoteMobile>
             </div>
           </Centralizer>
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.97} speed={0.5}>
-          <MateriePrimi materiePrimi={sanityMateriePrimePage} />
+          <MateriePrimi english={page.english} materiePrimi={sanityMateriePrimePage} />
         </ParallaxLayer>
       </Parallax>
     </LayoutMobile>

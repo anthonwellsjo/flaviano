@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import PageTitleDesktop from '../../../Desktop/PageTitleDesktop/PageTitleDesktop';
 import BackDropMobile from '../../Components/BackDropMobile/BackDropMobile';
@@ -9,9 +9,11 @@ import { MateriePrimeQuery, QuoteStyle } from '../../../../../types';
 import Centralizer from '../../../StructureComponents/Centralizer/Centralizer';
 import { useMateriePrimeQuery } from '../../../../hooks/queries/useMateriePrimeQuery';
 import MateriePrimi from '../../Components/MateriePrimi/MateriePrimi';
+import { PageContext } from '../../../../contexts/pageContext';
 
 const MateriePrimeMobileRenderSmallHeight: React.FC = () => {
   const { sanityMateriePrimePage }: MateriePrimeQuery = useMateriePrimeQuery();
+  const [page, setPage]: any = useContext(PageContext);
   let parallax: any = useRef();
   return (
     <LayoutMobile>
@@ -30,21 +32,21 @@ const MateriePrimeMobileRenderSmallHeight: React.FC = () => {
         <ParallaxLayer offset={0.15} speed={0}>
           <div style={{ width: "60%", position: "absolute", right: 0, top: "100px" }}>
             <div style={{ height: "1px", width: "15px", marginLeft: "1px", backgroundColor: "black", marginBottom: "4px" }}></div>
-            <div style={{ width: "20px" }}>
-              <PageTitleDesktop fontSize="1.5em" letterSpacing={".4em"}>Materie Prime</PageTitleDesktop>
+            <div style={{ width: "20px", marginLeft: page.english ? "-50px" : "0" }}>
+              <PageTitleDesktop fontSize="1.5em" letterSpacing={".4em"}>{page.english ? "Raw Materials" : "Materie Prime"}</PageTitleDesktop>
             </div>
           </div>
         </ParallaxLayer>
         <ParallaxLayer offset={0.05} speed={0}>
           <Centralizer>
             <div style={{ width: "75%", marginTop: "0" }}>
-              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"0px"} rightQuoteY={"90px"}>{sanityMateriePrimePage.quoteHeaderText}</QuoteMobile>
+              <QuoteMobile left fontSize={"1.3em"} rightQuoteX={"0px"} rightQuoteY={"90px"}>{page.english ? sanityMateriePrimePage.quoteHeaderTextEng : sanityMateriePrimePage.quoteHeaderText}</QuoteMobile>
             </div>
           </Centralizer>
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.97} speed={0.5}>
-          <MateriePrimi materiePrimi={sanityMateriePrimePage} />
+          <MateriePrimi english={page.english} materiePrimi={sanityMateriePrimePage} />
           {/* <MateriaPrima height={"350px"} title={"Lievito Madre"} hexColor={sanityMateriePrimePage.lievitoMadreColor.hex} fluidImg={sanityMateriePrimePage.lievitoMadreImg.asset.fluid} text={sanityMateriePrimePage.lievitoMadreText} />
           <MateriaPrima whiteBehindImg imgBehindTitle height={"500px"} title={"Limoni di sorrento"} hexColor={sanityMateriePrimePage.limoniColor.hex} fluidImg={sanityMateriePrimePage.limoniImg.asset.fluid} text={sanityMateriePrimePage.limoniText} />
           <MateriaPrima imgLeft height={"400px"} title={"Mela Annurca"} hexColor={sanityMateriePrimePage.melaColor.hex} fluidImg={sanityMateriePrimePage.melaImg.asset.fluid} text={sanityMateriePrimePage.melaText} />

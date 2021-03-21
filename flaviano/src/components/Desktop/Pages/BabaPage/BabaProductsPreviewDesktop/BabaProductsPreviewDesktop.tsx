@@ -8,9 +8,18 @@ import { useSpring, animated } from 'react-spring';
 import BabaProductPhotosAnimation from '../BabaProductPhotosAnimation/BabaProductPhotosAnimation';
 import { useViewport } from '../../../../../hooks/useViewPort';
 import { PageContext } from '../../../../../contexts/pageContext';
+import { FixedObject } from 'gatsby-image';
 
 interface props {
   bigDesktop?: boolean | undefined
+}
+
+interface PhotoBatch {
+  leftUp: undefined | FixedObject,
+  leftDown: undefined | FixedObject,
+  middleCenter: undefined | FixedObject,
+  rightUp: undefined | FixedObject,
+  rightDown: undefined | FixedObject
 }
 
 const BabaProductsPreviewDesktop = ({ bigDesktop }: props) => {
@@ -23,12 +32,12 @@ const BabaProductsPreviewDesktop = ({ bigDesktop }: props) => {
     to: { opacity: 0 },
     from: { opacity: 1 }
   })
-  const [photosToShow, setPhotosToShow] = useState({
-    leftUp: {},
-    leftDown: {},
-    middleCenter: {},
-    rightUp: {},
-    rightDown: {}
+  const [photosToShow, setPhotosToShow] = useState<PhotoBatch>({
+    leftUp: undefined,
+    leftDown: undefined,
+    middleCenter: undefined,
+    rightUp: undefined,
+    rightDown: undefined
   });
 
   const queryData: ProductQuery = useProductQuery();
@@ -38,8 +47,8 @@ const BabaProductsPreviewDesktop = ({ bigDesktop }: props) => {
   const onMouseEnterEventHandler = (index: number, p: Product) => {
     if (index == 0) {
       setPhotosToShow({
-        leftUp: {},
-        leftDown: {},
+        leftUp: undefined,
+        leftDown: undefined,
         middleCenter: p.node.productDetailPhoto1.asset.fixed,
         rightUp: p.node.productDetailPhoto2.asset.fixed,
         rightDown: p.node.productDetailPhoto3.asset.fixed
@@ -49,9 +58,9 @@ const BabaProductsPreviewDesktop = ({ bigDesktop }: props) => {
       setPhotosToShow({
         leftUp: p.node.productDetailPhoto1.asset.fixed,
         leftDown: p.node.productDetailPhoto2.asset.fixed,
-        middleCenter: {},
+        middleCenter: undefined,
         rightUp: p.node.productDetailPhoto3.asset.fixed,
-        rightDown: {}
+        rightDown: undefined
       })
     }
     if (index == 2) {
@@ -59,8 +68,8 @@ const BabaProductsPreviewDesktop = ({ bigDesktop }: props) => {
         leftUp: p.node.productDetailPhoto1.asset.fixed,
         leftDown: p.node.productDetailPhoto2.asset.fixed,
         middleCenter: p.node.productDetailPhoto3.asset.fixed,
-        rightUp: {},
-        rightDown: {}
+        rightUp: undefined,
+        rightDown: undefined
       })
     }
 
@@ -71,11 +80,11 @@ const BabaProductsPreviewDesktop = ({ bigDesktop }: props) => {
     setProductHover(false);
 
     setPhotosToShow({
-      leftUp: {},
-      leftDown: {},
-      middleCenter: {},
-      rightUp: {},
-      rightDown: {}
+      leftUp: undefined,
+      leftDown: undefined,
+      middleCenter: undefined,
+      rightUp: undefined,
+      rightDown: undefined
     })
   }
 
@@ -87,9 +96,9 @@ const BabaProductsPreviewDesktop = ({ bigDesktop }: props) => {
             <div key={p.node.id} onMouseLeave={() => onMouseExitEventHandler()} onMouseEnter={() => onMouseEnterEventHandler(index, p)} className={classes.productCard} style={{ width: "33.33%", height: "500px", backgroundColor: p.node.backGroundColor.hex, position: "relative", zIndex: 2 }}>
               <div className={classes.header}>
                 <div style={{ position: "absolute", height: "2px", width: "20px", backgroundColor: "black", top: "12px" }}></div>
-                <PageTitle fontSize={`${width / 700}em`} lineHeight={`${width / 500000}em`} letterSpacing={`${width / 10000}em`}>Babà</PageTitle>
+                <PageTitle fontSize={`2em`} lineHeight={`${width / 500000}em`} letterSpacing={`${width / 10000}em`}>Babà</PageTitle>
                 <br></br>
-                <PageTitle fontSize={`${width / 700}em`} letterSpacing={`${width / 10000}em`}>{p.node.title}</PageTitle>
+                <PageTitle fontSize={`2em`} letterSpacing={`${width / 10000}em`}>{p.node.title}</PageTitle>
               </div>
               <div className={classes.body}>
                 <PageTitle fontSize={"0.8em"} letterSpacing={".15em"}>{page.english ? "Ingredients" : "Ingredienti"}</PageTitle>
