@@ -29,9 +29,9 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
-        token: process.env.SANITY_TOKEN,
+        projectId: "d1gzutwf",
+        dataset: "development",
+        token: "skPfXj8BJwa42B0wXKEBzhDSBh5lOPqEubpLhXRBGem8e7cTMXvLqUCwUPylsnyJxm1cV89lRBfMMSZmg4xPvtgQFhkpFEVAqQxEtqomP5fKVEreWMonEbmncGXg0tnufJ0Vp9llelHPvCUdnbpHFZuJUkCb2hbXjicHme0wwStI3DFHnFIw",
         watchMode: true,
       },
     },
@@ -39,9 +39,9 @@ module.exports = {
       resolve: "gatsby-plugin-sanity-image",
       options: {
         // Sanity project info (required)
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
-        token: process.env.SANITY_TOKEN
+        projectId: "d1gzutwf",
+        dataset: "development",
+        token: "skPfXj8BJwa42B0wXKEBzhDSBh5lOPqEubpLhXRBGem8e7cTMXvLqUCwUPylsnyJxm1cV89lRBfMMSZmg4xPvtgQFhkpFEVAqQxEtqomP5fKVEreWMonEbmncGXg0tnufJ0Vp9llelHPvCUdnbpHFZuJUkCb2hbXjicHme0wwStI3DFHnFIw"
       },
     },
     "gatsby-plugin-sharp",
